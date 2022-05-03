@@ -5,11 +5,11 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Products</h2>
+                <h2>client</h2>
             </div>
             <div class="pull-right">
-                @can('product-create')
-                <a class="btn btn-success" href="{{ route('clients.create') }}"> Create New Product</a>
+                @can('client-create')
+                <a class="btn btn-success" href="{{ route('clients.create') }}"> Create New client</a>
                 @endcan
             </div>
         </div>
@@ -30,22 +30,22 @@
             <th>Details</th>
             <th width="280px">Action</th>
         </tr>
-	    @foreach ($clients as $product)
+	    @foreach ($clients as $client)
 	    <tr>
 	        <td>{{ ++$i }}</td>
-	        <td>{{ $product->name }}</td>
-	        <td>{{ $product->detail }}</td>
+	        <td>{{ $client->name }}</td>
+	        <td>{{ $client->detail }}</td>
 	        <td>
-                <form action="{{ route('clients.destroy',$product->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('clients.show',$product->id) }}">Show</a>
-                    @can('product-edit')
-                    <a class="btn btn-primary" href="{{ route('clients.edit',$product->id) }}">Edit</a>
+                <form action="{{ route('clients.destroy',$client->id) }}" method="POST">
+                    <a class="btn btn-info" href="{{ route('clients.show',$client->id) }}">Show</a>
+                    @can('client-edit')
+                    <a class="btn btn-primary" href="{{ route('clients.edit',$client->id) }}">Edit</a>
                     @endcan
 
 
                     @csrf
                     @method('DELETE')
-                    @can('product-delete')
+                    @can('client-delete')
                     <button type="submit" class="btn btn-danger">Delete</button>
                     @endcan
                 </form>

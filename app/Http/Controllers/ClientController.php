@@ -14,10 +14,10 @@ class ClientController extends Controller
      */
     function __construct()
     {
-         $this->middleware('permission:product-list|product-create|product-edit|product-delete', ['only' => ['index','show']]);
-         $this->middleware('permission:product-create', ['only' => ['create','store']]);
-         $this->middleware('permission:product-edit', ['only' => ['edit','update']]);
-         $this->middleware('permission:product-delete', ['only' => ['destroy']]);
+        $this->middleware('permission:client-list|client-create|client-edit|client-delete', ['only' => ['index', 'show']]);
+        $this->middleware('permission:client-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:client-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:client-delete', ['only' => ['destroy']]);
     }
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class ClientController extends Controller
     public function index()
     {
         $clients = Client::latest()->paginate(5);
-        return view('clients.index',compact('clients'))
+        return view('clients.index', compact('clients'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -57,7 +57,7 @@ class ClientController extends Controller
         Client::create($request->all());
 
         return redirect()->route('clients.index')
-                        ->with('success','Client created successfully.');
+            ->with('success', 'Client created successfully.');
     }
 
     /**
@@ -68,7 +68,7 @@ class ClientController extends Controller
      */
     public function show(Client $product)
     {
-        return view('clients.show',compact('product'));
+        return view('clients.show', compact('product'));
     }
 
     /**
@@ -79,7 +79,7 @@ class ClientController extends Controller
      */
     public function edit(Client $product)
     {
-        return view('clients.edit',compact('product'));
+        return view('clients.edit', compact('product'));
     }
 
     /**
@@ -91,7 +91,7 @@ class ClientController extends Controller
      */
     public function update(Request $request, Client $product)
     {
-         request()->validate([
+        request()->validate([
             'name' => 'required',
             'detail' => 'required',
         ]);
@@ -99,7 +99,7 @@ class ClientController extends Controller
         $product->update($request->all());
 
         return redirect()->route('clients.index')
-                        ->with('success','Client updated successfully');
+            ->with('success', 'Client updated successfully');
     }
 
     /**
@@ -113,6 +113,6 @@ class ClientController extends Controller
         $product->delete();
 
         return redirect()->route('clients.index')
-                        ->with('success','Client deleted successfully');
+            ->with('success', 'Client deleted successfully');
     }
 }
