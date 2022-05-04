@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Client;
 use Illuminate\Http\Request;
 
+/**
+ * Class ClientController
+ * @package App\Http\Controllers
+ */
 class ClientController extends Controller
 {
     /**
@@ -12,23 +16,12 @@ class ClientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    function __construct()
-    {
-        $this->middleware('permission:client-list|client-create|client-edit|client-delete', ['only' => ['index', 'show']]);
-        $this->middleware('permission:client-create', ['only' => ['create', 'store']]);
-        $this->middleware('permission:client-edit', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:client-delete', ['only' => ['destroy']]);
-    }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $clients = Client::latest()->paginate(5);
-        return view('clients.index', compact('clients'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        $clients = Client::paginate();
+
+        return view('client.index', compact('clients'))
+            ->with('i', (request()->input('page', 1) - 1) * $clients->perPage());
     }
 
     /**
@@ -38,23 +31,21 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('clients.create');
+        $client = new Client();
+        return view('client.create', compact('client'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        request()->validate([
-            'name' => 'required',
-            'detail' => 'required',
-        ]);
+        request()->validate(Client::$rules);
 
-        Client::create($request->all());
+        $client = Client::create($request->all());
 
         return redirect()->route('clients.index')
             ->with('success', 'Client created successfully.');
@@ -63,54 +54,54 @@ class ClientController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Client  $product
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Client $product)
+    public function show($id)
     {
-        return view('clients.show', compact('product'));
+        $client = Client::find($id);
+
+        return view('client.show', compact('client'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Client  $product
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Client $product)
+    public function edit($id)
     {
-        return view('clients.edit', compact('product'));
+        $client = Client::find($id);
+
+        return view('client.edit', compact('client'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Client  $product
+     * @param  \Illuminate\Http\Request $request
+     * @param  Client $client
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Client $product)
+    public function update(Request $request, Client $client)
     {
-        request()->validate([
-            'name' => 'required',
-            'detail' => 'required',
-        ]);
+        request()->validate(Client::$rules);
 
-        $product->update($request->all());
+        $client->update($request->all());
 
         return redirect()->route('clients.index')
             ->with('success', 'Client updated successfully');
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Client  $product
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
      */
-    public function destroy(Client $product)
+    public function destroy($id)
     {
-        $product->delete();
+        $client = Client::find($id)->delete();
 
         return redirect()->route('clients.index')
             ->with('success', 'Client deleted successfully');
