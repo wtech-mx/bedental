@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
-  <title>Argon Dashboard PRO - Premium Bootstrap 4 Admin Template</title>
+  <title>
+       @yield('template_title') - Bedental System
+  </title>
   <!-- Favicon -->
 
   <link rel="icon" href="{{ asset('assets/img/brand/favicon.png') }}" type="image/png">
@@ -20,7 +22,7 @@
   <link rel="stylesheet" href="{{ asset('assets/css/argon.css?v=1.1.0') }}" type="text/css">
 </head>
 
-<body style="overflow: hidden;">
+<body style="overflow-x: hidden">
 @auth
     <!-- Sidenav -->
     @include('layouts.sidebar')
