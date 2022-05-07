@@ -2,6 +2,23 @@
 
 @section('content')
 
+@if (Session::has('success'))
+<script>
+    Swal.fire({
+        title: 'Exito!!',
+        html: 'Se ha agragado el <b>permiso</b>, ' +
+            'Exitosamente',
+        // text: 'Se ha agragado la "MARCA" Exitosamente',
+        imageUrl: '{{ asset('img/icon/color/coche (6).png') }}',
+        background: '#fff',
+        imageWidth: 150,
+        imageHeight: 150,
+        imageAlt: 'USUARIO IMG',
+    })
+
+</script>
+@endif
+
 <div class="container-fluid mt-3">
       <div class="row">
         <div class="col">
@@ -9,7 +26,13 @@
             <!-- Card header -->
             <div class="card-header">
               <h3 class="mb-3">Create New Role</h3>
-               <a class="btn btn-primary" href="{{ route('roles.index') }}"> Back</a>
+              <div class="d-flex justify-content-between">
+                <a class="btn btn-primary" href="{{ route('roles.index') }}"> Back</a>
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
+                    Launch demo modal
+                  </button>
+              </div>
+
                     @if (count($errors) > 0)
                       <div class="alert alert-danger">
                         <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -40,7 +63,26 @@
                             <br/>
                             @foreach($permission as $value)
                                 <label>{{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
-                                {{ $value->name }}</label>
+                                    {{ $value->name }}
+                                </label>
+                                <div class="dropdown ">
+                                    <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <i class="fas fa-ellipsis-v"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+
+                                      <a class="dropdown-item" href="{{ route('permisos.update',$value->id) }}">
+                                        Edit
+                                      </a>
+
+                                    <form action="{{ route('permisos.destroy',$value->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger" class="dropdown-item">Delete</button>
+                                    </form>
+
+                                    </div>
+                                  </div>
                             <br/>
                             @endforeach
                         </div>
@@ -60,5 +102,6 @@
       </div>
 </div>
 
+@include('roles.modal')
 
 @endsection
