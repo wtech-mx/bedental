@@ -63,6 +63,7 @@ class RoleController extends Controller
         $role = Role::create(['name' => $request->input('name')]);
         $role->syncPermissions($request->input('permission'));
 
+        Session::flash('success', 'Se ha guardado sus datos con exito');
         return redirect()->route('roles.index')
                         ->with('success','Role created successfully');
     }
@@ -119,6 +120,7 @@ class RoleController extends Controller
 
         $role->syncPermissions($request->input('permission'));
 
+        Session::flash('edit', 'Se ha editado sus datos con exito');
         return redirect()->route('roles.index')
                         ->with('success','Role updated successfully');
     }
@@ -131,6 +133,8 @@ class RoleController extends Controller
     public function destroy($id)
     {
         DB::table("roles")->where('id',$id)->delete();
+
+        Session::flash('delete', 'Se ha eliminado sus datos con exito');
         return redirect()->route('roles.index')
                         ->with('success','Role deleted successfully');
     }

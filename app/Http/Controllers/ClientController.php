@@ -47,6 +47,7 @@ class ClientController extends Controller
 
         $client = Client::create($request->all());
 
+        Session::flash('success', 'Se ha guardado sus datos con exito');
         return redirect()->route('clients.index')
             ->with('success', 'Client created successfully.');
     }
@@ -90,6 +91,7 @@ class ClientController extends Controller
 
         $client->update($request->all());
 
+        Session::flash('edit', 'Se ha editado sus datos con exito');
         return redirect()->route('clients.index')
             ->with('success', 'Client updated successfully');
     }
@@ -103,6 +105,7 @@ class ClientController extends Controller
     {
         $client = Client::find($id)->delete();
 
+        Session::flash('delete', 'Se ha eliminado sus datos con exito');
         return redirect()->route('clients.index')
             ->with('success', 'Client deleted successfully');
     }

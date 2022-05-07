@@ -23,11 +23,60 @@
                               </div>
                         </div>
                     </div>
-                    @if ($message = Session::get('success'))
+                    {{-- @if ($message = Session::get('success'))
                         <div class="alert alert-success">
                             <p>{{ $message }}</p>
                         </div>
-                    @endif
+                    @endif --}}
+
+                    @if (Session::has('success'))
+                    <script>
+                        Swal.fire({
+                            title: 'Exito!!',
+                            html: 'Se ha agragado el <b>Usuario</b>, ' +
+                                'Exitosamente',
+                            // text: 'Se ha agragado la "MARCA" Exitosamente',
+                            imageUrl: '{{ asset('img/icon/color/coche (6).png') }}',
+                            background: '#fff',
+                            imageWidth: 150,
+                            imageHeight: 150,
+                            imageAlt: 'USUARIO IMG',
+                        })
+
+                    </script>
+                @endif
+                @if (Session::has('edit'))
+                    <script>
+                        Swal.fire({
+                            title: 'Exito!!',
+                            html: 'Se ha editado el <b>Usuario</b>, ' +
+                                'Exitosamente',
+                            // text: 'Se ha agragado la "MARCA" Exitosamente',
+                            imageUrl: '{{ asset('img/icon/color/coche (6).png') }}',
+                            background: '#fff',
+                            imageWidth: 150,
+                            imageHeight: 150,
+                            imageAlt: 'USUARIO IMG',
+                        })
+
+                    </script>
+                @endif
+                @if (Session::has('delete'))
+                    <script>
+                        Swal.fire({
+                            title: 'Exito!!',
+                            html: 'Se ha eliminado el <b>Usuario</b>, ' +
+                                'Exitosamente',
+                            // text: 'Se ha agragado la "MARCA" Exitosamente',
+                            imageUrl: '{{ asset('img/icon/color/coche (6).png') }}',
+                            background: '#fff',
+                            imageWidth: 150,
+                            imageHeight: 150,
+                            imageAlt: 'USUARIO IMG',
+                        })
+
+                    </script>
+                @endif
 
                     <div class="card-body">
                         <div class="table-responsive">
@@ -35,7 +84,7 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
+
 										<th>Nombre</th>
 										<th>Apellido</th>
 										<th>Edad</th>
@@ -52,7 +101,7 @@
                                     @foreach ($clients as $client)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
+
 											<td>{{ $client->nombre }}</td>
 											<td>{{ $client->apellido }}</td>
 											<td>{{ $client->edad }}</td>

@@ -9,6 +9,7 @@ use Spatie\Permission\Models\Role;
 use DB;
 use Hash;
 use Illuminate\Support\Arr;
+use Session;
 
 class UserController extends Controller
 {
@@ -56,6 +57,7 @@ class UserController extends Controller
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
 
+        Session::flash('success', 'Se ha guardado sus datos con exito');
         return redirect()->route('users.index')
                         ->with('success','User created successfully');
     }
@@ -116,6 +118,7 @@ class UserController extends Controller
 
         $user->assignRole($request->input('roles'));
 
+        Session::flash('edit', 'Se ha editado sus datos con exito');
         return redirect()->route('users.index')
                         ->with('success','User updated successfully');
     }
@@ -129,6 +132,8 @@ class UserController extends Controller
     public function destroy($id)
     {
         User::find($id)->delete();
+
+        Session::flash('delete', 'Se ha eliminado sus datos con exito');
         return redirect()->route('users.index')
                         ->with('success','User deleted successfully');
     }
