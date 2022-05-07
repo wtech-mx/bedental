@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use DB;
+use Session;
 
 class RoleController extends Controller
 {
@@ -132,7 +133,8 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        DB::table("roles")->where('id',$id)->delete();
+        DB::table("role_has_permissions")->where('permission_id',$id)->delete();
+        DB::table("permissions")->where('permission_id',$id)->delete();
 
         Session::flash('delete', 'Se ha eliminado sus datos con exito');
         return redirect()->route('roles.index')
