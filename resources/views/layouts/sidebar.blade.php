@@ -24,9 +24,9 @@
 
             <li class="nav-item">
 
-              <a class="nav-link {{ (Request::is('clients*') ? 'active' : '') }}" href="{{ route('clients.index') }}">
+              <a class="nav-link {{ (Request::is('especialists*') ? 'active' : '') }}" href="especialists">
                 <i class="ni ni-circle-08 text-red"></i>
-                <span class="nav-link-text">Clients</span>
+                <span class="nav-link-text">Especialistas</span>
               </a>
             </li>
 

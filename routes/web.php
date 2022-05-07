@@ -31,3 +31,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('users', UserController::class);
     Route::resource('clients', ClientController::class);
 });
+
+//Route Hooks - Do not delete//
+Route::view('especialists', 'livewire.especialists.index')->middleware('auth');

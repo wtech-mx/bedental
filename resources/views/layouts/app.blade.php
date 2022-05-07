@@ -9,6 +9,8 @@
   <title>
        @yield('template_title') - Bedental System
   </title>
+  {{-- <title>@hasSection('title') @yield('title') | @endif {{ config('app.name', 'Laravel') }}</title> --}}
+
   <!-- Favicon -->
 
   <link rel="icon" href="{{ asset('assets/img/brand/favicon.png') }}" type="image/png">
@@ -20,6 +22,8 @@
   <!-- Page plugins -->
   <!-- Argon CSS -->
   <link rel="stylesheet" href="{{ asset('assets/css/argon.css?v=1.1.0') }}" type="text/css">
+
+  @livewireStyles
 </head>
 
 <body style="overflow-x: hidden">
@@ -78,6 +82,14 @@
         <!-- Footer -->
 @endauth
     </div>
+
+    <!--livewire -->
+    @livewireScripts
+    <script type="text/javascript">
+        window.livewire.on('closeModal', () => {
+            $('#createDataModal').modal('hide');
+        });
+    </script>
 
   <!-- Argon Scripts -->
   <!-- Core -->
