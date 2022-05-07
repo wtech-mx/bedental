@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Illuminate\Support\Str;
 use DB;
 
 class PermisosController extends Controller
@@ -15,8 +16,10 @@ class PermisosController extends Controller
             'name' => 'required',
             ]);
 
+            $slug = Str::slug($request->name, '-');
+
             $Permission = new Permission;
-            $Permission->name = $request->name;
+            $Permission->name = $slug;
 
             $Permission->save();
             return redirect()->route('roles.create')
@@ -33,7 +36,7 @@ class PermisosController extends Controller
         $Permission->name = $request->name;
         $Permission->save();
         return redirect()->route('roles.create')
-        ->with('success','Permission Has Been updated successfully');
+        ->with('edit','Permission Has Been updated successfully');
     }
 
     public function destroy($id)
