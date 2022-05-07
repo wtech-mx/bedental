@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('template_title')
+    Mostrar ususarios
+@endsection
 
 @section('content')
 <div class="row">

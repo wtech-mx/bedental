@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('template_title')
+    Create Usuario
+@endsection
+
 @section('content')
 
 <div class="container-fluid mt-3">

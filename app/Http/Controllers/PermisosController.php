@@ -32,14 +32,14 @@ class PermisosController extends Controller
         $Permission->name = $request->name;
         $Permission->save();
         return redirect()->route('roles.create')
-        ->with('success','Permission Has Been updated successfully');
+        ->with('edit','Permission Has Been updated successfully');
     }
 
     public function destroy(Permission $Permission)
     {
         $Permission->delete();
         return redirect()->route('roles.create')
-        ->with('success','Permission has been deleted successfully');
+        ->with('delete','Permission has been deleted successfully');
     }
 
 }

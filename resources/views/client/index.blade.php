@@ -23,60 +23,6 @@
                               </div>
                         </div>
                     </div>
-                    {{-- @if ($message = Session::get('success'))
-                        <div class="alert alert-success">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif --}}
-
-                    @if (Session::has('success'))
-                    <script>
-                        Swal.fire({
-                            title: 'Exito!!',
-                            html: 'Se ha agragado el <b>Usuario</b>, ' +
-                                'Exitosamente',
-                            // text: 'Se ha agragado la "MARCA" Exitosamente',
-                            imageUrl: '{{ asset('img/icon/color/coche (6).png') }}',
-                            background: '#fff',
-                            imageWidth: 150,
-                            imageHeight: 150,
-                            imageAlt: 'USUARIO IMG',
-                        })
-
-                    </script>
-                @endif
-                @if (Session::has('edit'))
-                    <script>
-                        Swal.fire({
-                            title: 'Exito!!',
-                            html: 'Se ha editado el <b>Usuario</b>, ' +
-                                'Exitosamente',
-                            // text: 'Se ha agragado la "MARCA" Exitosamente',
-                            imageUrl: '{{ asset('img/icon/color/coche (6).png') }}',
-                            background: '#fff',
-                            imageWidth: 150,
-                            imageHeight: 150,
-                            imageAlt: 'USUARIO IMG',
-                        })
-
-                    </script>
-                @endif
-                @if (Session::has('delete'))
-                    <script>
-                        Swal.fire({
-                            title: 'Exito!!',
-                            html: 'Se ha eliminado el <b>Usuario</b>, ' +
-                                'Exitosamente',
-                            // text: 'Se ha agragado la "MARCA" Exitosamente',
-                            imageUrl: '{{ asset('img/icon/color/coche (6).png') }}',
-                            background: '#fff',
-                            imageWidth: 150,
-                            imageHeight: 150,
-                            imageAlt: 'USUARIO IMG',
-                        })
-
-                    </script>
-                @endif
 
                     <div class="card-body">
                         <div class="table-responsive">

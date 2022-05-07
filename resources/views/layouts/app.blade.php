@@ -86,6 +86,8 @@
 @endauth
     </div>
 
+    @include('layouts.alertas')
+
     <!--livewire -->
     @livewireScripts
     <script type="text/javascript">

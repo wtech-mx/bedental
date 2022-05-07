@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('template_title')
+    Ver Roles
+@endsection
+
 
 @section('content')
 <div class="row">

@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('template_title')
+    Editar Client
+@endsection
+
 @section('content')
 
 <div class="container-fluid mt-3">

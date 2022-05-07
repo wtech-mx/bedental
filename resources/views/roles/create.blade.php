@@ -1,23 +1,10 @@
 @extends('layouts.app')
 
+@section('template_title')
+    Create Rol
+@endsection
+
 @section('content')
-
-@if (Session::has('success'))
-<script>
-    Swal.fire({
-        title: 'Exito!!',
-        html: 'Se ha agragado el <b>permiso</b>, ' +
-            'Exitosamente',
-        // text: 'Se ha agragado la "MARCA" Exitosamente',
-        imageUrl: '{{ asset('img/icon/color/coche (6).png') }}',
-        background: '#fff',
-        imageWidth: 150,
-        imageHeight: 150,
-        imageAlt: 'USUARIO IMG',
-    })
-
-</script>
-@endif
 
 <div class="container-fluid mt-3">
       <div class="row">

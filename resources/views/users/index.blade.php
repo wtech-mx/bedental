@@ -1,13 +1,10 @@
 @extends('layouts.app')
 
+@section('template_title')
+    Usuarios
+@endsection
+
 @section('content')
-
-{{-- @if ($message = Session::get('success'))
-    <div class="alert alert-success">
-      <p>{{ $message }}</p>
-    </div>
-@endif --}}
-
 
 <div class="container-fluid mt-3">
       <div class="row">
@@ -18,55 +15,6 @@
               <h3 class="mb-3">Users Management</h3>
               <a class="btn btn-success" href="{{ route('users.create') }}"> Create New User</a>
             </div>
-
-            @if (Session::has('success'))
-                <script>
-                    Swal.fire({
-                        title: 'Exito!!',
-                        html: 'Se ha agragado el <b>Usuario</b>, ' +
-                            'Exitosamente',
-                        // text: 'Se ha agragado la "MARCA" Exitosamente',
-                        imageUrl: '{{ asset('img/icon/color/coche (6).png') }}',
-                        background: '#fff',
-                        imageWidth: 150,
-                        imageHeight: 150,
-                        imageAlt: 'USUARIO IMG',
-                    })
-
-                </script>
-            @endif
-            @if (Session::has('edit'))
-                <script>
-                    Swal.fire({
-                        title: 'Exito!!',
-                        html: 'Se ha editado el <b>Usuario</b>, ' +
-                            'Exitosamente',
-                        // text: 'Se ha agragado la "MARCA" Exitosamente',
-                        imageUrl: '{{ asset('img/icon/color/coche (6).png') }}',
-                        background: '#fff',
-                        imageWidth: 150,
-                        imageHeight: 150,
-                        imageAlt: 'USUARIO IMG',
-                    })
-
-                </script>
-            @endif
-            @if (Session::has('delete'))
-                <script>
-                    Swal.fire({
-                        title: 'Exito!!',
-                        html: 'Se ha eliminado el <b>Usuario</b>, ' +
-                            'Exitosamente',
-                        // text: 'Se ha agragado la "MARCA" Exitosamente',
-                        imageUrl: '{{ asset('img/icon/color/coche (6).png') }}',
-                        background: '#fff',
-                        imageWidth: 150,
-                        imageHeight: 150,
-                        imageAlt: 'USUARIO IMG',
-                    })
-
-                </script>
-            @endif
 
             <div class="table-responsive py-4" style="">
               <table class="table table-flush" id="datatable-basic" >
