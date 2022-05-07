@@ -71,18 +71,21 @@
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
 
-                                      <a class="dropdown-item" href="{{ route('permisos.update',$value->id) }}">
+                                    <a type="button" class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter{{$value->id}}">
                                         Edit
-                                      </a>
+                                    </a>
 
                                     <form action="{{ route('permisos.destroy',$value->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger" class="dropdown-item">Delete</button>
+                                        <button type="submit" class="dropdown-item" class="dropdown-item">Delete</button>
                                     </form>
 
                                     </div>
                                   </div>
+
+                                  @include('roles.modal_update')
+
                             <br/>
                             @endforeach
                         </div>

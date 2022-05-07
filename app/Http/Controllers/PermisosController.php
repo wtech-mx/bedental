@@ -37,9 +37,7 @@ class PermisosController extends Controller
 
     public function destroy(Permission $Permission)
     {
-        dd($Permission);
         $Permission->delete();
-        dd($Permission->delete());
         return redirect()->route('roles.create')
         ->with('success','Permission has been deleted successfully');
     }
