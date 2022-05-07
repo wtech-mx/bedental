@@ -26,6 +26,10 @@
     <!-- sweetalert2 JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
+    <!-- Datatable -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.1/css/bootstrap.min.css">
+    <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+
   @livewireStyles
 </head>
 
@@ -121,6 +125,20 @@
   <!-- Demo JS - remove this in your project -->
   <script src="{{ asset('assets/js/demo.min.js') }}"></script>
 
+   <script>
+        $(document).ready(function () {
+            $.noConflict();
+            var table = $('#table_id').DataTable({
+                "ordering": false,
+                autoFill: true,
+                responsive: true,
+                fixedHeader: true,
+                language: {
+                    url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json'
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -8,6 +8,7 @@ use Mediconesystems\LivewireDatatables\Column;
 use Mediconesystems\LivewireDatatables\NumberColumn;
 use Mediconesystems\LivewireDatatables\DateColumn;
 use Mediconesystems\LivewireDatatables\Http\Livewire\LivewireDatatable;
+use Session;
 
 /**
  * Class ClientController
@@ -20,22 +21,6 @@ class ClientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function columns()
-    {
-        return [
-            NumberColumn::name('id')
-                ->label('ID')
-                ->sortBy('id'),
-
-            Column::name('name')
-                ->label('Name'),
-
-            Column::name('email'),
-
-            DateColumn::name('created_at')
-                ->label('Creation Date')
-        ];
-    }
     public function index()
     {
         $clients = Client::paginate();
