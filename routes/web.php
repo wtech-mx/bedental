@@ -31,7 +31,6 @@ Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('permisos', PermisosController::class);
-    Route::delete('permisos/destroy/{id}', [RoleController::class, 'destroy'])->name('permisos.destroy');
     Route::resource('users', UserController::class);
     Route::resource('clients', ClientController::class);
 });

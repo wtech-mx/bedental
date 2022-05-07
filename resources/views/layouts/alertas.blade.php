@@ -2,7 +2,7 @@
 <script>
     Swal.fire({
         title: 'Exito!!',
-        html: 'Se ha <b>agragado</b> </br>  <b>Exitosamente</b>',
+        html: 'Se ha <b>agragado</b> </br> ',
         imageUrl: '{{ asset('img/icon/checked.png') }}',
         background: '#fff',
         imageWidth: 150,
@@ -16,7 +16,7 @@
 <script>
     Swal.fire({
         title: 'Exito!!',
-        html: 'Se ha <b>editado</b> </br> <b>Exitosamente</b>',
+        html: 'Se ha <b>editado</b> </br>',
         imageUrl: '{{ asset('img/icon/edit.png') }}',
         background: '#fff',
         imageWidth: 150,
@@ -30,7 +30,7 @@
 <script>
     Swal.fire({
         title: 'Exito!!',
-        html: 'Se ha <b>eliminado</b> </br> <b>Exitosamente</b>',
+        html: 'Se ha <b>eliminado</b> </br>',
         imageUrl: '{{ asset('img/icon/delete.png') }}',
         background: '#fff',
         imageWidth: 150,

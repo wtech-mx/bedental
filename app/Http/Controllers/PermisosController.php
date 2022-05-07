@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Company;
+
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use DB;
 
 class PermisosController extends Controller
 {
@@ -32,12 +33,12 @@ class PermisosController extends Controller
         $Permission->name = $request->name;
         $Permission->save();
         return redirect()->route('roles.create')
-        ->with('edit','Permission Has Been updated successfully');
+        ->with('success','Permission Has Been updated successfully');
     }
 
-    public function destroy(Permission $Permission)
+    public function destroy($id)
     {
-        $Permission->delete();
+        DB::table("permissions")->where('id',$id)->delete();
         return redirect()->route('roles.create')
         ->with('delete','Permission has been deleted successfully');
     }

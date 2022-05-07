@@ -46,13 +46,10 @@
                               <a class="dropdown-item" href="{{ route('roles.edit',$role->id) }}">
                                 Edit
                               </a>
-                            {!! Form::open(['method' => 'DELETE','route' => ['roles.destroy', $role->id],'style'=>'display:inline']) !!}
+                            {!! Form::open(['method' => 'DELETE','route' => ['permisos.destroy', $role->id],'style'=>'display:inline']) !!}
                                 {!! Form::submit('Delete', ['class' => 'dropdown-item']) !!}
                             {!! Form::close() !!}
 
-                            {!! Form::open(['method' => 'DELETE','route' => ['roles.destroy', $role->id],'style'=>'display:inline']) !!}
-                                {!! Form::submit('Delete', ['class' => 'dropdown-item']) !!}
-                            {!! Form::close() !!}
                             </div>
                           </div>
                         </td>
