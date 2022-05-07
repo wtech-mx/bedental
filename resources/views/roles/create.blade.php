@@ -62,11 +62,15 @@
                                         Edit
                                     </a>
 
-                                    <form action="{{ route('permisos.destroy',$value->id) }}" method="POST">
+                                    {{-- <form action="{{ route('permisos.destroy',$value->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="dropdown-item" class="dropdown-item">Delete</button>
-                                    </form>
+                                    </form> --}}
+
+                                    {!! Form::open(['method' => 'DELETE','route' => ['permisos.destroy', $value->id],'style'=>'display:inline']) !!}
+                                        {!! Form::submit('Delete', ['class' => 'dropdown-item']) !!}
+                                    {!! Form::close() !!}
 
                                     </div>
                                   </div>
