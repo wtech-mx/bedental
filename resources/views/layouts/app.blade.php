@@ -94,12 +94,27 @@
 
     <!--livewire -->
     @livewireScripts
+
     <script type="text/javascript">
         window.livewire.on('closeModal', () => {
             $('#createDataModal').modal('hide');
         });
     </script>
 
+   <script>
+    $(document).ready(function () {
+        $.noConflict();
+        var table = $('#table_id').DataTable({
+            "ordering": false,
+            autoFill: true,
+            responsive: true,
+            fixedHeader: true,
+            language: {
+                url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json'
+            }
+        });
+    });
+    </script>
   <!-- Argon Scripts -->
   <!-- Core -->
   <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
@@ -125,20 +140,8 @@
   <!-- Demo JS - remove this in your project -->
   <script src="{{ asset('assets/js/demo.min.js') }}"></script>
 
-   <script>
-        $(document).ready(function () {
-            $.noConflict();
-            var table = $('#table_id').DataTable({
-                "ordering": false,
-                autoFill: true,
-                responsive: true,
-                fixedHeader: true,
-                language: {
-                    url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json'
-                }
-            });
-        });
-    </script>
+
+
 </body>
 
 </html>
