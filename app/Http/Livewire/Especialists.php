@@ -133,15 +133,15 @@ class Especialists extends Component
 		$this->fecha_nacimiento = $record-> fecha_nacimiento;
 		$this->email = $record-> email;
         $this->color = null;
-		$this->domicilio_fiscal = null;
-		$this->regimen_fiscal = null;
-		$this->rfc = null;
-		$this->razon_social = null;
-		$this->correo_fiscal = null;
-		$this->cfdi = null;
-		$this->seguro = null;
-		$this->poliza = null;
-		$this->empresa = null;
+		$this->domicilio_fiscal = $record-> domicilio_fiscal;
+		$this->regimen_fiscal = $record-> regimen_fiscal;
+		$this->rfc = $record-> rfc;
+		$this->razon_social = $record-> razon_social;
+		$this->correo_fiscal = $record-> correo_fiscal;
+		$this->cfdi = $record-> cfdi;
+		$this->seguro = $record-> seguro;
+		$this->poliza = $record-> poliza;
+		$this->empresa = $record-> empresa;
         $this->updateMode = true;
     }
 

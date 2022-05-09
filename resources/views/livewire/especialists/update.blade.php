@@ -15,22 +15,22 @@
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
 
                                 <li class="nav-item">
-                                <a class="nav-link active" id="cliente-tab" data-toggle="tab" href="#cliente" role="tab" aria-controls="cliente" aria-selected="true">Cliente</a>
+                                <a class="nav-link active" id="cliente2-tab" data-toggle="tab" href="#cliente2" role="tab" aria-controls="cliente2" aria-selected="true">Cliente</a>
                                 </li>
 
                                 <li class="nav-item">
-                                <a class="nav-link" id="facturacion-tab" data-toggle="tab" href="#facturacion" role="tab" aria-controls="facturacion" aria-selected="false">Facturacion</a>
+                                <a class="nav-link" id="facturacion2-tab" data-toggle="tab" href="#facturacion2" role="tab" aria-controls="facturacion2" aria-selected="false">Facturacion</a>
                                 </li>
 
                                 <li class="nav-item">
-                                <a class="nav-link" id="seguro-tab" data-toggle="tab" href="#seguro" role="tab" aria-controls="seguro" aria-selected="false">Seguro</a>
+                                <a class="nav-link" id="seguro2-tab" data-toggle="tab" href="#seguro2" role="tab" aria-controls="seguro2" aria-selected="false">Seguro</a>
                                 </li>
                             </ul>
                         </div>
 
-                          {{-- tab datos de cliente --}}
+                          {{-- tab datos de cliente2 --}}
                           <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="cliente" role="tabpanel" aria-labelledby="cliente-tab">
+                            <div class="tab-pane fade show active" id="cliente2" role="tabpanel" aria-labelledby="cliente2-tab">
                                 <div class="row mt-3">
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6 ">
                                         <label for="nombre">Nombre</label>
@@ -78,8 +78,8 @@
                             </div>
                             {{-- tab datos de cliente --}}
 
-                            {{-- tab datos de facturacion --}}
-                            <div class="tab-pane fade" id="facturacion" role="tabpanel" aria-labelledby="facturacion-tab">
+                            {{-- tab datos de facturacion2 --}}
+                            <div class="tab-pane fade" id="facturacion2" role="tabpanel" aria-labelledby="facturacion2-tab">
                                 <div class="row mt-3">
 
                                     <div class="form-group col-xs-12 col-sm-12 col-md-12">
@@ -112,7 +112,7 @@
                             {{-- tab datos de facturacion --}}
 
                             {{-- tab datos de cliente --}}
-                            <div class="tab-pane fade" id="seguro" role="tabpanel" aria-labelledby="seguro-tab">
+                            <div class="tab-pane fade" id="seguro2" role="tabpanel" aria-labelledby="seguro2-tab">
                                 <div class="row">
 
                                     <div class="form-group col-xs-12 col-sm-12 col-md-12">
