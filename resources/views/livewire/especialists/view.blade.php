@@ -23,19 +23,15 @@
 				</div>
 
 				<div class="card-body">
-						@include('livewire.especialists.create')
-						@include('livewire.especialists.update')
                 <div class="table-responsive py-4" style="">
                     <table class="table table-flush" id="datatable-basic" >
 						<thead class="thead">
 							<tr>
 								<td>#</td>
 								<th>Nombre</th>
-								<th>Apellido</th>
 								<th>Cedula</th>
 								<th>Especialidad</th>
 								<th>Telefono</th>
-								<th>Fecha Nacimiento</th>
 								<th>Email</th>
 								<td>ACTIONS</td>
 							</tr>
@@ -44,12 +40,10 @@
 							@foreach($especialists as $row)
 							<tr>
 								<td>{{ $loop->iteration }}</td>
-								<td>{{ $row->nombre }}</td>
-								<td>{{ $row->apellido }}</td>
+								<td>{{ $row->nombre }} {{ $row->apellido }}</td>
 								<td>{{ $row->cedula }}</td>
 								<td>{{ $row->especialidad }}</td>
 								<td>{{ $row->telefono }}</td>
-								<td>{{ $row->fecha_nacimiento }}</td>
 								<td>{{ $row->email }}</td>
 								<td width="90">
 								<div class="btn-group">
@@ -62,6 +56,8 @@
 									</div>
 								</div>
 								</td>
+                                @include('livewire.especialists.create')
+                                @include('livewire.especialists.update')
 							@endforeach
 						</tbody>
 					</table>

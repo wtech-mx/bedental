@@ -11,7 +11,27 @@ class Especialists extends Component
     use WithPagination;
 
 	protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $nombre, $apellido, $cedula, $especialidad, $telefono, $fecha_nacimiento, $email;
+    public $selected_id,
+           $keyWord,
+           $nombre,
+           $apellido,
+           $cedula,
+           $especialidad,
+           $telefono,
+           $fecha_nacimiento,
+           $email,
+
+           $color,
+           $domicilio_fiscal,
+           $regimen_fiscal,
+           $rfc,
+           $razon_social,
+           $correo_fiscal,
+           $cfdi,
+           $seguro,
+           $poliza,
+           $empresa;
+
     public $updateMode = false;
 
     public function render()
@@ -19,25 +39,35 @@ class Especialists extends Component
 		$keyWord = '%'.$this->keyWord .'%';
         return view('livewire.especialists.view', [
             'especialists' => Especialist::latest()
-						->orWhere('nombre', 'LIKE', $keyWord)
-						->orWhere('apellido', 'LIKE', $keyWord)
-						->orWhere('cedula', 'LIKE', $keyWord)
-						->orWhere('especialidad', 'LIKE', $keyWord)
-						->orWhere('telefono', 'LIKE', $keyWord)
-						->orWhere('fecha_nacimiento', 'LIKE', $keyWord)
-						->orWhere('email', 'LIKE', $keyWord)
-						->paginate(10),
+				->orWhere('nombre', 'LIKE', $keyWord)
+				->orWhere('apellido', 'LIKE', $keyWord)
+				->orWhere('cedula', 'LIKE', $keyWord)
+				->orWhere('especialidad', 'LIKE', $keyWord)
+				->orWhere('telefono', 'LIKE', $keyWord)
+				->orWhere('fecha_nacimiento', 'LIKE', $keyWord)
+				->orWhere('email', 'LIKE', $keyWord)
+				->orWhere('color', 'LIKE', $keyWord)
+				->orWhere('domicilio_fiscal', 'LIKE', $keyWord)
+				->orWhere('regimen_fiscal', 'LIKE', $keyWord)
+				->orWhere('rfc', 'LIKE', $keyWord)
+				->orWhere('razon_social', 'LIKE', $keyWord)
+				->orWhere('correo_fiscal', 'LIKE', $keyWord)
+				->orWhere('cfdi', 'LIKE', $keyWord)
+                ->orWhere('cfdi', 'LIKE', $keyWord)
+				->orWhere('poliza', 'LIKE', $keyWord)
+				->orWhere('empresa', 'LIKE', $keyWord)
+				->paginate(10)
         ]);
     }
-	
+
     public function cancel()
     {
         $this->resetInput();
         $this->updateMode = false;
     }
-	
+
     private function resetInput()
-    {		
+    {
 		$this->nombre = null;
 		$this->apellido = null;
 		$this->cedula = null;
@@ -45,6 +75,16 @@ class Especialists extends Component
 		$this->telefono = null;
 		$this->fecha_nacimiento = null;
 		$this->email = null;
+        $this->color = null;
+		$this->domicilio_fiscal = null;
+		$this->regimen_fiscal = null;
+		$this->rfc = null;
+		$this->razon_social = null;
+		$this->correo_fiscal = null;
+		$this->cfdi = null;
+		$this->seguro = null;
+		$this->poliza = null;
+		$this->empresa = null;
     }
 
     public function store()
@@ -55,16 +95,26 @@ class Especialists extends Component
 		'telefono' => 'required',
         ]);
 
-        Especialist::create([ 
+        Especialist::create([
 			'nombre' => $this-> nombre,
 			'apellido' => $this-> apellido,
 			'cedula' => $this-> cedula,
 			'especialidad' => $this-> especialidad,
 			'telefono' => $this-> telefono,
 			'fecha_nacimiento' => $this-> fecha_nacimiento,
-			'email' => $this-> email
+			'email' => $this-> email,
+            'color' => $this-> color,
+			'domicilio_fiscal' => $this-> domicilio_fiscal,
+			'regimen_fiscal' => $this-> regimen_fiscal,
+			'rfc' => $this-> rfc,
+			'razon_social' => $this-> razon_social,
+			'correo_fiscal' => $this-> correo_fiscal,
+			'cfdi' => $this-> cfdi,
+            'seguro' => $this-> seguro,
+			'poliza' => $this-> poliza,
+			'empresa' => $this-> empresa
         ]);
-        
+
         $this->resetInput();
 		$this->emit('closeModal');
 		session()->flash('message', 'Especialist Successfully created.');
@@ -74,7 +124,7 @@ class Especialists extends Component
     {
         $record = Especialist::findOrFail($id);
 
-        $this->selected_id = $id; 
+        $this->selected_id = $id;
 		$this->nombre = $record-> nombre;
 		$this->apellido = $record-> apellido;
 		$this->cedula = $record-> cedula;
@@ -82,7 +132,16 @@ class Especialists extends Component
 		$this->telefono = $record-> telefono;
 		$this->fecha_nacimiento = $record-> fecha_nacimiento;
 		$this->email = $record-> email;
-		
+        $this->color = null;
+		$this->domicilio_fiscal = null;
+		$this->regimen_fiscal = null;
+		$this->rfc = null;
+		$this->razon_social = null;
+		$this->correo_fiscal = null;
+		$this->cfdi = null;
+		$this->seguro = null;
+		$this->poliza = null;
+		$this->empresa = null;
         $this->updateMode = true;
     }
 
@@ -96,14 +155,24 @@ class Especialists extends Component
 
         if ($this->selected_id) {
 			$record = Especialist::find($this->selected_id);
-            $record->update([ 
+            $record->update([
 			'nombre' => $this-> nombre,
 			'apellido' => $this-> apellido,
 			'cedula' => $this-> cedula,
 			'especialidad' => $this-> especialidad,
 			'telefono' => $this-> telefono,
 			'fecha_nacimiento' => $this-> fecha_nacimiento,
-			'email' => $this-> email
+			'email' => $this-> email,
+            'color' => $this-> color,
+			'domicilio_fiscal' => $this-> domicilio_fiscal,
+			'regimen_fiscal' => $this-> regimen_fiscal,
+			'rfc' => $this-> rfc,
+			'razon_social' => $this-> razon_social,
+			'correo_fiscal' => $this-> correo_fiscal,
+			'cfdi' => $this-> cfdi,
+            'seguro' => $this-> seguro,
+			'poliza' => $this-> poliza,
+			'empresa' => $this-> empresa
             ]);
 
             $this->resetInput();
