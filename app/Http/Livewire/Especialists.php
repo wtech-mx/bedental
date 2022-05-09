@@ -53,8 +53,8 @@ class Especialists extends Component
 				->orWhere('razon_social', 'LIKE', $keyWord)
 				->orWhere('correo_fiscal', 'LIKE', $keyWord)
 				->orWhere('cfdi', 'LIKE', $keyWord)
-                ->orWhere('cfdi', 'LIKE', $keyWord)
 				->orWhere('poliza', 'LIKE', $keyWord)
+                ->orWhere('seguro', 'LIKE', $keyWord)
 				->orWhere('empresa', 'LIKE', $keyWord)
 				->paginate(10)
         ]);

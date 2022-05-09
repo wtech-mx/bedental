@@ -32,6 +32,7 @@
                           <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="cliente2" role="tabpanel" aria-labelledby="cliente2-tab">
                                 <div class="row mt-3">
+
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6 ">
                                         <label for="nombre">Nombre</label>
                                         <input wire:model="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre">@error('nombre') <span class="error text-danger">{{ $message }}</span> @enderror
@@ -40,16 +41,19 @@
                                         <label for="apellido">Apellido</label>
                                         <input wire:model="apellido" type="text" class="form-control" id="apellido" placeholder="Apellido">@error('apellido') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
+
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6">
                                         <label for="email">Email</label>
                                         <input wire:model="email" type="email" class="form-control" id="email" placeholder="Email">@error('email') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
+
+
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6">
-                                        <label for="cedula">Cedula</label>
-                                        <input wire:model="cedula" type="text" class="form-control" id="cedula" placeholder="Cedula">@error('cedula') <span class="error text-danger">{{ $message }}</span> @enderror
+                                        <label for="telefono">Telefono</label>
+                                        <input wire:model="telefono" type="number" class="form-control" id="telefono" placeholder="Telefono">@error('telefono') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
 
-                                    <div class="form-group col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-6">
                                         <label for="especialidad">Especialidad</label>
                                         <select wire:model="especialidad" class="form-control" id="especialidad">
                                             <option >Seleciona especialidad</option>
@@ -65,13 +69,18 @@
                                     </div>
 
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6">
-                                        <label for="telefono">Telefono</label>
-                                        <input wire:model="telefono" type="number" class="form-control" id="telefono" placeholder="Telefono">@error('telefono') <span class="error text-danger">{{ $message }}</span> @enderror
+                                        <label for="cedula">Cedula</label>
+                                        <input wire:model="cedula" type="text" class="form-control" id="cedula" placeholder="Cedula">@error('cedula') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
 
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6">
                                         <label for="fecha_nacimiento">Fecha de nacimiento</label>
                                         <input wire:model="fecha_nacimiento" type="date" class="form-control" id="fecha_nacimiento" placeholder="Fecha Nacimiento">@error('fecha_nacimiento') <span class="error text-danger">{{ $message }}</span> @enderror
+                                    </div>
+
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-6">
+                                        <label for="color">Color</label>
+                                        <input wire:model="color" type="color" class="form-control" id="color" placeholder="Fecha Nacimiento">@error('color') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
 
@@ -82,16 +91,6 @@
                             <div class="tab-pane fade" id="facturacion2" role="tabpanel" aria-labelledby="facturacion2-tab">
                                 <div class="row mt-3">
 
-                                    <div class="form-group col-xs-12 col-sm-12 col-md-12">
-                                        <label for="domicilio_fiscal">Domicilio fiscal</label>
-                                        <input wire:model.defer="domicilio_fiscal" type="text" class="form-control" id="domicilio_fiscal" placeholder="Domicilio fiscal">@error('domicilio_fiscal') <span class="error text-danger">{{ $message }}</span> @enderror
-                                    </div>
-
-                                    <div class="form-group col-xs-12 col-sm-12 col-md-12">
-                                        <label for="regimen_fiscal">regimen fiscal</label>
-                                        <input wire:model.defer="regimen_fiscal" type="text" class="form-control" id="regimen_fiscal" placeholder="regimen fiscal">@error('regimen_fiscal') <span class="error text-danger">{{ $message }}</span> @enderror
-                                    </div>
-
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6">
                                         <label for="rfc">RFC</label>
                                         <input wire:model.defer="rfc" type="text" class="form-control" id="rfc" placeholder="RFC">@error('rfc') <span class="error text-danger">{{ $message }}</span> @enderror
@@ -99,13 +98,46 @@
 
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6">
                                         <label for="razon_social">Razon social</label>
-                                        <input wire:model.defer="razon_social" type="text" class="form-control" id="razon_social" placeholder="razon_social">@error('razon_social') <span class="error text-danger">{{ $message }}</span> @enderror
+                                        <select wire:model.defer="razon_social" class="form-control" id="razon_social">
+                                            <option >Seleciona Razon social</option>
+                                            <option value="Fisica">Fisica</option>
+                                            <option value="Moral">Moral</option>
+                                        </select>
                                     </div>
 
                                     <div class="form-group col-xs-12 col-sm-12 col-md-12">
+                                        <label for="domicilio_fiscal">Direccion fiscal</label>
+                                        <input wire:model.defer="domicilio_fiscal" type="text" class="form-control" id="domicilio_fiscal" placeholder="Domicilio fiscal">@error('domicilio_fiscal') <span class="error text-danger">{{ $message }}</span> @enderror
+                                    </div>
+
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-12">
+                                        <label for="regimen_fiscal">Regimen fiscal</label>
+                                        <select wire:model.defer="regimen_fiscal" class="form-control" id="regimen_fiscal">
+                                            <option >Seleciona regimen fiscal</option>
+                                            <option value="Simplificado de confianza">Simplificado de confianza</option>
+                                            <option value="Sueldos y salarios e ingresos asimilados a saladrios">Sueldos y salarios e ingresos asimilados a saladrios</option>
+                                            <option value="Actividades empresariales y profesionales">Actividades empresariales y profesionales</option>
+                                            <option value="Incorporacion fiscal">Incorporacion fiscal</option>
+                                            <option value="Enajenacion de bienes">Enajenacion de bienes</option>
+                                            <option value="Actividades empresariales con ingresos a traves de plataformas tecnologicas">Actividades empresariales con ingresos a traves de plataformas tecnologicas</option>
+                                            <option value="Arrendamiento">Arrendamiento</option>
+                                            <option value="Intereses">Intereses</option>
+                                            <option value="Obtencion de premios">Obtencion de premios</option>
+                                            <option value="Dividendos">Dividendos</option>
+                                            <option value="Demas ingresos">Demas ingresos</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-6">
+                                        <label for="cfdi">CFDI</label>
+                                        <input wire:model.defer="cfdi" type="text" class="form-control" id="cfdi" placeholder="cfdi">@error('cfdi') <span class="error text-danger">{{ $message }}</span> @enderror
+                                    </div>
+
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-6">
                                         <label for="correo_fiscal">Correo fiscal</label>
                                         <input wire:model.defer="correo_fiscal" type="text" class="form-control" id="correo_fiscal" placeholder="correo_fiscal">@error('correo_fiscal') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
+
 
                                 </div>
                             </div>
