@@ -20,9 +20,9 @@ return new class extends Migration
             $table->integer('edad')->nullable();
             $table->string('sanguineo')->nullable();
             $table->string('ocupacion')->nullable();
-            $table->integer('telefono')->unique();
+            $table->integer('telefono');
             $table->date('fecha_nacimiento')->nullable();
-            $table->string('email')->unique()->nullable();
+            $table->string('email')->nullable();
 
             $table->timestamps();
         });

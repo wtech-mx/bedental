@@ -1,15 +1,16 @@
 <!-- Modal -->
 <div wire:ignore.self class="modal fade" id="updateModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-       <div class="modal-content">
+        <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="updateModalLabel">Update Especialist</h5>
+                <h5 class="modal-title" id="createDataModalLabel">Update Client</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span wire:click.prevent="cancel()" aria-hidden="true">×</span>
+                     <span aria-hidden="true close-btn">×</span>
                 </button>
             </div>
-            <div class="modal-body">
+           <div class="modal-body">
 				<form class="row">
+
                     <div class="col-12">
                         <div class="d-flex justify-content-center">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -27,12 +28,10 @@
                                 </li>
                             </ul>
                         </div>
-
                           {{-- tab datos de cliente2 --}}
                           <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="cliente2" role="tabpanel" aria-labelledby="cliente2-tab">
                                 <div class="row mt-3">
-
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6 ">
                                         <label for="nombre">Nombre</label>
                                         <input wire:model="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre">@error('nombre') <span class="error text-danger">{{ $message }}</span> @enderror
@@ -47,40 +46,29 @@
                                         <input wire:model="email" type="email" class="form-control" id="email" placeholder="Email">@error('email') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
 
-
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6">
                                         <label for="telefono">Telefono</label>
                                         <input wire:model="telefono" type="number" class="form-control" id="telefono" placeholder="Telefono">@error('telefono') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
 
-                                    <div class="form-group col-xs-12 col-sm-12 col-md-6">
-                                        <label for="especialidad">Especialidad</label>
-                                        <select wire:model="especialidad" class="form-control" id="especialidad">
-                                            <option >Seleciona especialidad</option>
-                                            <option value="Cirugía oral y maxilofacial">Cirugía oral y maxilofacial</option>
-                                            <option value="Endodoncista">Endodoncista</option>
-                                            <option value="Odontólogo general">Odontólogo general</option>
-                                            <option value="Odontopediatra">Odontopediatra</option>
-                                            <option value="Ortodoncista">Ortodoncista</option>
-                                            <option value="Periodoncista">Periodoncista</option>
-                                            <option value="Patología maxilofacial y oral">Patología maxilofacial y oral</option>
-                                            <option value="Prostodoncista y odontología protésica">Prostodoncista y odontología protésica</option>
-                                        </select>
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-6 ">
+                                        <label for="sanguineo">Sanguineo</label>
+                                        <input wire:model="sanguineo" type="text" class="form-control" id="sanguineo" placeholder="sanguineo">@error('sanguineo') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
 
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6">
-                                        <label for="cedula">Cedula</label>
-                                        <input wire:model="cedula" type="text" class="form-control" id="cedula" placeholder="Cedula">@error('cedula') <span class="error text-danger">{{ $message }}</span> @enderror
+                                        <label for="ocupacion">Ocupación</label>
+                                        <input wire:model="ocupacion" type="text" class="form-control" id="ocupacion" placeholder="ocupación">@error('ocupacion') <span class="error text-danger">{{ $message }}</span> @enderror
+                                    </div>
+
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-6">
+                                        <label for="edad">Edad</label>
+                                        <input wire:model="edad" type="number" class="form-control" id="edad" placeholder="edad">@error('edad') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
 
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6">
                                         <label for="fecha_nacimiento">Fecha de nacimiento</label>
                                         <input wire:model="fecha_nacimiento" type="date" class="form-control" id="fecha_nacimiento" placeholder="Fecha Nacimiento">@error('fecha_nacimiento') <span class="error text-danger">{{ $message }}</span> @enderror
-                                    </div>
-
-                                    <div class="form-group col-xs-12 col-sm-12 col-md-6">
-                                        <label for="color">Color</label>
-                                        <input wire:model="color" type="color" class="form-control" id="color" placeholder="Fecha Nacimiento">@error('color') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
 
@@ -95,6 +83,7 @@
                                         <label for="rfc">RFC</label>
                                         <input wire:model.defer="rfc" type="text" class="form-control" id="rfc" placeholder="RFC">@error('rfc') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
+
 
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6">
                                         <label for="razon_social">Razon social</label>
@@ -128,22 +117,61 @@
                                         </select>
                                     </div>
 
-                                    <div class="form-group col-xs-12 col-sm-12 col-md-6">
-                                        <label for="cfdi">CFDI</label>
-                                        <input wire:model.defer="cfdi" type="text" class="form-control" id="cfdi" placeholder="cfdi">@error('cfdi') <span class="error text-danger">{{ $message }}</span> @enderror
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-12">
+                                        <label for="cfdi">GFDI</label>
+                                        <select wire:model.defer="regimen_fiscal" class="form-control" id="regimen_fiscal">
+                                            <option >Seleciona el uso del GFDI (Fisica y Moral) (Fisica y Moral)</option>
+                                            <option value="C01">C01 Adquisicion de mercancias (Fisica y Moral)</option>
+                                            <option value="C02">C02 Devoluciones descuentos o bonificaciones (Fisica y Moral)</option>
+                                            <option value="C03">C03 Gastoos en general (Fisica y Moral)</option>
+                                            <option value="101">101 construcciones (Fisica y Moral)</option>
+                                            <option value="102">102 Mobiliario quipo de oficinae e inversiones (Fisica y Moral)</option>
+                                            <option value="103">103 Equipo de transporte (Fisica y Moral)</option>
+                                            <option value="104">104 Euipo de cumputo y accesorios (Fisica y Moral)</option>
+                                            <option value="105">105 Dados troqueles moldes matrices y herramental (Fisica y Moral)</option>
+                                            <option value="106">106 Comunicaciones telefonicas (Fisica y Moral)</option>
+                                            <option value="107">107 Comunicaciones satelitles (Fisica y Moral)</option>
+                                            <option value="108">108 Otro maquinaria y equipo (Fisica y Moral)</option>
+                                            <option value="D01">D01 Honorarios medicos, dentales y gastos hospitalarios (Moral)</option>
+                                            <option value="D02">D02 Gastos medicos por incapacidad o discapacidad (Moral)</option>
+                                            <option value="D03">D03 Gastos funerlaes (Moral)</option>
+                                            <option value="D04">D04 Donativos (Moral)</option>
+                                            <option value="D05">D05 Intereses por creditos hipotecarios (Moral)</option>
+                                            <option value="D06">D06 Aportaciones voluntaerias al SAR (Moral)</option>
+                                            <option value="D07">D07 Primas por seguros de gastos mdicos  (Moral)</option>
+                                            <option value="D08">D08 Gastos de transpotacion escolar obligatoria (Moral)</option>
+                                            <option value="D09">D09 Depositos en cuentas para ahorro , primas con base (Moral)</option>
+                                            <option value="D10">D10 Pagos por servicios educativos colegiaturas (Moral)</option>
+                                            <option value="P01">P01 Por definir (Moral)</option>
+                                        </select>
                                     </div>
 
-                                    <div class="form-group col-xs-12 col-sm-12 col-md-6">
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-12">
                                         <label for="correo_fiscal">Correo fiscal</label>
                                         <input wire:model.defer="correo_fiscal" type="text" class="form-control" id="correo_fiscal" placeholder="correo_fiscal">@error('correo_fiscal') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
 
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-12">
+
+                                        <p class="text-center">
+                                            <a href="#collapsExample" class="btn btn-primary" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapsExample">
+                                                Ver uso de GFDI
+                                            </a>
+                                        </p>
+
+                                        <div class="collapse" id="collapsExample">
+                                            <div class="card card-body">
+
+                                            </div>
+                                        </div>
+
+                                    </div>
 
                                 </div>
                             </div>
                             {{-- tab datos de facturacion --}}
 
-                            {{-- tab datos de cliente --}}
+                            {{-- tab datos de SEGURO --}}
                             <div class="tab-pane fade" id="seguro2" role="tabpanel" aria-labelledby="seguro2-tab">
                                 <div class="row">
 
@@ -164,7 +192,7 @@
 
                                 </div>
                             </div>
-                            {{-- tab datos de cliente --}}
+                            {{-- tab datos de SEGURO --}}
 
                           </div>
 
@@ -173,9 +201,9 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" wire:click.prevent="cancel()" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="button" wire:click.prevent="update()" class="btn btn-primary" data-dismiss="modal">Crear</button>
+                <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Cerrar</button>
+                <button type="button" wire:click.prevent="update()" class="btn btn-primary" data-dismiss="modal">Guardar</button>
             </div>
-       </div>
+        </div>
     </div>
 </div>
