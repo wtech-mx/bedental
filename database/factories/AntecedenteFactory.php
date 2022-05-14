@@ -1,0 +1,95 @@
+<?php
+
+namespace Database\Factories;
+
+use App\Models\Antecedente;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
+
+class AntecedenteFactory extends Factory
+{
+    protected $model = Antecedente::class;
+
+    public function definition()
+    {
+        return [
+			'id_client' => $this->faker->name,
+			'antecedente1' => $this->faker->name,
+			'tratamiento1' => $this->faker->name,
+			'tiempo1' => $this->faker->name,
+			'parentesco1' => $this->faker->name,
+			'antecedente2' => $this->faker->name,
+			'tratamiento2' => $this->faker->name,
+			'tiempo2' => $this->faker->name,
+			'parentesco2' => $this->faker->name,
+			'antecedente3' => $this->faker->name,
+			'tratamiento3' => $this->faker->name,
+			'tiempo3' => $this->faker->name,
+			'parentesco3' => $this->faker->name,
+			'antecedente4' => $this->faker->name,
+			'tratamiento4' => $this->faker->name,
+			'tiempo4' => $this->faker->name,
+			'parentesco4' => $this->faker->name,
+			'antecedente5' => $this->faker->name,
+			'tratamiento5' => $this->faker->name,
+			'tiempo5' => $this->faker->name,
+			'parentesco5' => $this->faker->name,
+			'antecedente6' => $this->faker->name,
+			'tratamiento6' => $this->faker->name,
+			'tiempo6' => $this->faker->name,
+			'parentesco6' => $this->faker->name,
+			'antecedente7' => $this->faker->name,
+			'tratamiento7' => $this->faker->name,
+			'tiempo7' => $this->faker->name,
+			'parentesco7' => $this->faker->name,
+			'antecedente8' => $this->faker->name,
+			'tratamiento8' => $this->faker->name,
+			'tiempo8' => $this->faker->name,
+			'parentesco8' => $this->faker->name,
+			'antecedente9' => $this->faker->name,
+			'tratamiento9' => $this->faker->name,
+			'tiempo9' => $this->faker->name,
+			'parentesco9' => $this->faker->name,
+			'antecedente10' => $this->faker->name,
+			'tratamiento10' => $this->faker->name,
+			'tiempo10' => $this->faker->name,
+			'parentesco10' => $this->faker->name,
+			'antecedente11' => $this->faker->name,
+			'tratamiento11' => $this->faker->name,
+			'tiempo11' => $this->faker->name,
+			'parentesco11' => $this->faker->name,
+			'antecedente12' => $this->faker->name,
+			'tratamiento12' => $this->faker->name,
+			'tiempo12' => $this->faker->name,
+			'parentesco12' => $this->faker->name,
+			'antecedente13' => $this->faker->name,
+			'tratamiento13' => $this->faker->name,
+			'tiempo13' => $this->faker->name,
+			'parentesco13' => $this->faker->name,
+			'antecedente14' => $this->faker->name,
+			'tratamiento14' => $this->faker->name,
+			'tiempo14' => $this->faker->name,
+			'parentesco14' => $this->faker->name,
+			'antecedente15' => $this->faker->name,
+			'tratamiento15' => $this->faker->name,
+			'tiempo15' => $this->faker->name,
+			'parentesco15' => $this->faker->name,
+			'antecedente16' => $this->faker->name,
+			'tratamiento16' => $this->faker->name,
+			'tiempo16' => $this->faker->name,
+			'parentesco16' => $this->faker->name,
+			'antecedente17' => $this->faker->name,
+			'tratamiento17' => $this->faker->name,
+			'tiempo17' => $this->faker->name,
+			'parentesco17' => $this->faker->name,
+			'antecedente18' => $this->faker->name,
+			'tratamiento18' => $this->faker->name,
+			'tiempo18' => $this->faker->name,
+			'parentesco18' => $this->faker->name,
+			'antecedente19' => $this->faker->name,
+			'tratamiento19' => $this->faker->name,
+			'tiempo19' => $this->faker->name,
+			'parentesco19' => $this->faker->name,
+        ];
+    }
+}

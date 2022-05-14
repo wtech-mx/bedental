@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Antecedente;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Client;
@@ -39,15 +40,15 @@ class Clients extends Component
 						->paginate(10),
         ]);
     }
-	
+
     public function cancel()
     {
         $this->resetInput();
         $this->updateMode = false;
     }
-	
+
     private function resetInput()
-    {		
+    {
 		$this->nombre = null;
 		$this->apellido = null;
 		$this->edad = null;
@@ -75,7 +76,7 @@ class Clients extends Component
 		'telefono' => 'required',
         ]);
 
-        Client::create([ 
+        Client::create([
 			'nombre' => $this-> nombre,
 			'apellido' => $this-> apellido,
 			'edad' => $this-> edad,
@@ -94,7 +95,14 @@ class Clients extends Component
 			'poliza' => $this-> poliza,
 			'empresa' => $this-> empresa
         ]);
-        
+
+        $cliente = Client::orderBy('id', 'DESC')->first();
+        $antecedente = new Antecedente;
+        $antecedente->id_client = $cliente->id;
+        $antecedente->save();
+
+
+
         $this->resetInput();
 		$this->emit('closeModal');
 		session()->flash('message', 'Client Successfully created.');
@@ -104,7 +112,7 @@ class Clients extends Component
     {
         $record = Client::findOrFail($id);
 
-        $this->selected_id = $id; 
+        $this->selected_id = $id;
 		$this->nombre = $record-> nombre;
 		$this->apellido = $record-> apellido;
 		$this->edad = $record-> edad;
@@ -122,7 +130,7 @@ class Clients extends Component
 		$this->seguro = $record-> seguro;
 		$this->poliza = $record-> poliza;
 		$this->empresa = $record-> empresa;
-		
+
         $this->updateMode = true;
     }
 
@@ -136,7 +144,7 @@ class Clients extends Component
 
         if ($this->selected_id) {
 			$record = Client::find($this->selected_id);
-            $record->update([ 
+            $record->update([
 			'nombre' => $this-> nombre,
 			'apellido' => $this-> apellido,
 			'edad' => $this-> edad,
