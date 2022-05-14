@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('antecedentes', function (Blueprint $table) {
-            $table->string('domicilio_fiscal');
-
-            for($i=1; $i<=14; $i++){
-                $table->string('pregunta'.$i);
-            }
-
+        Schema::table('clients', function (Blueprint $table) {
+            $table->string('tipo_plan')->nullable();
+            $table->string('certificado')->nullable();
         });
     }
 
@@ -30,7 +26,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('antecedentes', function (Blueprint $table) {
+        Schema::table('clients', function (Blueprint $table) {
             //
         });
     }

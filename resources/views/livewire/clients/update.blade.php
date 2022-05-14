@@ -173,19 +173,29 @@
 
                             {{-- tab datos de SEGURO --}}
                             <div class="tab-pane fade" id="seguro2" role="tabpanel" aria-labelledby="seguro2-tab">
-                                <div class="row">
+                                <div class="row mt-3">
 
-                                    <div class="form-group col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-6 ">
                                         <label for="correo_fiscal">Seguro</label>
                                         <input wire:model.defer="seguro" type="text" class="form-control" id="seguro" placeholder="seguro">@error('seguro') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
 
-                                    <div class="form-group col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-6 ">
                                         <label for="poliza">Poliza</label>
                                         <input wire:model.defer="poliza" type="text" class="form-control" id="poliza" placeholder="poliza">@error('poliza') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
 
-                                    <div class="form-group col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-6 ">
+                                        <label for="tipo_plan">Tipo de Plan</label>
+                                        <input wire:model.defer="tipo_plan" type="text" class="form-control" id="tipo_plan" placeholder="tipo_plan">@error('tipo_plan') <span class="error text-danger">{{ $message }}</span> @enderror
+                                    </div>
+
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-6 ">
+                                        <label for="certificado">certificado</label>
+                                        <input wire:model.defer="certificado" type="text" class="form-control" id="certificado" placeholder="certificado">@error('certificado') <span class="error text-danger">{{ $message }}</span> @enderror
+                                    </div>
+
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-6 ">
                                         <label for="empresa">Empresa</label>
                                         <input wire:model.defer="empresa" type="text" class="form-control" id="empresa" placeholder="empresa">@error('empresa') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>

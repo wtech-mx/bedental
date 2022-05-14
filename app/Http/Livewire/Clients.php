@@ -12,7 +12,7 @@ class Clients extends Component
     use WithPagination;
 
 	protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $nombre, $apellido, $edad, $sanguineo, $ocupacion, $telefono, $fecha_nacimiento, $email, $domicilio_fiscal, $regimen_fiscal, $rfc, $razon_social, $correo_fiscal, $cfdi, $seguro, $poliza, $empresa;
+    public $selected_id, $keyWord, $nombre, $apellido, $edad, $sanguineo, $ocupacion, $telefono, $fecha_nacimiento, $email, $domicilio_fiscal, $regimen_fiscal, $rfc, $razon_social, $correo_fiscal, $cfdi, $seguro, $poliza, $empresa,$certificado, $tipo_plan;
     public $updateMode = false;
 
     public function render()
@@ -36,6 +36,8 @@ class Clients extends Component
 						->orWhere('cfdi', 'LIKE', $keyWord)
 						->orWhere('seguro', 'LIKE', $keyWord)
 						->orWhere('poliza', 'LIKE', $keyWord)
+						->orWhere('tipo_plan', 'LIKE', $keyWord)
+						->orWhere('certificado', 'LIKE', $keyWord)
 						->orWhere('empresa', 'LIKE', $keyWord)
 						->paginate(10),
         ]);
@@ -66,6 +68,8 @@ class Clients extends Component
 		$this->seguro = null;
 		$this->poliza = null;
 		$this->empresa = null;
+		$this->tipo_plan = null;
+		$this->certificado = null;
     }
 
     public function store()
@@ -93,6 +97,8 @@ class Clients extends Component
 			'cfdi' => $this-> cfdi,
 			'seguro' => $this-> seguro,
 			'poliza' => $this-> poliza,
+			'tipo_plan' => $this-> tipo_plan,
+			'certificado' => $this-> certificado,
 			'empresa' => $this-> empresa
         ]);
 
@@ -130,7 +136,8 @@ class Clients extends Component
 		$this->seguro = $record-> seguro;
 		$this->poliza = $record-> poliza;
 		$this->empresa = $record-> empresa;
-
+		$this->tipo_plan = $record-> tipo_plan;
+		$this->certificado = $record-> certificado;
         $this->updateMode = true;
     }
 
@@ -161,6 +168,8 @@ class Clients extends Component
 			'cfdi' => $this-> cfdi,
 			'seguro' => $this-> seguro,
 			'poliza' => $this-> poliza,
+			'tipo_plan' => $this-> tipo_plan,
+			'certificado' => $this-> certificado,
 			'empresa' => $this-> empresa
             ]);
 
