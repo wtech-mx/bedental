@@ -62,9 +62,15 @@
 									Actions
 									</button>
 									<div class="dropdown-menu dropdown-menu-right">
-                                    <a href="/antecedentes"><i class="fa fa-edit"></i> Antecedentes </a>
-									<a data-toggle="modal" data-target="#updateModal" class="dropdown-item" wire:click="edit({{$row->id}})"><i class="fa fa-edit"></i> Edit </a>
-									<a class="dropdown-item" onclick="confirm('Confirm Delete Client id {{$row->id}}? \nDeleted Clients cannot be recovered!')||event.stopImmediatePropagation()" wire:click="destroy({{$row->id}})"><i class="fa fa-trash"></i> Delete </a>
+                                        <a href="/antecedentes" class="dropdown-item" wire:click="edit({{$row->id}})">
+                                            <i class="fa fa-solid fa-user"></i> Antecedentes
+                                        </a>
+                                        <a data-toggle="modal" data-target="#updateModal" class="dropdown-item" wire:click="edit({{$row->id}})">
+                                            <i class="fa fa-edit"></i> Edit
+                                        </a>
+                                        <a class="dropdown-item" onclick="confirm('Confirm Delete Client id {{$row->id}}? \nDeleted Clients cannot be recovered!')||event.stopImmediatePropagation()" wire:click="destroy({{$row->id}})">
+                                            <i class="fa fa-trash"></i> Delete
+                                        </a>
 									</div>
 								</div>
 								</td>

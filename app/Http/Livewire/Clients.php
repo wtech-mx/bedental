@@ -7,6 +7,7 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Client;
 
+
 class Clients extends Component
 {
     use WithPagination;
@@ -17,6 +18,7 @@ class Clients extends Component
 
     public function render()
     {
+
 		$keyWord = '%'.$this->keyWord .'%';
         return view('livewire.clients.view', [
             'clients' => Client::latest()
@@ -102,16 +104,20 @@ class Clients extends Component
 			'empresa' => $this-> empresa
         ]);
 
-        $cliente = Client::orderBy('id', 'DESC')->first();
-        $antecedente = new Antecedente;
-        $antecedente->id_client = $cliente->id;
-        $antecedente->save();
-
-
+//        $antecedente = new Antecedente;
+//        $antecedente->id_client = $cliente->id;
+//        $antecedente->save();
 
         $this->resetInput();
 		$this->emit('closeModal');
+
 		session()->flash('message', 'Client Successfully created.');
+
+        $cliente = Client::orderBy('id', 'DESC')->first();
+
+        Antecedente::create([
+             'id_client' => $cliente->id,
+         ]);
     }
 
     public function edit($id)

@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Antecedente;
+use App\Models\Client;
 
 class Antecedentes extends Component
 {
@@ -16,8 +17,11 @@ class Antecedentes extends Component
 
     public function render()
     {
+         $client = Client::get();
+
 		$keyWord = '%'.$this->keyWord .'%';
         return view('livewire.antecedentes.view', [
+            'client' => $client,
             'antecedentes' => Antecedente::latest()
 						->orWhere('id_client', 'LIKE', $keyWord)
 						->orWhere('antecedente1', 'LIKE', $keyWord)

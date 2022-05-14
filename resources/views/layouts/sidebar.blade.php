@@ -32,6 +32,11 @@
                 <i class="fa fa-user-md text-red"></i>
                 <span class="nav-link-text">Especialistas</span>
               </a>
+
+              <a class="nav-link {{ (Request::is('antecedentes*') ? 'active' : '') }}" href="/antecedentes">
+                <i class="fa fa-address-book text-red"></i>
+                <span class="nav-link-text">Antecedentes</span>
+              </a>
             </li>
 
             <li class="nav-item">
