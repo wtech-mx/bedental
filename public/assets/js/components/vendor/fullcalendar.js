@@ -17,10 +17,10 @@ var Fullcalendar = (function() {
 	// Init
 	function init($this) {
 
-		// Calendar events
+		// Calendars events
 
 		var events = [
-			
+
             {
 				id: 1,
 				title: 'Call with Dave',
@@ -29,7 +29,7 @@ var Fullcalendar = (function() {
 				className: 'bg-red',
 				description: 'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
             },
-            
+
             {
 				id: 2,
 				title: 'Lunch meeting',
@@ -38,7 +38,7 @@ var Fullcalendar = (function() {
 				className: 'bg-orange',
 				description: 'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
             },
-            
+
             {
 				id: 3,
 				title: 'All day conference',
@@ -47,7 +47,7 @@ var Fullcalendar = (function() {
 				className: 'bg-green',
 				description: 'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
             },
-            
+
             {
 				id: 4,
 				title: 'Meeting with Mary',
@@ -56,7 +56,7 @@ var Fullcalendar = (function() {
 				className: 'bg-blue',
 				description: 'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
             },
-            
+
             {
 				id: 5,
 				title: 'Winter Hackaton',
@@ -65,7 +65,7 @@ var Fullcalendar = (function() {
 				className: 'bg-red',
 				description: 'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
             },
-            
+
             {
 				id: 6,
 				title: 'Digital event',
@@ -74,7 +74,7 @@ var Fullcalendar = (function() {
 				className: 'bg-warning',
 				description: 'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
             },
-            
+
             {
 				id: 7,
 				title: 'Marketing event',
@@ -83,7 +83,7 @@ var Fullcalendar = (function() {
 				className: 'bg-purple',
 				description: 'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
             },
-            
+
             {
 				id: 8,
 				title: 'Dinner with Family',
@@ -92,7 +92,7 @@ var Fullcalendar = (function() {
 				className: 'bg-red',
 				description: 'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
             },
-            
+
             {
 				id: 9,
 				title: 'Black Friday',
@@ -101,7 +101,7 @@ var Fullcalendar = (function() {
 				className: 'bg-blue',
 				description: 'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
             },
-            
+
             {
 				id: 10,
 				title: 'Cyber Week',
@@ -110,7 +110,7 @@ var Fullcalendar = (function() {
 				className: 'bg-yellow',
 				description: 'Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'
             },
-            
+
 		],
 
 
@@ -168,7 +168,7 @@ var Fullcalendar = (function() {
 
 
 		//
-		// Calendar actions
+		// Calendars actions
 		//
 
 
@@ -277,7 +277,7 @@ var Fullcalendar = (function() {
 		});
 
 
-		//Calendar views switch
+		//Calendars views switch
 		$('body').on('click', '[data-calendar-view]', function(e) {
 			e.preventDefault();
 
@@ -289,14 +289,14 @@ var Fullcalendar = (function() {
 		});
 
 
-		//Calendar Next
+		//Calendars Next
 		$('body').on('click', '.fullcalendar-btn-next', function(e) {
 			e.preventDefault();
 			$this.fullCalendar('next');
 		});
 
 
-		//Calendar Prev
+		//Calendars Prev
 		$('body').on('click', '.fullcalendar-btn-prev', function(e) {
 			e.preventDefault();
 			$this.fullCalendar('prev');

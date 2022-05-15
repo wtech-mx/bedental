@@ -37,6 +37,11 @@
                 <i class="fa fa-address-book text-red"></i>
                 <span class="nav-link-text">Antecedentes</span>
               </a>
+
+              <a class="nav-link {{ (Request::is('calendar*') ? 'active' : '') }}" href="/calendar">
+                <i class="fa fa-calendar text-red"></i>
+                <span class="nav-link-text">Calendario</span>
+              </a>
             </li>
 
             <li class="nav-item">

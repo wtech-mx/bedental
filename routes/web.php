@@ -7,7 +7,8 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\PermisosController;
-
+use App\Http\Controllers\Livewire\Calendar;
+use App\Http\Controllers\AlertasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +40,15 @@ Route::group(['middleware' => ['auth']], function() {
 Route::view('antecedentes', 'livewire.antecedentes.index')->middleware('auth');
 Route::view('clients', 'livewire.clients.index')->name('clients.index')->middleware('auth');
 Route::view('especialists', 'livewire.especialists.index')->middleware('auth');
+
+
+
+/*|--------------------------------------------------------------------------
+|Calendario
+|--------------------------------------------------------------------------*/
+
+Route::get('calendar', [AlertasController::class, 'index_calendar'])->name('calendar.index_calendar');
+Route::post('calendar', [AlertasController::class, 'store_calendar'])->name('calendar.store_calendar');
+Route::get('calendar/show', [AlertasController::class, 'show_calendar'])->name('calendar.show_calendar');
+Route::patch('calendar/destroy/{id}', [AlertasController::class, 'destroy_calendar'])->name('calendar.destroy_calendar');
+Route::patch('calendar/update/{id}', [AlertasController::class, 'update_calendar'])->name('calendar.update_calendar');
