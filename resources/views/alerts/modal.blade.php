@@ -1,6 +1,6 @@
 <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-sm ">
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="edit-event-label" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-secondary" role="document">
             <div class="modal-content">
 
               <div class="modal-header">
@@ -12,6 +12,7 @@
 
               <div class="modal-body">
 
+
                   <div class="form-row">
 
                       <div class="form-group col-12">
@@ -19,22 +20,30 @@
                         <input class="form-control" type="hidden" name="txtID" id="txtID">
                       </div>
 
-                      <div class="form-group col-12">
+                      <div class="form-group col-4">
                           <label for="">Fecha</label>
-                        <input class="form-control" type="datetime" name="txtFecha" id="txtFecha">
+                        <input class="form-control" type="date" name="txtFecha" id="txtFecha">
                       </div>
 
-                      <input type="hidden" class="form-control" name="color" id="color">
+                      <div class="form-group col-4">
+                          <label for="">Hora Inicio</label>
+                        <input class="form-control" type="time" name="txtHora" id="txtHora">
+                      </div>
+
+                      <div class="form-group col-4">
+                          <label for="">Hora Fin</label>
+                        <input class="form-control" type="time" name="txtHorafin" id="txtHorafin">
+                      </div>
+
                       <input type="hidden" class="form-control" name="image" id="image">
                       <input class="form-control" type="hidden" name="estatus" id="estatus" >
-
 
                       <div class="form-group col-12 mb-3">
                           <label for="">T&iacute;tulo</label>
                           <input class="form-control" type="text" name="title" id="title">
                       </div>
 
-                      <div class="form-group col-12 mb-3">
+                      <div class="form-group col-6 mb-3">
                          <label for="">Selecionar Usuario</label>
                               <select class="form-control" id="id_client" name="id_client">
                                    <option value="">Seleccione usuario</option>
@@ -44,7 +53,7 @@
                               </select>
                       </div>
 
-                      <div class="form-group col-12 mb-3">
+                      <div class="form-group col-6 mb-3">
                          <label for="">Selecionar Unidad</label>
                               <select class="form-control" id="resourceId" name="resourceId">
                                    <option value="">Seleccione Unidad</option>
@@ -53,9 +62,21 @@
                               </select>
                       </div>
 
+                      <div class="form-group col-12 mb-3">
+                         <label for="">Selecionar Especialista</label>
+                              <select class="form-control" id="resourceId" name="resourceId">
+                                   <option value="">Seleccione Especialista</option>
+                                       @foreach($especialist as $item)
+                                          <option value="{{$item->id}}">{{$item->nombre}}</option>
+                                       @endforeach
+                              </select>
+                      </div>
 
                       <label for="">Description</label>
                       <textarea class="form-control" name="descripcion" id="descripcion" cols="30" rows="3"></textarea>
+
+                       <label for="">Color</label>
+                      <input type="color" class="form-control" name="color" id="color">
 
 
                       <div class="form-group col-12 mt-3">

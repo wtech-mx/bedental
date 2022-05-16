@@ -20,6 +20,12 @@ return new class extends Migration
             $table->foreign('id_client')
             ->references('id')->on('clients')
             ->inDelete('set null');
+
+            $table->unsignedBigInteger('id_especialist');
+            $table->foreign('id_especialist')
+            ->references('id')->on('especialists')
+            ->inDelete('set null');
+
             $table->string('resourceId')->nullable();
             $table->string('title')->nullable();
             $table->string('start')->nullable();

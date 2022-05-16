@@ -54,9 +54,11 @@
                     }
                   },
                   resources: [
-                    { id: 'a', eventColor: 'green' },
-                    { id: 'b', eventColor: 'orange' },
+                    { id: 'a'},
+                    { id: 'b'},
                   ],
+
+                events:"{{ route('calendar.show_calendar') }}",
 
                   dateClick:function (info) {
 
@@ -74,20 +76,28 @@
                   $("#btnAgregar").prop("disabled",true);
                   $("#btnModificar").prop("disabled",false);
                   $("#btnBorrar").prop("disabled",false);
-
                   $('#txtID').val(info.event.id);
 
-                    mes = (info.event.start.getMonth()+1)
-                    dia = (info.event.start.getDate())
-                    anio = (info.event.start.getFullYear())
+                    mes = (info.event.start.getMonth()+1);
+                    dia = (info.event.start.getDate());
+                    anio = (info.event.start.getFullYear());
 
                     mes = (mes<10)?"0"+mes:mes;
                     dia = (dia<10)?"0"+dia:dia;
 
-                  $('#txtFecha').val(anio+"-"+mes+"-"+dia);
+                    minutos=(info.event.start.getMinutes());
+                    hora=(info.event.start.getHours());
 
+                    minutos = (minutos<10)?"0"+minutos:minutos;
+                    hora = (hora<10)?"0"+hora:hora;
+
+                    horario = (hora+":"+minutos);
+
+                  $('#txtFecha').val(anio+"-"+mes+"-"+dia);
+                  $('#txtHora').val(horario);
                   $('#id_client').val(info.event.extendedProps.id_client);
                   $('#resourceId').val(info.event.extendedProps.resourceId);
+                  $('#id_especialist').val(info.event.extendedProps.id_especialist);
                   $('#title').val(info.event.title);
                   $('#color').val(info.event.backgroundColor);
                   $('#descripcion').val(info.event.extendedProps.descripcion);
@@ -98,8 +108,6 @@
 
                   console.log('Fecha', dia)
                 },
-
-                events:"{{ route('calendar.show_calendar') }}",
 
                   eventContent: function(arg) {
 
@@ -155,13 +163,14 @@
                     title:$('#title').val(),
                     id_client:$('#id_client').val(),
                     resourceId:$('#resourceId').val(),
+                    id_especialist:$('#id_especialist').val(),
                     descripcion:$('#descripcion').val(),
                     estatus:$('#estatus').val()+estatusDefault,
                     check:$('#check').val()+checkDefault,
                     image:$('#image').val()+imageDefault,
                     color:$('#color').val()+colorAlert,
-                    end:$('#txtFecha').val(),
-                    start:$('#txtFecha').val(),
+                    start:$('#txtFecha').val()+"T"+$('#txtHora').val(),
+                    end:$('#txtFecha').val()+"T"+$('#txtHorafin').val(),
                     '_token':$("meta[name='csrf-token']").attr("content"),
                     '_method':method
                 }
@@ -175,6 +184,7 @@
                     title:$('#title').val(),
                     id_client:$('#id_client').val(),
                     resourceId:$('#resourceId').val(),
+                    id_especialist:$('#id_especialist').val(),
                     descripcion:$('#descripcion').val(),
                     estatus:$('#estatus').val(),
                     check:$('#check').val(),
@@ -182,6 +192,7 @@
                     color:$('#color').val(),
                     start:$('#txtFecha').val(),
                     end:$('#txtFecha').val(),
+                    hora:$('#txtHora').val(),
                     '_token':$("meta[name='csrf-token']").attr("content"),
                     '_method':method
                 }
@@ -210,7 +221,10 @@
                   $('#title').val("");
                   $('#id_client').val("");
                   $('#resourceId').val("");
+                  $('#id_especialist').val("");
                   $('#txtFecha').val("");
+                  $('#txtHora').val("");
+                  $('#txtHorafin').val("");
                   $('#color').val("");
                   $('#descripcion').val("");
                   $('#estatus').val("");

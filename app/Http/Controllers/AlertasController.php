@@ -26,10 +26,11 @@ class AlertasController extends Controller
     {
 
         $client = DB::table('clients')->get();
+        $especialist = DB::table('especialists')->get();
 
         $alert = Alertas::get();
 
-        return view('alerts.calendar', compact('client', 'alert'));
+        return view('alerts.calendar', compact('client', 'alert','especialist'));
     }
 
     public function store_calendar(Request $request)
