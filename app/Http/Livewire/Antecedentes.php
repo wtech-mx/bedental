@@ -12,7 +12,7 @@ class Antecedentes extends Component
     use WithPagination;
 
 	protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $id_client, $antecedente1, $tratamiento1, $tiempo1, $parentesco1, $antecedente2, $tratamiento2, $tiempo2, $parentesco2, $antecedente3, $tratamiento3, $tiempo3, $parentesco3, $antecedente4, $tratamiento4, $tiempo4, $parentesco4, $antecedente5, $tratamiento5, $tiempo5, $parentesco5, $antecedente6, $tratamiento6, $tiempo6, $parentesco6, $antecedente7, $tratamiento7, $tiempo7, $parentesco7, $antecedente8, $tratamiento8, $tiempo8, $parentesco8, $antecedente9, $tratamiento9, $tiempo9, $parentesco9, $antecedente10, $tratamiento10, $tiempo10, $parentesco10, $antecedente11, $tratamiento11, $tiempo11, $parentesco11, $antecedente12, $tratamiento12, $tiempo12, $parentesco12, $antecedente13, $tratamiento13, $tiempo13, $parentesco13, $antecedente14, $tratamiento14, $tiempo14, $parentesco14, $antecedente15, $tratamiento15, $tiempo15, $parentesco15, $antecedente16, $tratamiento16, $tiempo16, $parentesco16, $antecedente17, $tratamiento17, $tiempo17, $parentesco17, $antecedente18, $tratamiento18, $tiempo18, $parentesco18, $antecedente19, $tratamiento19, $tiempo19, $parentesco19;
+    public $selected_id, $keyWord, $id_client, $antecedente1, $tratamiento1, $tiempo1, $parentesco1, $antecedente2, $tratamiento2, $tiempo2, $parentesco2, $antecedente3, $tratamiento3, $tiempo3, $parentesco3, $antecedente4, $tratamiento4, $tiempo4, $parentesco4, $antecedente5, $tratamiento5, $tiempo5, $parentesco5, $antecedente6, $tratamiento6, $tiempo6, $parentesco6, $antecedente7, $tratamiento7, $tiempo7, $parentesco7, $antecedente8, $tratamiento8, $tiempo8, $parentesco8, $antecedente9, $tratamiento9, $tiempo9, $parentesco9, $antecedente10, $tratamiento10, $tiempo10, $parentesco10, $antecedente11, $tratamiento11, $tiempo11, $parentesco11, $antecedente12, $tratamiento12, $tiempo12, $parentesco12, $antecedente13, $tratamiento13, $tiempo13, $parentesco13, $antecedente14, $tratamiento14, $tiempo14, $parentesco14, $antecedente15, $tratamiento15, $tiempo15, $parentesco15, $antecedente16, $tratamiento16, $tiempo16, $parentesco16, $antecedente17, $tratamiento17, $tiempo17, $parentesco17, $antecedente18, $tratamiento18, $tiempo18, $parentesco18, $pregunta1, $pregunta2, $pregunta3, $pregunta4, $pregunta6, $pregunta7, $pregunta8, $pregunta9, $pregunta10, $pregunta11, $pregunta12, $pregunta13, $descripcion1, $descripcion2, $descripcion3, $descripcion4, $descripcion5, $descripcion6, $descripcion7, $descripcion8, $descripcion9, $descripcion10, $medicamentos, $varicela, $sarampion, $rubeola, $escarlatina, $vih, $hepatitis, $vph, $otras_tran, $covid, $influenza, $epoc, $asma, $otras_res;
     public $updateMode = false;
 
     public function render()
@@ -96,10 +96,44 @@ class Antecedentes extends Component
 						->orWhere('tratamiento18', 'LIKE', $keyWord)
 						->orWhere('tiempo18', 'LIKE', $keyWord)
 						->orWhere('parentesco18', 'LIKE', $keyWord)
-						->orWhere('antecedente19', 'LIKE', $keyWord)
-						->orWhere('tratamiento19', 'LIKE', $keyWord)
-						->orWhere('tiempo19', 'LIKE', $keyWord)
-						->orWhere('parentesco19', 'LIKE', $keyWord)
+                        ->orWhere('varicela', 'LIKE', $keyWord)
+                        ->orWhere('sarampion', 'LIKE', $keyWord)
+                        ->orWhere('rubeola', 'LIKE', $keyWord)
+                        ->orWhere('escarlatina', 'LIKE', $keyWord)
+                        ->orWhere('vih', 'LIKE', $keyWord)
+                        ->orWhere('hepatitis', 'LIKE', $keyWord)
+                        ->orWhere('vph', 'LIKE', $keyWord)
+                        ->orWhere('otras_tran', 'LIKE', $keyWord)
+                        ->orWhere('covid', 'LIKE', $keyWord)
+                        ->orWhere('influenza', 'LIKE', $keyWord)
+                        ->orWhere('epoc', 'LIKE', $keyWord)
+                        ->orWhere('asma', 'LIKE', $keyWord)
+                        ->orWhere('otras_res', 'LIKE', $keyWord)
+
+                        ->orWhere('medicamentos', 'LIKE', $keyWord)
+                        ->orWhere('pregunta1', 'LIKE', $keyWord)
+                        ->orWhere('pregunta2', 'LIKE', $keyWord)
+                        ->orWhere('pregunta3', 'LIKE', $keyWord)
+                        ->orWhere('pregunta4', 'LIKE', $keyWord)
+                        ->orWhere('pregunta5', 'LIKE', $keyWord)
+                        ->orWhere('pregunta6', 'LIKE', $keyWord)
+                        ->orWhere('pregunta7', 'LIKE', $keyWord)
+                        ->orWhere('pregunta8', 'LIKE', $keyWord)
+                        ->orWhere('pregunta9', 'LIKE', $keyWord)
+                        ->orWhere('pregunta10', 'LIKE', $keyWord)
+                        ->orWhere('pregunta11', 'LIKE', $keyWord)
+                        ->orWhere('pregunta12', 'LIKE', $keyWord)
+                        ->orWhere('pregunta13', 'LIKE', $keyWord)
+                        ->orWhere('descripcion1', 'LIKE', $keyWord)
+                        ->orWhere('descripcion2', 'LIKE', $keyWord)
+                        ->orWhere('descripcion3', 'LIKE', $keyWord)
+                        ->orWhere('descripcion4', 'LIKE', $keyWord)
+                        ->orWhere('descripcion5', 'LIKE', $keyWord)
+                        ->orWhere('descripcion6', 'LIKE', $keyWord)
+                        ->orWhere('descripcion7', 'LIKE', $keyWord)
+                        ->orWhere('descripcion8', 'LIKE', $keyWord)
+                        ->orWhere('descripcion9', 'LIKE', $keyWord)
+                        ->orWhere('descripcion10', 'LIKE', $keyWord)
 						->paginate(10),
         ]);
     }
@@ -184,10 +218,44 @@ class Antecedentes extends Component
 		$this->tratamiento18 = null;
 		$this->tiempo18 = null;
 		$this->parentesco18 = null;
-		$this->antecedente19 = null;
-		$this->tratamiento19 = null;
-		$this->tiempo19 = null;
-		$this->parentesco19 = null;
+        $this->varicela = null;
+        $this->sarampion = null;
+        $this->rubeola = null;
+        $this->escarlatina = null;
+        $this->vih = null;
+        $this->hepatitis = null;
+        $this->vph = null;
+        $this->otras_tran = null;
+        $this->covid = null;
+        $this->influenza = null;
+        $this->epoc = null;
+        $this->asma = null;
+        $this->otras_res = null;
+
+        $this->medicamentos = null;
+        $this->pregunta1 = null;
+        $this->pregunta2 = null;
+        $this->pregunta3 = null;
+        $this->pregunta4 = null;
+        $this->pregunta5 = null;
+        $this->pregunta6 = null;
+        $this->pregunta7 = null;
+        $this->pregunta8 = null;
+        $this->pregunta9 = null;
+        $this->pregunta10 = null;
+        $this->pregunta11 = null;
+        $this->pregunta12 = null;
+        $this->pregunta13 = null;
+        $this->descripcion1 = null;
+        $this->descripcion2 = null;
+        $this->descripcion3 = null;
+        $this->descripcion4 = null;
+        $this->descripcion5 = null;
+        $this->descripcion6 = null;
+        $this->descripcion7 = null;
+        $this->descripcion8 = null;
+        $this->descripcion9 = null;
+        $this->descripcion10 = null;
     }
 
     public function store()
@@ -270,10 +338,44 @@ class Antecedentes extends Component
 			'tratamiento18' => $this-> tratamiento18,
 			'tiempo18' => $this-> tiempo18,
 			'parentesco18' => $this-> parentesco18,
-			'antecedente19' => $this-> antecedente19,
-			'tratamiento19' => $this-> tratamiento19,
-			'tiempo19' => $this-> tiempo19,
-			'parentesco19' => $this-> parentesco19
+            'varicela' => $this-> varicela,
+            'sarampion' => $this-> sarampion,
+            'rubeola' => $this-> rubeola,
+            'escarlatina' => $this-> escarlatina,
+            'vih' => $this-> vih,
+            'hepatitis' => $this-> hepatitis,
+            'vph' => $this-> vph,
+            'otras_tran' => $this-> otras_tran,
+            'covid' => $this-> covid,
+            'influenza' => $this-> influenza,
+            'epoc' => $this-> epoc,
+            'asma' => $this-> asma,
+            'otras_res' => $this-> otras_res,
+
+            'medicamentos' => $this-> medicamentos,
+            'pregunta1' => $this-> pregunta1,
+            'pregunta2' => $this-> pregunta2,
+            'pregunta3' => $this-> pregunta3,
+            'pregunta4' => $this-> pregunta4,
+            'pregunta5' => $this-> pregunta5,
+            'pregunta6' => $this-> pregunta6,
+            'pregunta7' => $this-> pregunta7,
+            'pregunta8' => $this-> pregunta8,
+            'pregunta9' => $this-> pregunta9,
+            'pregunta10' => $this-> pregunta10,
+            'pregunta11' => $this-> pregunta11,
+            'pregunta12' => $this-> pregunta12,
+            'pregunta13' => $this-> pregunta13,
+            'descripcion1' => $this-> descripcion1,
+            'descripcion2' => $this-> descripcion2,
+            'descripcion3' => $this-> descripcion3,
+            'descripcion4' => $this-> descripcion4,
+            'descripcion5' => $this-> descripcion5,
+            'descripcion6' => $this-> descripcion6,
+            'descripcion7' => $this-> descripcion7,
+            'descripcion8' => $this-> descripcion8,
+            'descripcion9' => $this-> descripcion9,
+            'descripcion10' => $this-> descripcion10
         ]);
 
         $this->resetInput();
@@ -358,6 +460,44 @@ class Antecedentes extends Component
 		$this->tratamiento18 = $record-> tratamiento18;
 		$this->tiempo18 = $record-> tiempo18;
 		$this->parentesco18 = $record-> parentesco18;
+        $this->varicela = $record-> varicela;
+        $this->sarampion = $record-> sarampion;
+        $this->rubeola = $record-> rubeola;
+        $this->escarlatina = $record-> escarlatina;
+        $this->vih = $record-> vih;
+        $this->hepatitis = $record-> hepatitis;
+        $this->vph = $record-> vph;
+        $this->otras_tran = $record-> otras_tran;
+        $this->covid = $record-> covid;
+        $this->influenza = $record-> influenza;
+        $this->epoc = $record-> epoc;
+        $this->asma = $record-> asma;
+        $this->otras_res = $record-> otras_res;
+
+        $this->medicamentos = $record-> medicamentos;
+        $this->pregunta1 = $record-> pregunta1;
+        $this->pregunta2 = $record-> pregunta2;
+        $this->pregunta3 = $record-> pregunta3;
+        $this->pregunta4 = $record-> pregunta4;
+        $this->pregunta5 = $record-> pregunta5;
+        $this->pregunta6 = $record-> pregunta6;
+        $this->pregunta7 = $record-> pregunta7;
+        $this->pregunta8 = $record-> pregunta8;
+        $this->pregunta9 = $record-> pregunta9;
+        $this->pregunta10 = $record-> pregunta10;
+        $this->pregunta11 = $record-> pregunta11;
+        $this->pregunta12 = $record-> pregunta12;
+        $this->pregunta13 = $record-> pregunta13;
+        $this->descripcion1 = $record-> descripcion1;
+        $this->descripcion2 = $record-> descripcion2;
+        $this->descripcion3 = $record-> descripcion3;
+        $this->descripcion4 = $record-> descripcion4;
+        $this->descripcion5 = $record-> descripcion5;
+        $this->descripcion6 = $record-> descripcion6;
+        $this->descripcion7 = $record-> descripcion7;
+        $this->descripcion8 = $record-> descripcion8;
+        $this->descripcion9 = $record-> descripcion9;
+        $this->descripcion10 = $record-> descripcion10;
         $this->updateMode = true;
     }
 
@@ -439,6 +579,44 @@ class Antecedentes extends Component
 			'tratamiento18' => $this-> tratamiento18,
 			'tiempo18' => $this-> tiempo18,
 			'parentesco18' => $this-> parentesco18,
+            'varicela' => $this-> varicela,
+            'sarampion' => $this-> sarampion,
+            'rubeola' => $this-> rubeola,
+            'escarlatina' => $this-> escarlatina,
+            'vih' => $this-> vih,
+            'hepatitis' => $this-> hepatitis,
+            'vph' => $this-> vph,
+            'otras_tran' => $this-> otras_tran,
+            'covid' => $this-> covid,
+            'influenza' => $this-> influenza,
+            'epoc' => $this-> epoc,
+            'asma' => $this-> asma,
+            'otras_res' => $this-> otras_res,
+
+            'medicamentos' => $this-> medicamentos,
+            'pregunta1' => $this-> pregunta1,
+            'pregunta2' => $this-> pregunta2,
+            'pregunta3' => $this-> pregunta3,
+            'pregunta4' => $this-> pregunta4,
+            'pregunta5' => $this-> pregunta5,
+            'pregunta6' => $this-> pregunta6,
+            'pregunta7' => $this-> pregunta7,
+            'pregunta8' => $this-> pregunta8,
+            'pregunta9' => $this-> pregunta9,
+            'pregunta10' => $this-> pregunta10,
+            'pregunta11' => $this-> pregunta11,
+            'pregunta12' => $this-> pregunta12,
+            'pregunta13' => $this-> pregunta13,
+            'descripcion1' => $this-> descripcion1,
+            'descripcion2' => $this-> descripcion2,
+            'descripcion3' => $this-> descripcion3,
+            'descripcion4' => $this-> descripcion4,
+            'descripcion5' => $this-> descripcion5,
+            'descripcion6' => $this-> descripcion6,
+            'descripcion7' => $this-> descripcion7,
+            'descripcion8' => $this-> descripcion8,
+            'descripcion9' => $this-> descripcion9,
+            'descripcion10' => $this-> descripcion10,
             ]);
 
 

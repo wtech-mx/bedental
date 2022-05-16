@@ -93,10 +93,6 @@ return new class extends Migration
             $table->string('tratamiento18')->nullable();
             $table->string('tiempo18', 50)->nullable();
             $table->string('parentesco18')->nullable();
-            $table->string('antecedente19', 15)->nullable();
-            $table->string('tratamiento19')->nullable();
-            $table->string('tiempo19', 50)->nullable();
-            $table->string('parentesco19')->nullable();
 
             $table->timestamps();
         });

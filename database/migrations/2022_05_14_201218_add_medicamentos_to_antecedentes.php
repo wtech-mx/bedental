@@ -14,10 +14,30 @@ return new class extends Migration
     public function up()
     {
         Schema::table('antecedentes', function (Blueprint $table) {
-            $table->string('domicilio_fiscal');
+            $table->string('varicela', 10);
+            $table->string('sarampion', 10);
+            $table->string('rubeola', 10);
+            $table->string('escarlatina', 10);
 
-            for($i=1; $i<=14; $i++){
-                $table->string('pregunta'.$i);
+            $table->string('vih', 10);
+            $table->string('hepatitis', 10);
+            $table->string('vph', 10);
+            $table->string('otras_tran', 10);
+
+            $table->string('covid', 10);
+            $table->string('influenza', 10);
+            $table->string('epoc', 10);
+            $table->string('asma', 10);
+            $table->string('otras_res', 10);
+
+            $table->string('medicamentos', 100);
+
+            for($i=1; $i<=13; $i++){
+                $table->string('pregunta'.$i, 100);
+            }
+
+            for($i=1; $i<=10; $i++){
+                $table->string('descripcion'.$i);
             }
 
         });
