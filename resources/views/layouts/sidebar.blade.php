@@ -28,17 +28,17 @@
                     <span class="nav-link-text">Clientes</span>
                 </a>
 
-              <a class="nav-link {{ (Request::is('especialists*') ? 'active' : '') }}" href="/especialists">
+              <a class="nav-link {{ (Request::is('especialists*') ? 'active' : '') }}" href="{{ route('especialists.index') }}">
                 <i class="fa fa-user-md text-red"></i>
                 <span class="nav-link-text">Especialistas</span>
               </a>
 
-              <a class="nav-link {{ (Request::is('antecedentes*') ? 'active' : '') }}" href="/antecedentes">
+              <a class="nav-link {{ (Request::is('antecedentes*') ? 'active' : '') }}" href="{{ route('antecedentes.index') }}">
                 <i class="fa fa-address-book text-red"></i>
                 <span class="nav-link-text">Antecedentes</span>
               </a>
 
-              <a class="nav-link {{ (Request::is('calendar*') ? 'active' : '') }}" href="/calendar">
+              <a class="nav-link {{ (Request::is('calendar*') ? 'active' : '') }}" href="{{ route('calendar.index_calendar') }}">
                 <i class="fa fa-calendar text-red"></i>
                 <span class="nav-link-text">Calendario</span>
               </a>
