@@ -80,7 +80,7 @@
 
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6">
                                         <label for="color">Color</label>
-                                        <input wire:model="color" type="color" class="form-control" id="color" placeholder="Fecha Nacimiento">@error('color') <span class="error text-danger">{{ $message }}</span> @enderror
+                                        <input wire:model="color" type="color" class="form-control" id="color">@error('color') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
 

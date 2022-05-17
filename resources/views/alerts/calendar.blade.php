@@ -93,8 +93,17 @@
 
                     horario = (hora+":"+minutos);
 
+                    minutos2=(info.event.end.getMinutes());
+                    hora2=(info.event.end.getHours());
+
+                    minutos2 = (minutos2<10)?"0"+minutos2:minutos2;
+                    hora2 = (hora2<10)?"0"+hora2:hora2;
+
+                    horario2 = (hora2+":"+minutos2);
+
                   $('#txtFecha').val(anio+"-"+mes+"-"+dia);
                   $('#txtHora').val(horario);
+                  $('#txtHorafin').val(horario2);
                   $('#id_client').val(info.event.extendedProps.id_client);
                   $('#resourceId').val(info.event.extendedProps.resourceId);
                   $('#id_especialist').val(info.event.extendedProps.id_especialist);
@@ -168,7 +177,7 @@
                     estatus:$('#estatus').val()+estatusDefault,
                     check:$('#check').val()+checkDefault,
                     image:$('#image').val()+imageDefault,
-                    color:$('#color').val()+colorAlert,
+                    color:$('#color').val(),
                     start:$('#txtFecha').val()+"T"+$('#txtHora').val(),
                     end:$('#txtFecha').val()+"T"+$('#txtHorafin').val(),
                     '_token':$("meta[name='csrf-token']").attr("content"),
@@ -190,9 +199,8 @@
                     check:$('#check').val(),
                     image:$('#image').val(),
                     color:$('#color').val(),
-                    start:$('#txtFecha').val(),
-                    end:$('#txtFecha').val(),
-                    hora:$('#txtHora').val(),
+                    start:$('#txtFecha').val()+"T"+$('#txtHora').val(),
+                    end:$('#txtFecha').val()+"T"+$('#txtHorafin').val(),
                     '_token':$("meta[name='csrf-token']").attr("content"),
                     '_method':method
                 }

@@ -64,7 +64,7 @@
 
                       <div class="form-group col-12 mb-3">
                          <label for="">Selecionar Especialista</label>
-                              <select class="form-control" id="resourceId" name="resourceId">
+                              <select class="form-control" id="id_especialist" name="id_especialist">
                                    <option value="">Seleccione Especialista</option>
                                        @foreach($especialist as $item)
                                           <option value="{{$item->id}}">{{$item->nombre}}</option>

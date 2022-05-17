@@ -131,7 +131,7 @@ class Especialists extends Component
 		$this->telefono = $record-> telefono;
 		$this->fecha_nacimiento = $record-> fecha_nacimiento;
 		$this->email = $record-> email;
-        $this->color = null;
+        $this->color = $record-> color;
 		$this->domicilio_fiscal = $record-> domicilio_fiscal;
 		$this->regimen_fiscal = $record-> regimen_fiscal;
 		$this->rfc = $record-> rfc;
