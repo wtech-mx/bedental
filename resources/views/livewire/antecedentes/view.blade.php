@@ -7,7 +7,7 @@
 					<div style="display: flex; justify-content: space-between; align-items: center;">
 						<div class="float-left">
 							<h4><i class="fab fa-laravel text-info"></i>
-							Antecedente Listing </h4>
+							Listado Historial Clinico </h4>
 						</div>
 						<div wire:poll.60s>
 							<code><h5>{{ now()->format('H:i:s') }} UTC</h5></code>
@@ -20,7 +20,7 @@
 						</div>
 
 						<div class="btn btn-sm btn-info" data-toggle="modal" data-target="#createDataModal">
-						    <i class="fa fa-plus"></i>  Add Antecedentes
+						    <i class="fa fa-plus"></i>  Agregar Historial Clinico
 						</div>
 
 					</div>
@@ -34,7 +34,7 @@
                             <thead class="thead">
                                 <tr>
                                     <td>#</td>
-                                    <th>Cliente</th>
+                                    <th>Paciente</th>
                                     <th>Sanguineo</th>
                                     <th>Telefono</th>
                                     <td>Acciones</td>

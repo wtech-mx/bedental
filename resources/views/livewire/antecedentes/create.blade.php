@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="createDataModalLabel">Create New Antecedente</h5>
+                <h5 class="modal-title" id="createDataModalLabel">Crear Historial Clinico</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                      <span aria-hidden="true close-btn">×</span>
                 </button>
@@ -12,7 +12,7 @@
 				<form class="row">
 
             <div class="form-group col-xs-12 col-sm-12 col-md-12">
-                <label for="id_client">Cliente</label>
+                <label for="id_client">Paciente</label>
                 <select wire:model.defer="id_client" class="form-control" id="id_client">
                     <option>Seleciona el paciente</option>
                     @foreach ($client as $value)

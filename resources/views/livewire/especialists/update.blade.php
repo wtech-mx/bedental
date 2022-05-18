@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
        <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="updateModalLabel">Update Especialist</h5>
+                <h5 class="modal-title" id="updateModalLabel">Actualizar Doctor</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span wire:click.prevent="cancel()" aria-hidden="true">×</span>
                 </button>
@@ -15,7 +15,7 @@
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
 
                                 <li class="nav-item">
-                                <a class="nav-link active" id="cliente2-tab" data-toggle="tab" href="#cliente2" role="tab" aria-controls="cliente2" aria-selected="true">Cliente</a>
+                                <a class="nav-link active" id="cliente2-tab" data-toggle="tab" href="#cliente2" role="tab" aria-controls="cliente2" aria-selected="true">Doctor</a>
                                 </li>
 
                                 <li class="nav-item">

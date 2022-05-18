@@ -44,9 +44,9 @@
                       </div>
 
                       <div class="form-group col-6 mb-3">
-                         <label for="">Selecionar Usuario</label>
+                         <label for="">Selecionar Paciente</label>
                               <select class="form-control" id="id_client" name="id_client">
-                                   <option value="">Seleccione usuario</option>
+                                   <option value="">Seleccione Paciente</option>
                                        @foreach($client as $item)
                                           <option value="{{$item->id}}">{{$item->nombre}}</option>
                                        @endforeach
@@ -63,16 +63,16 @@
                       </div>
 
                       <div class="form-group col-12 mb-3">
-                         <label for="">Selecionar Especialista</label>
+                         <label for="">Selecionar Doctor</label>
                               <select class="form-control" id="id_especialist" name="id_especialist">
-                                   <option value="">Seleccione Especialista</option>
+                                   <option value="">Seleccione Doctor</option>
                                        @foreach($especialist as $item)
                                           <option value="{{$item->id}}">{{$item->nombre}}</option>
                                        @endforeach
                               </select>
                       </div>
 
-                      <label for="">Description</label>
+                      <label for="">Descripcion</label>
                       <textarea class="form-control" name="descripcion" id="descripcion" cols="30" rows="3"></textarea>
 
                        <label for="">Color</label>

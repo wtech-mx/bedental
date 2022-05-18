@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-lg" role="document">
        <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="updateModalLabel">Actualizar Antecedente</h5>
+                <h5 class="modal-title" id="updateModalLabel">Actualizar Historial Clinico</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span wire:click.prevent="cancel()" aria-hidden="true">×</span>
                 </button>
@@ -13,11 +13,11 @@
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
 
                         <li class="nav-item">
-                        <a class="nav-link active" id="evaluacion-tab" data-toggle="tab" href="#evaluacion" role="tab" aria-controls="evaluacion" aria-selected="true">Evaluación oral</a>
+                        <a class="nav-link active" id="evaluacion-tab" data-toggle="tab" href="#evaluacion" role="tab" aria-controls="evaluacion" aria-selected="true">Ant. Patologicos y no Patologicos</a>
                         </li>
 
                         <li class="nav-item">
-                        <a class="nav-link" id="medicamentos-tab" data-toggle="tab" href="#medicamentos" role="tab" aria-controls="medicamentos" aria-selected="false">Medicamentos que consume</a>
+                        <a class="nav-link" id="medicamentos-tab" data-toggle="tab" href="#medicamentos" role="tab" aria-controls="medicamentos" aria-selected="false">Evaluación Oral</a>
                         </li>
                     </ul>
                 </div>
