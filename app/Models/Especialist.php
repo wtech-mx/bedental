@@ -20,7 +20,6 @@ class Especialist extends Model
     'telefono',
     'fecha_nacimiento',
     'email',
-    'color',
     'domicilio_fiscal',
     'regimen_fiscal',
     'rfc',

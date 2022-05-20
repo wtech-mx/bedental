@@ -62,10 +62,10 @@
                                         <input wire:model="fecha_nacimiento" type="date" class="form-control" id="fecha_nacimiento" placeholder="Fecha Nacimiento">@error('fecha_nacimiento') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
 
-                                    <div class="form-group col-xs-12 col-sm-12 col-md-6">
+                                    {{-- <div class="form-group col-xs-12 col-sm-12 col-md-6">
                                         <label for="color">Color</label>
                                         <input wire:model="color" type="color" class="form-control" id="color" placeholder="Fecha Nacimiento">@error('color') <span class="error text-danger">{{ $message }}</span> @enderror
-                                    </div>
+                                    </div> --}}
                                 </div>
 
                             </div>

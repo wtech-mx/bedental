@@ -20,7 +20,6 @@ class Especialists extends Component
            $telefono,
            $fecha_nacimiento,
            $email,
-           $color,
            $domicilio_fiscal,
            $regimen_fiscal,
            $rfc,
@@ -45,7 +44,6 @@ class Especialists extends Component
 				->orWhere('telefono', 'LIKE', $keyWord)
 				->orWhere('fecha_nacimiento', 'LIKE', $keyWord)
 				->orWhere('email', 'LIKE', $keyWord)
-				->orWhere('color', 'LIKE', $keyWord)
 				->orWhere('domicilio_fiscal', 'LIKE', $keyWord)
 				->orWhere('regimen_fiscal', 'LIKE', $keyWord)
 				->orWhere('rfc', 'LIKE', $keyWord)
@@ -74,7 +72,6 @@ class Especialists extends Component
 		$this->telefono = null;
 		$this->fecha_nacimiento = null;
 		$this->email = null;
-        $this->color = null;
 		$this->domicilio_fiscal = null;
 		$this->regimen_fiscal = null;
 		$this->rfc = null;
@@ -102,7 +99,6 @@ class Especialists extends Component
 			'telefono' => $this-> telefono,
 			'fecha_nacimiento' => $this-> fecha_nacimiento,
 			'email' => $this-> email,
-            'color' => $this-> color,
 			'domicilio_fiscal' => $this-> domicilio_fiscal,
 			'regimen_fiscal' => $this-> regimen_fiscal,
 			'rfc' => $this-> rfc,
@@ -131,7 +127,6 @@ class Especialists extends Component
 		$this->telefono = $record-> telefono;
 		$this->fecha_nacimiento = $record-> fecha_nacimiento;
 		$this->email = $record-> email;
-        $this->color = $record-> color;
 		$this->domicilio_fiscal = $record-> domicilio_fiscal;
 		$this->regimen_fiscal = $record-> regimen_fiscal;
 		$this->rfc = $record-> rfc;
@@ -162,7 +157,6 @@ class Especialists extends Component
 			'telefono' => $this-> telefono,
 			'fecha_nacimiento' => $this-> fecha_nacimiento,
 			'email' => $this-> email,
-            'color' => $this-> color,
 			'domicilio_fiscal' => $this-> domicilio_fiscal,
 			'regimen_fiscal' => $this-> regimen_fiscal,
 			'rfc' => $this-> rfc,
