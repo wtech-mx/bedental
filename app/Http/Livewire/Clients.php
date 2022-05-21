@@ -13,7 +13,7 @@ class Clients extends Component
     use WithPagination;
 
 	protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $nombre, $apellido, $edad, $sanguineo, $ocupacion, $telefono, $fecha_nacimiento, $email, $domicilio_fiscal, $regimen_fiscal, $rfc, $razon_social, $correo_fiscal, $cfdi, $seguro, $poliza, $empresa,$certificado, $tipo_plan;
+    public $selected_id, $keyWord, $nombre, $apellido, $edad, $sanguineo, $ocupacion, $telefono, $fecha_nacimiento, $motivo_consulta,$email, $domicilio_fiscal, $regimen_fiscal, $rfc, $razon_social, $correo_fiscal, $cfdi, $seguro, $poliza, $empresa,$certificado, $tipo_plan;
     public $updateMode = false;
 
     public function render()
@@ -29,6 +29,7 @@ class Clients extends Component
 						->orWhere('ocupacion', 'LIKE', $keyWord)
 						->orWhere('telefono', 'LIKE', $keyWord)
 						->orWhere('fecha_nacimiento', 'LIKE', $keyWord)
+                        ->orWhere('motivo_consulta', 'LIKE', $keyWord)
 						->orWhere('email', 'LIKE', $keyWord)
 						->orWhere('domicilio_fiscal', 'LIKE', $keyWord)
 						->orWhere('regimen_fiscal', 'LIKE', $keyWord)
@@ -60,6 +61,7 @@ class Clients extends Component
 		$this->ocupacion = null;
 		$this->telefono = null;
 		$this->fecha_nacimiento = null;
+		$this->motivo_consulta = null;
 		$this->email = null;
 		$this->domicilio_fiscal = null;
 		$this->regimen_fiscal = null;
@@ -90,6 +92,7 @@ class Clients extends Component
 			'ocupacion' => $this-> ocupacion,
 			'telefono' => $this-> telefono,
 			'fecha_nacimiento' => $this-> fecha_nacimiento,
+			'motivo_consulta' => $this-> motivo_consulta,
 			'email' => $this-> email,
 			'domicilio_fiscal' => $this-> domicilio_fiscal,
 			'regimen_fiscal' => $this-> regimen_fiscal,
@@ -132,6 +135,7 @@ class Clients extends Component
 		$this->ocupacion = $record-> ocupacion;
 		$this->telefono = $record-> telefono;
 		$this->fecha_nacimiento = $record-> fecha_nacimiento;
+		$this->motivo_consulta = $record-> motivo_consulta;
 		$this->email = $record-> email;
 		$this->domicilio_fiscal = $record-> domicilio_fiscal;
 		$this->regimen_fiscal = $record-> regimen_fiscal;
@@ -165,6 +169,7 @@ class Clients extends Component
 			'ocupacion' => $this-> ocupacion,
 			'telefono' => $this-> telefono,
 			'fecha_nacimiento' => $this-> fecha_nacimiento,
+			'motivo_consulta' => $this-> motivo_consulta,
 			'email' => $this-> email,
 			'domicilio_fiscal' => $this-> domicilio_fiscal,
 			'regimen_fiscal' => $this-> regimen_fiscal,
@@ -189,7 +194,11 @@ class Clients extends Component
     {
         if ($id) {
             $record = Client::where('id', $id);
+            $antecedentes = Antecedente::where('id_client','=',$id);
+            $antecedentes->delete();
             $record->delete();
+
+
         }
     }
 }

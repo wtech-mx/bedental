@@ -70,6 +70,12 @@
                                         <label for="fecha_nacimiento">Fecha de nacimiento</label>
                                         <input wire:model="fecha_nacimiento" type="date" class="form-control" id="fecha_nacimiento" placeholder="Fecha Nacimiento">@error('fecha_nacimiento') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
+
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-12">
+                                        <label for="motivo_consulta">Motivo de consulta</label>
+                                        <textarea wire:model="motivo_consulta" id="fecha_nacimiento" class="form-control"></textarea>
+                                    </div>
+
                                 </div>
 
                             </div>
