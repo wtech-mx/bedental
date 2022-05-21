@@ -36,17 +36,39 @@
                             {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
                         </div>
                     </div>
+
                     <div class="col-xs-12 col-sm-12 col-md-6">
                         <div class="form-group">
                             <strong>Permission:</strong>
                             <br/>
                             @foreach($permission as $value)
                                 <label>{{ Form::checkbox('permission[]', $value->id, in_array($value->id, $rolePermissions) ? true : false, array('class' => 'name')) }}
-                                {{ $value->name }}</label>
-                            <br/>
+                                {{ $value->name }}
+                                </label>
+
+                                <div class="dropdown ">
+                                    <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <i class="fas fa-ellipsis-v"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+
+                                    <a type="button" class="dropdown-item" data-toggle="modal" data-target="#exampleModalCenter{{$value->id}}">
+                                        Edit
+                                    </a>
+
+                                    {!! Form::open(['method' => 'DELETE','route' => ['permisos.destroy', $value->id],'style'=>'display:inline']) !!}
+                                        {!! Form::submit('Delete', ['class' => 'dropdown-item']) !!}
+                                    {!! Form::close() !!}
+
+                                    </div>
+                                  </div>
+
+                                <br/>
+                            @include('roles.modal_update')
                             @endforeach
                         </div>
                     </div>
+
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
@@ -60,5 +82,6 @@
       </div>
 </div>
 
+@include('roles.modal')
 
 @endsection

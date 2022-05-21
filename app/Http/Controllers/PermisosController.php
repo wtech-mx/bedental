@@ -22,7 +22,7 @@ class PermisosController extends Controller
             $Permission->name = $slug;
 
             $Permission->save();
-            return redirect()->route('roles.create')
+            return redirect()->back()
             ->with('success','Permission has been created successfully.');
     }
 
@@ -35,7 +35,7 @@ class PermisosController extends Controller
         $Permission = Permission::find($id);
         $Permission->name = $request->name;
         $Permission->save();
-        return redirect()->route('roles.create')
+        return redirect()->back()
         ->with('edit','Permission Has Been updated successfully');
     }
 
