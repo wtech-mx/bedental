@@ -12,11 +12,11 @@
           <div class="card">
             <!-- Card header -->
             <div class="card-header">
-              <h3 class="mb-3">Create New Role</h3>
+              <h3 class="mb-3">Crear Nuevo Role</h3>
               <div class="d-flex justify-content-between">
-                <a class="btn btn-primary" href="{{ route('roles.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('roles.index') }}"> Regresar</a>
                 <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
-                    Launch demo modal
+                    Crear Permiso
                   </button>
               </div>
                     @if (count($errors) > 0)
@@ -44,7 +44,7 @@
 
                     <div class="col-xs-12 col-sm-12 col-md-6">
                         <div class="form-group">
-                            <label class="form-control-label">Permission:</label>
+                            <label class="form-control-label">Permiso:</label>
                             <br/>
                             @foreach($permission as $value)
                                 <label>{{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
@@ -72,7 +72,7 @@
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
                     </div>
                 </div>
                 {!! Form::close() !!}

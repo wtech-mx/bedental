@@ -12,7 +12,7 @@
           <div class="card">
             <!-- Card header -->
             <div class="card-header">
-              <h3 class="mb-3">Edit New User</h3>
+              <h3 class="mb-3">Editar ususario</h3>
                <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
                     @if (count($errors) > 0)
                       <div class="alert alert-danger">
@@ -61,7 +61,7 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
                     </div>
                 </div>
                 {!! Form::close() !!}

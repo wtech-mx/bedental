@@ -12,8 +12,13 @@
           <div class="card">
             <!-- Card header -->
             <div class="card-header">
-              <h3 class="mb-3">Edit Role</h3>
-               <a class="btn btn-primary" href="{{ route('roles.index') }}"> Back</a>
+              <h3 class="mb-3">Editar Rol</h3>
+              <div class="d-flex justify-content-between">
+                <a class="btn btn-primary" href="{{ route('roles.index') }}"> Regresar</a>
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
+                    Crear Permiso
+                  </button>
+              </div>
                     @if (count($errors) > 0)
                       <div class="alert alert-danger">
                         <strong>Whoops!</strong> There were some problems with your input.<br><br>

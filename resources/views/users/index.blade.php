@@ -12,8 +12,8 @@
           <div class="card">
             <!-- Card header -->
             <div class="card-header">
-              <h3 class="mb-3">Users Management</h3>
-              <a class="btn btn-success" href="{{ route('users.create') }}"> Create New User</a>
+              <h3 class="mb-3">Gestionar usuarios</h3>
+              <a class="btn btn-success" href="{{ route('users.create') }}"> Crear nuevo usuario</a>
             </div>
 
             <div class="table-responsive py-4" style="">
@@ -21,10 +21,10 @@
                   <thead class="thead-light">
                       <tr>
                        <th>No</th>
-                       <th>Name</th>
+                       <th>Nombre</th>
                        <th>Email</th>
                        <th>Roles</th>
-                       <th width="280px">Action</th>
+                       <th width="280px">Acciones</th>
                      </tr>
                   </thead>
 
@@ -48,10 +48,10 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                               <a class="dropdown-item" href="{{ route('users.show',$user->id) }}">
-                                  Show
+                                  Mostrar
                               </a>
                               <a class="dropdown-item" href="{{ route('users.edit',$user->id) }}">
-                                Edit
+                                Editar
                               </a>
                             {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
                                 {!! Form::submit('Delete', ['class' => 'dropdown-item']) !!}

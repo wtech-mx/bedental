@@ -12,10 +12,10 @@
           <div class="card">
             <!-- Card header -->
             <div class="card-header">
-              <h3 class="mb-3">Role Management</h3>
+              <h3 class="mb-3">Gestionar roles</h3>
 
                 @can('role-create')
-                     <a class="btn btn-success" href="{{ route('roles.create') }}">Create New Role</a>
+                     <a class="btn btn-success" href="{{ route('roles.create') }}">Crear nuevo rol</a>
                 @endcan
             </div>
 
@@ -24,8 +24,8 @@
                   <thead class="thead-light">
                       <tr>
                        <th>No</th>
-                       <th>Name</th>
-                       <th width="280px">Action</th>
+                       <th>Nombre</th>
+                       <th width="280px">Acciones</th>
                      </tr>
                   </thead>
 

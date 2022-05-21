@@ -12,8 +12,8 @@
           <div class="card">
             <!-- Card header -->
             <div class="card-header">
-              <h3 class="mb-3">Create New User</h3>
-               <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
+              <h3 class="mb-3">Crear nuevo ususario</h3>
+               <a class="btn btn-primary" href="{{ route('users.index') }}"> Regresar</a>
                     @if (count($errors) > 0)
                       <div class="alert alert-danger">
                         <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -62,7 +62,7 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
                     </div>
                 </div>
                 {!! Form::close() !!}
