@@ -35,9 +35,19 @@ class AlertasController extends Controller
 
     public function store_calendar(Request $request)
     {
-        $datosEvento = request()->except(['_token', '_method'], []);
 
-        Alertas::insert($datosEvento);
+        $datosEvento = new Alertas;
+        $datosEvento->end = $request->start;
+        $datosEvento->start = $request->start;
+        $datosEvento->image = $request->image;
+        $datosEvento->id_client = $request->id_client;
+        $datosEvento->title = $datosEvento->Client->nombre;
+        $datosEvento->resourceId = $request->resourceId;
+        $datosEvento->id_especialist = $request->id_especialist;
+        $datosEvento->descripcion = $request->descripcion;
+        $datosEvento->check = $request->check;
+
+        $datosEvento->save();
     }
 
     public function show_calendar()
