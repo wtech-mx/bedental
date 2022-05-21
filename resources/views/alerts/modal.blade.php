@@ -4,14 +4,59 @@
             <div class="modal-content">
 
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Datos del Evento</h5>
-                    <a type="button" class="btn btn-secondary" data-dismiss="modal">
-                        <i class="fa fa-window-close text-white" aria-hidden="true"></i>
-                    </a>
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span class="text-dark" aria-hidden="true">&times;</span>
+                </button>
               </div>
 
-              <div class="modal-body">
+              <div class="modal-body" style="padding: 0rem 1rem 0rem 1rem;">
 
+                    <p class="text-center">
+                      <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+                          Agregar Nuevo paciente
+                      </a>
+                    </p>
+                    <div class="row">
+                      <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample1">
+                          <div class="card card-body">
+
+                            <form action="{{route('client.calendar_store')}}"  class="form-horizontal" method="POST" enctype="multipart/form-data">
+                                @csrf
+
+                                <div class="form-row">
+                                   <div class="form-group col-6">
+                                        <label for="">Nombre</label>
+                                        <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Nombre">
+                                   </div>
+
+                                   <div class="form-group col-6">
+                                        <label for="">Apellido</label>
+                                        <input class="form-control" type="text" name="apellido" id="apellido" placeholder="Apellido">
+                                   </div>
+
+                                   <div class="form-group col-6">
+                                        <label for="">Telefono</label>
+                                        <input class="form-control" type="number" name="telefono" id="telefono" placeholder="Telefono">
+                                   </div>
+
+                                   <div class="form-group col-6">
+                                        <label for="">Correo</label>
+                                        <input class="form-control" type="email" name="email" id="" placeholder="Email">
+                                   </div>
+
+                                     <div class="form-group col-12">
+                                        <button type="submit" class="btn btn-primary" id="btn-save">Guardar</button>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
                   <div class="form-row">
 
@@ -73,11 +118,9 @@
                       </div>
 
                       <label for="">Descripcion</label>
-                      <textarea class="form-control" name="descripcion" id="descripcion" cols="30" rows="3"></textarea>
+                      <textarea class="form-control" name="descripcion" id="descripcion" cols="30" rows="2"></textarea>
 
-                       <label for="">Color</label>
-                      <input type="color" class="form-control" name="color" id="color">
-
+                      <input type="hidden" class="form-control" name="color" id="color">
 
                       <div class="form-group col-12 mt-3">
                           <label for="">¿Esta tarea ya esta realizada?</label>

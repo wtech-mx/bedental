@@ -57,6 +57,27 @@ class ClientController extends Controller
             ->with('success', 'Client created successfully.');
     }
 
+    public function store_client(Request $request)
+    {
+
+        $this->validate($request, [
+            'nombre' => 'required',
+            'telefono' => 'required',
+        ]);
+
+           $client = new Client();
+           $client->nombre = $request->nombre;
+           $client->apellido = $request->apellido;
+           $client->email = $request->email;
+           $client->telefono = $request->telefono;
+           $client->save();
+
+        Session::flash('success', 'Se ha guardado sus datos con exito');
+        return redirect()->route('calendar.index_calendar')
+                        ->with('success','Role created successfully');
+
+    }
+
     /**
      * Display the specified resource.
      *

@@ -52,3 +52,5 @@ Route::post('calendar', [AlertasController::class, 'store_calendar'])->name('cal
 Route::get('calendar/show', [AlertasController::class, 'show_calendar'])->name('calendar.show_calendar');
 Route::patch('calendar/destroy/{id}', [AlertasController::class, 'destroy_calendar'])->name('calendar.destroy_calendar');
 Route::patch('calendar/update/{id}', [AlertasController::class, 'update_calendar'])->name('calendar.update_calendar');
+
+Route::post('create_pacient', [ClientController::class, 'store_client'])->name('client.calendar_store');

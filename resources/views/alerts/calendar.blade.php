@@ -9,6 +9,8 @@
     <link href='{{ asset('lib/main.css') }}' rel='stylesheet' />
     <script src='{{ asset('lib/main.js') }}'></script>
 
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
         @php
         $Y = date('Y') ;
         $M = date('m');
@@ -24,26 +26,20 @@
             var calendar = new FullCalendar.Calendar(calendarEl, {
 
                 height: 'auto',
-                initialDate: '{{$Fecha}}',
-                initialView: 'resourceTimelineDay',
+                now: '{{$Fecha}}',
+                {{--initialDate: '{{$Fecha}}',--}}
+                initialView: 'timeGridWeek',
                 editable: true,
-                dayMaxEvents: 3,
+                dayMaxEvents: 5,
                 aspectRatio: 1.8,
                 scrollTime: '00:00',
 
               headerToolbar: {
                 left: 'today prev,next',
                 center: 'title',
-                right: 'resourceTimelineDay,resourceTimelineThreeDays,timeGridWeek,dayGridMonth'
+                right: 'resourceTimelineDay,timeGridWeek,dayGridMonth'
               },
 
-              views: {
-                resourceTimelineThreeDays: {
-                  type: 'resourceTimeline',
-                  duration: { days: 3 },
-                  buttonText: '3 days'
-                }
-              },
                  resourceAreaHeaderContent: 'Modulo',
                   resourceLabelContent: function(arg) {
                     return 'Unidad ' + arg.resource.id.toUpperCase();
