@@ -46,6 +46,15 @@
                                         <input class="form-control" type="email" name="email" id="" placeholder="Email">
                                    </div>
 
+                                   <div class="form-group col-12">
+
+                                      <label for="">Motivo de consulta</label>
+                                      <textarea class="form-control" name="motivo_consulta" id="motivo_consulta" cols="30" rows="2"></textarea>
+                                       
+                                   </div>
+
+
+
                                      <div class="form-group col-12">
                                         <button type="submit" class="btn btn-primary" id="btn-save">Guardar</button>
                                     </div>
