@@ -243,7 +243,7 @@
 
 @section('content')
 
-    <div id='calendar'></div>
+    <div class="calendar" data-toggle="calendar" id="calendar"></div>
     @include('alerts.modal')
 
 @endsection

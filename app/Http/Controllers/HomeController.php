@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Client;
 use App\Models\Especialist;
+use App\Models\User;
+use App\Models\Antecedente;
+use DB;
 
 class HomeController extends Controller
 {
@@ -31,6 +34,15 @@ class HomeController extends Controller
        $especialists = Especialist::all();
        $count_especialist = count($especialists);
 
-        return view('dashboard', compact('count_client','count_especialist'));
+       $users = User::all();
+       $count_users = count($users);
+
+       $antecedentes = Antecedente::all();
+       $count_antecedentes = count($antecedentes);
+
+        $client = DB::table('clients')->get();
+        $especialist = DB::table('especialists')->get();
+
+        return view('dashboard', compact('count_client','count_especialist','count_users','count_antecedentes','client','especialist'));
     }
 }

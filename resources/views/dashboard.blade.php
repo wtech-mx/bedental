@@ -2,37 +2,40 @@
 
 @section('breadcrumb')
           <div class="row">
-            <div class="col-xl-3 col-md-6">
+
+            <div class="col-xl-3 col-md-6 col-6">
               <div class="card card-stats">
                 <!-- Card body -->
+                <a class="hover_card_bred" href="{{ route('clients.index') }}">
                 <div class="card-body">
                   <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Pacientes Totales</h5>
-                      <span class="h2 font-weight-bold mb-0"> {{$count_client}} </span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
-                        <i class="ni ni-circle-08 text-white"></i>
-                      </div>
-                    </div>
+                        <div class="col">
+                          <h5 class="card-title text-uppercase text-muted mb-0">Pacientes </h5>
+                          <span class="h2 font-weight-bold mb-0"> {{$count_client}} </span>
+                        </div>
+                        <div class="col-auto">
+                          <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
+                            <i class="ni ni-circle-08 text-white"></i>
+                          </div>
+                        </div>
                   </div>
-
 {{--                  <p class="mt-3 mb-0 text-sm">--}}
 {{--                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>--}}
 {{--                    <span class="text-nowrap">Since last month</span>--}}
 {{--                  </p>--}}
-
                 </div>
+                </a>
               </div>
             </div>
-            <div class="col-xl-3 col-md-6">
+
+            <div class="col-xl-3 col-md-6 col-6">
               <div class="card card-stats">
                 <!-- Card body -->
+                <a class="hover_card_bred" href="{{ route('especialists.index') }}">
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Doctores<br>-</h5>
+                      <h5 class="card-title text-uppercase text-muted mb-0">Doctores</h5>
                       <span class="h2 font-weight-bold mb-0"> {{$count_especialist}} </span>
                     </div>
                     <div class="col-auto">
@@ -42,16 +45,19 @@
                     </div>
                   </div>
                 </div>
+              </a>
               </div>
             </div>
-            <div class="col-xl-3 col-md-6">
+
+            <div class="col-xl-3 col-md-6 col-6">
               <div class="card card-stats">
                 <!-- Card body -->
+                <a class="hover_card_bred" href="{{ route('antecedentes.index') }}">
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Historial Clinico</h5>
-                      <span class="h2 font-weight-bold mb-0"></span>
+                      <h5 class="card-title text-uppercase text-muted mb-0">His. Clinico</h5>
+                      <span class="h2 font-weight-bold mb-0">{{$count_antecedentes}}</span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
@@ -60,16 +66,19 @@
                     </div>
                   </div>
                 </div>
+                </a>
               </div>
             </div>
-            <div class="col-xl-3 col-md-6">
+
+            <div class="col-xl-3 col-md-6 col-6">
               <div class="card card-stats">
                 <!-- Card body -->
+                <a class="hover_card_bred" href="{{ route('users.index') }}">
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Usuarios</h5>
-                      <span class="h2 font-weight-bold mb-0"></span>
+                      <span class="h2 font-weight-bold mb-0">{{$count_users}}</span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
@@ -78,13 +87,39 @@
                     </div>
                   </div>
                 </div>
+                </a>
               </div>
             </div>
           </div>
 @endsection
 
+<style>
+    .calendar .fc-toolbar {
+        height: 100px!important;
+        padding: 15px;
+}
+</style>
+
 @section('content')
 
-{{--    @include('alerts.calendar')--}}
+    <div class="container-fluid mt--6">
+      <div class="row">
+        <div class="col">
+          <!-- Fullcalendar -->
+          <div class="card card-calendar">
+            <!-- Card header -->
+            <div class="card-header">
+              <!-- Title -->
+              <h5 class="h3 mb-0">Calendassssssr</h5>
+            </div>
+            <!-- Card body -->
+            <div class="card-body p-0">
+              @include('alerts.calendar')
+            </div>
+          </div>
+        </div>
+      </div>
+
+
 
 @endsection
