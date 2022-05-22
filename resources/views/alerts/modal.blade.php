@@ -125,11 +125,25 @@
                       <label for="">Descripcion</label>
                       <textarea class="form-control" name="descripcion" id="descripcion" cols="30" rows="2"></textarea>
 
-                      <input type="hidden" class="form-control" name="color" id="color">
+                      <div class="form-group col-12 mt-3">
+                          <label for="">Selecciona el estatus de la cita</label>
+                          <select class="form-control" id="color" name="color">
+                              <option value="">Selecionar estatus</option>
+                              <option value="#8E44AD">No asistieron cancelado</option>
+                              <option value="#3498DB">Sin confirmar/agendado</option>
+                              <option value="#1ABC9C">Confirmado</option>
+                              <option value="#27AE60">Recordatorio/tentativo</option>
+                              <option value="#E74C3C">Limpieza</option>
+                              <option value="#7F8C8D">Operatoria</option>
+                              <option value="#E67E22">Ortodoncia</option>
+                              <option value="#34495E">Cirugua/extraccion</option>
+                              <option value="#95A5A6">Atendido/reservado</option>
+                              <option value="#F1C40F">Paciente nuevo</option>
+                          </select>
+                      </div>
 
                       <div class="form-group col-12 mt-3">
                           <label for="">¿Esta tarea ya esta realizada?</label>
-
                           <select class="form-control" id="check" name="check">
                               <option value="0">Pendiente</option>
                               <option value="1">Realizado</option>
