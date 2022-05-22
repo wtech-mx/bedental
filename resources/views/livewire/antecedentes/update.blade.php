@@ -22,251 +22,845 @@
                     </ul>
                 </div>
                 <form>
-					<input type="hidden" wire:model="selected_id">
+					<input type="hidden" wire:model.defer="selected_id">
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="evaluacion" role="tabpanel" aria-labelledby="evaluacion-tab">
-                            <table class="table table-bordered table-sm">
-                                <thead class="thead">
-                                    <tr>
-                                        <th>Antecedente</th>
-                                        <th>Si</th>
-                                        <th>Tratamiento</th>
-                                        <th>Tiempo de evo.</th>
-                                        <th>Parentesco</th>
-                                    </tr>
-                                </thead>
 
-                                <tbody>
-                                    <tr>
-                                        <td>Alergias</td>
-                                        <td><input wire:model="antecedente1" type="checkbox" class="form-check" id="antecedente1" placeholder="Antecedente1"></td>
-                                        <td><input wire:model="tratamiento1" type="text" class="form-control" id="tratamiento1" placeholder="Tratamiento1"></td>
-                                        <td><input wire:model="tiempo1" type="text" class="form-control" id="tiempo1" placeholder="Tiempo1"></td>
-                                        <td><input wire:model="parentesco1" type="text" class="form-control" id="parentesco1" placeholder="Parentesco1"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Diabetes Melijtus</td>
-                                        <td><input wire:model="antecedente2" type="checkbox" class="form-check" id="antecedente2" placeholder="Antecedente2"></td>
-                                        <td><input wire:model="tratamiento2" type="text" class="form-control" id="tratamiento2" placeholder="Tratamiento2"></td>
-                                        <td><input wire:model="tiempo2" type="text" class="form-control" id="tiempo2" placeholder="Tiempo2"></td>
-                                        <td><input wire:model="parentesco2" type="text" class="form-control" id="parentesco2" placeholder="Parentesco2"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Enfermedades virales <br>
-                                            Var.<input wire:model="varicela" type="checkbox" class="form-check" id="varicela" placeholder="varicela">
-                                            Sara.<input wire:model="sarampion" type="checkbox" class="form-check" id="sarampion" placeholder="sarampion">
-                                            Rub.<input wire:model="rubeola" type="checkbox" class="form-check" id="rubeola" placeholder="rubeola">
-                                            Esc.<input wire:model="escarlatina" type="checkbox" class="form-check" id="escarlatina" placeholder="escarlatina"></td>
-                                        <td><input wire:model="antecedente3" type="checkbox" class="form-check" id="antecedente3" placeholder="Antecedente3"></td>
-                                        <td><input wire:model="tratamiento3" type="text" class="form-control" id="tratamiento3" placeholder="Tratamiento3"></td>
-                                        <td><input wire:model="tiempo3" type="text" class="form-control" id="tiempo3" placeholder="Tiempo3"></td>
-                                        <td><input wire:model="parentesco3" type="text" class="form-control" id="parentesco3" placeholder="Parentesco3"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Problemas cardiacos</td>
-                                        <td><input wire:model="antecedente4" type="checkbox" class="form-check" id="antecedente4" placeholder="Antecedente4"></td>
-                                        <td><input wire:model="tratamiento4" type="text" class="form-control" id="tratamiento4" placeholder="Tratamiento4"></td>
-                                        <td><input wire:model="tiempo4" type="text" class="form-control" id="tiempo4" placeholder="Tiempo4"></td>
-                                        <td><input wire:model="parentesco4" type="text" class="form-control" id="parentesco4" placeholder="Parentesco4"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Artritis reumatoide</td>
-                                        <td><input wire:model="antecedente5" type="checkbox" class="form-check" id="antecedente5" placeholder="Antecedente5"></td>
-                                        <td><input wire:model="tratamiento5" type="text" class="form-control" id="tratamiento5" placeholder="Tratamiento5"></td>
-                                        <td><input wire:model="tiempo5" type="text" class="form-control" id="tiempo5" placeholder="Tiempo5"></td>
-                                        <td><input wire:model="parentesco5" type="text" class="form-control" id="parentesco5" placeholder="Parentesco5"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Fiebre reumática</td>
-                                        <td><input wire:model="antecedente6" type="checkbox" class="form-check" id="antecedente6" placeholder="Antecedente6"></td>
-                                        <td><input wire:model="tratamiento6" type="text" class="form-control" id="tratamiento6" placeholder="Tratamiento6"></td>
-                                        <td><input wire:model="tiempo6" type="text" class="form-control" id="tiempo6" placeholder="Tiempo6"></td>
-                                        <td><input wire:model="parentesco6" type="text" class="form-control" id="parentesco6" placeholder="Parentesco6"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Hemorragias</td>
-                                        <td><input wire:model="antecedente7" type="checkbox" class="form-check" id="antecedente7" placeholder="Antecedente7"></td>
-                                        <td><input wire:model="tratamiento7" type="text" class="form-control" id="tratamiento7" placeholder="Tratamiento7"></td>
-                                        <td><input wire:model="tiempo7" type="text" class="form-control" id="tiempo7" placeholder="Tiempo7"></td>
-                                        <td><input wire:model="parentesco7" type="text" class="form-control" id="parentesco7" placeholder="Parentesco7"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Problemas tiroideos</td>
-                                        <td><input wire:model="antecedente8" type="checkbox" class="form-check" id="antecedente8" placeholder="Antecedente8"></td>
-                                        <td><input wire:model="tratamiento8" type="text" class="form-control" id="tratamiento8" placeholder="Tratamiento8"></td>
-                                        <td><input wire:model="tiempo8" type="text" class="form-control" id="tiempo8" placeholder="Tiempo8"></td>
-                                        <td><input wire:model="parentesco8" type="text" class="form-control" id="parentesco8" placeholder="Parentesco8"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Presión alta o baja</td>
-                                        <td><input wire:model="antecedente9" type="checkbox" class="form-check" id="antecedente9" placeholder="Antecedente9"></td>
-                                        <td><input wire:model="tratamiento9" type="text" class="form-control" id="tratamiento9" placeholder="Tratamiento9"></td>
-                                        <td><input wire:model="tiempo9" type="text" class="form-control" id="tiempo9" placeholder="Tiempo9"></td>
-                                        <td><input wire:model="parentesco9" type="text" class="form-control" id="parentesco9" placeholder="Parentesco9"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Desmayos frecuentes</td>
-                                        <td><input wire:model="antecedente10" type="checkbox" class="form-check" id="antecedente10" placeholder="Antecedente10"></td>
-                                        <td><input wire:model="tratamiento10" type="text" class="form-control" id="tratamiento10" placeholder="Tratamiento10"></td>
-                                        <td><input wire:model="tiempo10" type="text" class="form-control" id="tiempo10" placeholder="Tiempo10"></td>
-                                        <td><input wire:model="parentesco10" type="text" class="form-control" id="parentesco10" placeholder="Parentesco10"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Convulsiones</td>
-                                        <td><input wire:model="antecedente11" type="checkbox" class="form-check" id="antecedente11" placeholder="Antecedente11"></td>
-                                        <td><input wire:model="tratamiento11" type="text" class="form-control" id="tratamiento11" placeholder="Tratamiento11"></td>
-                                        <td><input wire:model="tiempo11" type="text" class="form-control" id="tiempo11" placeholder="Tiempo11"></td>
-                                        <td><input wire:model="parentesco11" type="text" class="form-control" id="parentesco11" placeholder="Parentesco11"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Enf. transmisión sexual<br>
-                                            VIH<input wire:model="vih" type="checkbox" class="form-check" id="vih" placeholder="vih">
-                                            Hepa.<input wire:model="hepatitis" type="checkbox" class="form-check" id="hepatitis" placeholder="hepatitis">
-                                            VPH.<input wire:model="vph" type="checkbox" class="form-check" id="vph" placeholder="vph">
-                                            Otras.<input wire:model="otras_tran" type="checkbox" class="form-check" id="otras_tran" placeholder="otras_tran"></td>
-                                        <td><input wire:model="antecedente12" type="checkbox" class="form-check" id="antecedente12" placeholder="Antecedente12"></td>
-                                        <td><input wire:model="tratamiento12" type="text" class="form-control" id="tratamiento12" placeholder="Tratamiento12"></td>
-                                        <td><input wire:model="tiempo12" type="text" class="form-control" id="tiempo12" placeholder="Tiempo12"></td>
-                                        <td><input wire:model="parentesco12" type="text" class="form-control" id="parentesco12" placeholder="Parentesco12"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Operaciones en el cuerpo</td>
-                                        <td><input wire:model="antecedente13" type="checkbox" class="form-check" id="antecedente13" placeholder="Antecedente13"></td>
-                                        <td><input wire:model="tratamiento13" type="text" class="form-control" id="tratamiento13" placeholder="Tratamiento13"></td>
-                                        <td><input wire:model="tiempo13" type="text" class="form-control" id="tiempo13" placeholder="Tiempo13"></td>
-                                        <td><input wire:model="parentesco13" type="text" class="form-control" id="parentesco13" placeholder="Parentesco13"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Problemas respiratorios<br>
-                                            Covid19<input wire:model="covid" type="checkbox" class="form-check" id="covid" placeholder="covid">
-                                            Influ.<input wire:model="influenza" type="checkbox" class="form-check" id="influenza" placeholder="influenza">
-                                            EPOC<input wire:model="epoc" type="checkbox" class="form-check" id="epoc" placeholder="epoc">
-                                            Asma<input wire:model="asma" type="checkbox" class="form-check" id="asma" placeholder="asma">
-                                            Otra<input wire:model="otras_res" type="checkbox" class="form-check" id="otras_res" placeholder="otras_res"></td>
-                                        <td><input wire:model="antecedente14" type="checkbox" class="form-check" id="antecedente14" placeholder="Antecedente14"></td>
-                                        <td><input wire:model="tratamiento14" type="text" class="form-control" id="tratamiento14" placeholder="Tratamiento14"></td>
-                                        <td><input wire:model="tiempo14" type="text" class="form-control" id="tiempo14" placeholder="Tiempo14"></td>
-                                        <td><input wire:model="parentesco14" type="text" class="form-control" id="parentesco14" placeholder="Parentesco14"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cáncer</td>
-                                        <td><input wire:model="antecedente15" type="checkbox" class="form-check" id="antecedente15" placeholder="Antecedente15"></td>
-                                        <td><input wire:model="tratamiento15" type="text" class="form-control" id="tratamiento15" placeholder="Tratamiento15"></td>
-                                        <td><input wire:model="tiempo15" type="text" class="form-control" id="tiempo15" placeholder="Tiempo15"></td>
-                                        <td><input wire:model="parentesco15" type="text" class="form-control" id="parentesco15" placeholder="Parentesco15"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tatuajes o perforaciones</td>
-                                        <td><input wire:model="antecedente16" type="checkbox" class="form-check" id="antecedente16" placeholder="Antecedente16"></td>
-                                        <td><input wire:model="tratamiento16" type="text" class="form-control" id="tratamiento16" placeholder="Tratamiento16"></td>
-                                        <td><input wire:model="tiempo16" type="text" class="form-control" id="tiempo16" placeholder="Tiempo16"></td>
-                                        <td><input wire:model="parentesco16" type="text" class="form-control" id="parentesco16" placeholder="Parentesco16"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cartilla de evaluación</td>
-                                        <td><input wire:model="antecedente17" type="checkbox" class="form-check" id="antecedente17" placeholder="Antecedente17"></td>
-                                        <td><input wire:model="tratamiento17" type="text" class="form-control" id="tratamiento17" placeholder="Tratamiento17"></td>
-                                        <td><input wire:model="tiempo17" type="text" class="form-control" id="tiempo17" placeholder="Tiempo17"></td>
-                                        <td><input wire:model="parentesco17" type="text" class="form-control" id="parentesco17" placeholder="Parentesco17"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Otra enfermedad</td>
-                                        <td><input wire:model="antecedente18" type="text" class="form-control" id="antecedente18" placeholder="Antecedente18"></td>
-                                        <td><input wire:model="tratamiento18" type="text" class="form-control" id="tratamiento18" placeholder="Tratamiento18"></td>
-                                        <td><input wire:model="tiempo18" type="text" class="form-control" id="tiempo18" placeholder="Tiempo18"></td>
-                                        <td><input wire:model="parentesco18" type="text" class="form-control" id="parentesco18" placeholder="Parentesco18"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">Antecedente</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols2Input">Si/No</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols3Input">Tratamiento</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                      <label class="form-control-label" for="example3cols3Input">Tiempo de evo.</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                      <label class="form-control-label" for="example3cols3Input">Parentesco</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">Alergias</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-check form-check-inline form-check-inline">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="antecedente1" type="radio" class="form-check-input" id="antecedente1" name="antecedente1" value="1">
+
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="antecedente1" type="radio" class="form-check-input" id="antecedente1" name="antecedente1" value="0">
+
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group">
+                                    <input wire:model.defer="tratamiento1" type="text" class="form-control" id="tratamiento1" placeholder="Tratamiento1">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="tiempo1" type="text" class="form-control" id="tiempo1" placeholder="Tiempo1">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="parentesco1" type="text" class="form-control" id="parentesco1" placeholder="Parentesco1">
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">Diabetes Melijtus</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group form-check-inline">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="antecedente2" type="radio" class="form-check-input" id="antecedente2" name="antecedente2" value="1">
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="antecedente2" type="radio" class="form-check-input" id="antecedente2" name="antecedente2" value="0">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group">
+                                    <input wire:model.defer="tratamiento2" type="text" class="form-control" id="tratamiento2" placeholder="Tratamiento2">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="tiempo2" type="text" class="form-control" id="tiempo2" placeholder="Tiempo2">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="parentesco2" type="text" class="form-control" id="parentesco2" placeholder="Parentesco2">
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <div class="form-check form-check-inline">
+                                    <label class="form-control-label" for="example3cols1Input">Enfermedades virales
+                                        <label class="form-check-label" for="">Var.</label>
+                                        <input wire:model.defer="varicela" type="checkbox" class="form-check-input" id="varicela" placeholder="varicela">
+                                        <label class="form-check-label" for="">Sara.</label>
+                                        <input wire:model.defer="sarampion" type="checkbox" class="form-check-input" id="sarampion" placeholder="sarampion">
+                                        <label class="form-check-label" for="">Rub.</label>
+                                        <input wire:model.defer="rubeola" type="checkbox" class="form-check-input" id="rubeola" placeholder="rubeola">
+                                        <label class="form-check-label" for="">Esc.</label>
+                                        <input wire:model.defer="escarlatina" type="checkbox" class="form-check-input" id="escarlatina" placeholder="escarlatina">
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-check form-check-inline">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="antecedente3" type="radio" class="form-check-input" id="antecedente3" name="antecedente3" value="1">
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="antecedente3" type="radio" class="form-check-input" id="antecedente3" name="antecedente3" value="0">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group">
+                                    <input wire:model.defer="tratamiento3" type="text" class="form-control" id="tratamiento3" placeholder="Tratamiento3">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="tiempo3" type="text" class="form-control" id="tiempo3" placeholder="Tiempo3">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="parentesco3" type="text" class="form-control" id="parentesco3" placeholder="Parentesco3">
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">Problemas cardiacos</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group form-check-inline">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="antecedente4" type="radio" class="form-check-input" id="antecedente4" name="antecedente4" value="1">
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="antecedente4" type="radio" class="form-check-input" id="antecedente4" name="antecedente4" value="0">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group">
+                                    <input wire:model.defer="tratamiento4" type="text" class="form-control" id="tratamiento4" placeholder="Tratamiento4">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="tiempo4" type="text" class="form-control" id="tiempo4" placeholder="Tiempo4">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="parentesco4" type="text" class="form-control" id="parentesco4" placeholder="Parentesco4">
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">Artritis reumatoide</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group form-check-inline">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="antecedente5" type="radio" class="form-check-input" id="antecedente5" name="antecedente5" value="1">
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="antecedente5" type="radio" class="form-check-input" id="antecedente5" name="antecedente5" value="0">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group">
+                                    <input wire:model.defer="tratamiento5" type="text" class="form-control" id="tratamiento5" placeholder="Tratamiento5">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="tiempo5" type="text" class="form-control" id="tiempo5" placeholder="Tiempo5">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="parentesco5" type="text" class="form-control" id="parentesco5" placeholder="Parentesco5">
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">Fiebre reumática</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group form-check-inline">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="antecedente6" type="radio" class="form-check-input" id="antecedente6" name="antecedente6" value="1">
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="antecedente6" type="radio" class="form-check-input" id="antecedente6" name="antecedente6" value="0">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group">
+                                    <input wire:model.defer="tratamiento6" type="text" class="form-control" id="tratamiento6" placeholder="Tratamiento6">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="tiempo6" type="text" class="form-control" id="tiempo6" placeholder="Tiempo6">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="parentesco6" type="text" class="form-control" id="parentesco6" placeholder="Parentesco6">
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">Hemorragias</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group form-check-inline">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="antecedente7" type="radio" class="form-check-input" id="antecedente7" name="antecedente7" value="1">
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="antecedente7" type="radio" class="form-check-input" id="antecedente7" name="antecedente7" value="0">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group">
+                                    <input wire:model.defer="tratamiento7" type="text" class="form-control" id="tratamiento7" placeholder="Tratamiento7">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="tiempo7" type="text" class="form-control" id="tiempo7" placeholder="Tiempo7">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="parentesco7" type="text" class="form-control" id="parentesco7" placeholder="Parentesco7">
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">Problemas tiroideos</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group form-check-inline">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="antecedente8" type="radio" class="form-check-input" id="antecedente8" name="antecedente8" value="1">
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="antecedente8" type="radio" class="form-check-input" id="antecedente8" name="antecedente8" value="0">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group">
+                                    <input wire:model.defer="tratamiento8" type="text" class="form-control" id="tratamiento8" placeholder="Tratamiento8">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="tiempo8" type="text" class="form-control" id="tiempo8" placeholder="Tiempo8">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="parentesco8" type="text" class="form-control" id="parentesco8" placeholder="Parentesco8">
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">Presión alta o baja</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group form-check-inline">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="antecedente9" type="radio" class="form-check-input" id="antecedente9" name="antecedente9" value="1">
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="antecedente9" type="radio" class="form-check-input" id="antecedente9" name="antecedente9" value="0">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group">
+                                    <input wire:model.defer="tratamiento9" type="text" class="form-control" id="tratamiento9" placeholder="Tratamiento9">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="tiempo9" type="text" class="form-control" id="tiempo9" placeholder="Tiempo9">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="parentesco9" type="text" class="form-control" id="parentesco9" placeholder="Parentesco9">
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">Desmayos frecuentes</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group form-check-inline">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="antecedente10" type="radio" class="form-check-input" id="antecedente10" name="antecedente10" value="1">
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="antecedente10" type="radio" class="form-check-input" id="antecedente10" name="antecedente10" value="0">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group">
+                                    <input wire:model.defer="tratamiento10" type="text" class="form-control" id="tratamiento10" placeholder="Tratamiento10">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="tiempo10" type="text" class="form-control" id="tiempo10" placeholder="Tiempo10">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="parentesco10" type="text" class="form-control" id="parentesco10" placeholder="Parentesco10">
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">Convulsiones</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group form-check-inline">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="antecedente11" type="radio" class="form-check-input" id="antecedente11" name="antecedente11" value="1">
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="antecedente11" type="radio" class="form-check-input" id="antecedente11" name="antecedente11" value="0">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group">
+                                    <input wire:model.defer="tratamiento11" type="text" class="form-control" id="tratamiento11" placeholder="Tratamiento11">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="tiempo11" type="text" class="form-control" id="tiempo11" placeholder="Tiempo11">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="parentesco11" type="text" class="form-control" id="parentesco11" placeholder="Parentesco11">
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <div class="form-group form-check-inline">
+                                    <label class="form-control-label" for="example3cols1Input">Enf. transmisión sexual
+                                        <label class="form-check-label" for="">VIH</label>
+                                        <input wire:model.defer="vih" type="checkbox" class="form-check-input" id="vih" placeholder="vih">
+                                        <label class="form-check-label" for="">Hepa</label>
+                                        <input wire:model.defer="hepatitis" type="checkbox" class="form-check-input" id="hepatitis" placeholder="hepatitis">
+                                        <label class="form-check-label" for="">VPH</label>
+                                        <input wire:model.defer="vph" type="checkbox" class="form-check-input" id="vph" placeholder="vph">
+                                        <label class="form-check-label" for="">Otras</label>
+                                        <input wire:model.defer="otras_tran" type="checkbox" class="form-check-input" id="otras_tran" placeholder="otras_tran">
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group form-check-inline">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="antecedente12" type="radio" class="form-check-input" id="antecedente12" name="antecedente12" value="1">
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="antecedente12" type="radio" class="form-check-input" id="antecedente12" name="antecedente12" value="0">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group">
+                                    <input wire:model.defer="tratamiento12" type="text" class="form-control" id="tratamiento12" placeholder="Tratamiento12">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="tiempo12" type="text" class="form-control" id="tiempo12" placeholder="Tiempo12">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="parentesco12" type="text" class="form-control" id="parentesco12" placeholder="Parentesco12">
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">Operaciones en el cuerpo</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group form-check-inline">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="antecedente13" type="radio" class="form-check-input" id="antecedente13" name="antecedente13" value="1">
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="antecedente13" type="radio" class="form-check-input" id="antecedente13" name="antecedente13" value="0">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group">
+                                    <input wire:model.defer="tratamiento13" type="text" class="form-control" id="tratamiento13" placeholder="Tratamiento13">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="tiempo13" type="text" class="form-control" id="tiempo13" placeholder="Tiempo13">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="parentesco13" type="text" class="form-control" id="parentesco13" placeholder="Parentesco13">
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <div class="form-group form-check-inline">
+                                    <label class="form-control-label" for="example3cols1Input">Problemas respiratorios
+                                        <label class="form-check-label" for="">Covid19</label>
+                                        <input wire:model.defer="covid" type="checkbox" class="form-check-input" id="covid" placeholder="covid">
+                                        <label class="form-check-label" for="">Influ</label>
+                                        <input wire:model.defer="influenza" type="checkbox" class="form-check-input" id="influenza" placeholder="influenza">
+                                        <label class="form-check-label" for="">EPOC</label>
+                                        <input wire:model.defer="epoc" type="checkbox" class="form-check-input" id="epoc" placeholder="epoc">
+                                        <label class="form-check-label" for="">Asma</label>
+                                        <input wire:model.defer="asma" type="checkbox" class="form-check-input" id="asma" placeholder="asma">
+                                        <label class="form-check-label" for="">Otra</label>
+                                        <input wire:model.defer="otras_res" type="checkbox" class="form-check-input" id="otras_res" placeholder="otras_res">
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group form-check-inline">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="antecedente14" type="radio" class="form-check-input" id="antecedente14" name="antecedente14" value="1">
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="antecedente14" type="radio" class="form-check-input" id="antecedente14" name="antecedente14" value="0">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group">
+                                    <input wire:model.defer="tratamiento14" type="text" class="form-control" id="tratamiento14" placeholder="Tratamiento14">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="tiempo14" type="text" class="form-control" id="tiempo14" placeholder="Tiempo14">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="parentesco14" type="text" class="form-control" id="parentesco14" placeholder="Parentesco14">
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">Cáncer</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group form-check-inline">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="antecedente15" type="radio" class="form-check-input" id="antecedente15" name="antecedente15" value="1">
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="antecedente15" type="radio" class="form-check-input" id="antecedente15" name="antecedente15" value="0">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group">
+                                    <input wire:model.defer="tratamiento15" type="text" class="form-control" id="tratamiento15" placeholder="Tratamiento15">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="tiempo15" type="text" class="form-control" id="tiempo15" placeholder="Tiempo15">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="parentesco15" type="text" class="form-control" id="parentesco15" placeholder="Parentesco15">
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">Tatuajes o perforaciones</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group form-check-inline">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="antecedente16" type="radio" class="form-check-input" id="antecedente16" name="antecedente16" value="1">
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="antecedente16" type="radio" class="form-check-input" id="antecedente16" name="antecedente16" value="0">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group">
+                                    <input wire:model.defer="tratamiento16" type="text" class="form-control" id="tratamiento16" placeholder="Tratamiento16">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="tiempo16" type="text" class="form-control" id="tiempo16" placeholder="Tiempo16">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="parentesco16" type="text" class="form-control" id="parentesco16" placeholder="Parentesco16">
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">Cartilla de evaluación</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group form-check-inline">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="antecedente17" type="radio" class="form-check-input" id="antecedente17" name="antecedente17" value="1">
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="antecedente17" type="radio" class="form-check-input" id="antecedente17" name="antecedente17" value="0">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group">
+                                    <input wire:model.defer="tratamiento17" type="text" class="form-control" id="tratamiento17" placeholder="Tratamiento17">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="tiempo17" type="text" class="form-control" id="tiempo17" placeholder="Tiempo17">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="parentesco17" type="text" class="form-control" id="parentesco17" placeholder="Parentesco17">
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">Otra enfermedad</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group">
+                                      <input wire:model.defer="antecedente18" type="text" class="form-control" id="antecedente18" placeholder="Antecedente18"></div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="form-group">
+                                    <input wire:model.defer="tratamiento18" type="text" class="form-control" id="tratamiento18" placeholder="Tratamiento18">
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="tiempo18" type="text" class="form-control" id="tiempo18" placeholder="Tiempo18">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <div class="form-group">
+                                        <input wire:model.defer="parentesco18" type="text" class="form-control" id="parentesco18" placeholder="Parentesco18">
+                                    </div>
+                                  </div>
+                            </div>
                         </div>
                         {{-- tab datos de Evaluación --}}
 
                         {{-- tab datos de Medicamentos --}}
                         <div class="tab-pane fade" id="medicamentos" role="tabpanel" aria-labelledby="medicamentos-tab">
 
-                            <table class="table table-bordered table-sm">
-                                <thead class="thead">
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>¿Le han aplicado anestesia en boca? <br> ¿Presentó alguna reacción: mareo, taquicardia o alguna otra?</td>
-                                        <td>Si<input wire:model.defer="pregunta1" type="radio" class="form-check" id="pregunta1" value="1"> <br>
-                                            Si<input wire:model.defer="pregunta2" type="radio" class="form-check" id="pregunta2" value="1"></td>
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">¿Le han aplicado anestesia en boca? <br> ¿Presentó alguna reacción: mareo, taquicardia o alguna otra?</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="form-check form-check-inline form-check-inline">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="pregunta1" type="radio" class="form-check-input" id="pregunta1" name="pregunta1" value="1">
 
-                                        <td>No<input wire:model.defer="pregunta1" type="radio" class="form-check" id="pregunta1.1" value="0"> <br>
-                                            No<input wire:model.defer="pregunta2" type="radio" class="form-check" id="pregunta2.1" value="0"></td>
-                                        <td><input wire:model.defer="descripcion1" type="text" class="form-control" id="descripcion1" placeholder="descripcion1"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>¿Cuándo fue la última revisón dental? y ¿para qué fue?</td>
-                                        <td><input wire:model.defer="descripcion2" type="text" class="form-control" id="descripcion2" placeholder="descripcion2"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>¿Presenta alguna molestia o dolor?</td>
-                                        <td>Si<input wire:model.defer="pregunta3" type="radio" class="form-check" id="pregunta3" value="1"></td>
-                                        <td>No<input wire:model.defer="pregunta3" type="radio" class="form-check" id="pregunta3.1" value="0"></td>
-                                        <td><input wire:model.defer="descripcion3" type="text" class="form-control" id="descripcion3" placeholder="descripcion3"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>¿Presenta sensibilidad dental al frío o calor?</td>
-                                        <td>Fri<input wire:model.defer="pregunta4" type="radio" class="form-check" id="pregunta4" value="1"></td>
-                                        <td>Cal<input wire:model.defer="pregunta4" type="radio" class="form-check" id="pregunta4.1" value="0"></td>
-                                        <td><input wire:model.defer="descripcion4" type="text" class="form-control" id="descripcion4" placeholder="descripcion4"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>¿Cuántas veces al día cepilla sus dientes?</td>
-                                        <td>1-2<input wire:model.defer="pregunta5" type="radio" class="form-check" id="pregunta5" value="1"></td>
-                                        <td>3-4<input wire:model.defer="pregunta5" type="radio" class="form-check" id="pregunta5.1" value="0"></td>
-                                        <td><input wire:model.defer="descripcion5" type="text" class="form-control" id="descripcion5" placeholder="descripcion5"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>¿Siente mal aliento, aún cepillándose?</td>
-                                        <td>Si<input wire:model.defer="pregunta6" type="radio" class="form-check" id="pregunta6" value="1"></td>
-                                        <td>No<input wire:model.defer="pregunta6" type="radio" class="form-check" id="pregunta6.1" value="0"></td>
-                                        <td><input wire:model.defer="descripcion6" type="text" class="form-control" id="descripcion6" placeholder="descripcion6"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>¿Presenta sagrado al realizar el cepillo?</td>
-                                        <td>Si<input wire:model.defer="pregunta7" type="radio" class="form-check" id="pregunta7" value="1"></td>
-                                        <td>No<input wire:model.defer="pregunta7" type="radio" class="form-check" id="pregunta7.1" value="0"></td>
-                                        <td><input wire:model.defer="descripcion7" type="text" class="form-control" id="descripcion7" placeholder="descripcion7"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>¿Usa pasta, enjuague, hilo dental?</td>
-                                        <td>P<input wire:model.defer="pregunta8" type="radio" class="form-check" id="pregunta8" value="1"> <br>
-                                            E<input wire:model.defer="pregunta9" type="radio" class="form-check" id="pregunta9" value="1"><br>
-                                            H<input wire:model.defer="pregunta10" type="radio" class="form-check" id="pregunta10" value="1"> <br></td>
-                                        <td><input wire:model.defer="descripcion8" type="text" class="form-control" id="descripcion8" placeholder="descripcion8"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>¿Siente movilidad en algún diente?</td>
-                                        <td>Si<input wire:model.defer="pregunta11" type="radio" class="form-check" id="pregunta11" value="1"></td>
-                                        <td>No<input wire:model.defer="pregunta11" type="radio" class="form-check" id="pregunta11.1" value="0"></td>
-                                        <td><input wire:model.defer="descripcion9" type="text" class="form-control" id="descripcion9" placeholder="descripcion9"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>¿Al dormir rechina o aprieta los dientes: bruxismo?</td>
-                                        <td>Si<input wire:model.defer="pregunta12" type="radio" class="form-check" id="pregunta12" value="1"></td>
-                                        <td>No<input wire:model.defer="pregunta12" type="radio" class="form-check" id="pregunta12.1" value="0"></td>
-                                        <td><input wire:model.defer="descripcion10" type="text" class="form-control" id="descripcion10" placeholder="descripcion10"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Antecedentes dentales</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td><input wire:model.defer="pregunta13" type="text" class="form-control" id="pregunta13" placeholder="pregunta13"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="pregunta1" type="radio" class="form-check-input" id="pregunta1" name="pregunta1" value="0"> <br><br>
 
-                            <label for="">Medicamentos que consume</label>
-                            <input wire:model.defer="medicamentos" type="text" class="form-control" id="medicamentos" placeholder="medicamentos">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="pregunta2" type="radio" class="form-check-input" id="pregunta2" name="pregunta2" value="1">
+
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="pregunta2" type="radio" class="form-check-input" id="pregunta2" name="pregunta2" value="0">
+
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="form-group">
+                                    <input wire:model.defer="descripcion1" type="text" class="form-control" id="descripcion1" placeholder="descripcion1">
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">¿Cuándo fue la última revisón dental? y ¿para qué fue?</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="form-check form-check-inline form-check-inline">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="pregunta3" type="radio" class="form-check-input" id="pregunta3" name="pregunta3" value="1">
+
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="pregunta3" type="radio" class="form-check-input" id="pregunta3" name="pregunta3" value="0">
+
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="form-group">
+                                    <input wire:model.defer="descripcion3" type="text" class="form-control" id="descripcion3" placeholder="descripcion3">
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">¿Presenta sensibilidad dental al frío o calor?</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="form-check form-check-inline form-check-inline">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="pregunta4" type="radio" class="form-check-input" id="pregunta4" name="pregunta4" value="1">
+
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="pregunta4" type="radio" class="form-check-input" id="pregunta4" name="pregunta4" value="0">
+
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="form-group">
+                                    <input wire:model.defer="descripcion4" type="text" class="form-control" id="descripcion4" placeholder="descripcion4">
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">¿Siente mal aliento, aún cepillándose?</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="form-check form-check-inline form-check-inline">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="pregunta6" type="radio" class="form-check-input" id="pregunta6" name="pregunta6" value="1">
+
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="pregunta6" type="radio" class="form-check-input" id="pregunta6" name="pregunta6" value="0">
+
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="form-group">
+                                    <input wire:model.defer="descripcion6" type="text" class="form-control" id="descripcion6" placeholder="descripcion6">
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">¿Presenta sagrado al realizar el cepillo?</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="form-check form-check-inline form-check-inline">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="pregunta7" type="radio" class="form-check-input" id="pregunta7" name="pregunta7" value="1">
+
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="pregunta7" type="radio" class="form-check-input" id="pregunta7" name="pregunta7" value="0">
+
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="form-group">
+                                    <input wire:model.defer="descripcion7" type="text" class="form-control" id="descripcion7" placeholder="descripcion7">
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">¿Usa pasta, enjuague, hilo dental?</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="form-check form-check-inline form-check-inline">
+                                    <label class="form-check-label" for="">P</label>
+                                    <input wire:model.defer="pregunta8" type="radio" class="form-check-input" id="pregunta8" name="pregunta8" value="1">
+                                    <label class="form-check-label" for="">E</label>
+                                    <input wire:model.defer="pregunta9" type="radio" class="form-check-input" id="pregunta9" name="pregunta9" value="1">
+                                    <label class="form-check-label" for="">H</label>
+                                    <input wire:model.defer="pregunta10" type="radio" class="form-check-input" id="pregunta10" name="pregunta10" value="1">
+
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="form-group">
+                                    <input wire:model.defer="descripcion8" type="text" class="form-control" id="descripcion8" placeholder="descripcion8">
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">¿Siente movilidad en algún diente?</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="form-check form-check-inline form-check-inline">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="pregunta11" type="radio" class="form-check-input" id="pregunta11" name="pregunta11" value="1">
+
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="pregunta11" type="radio" class="form-check-input" id="pregunta11" name="pregunta11" value="0">
+
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="form-group">
+                                    <input wire:model.defer="descripcion9" type="text" class="form-control" id="descripcion9" placeholder="descripcion9">
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">¿Al dormir rechina o aprieta los dientes: bruxismo?</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="form-check form-check-inline form-check-inline">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="pregunta12" type="radio" class="form-check-input" id="pregunta12" name="pregunta12" value="1">
+
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="pregunta12" type="radio" class="form-check-input" id="pregunta12" name="pregunta12" value="0">
+
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="form-group">
+                                    <input wire:model.defer="descripcion10" type="text" class="form-control" id="descripcion10" placeholder="descripcion10">
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">Antecedentes dentales</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <input wire:model.defer="pregunta13" type="text" class="form-control" id="pregunta13" placeholder="pregunta13">
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input">Medicamentos que consume</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <input wire:model.defer="medicamentos" type="text" class="form-control" id="medicamentos" placeholder="medicamentos">
+                                  </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </form>
