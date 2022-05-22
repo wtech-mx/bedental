@@ -73,8 +73,7 @@ class ClientController extends Controller
            $client->save();
 
         Session::flash('success', 'Se ha guardado sus datos con exito');
-        return redirect()->route('calendar.index_calendar')
-                        ->with('success','Role created successfully');
+        return redirect()->back()->with('success','Role created successfully');
 
     }
 
