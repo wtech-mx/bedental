@@ -105,7 +105,7 @@
 
                       <div class="form-group col-6 mb-3">
                          <label for="">Selecionar Unidad</label>
-                              <select class="form-control" id="resourceId" name="resourceId">
+                              <select class="form-control" id="resource_id" name="resource_id">
                                    <option value="">Seleccione Unidad</option>
                                    <option value="a">A</option>
                                    <option value="b">B</option>

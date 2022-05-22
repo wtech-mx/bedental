@@ -105,7 +105,7 @@
                   $('#txtHora').val(horario);
                   $('#txtHorafin').val(horario2);
                   $('#id_client').val(info.event.extendedProps.id_client);
-                  $('#resourceId').val(info.event.extendedProps.resourceId);
+                  $('#resource_id').val(info.event.extendedProps.resource_id);
                   $('#id_especialist').val(info.event.extendedProps.id_especialist);
                   $('#title').val(info.event.title);
                   $('#color').val(info.event.backgroundColor);
@@ -171,7 +171,7 @@
                     id:$('#txtID').val(),
                     title:$('#title').val(),
                     id_client:$('#id_client').val(),
-                    resourceId:$('#resourceId').val(),
+                    resource_id:$('#resource_id').val(),
                     id_especialist:$('#id_especialist').val(),
                     descripcion:$('#descripcion').val(),
                     estatus:$('#estatus').val()+estatusDefault,
@@ -192,7 +192,7 @@
                     id:$('#txtID').val(),
                     title:$('#title').val(),
                     id_client:$('#id_client').val(),
-                    resourceId:$('#resourceId').val(),
+                    resource_id:$('#resource_id').val(),
                     id_especialist:$('#id_especialist').val(),
                     descripcion:$('#descripcion').val(),
                     estatus:$('#estatus').val(),
@@ -228,7 +228,7 @@
                   $('#txtID').val("");
                   $('#title').val("");
                   $('#id_client').val("");
-                  $('#resourceId').val("");
+                  $('#resource_id').val("");
                   $('#id_especialist').val("");
                   $('#txtFecha').val("");
                   $('#txtHora').val("");

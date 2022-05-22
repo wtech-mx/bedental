@@ -42,7 +42,7 @@ class AlertasController extends Controller
         $datosEvento->image = $request->image;
         $datosEvento->id_client = $request->id_client;
         $datosEvento->title = $datosEvento->Client->nombre;
-        $datosEvento->resourceId = $request->resourceId;
+        $datosEvento->resource_id = $request->resource_id;
         $datosEvento->id_especialist = $request->id_especialist;
         $datosEvento->descripcion = $request->descripcion;
         $datosEvento->check = $request->check;
