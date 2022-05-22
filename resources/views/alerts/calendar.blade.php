@@ -26,8 +26,9 @@
             var calendar = new FullCalendar.Calendar(calendarEl, {
 
                 height: 'auto',
-                now: '{{$Fecha}}',
-                {{--initialDate: '{{$Fecha}}',--}}
+                timeZone: 'local',
+                {{--now: '{{$Fecha}}',--}}
+                initialDate: '{{$Fecha}}',
                 initialView: 'timeGridWeek',
                 editable: true,
                 dayMaxEvents: 5,
@@ -89,6 +90,8 @@
 
                     horario = (hora+":"+minutos);
 
+                    // ---------
+
                     minutos2=(info.event.end.getMinutes());
                     hora2=(info.event.end.getHours());
 
@@ -96,6 +99,7 @@
                     hora2 = (hora2<10)?"0"+hora2:hora2;
 
                     horario2 = (hora2+":"+minutos2);
+
 
                   $('#txtFecha').val(anio+"-"+mes+"-"+dia);
                   $('#txtHora').val(horario);
@@ -174,8 +178,8 @@
                     check:$('#check').val()+checkDefault,
                     image:$('#image').val()+imageDefault,
                     color:$('#color').val(),
-                    start:$('#txtFecha').val()+"T"+$('#txtHora').val(),
-                    end:$('#txtFecha').val()+"T"+$('#txtHorafin').val(),
+                    start:$('#txtFecha').val()+" "+$('#txtHora').val(),
+                    end:$('#txtFecha').val()+" "+$('#txtHorafin').val(),
                     '_token':$("meta[name='csrf-token']").attr("content"),
                     '_method':method
                 }
@@ -195,8 +199,8 @@
                     check:$('#check').val(),
                     image:$('#image').val(),
                     color:$('#color').val(),
-                    start:$('#txtFecha').val()+"T"+$('#txtHora').val(),
-                    end:$('#txtFecha').val()+"T"+$('#txtHorafin').val(),
+                    start:$('#txtFecha').val()+" "+$('#txtHora').val(),
+                    end:$('#txtFecha').val()+" "+$('#txtHorafin').val(),
                     '_token':$("meta[name='csrf-token']").attr("content"),
                     '_method':method
                 }
@@ -243,7 +247,7 @@
 
 @section('content')
 
-    <div class="calendar" data-toggle="calendar" id="calendar"></div>
+     <div class="calendar" data-toggle="calendar" id="calendar"></div>
     @include('alerts.modal')
 
 @endsection

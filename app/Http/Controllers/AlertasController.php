@@ -37,8 +37,8 @@ class AlertasController extends Controller
     {
 
         $datosEvento = new Alertas;
-        $datosEvento->end = $request->start;
         $datosEvento->start = $request->start;
+        $datosEvento->end = $request->end;
         $datosEvento->image = $request->image;
         $datosEvento->id_client = $request->id_client;
         $datosEvento->title = $datosEvento->Client->nombre;
