@@ -93,6 +93,7 @@
             </div>
           </footer>
         <!-- Footer -->
+        @include('layouts.colores')
 @endauth
     </div>
 

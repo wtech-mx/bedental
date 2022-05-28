@@ -60,11 +60,17 @@
                   dateClick:function (info) {
 
                   limpiarFormulario();
-                  $('#txtFecha').val("");
-                  $('#txtFecha').val(info.dateStr);
                   $("#btnAgregar").prop("disabled",false);
                   $("#btnModificar").prop("disabled",true);
                   $("#btnBorrar").prop("disabled",true);
+
+                    if (info.allDay) {
+                        $('#txtFecha').val(info.dateStr);
+                    } else {
+                        let fechaHora = info.dateStr.split("T");
+                        $('#txtFecha').val(fechaHora[0]);
+                        $('#txtHora').val(fechaHora[1].substring(0, 5));
+                    }
                   $('#exampleModal').modal('toggle');
                 },
 

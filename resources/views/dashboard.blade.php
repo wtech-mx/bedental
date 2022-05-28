@@ -1,7 +1,14 @@
 @extends('layouts.app')
 
 @section('breadcrumb')
+
           <div class="row">
+            <a class="nav-link" type="button" data-toggle="modal" data-target="#coloresModal">
+                <i class="fa fa-paint-brush text-green"></i>
+                <span class="nav-link-text">Colores</span>
+              </a>
+
+
 
             <div class="col-xl-3 col-md-6 col-6">
               <div class="card card-stats">

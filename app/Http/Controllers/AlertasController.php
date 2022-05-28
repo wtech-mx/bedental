@@ -30,7 +30,9 @@ class AlertasController extends Controller
 
         $alert = Alertas::get();
 
-        return view('alerts.calendar', compact('client', 'alert','especialist'));
+        $colores = Colores::find(1);
+
+        return view('alerts.calendar', compact('client', 'alert','especialist', 'colores'));
     }
 
     public function store_calendar(Request $request)

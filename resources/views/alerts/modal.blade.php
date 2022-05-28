@@ -77,12 +77,12 @@
 
                       <div class="form-group col-4">
                           <label for="">Hora Inicio</label>
-                        <input class="form-control" type="time" name="txtHora" id="txtHora">
+                        <input class="form-control" type="time" name="txtHora" id="txtHora" autocomplete="off">
                       </div>
 
                       <div class="form-group col-4">
                           <label for="">Hora Fin</label>
-                        <input class="form-control" type="time" name="txtHorafin" id="txtHorafin">
+                        <input class="form-control" type="time" name="txtHorafin" id="txtHorafin" autocomplete="off">
                       </div>
 
                       <input type="hidden" class="form-control" name="image" id="image">
@@ -133,10 +133,10 @@
                               <option value="#3498DB">Sin confirmar/agendado</option>
                               <option value="#1ABC9C">Confirmado</option>
                               <option value="#27AE60">Recordatorio/tentativo</option>
-                              <option value="#E74C3C">Limpieza</option>
-                              <option value="#7F8C8D">Operatoria</option>
-                              <option value="#E67E22">Ortodoncia</option>
-                              <option value="#34495E">Cirugua/extraccion</option>
+                              <option value="{{$colores->limpieza}}">Limpieza</option>
+                              <option value="{{$colores->operatoria}}">Operatoria</option>
+                              <option value="{{$colores->ortodoncia}}">Ortodoncia</option>
+                              <option value="{{$colores->cirugia_extraccion}}">Cirugua/extraccion</option>
                               <option value="#95A5A6">Atendido/reservado</option>
                               <option value="#F1C40F">Paciente nuevo</option>
                           </select>

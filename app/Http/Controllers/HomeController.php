@@ -7,6 +7,7 @@ use App\Models\Client;
 use App\Models\Especialist;
 use App\Models\User;
 use App\Models\Antecedente;
+use App\Models\Colores;
 use DB;
 
 class HomeController extends Controller
@@ -43,6 +44,8 @@ class HomeController extends Controller
         $client = DB::table('clients')->get();
         $especialist = DB::table('especialists')->get();
 
-        return view('dashboard', compact('count_client','count_especialist','count_users','count_antecedentes','client','especialist'));
+        $colores = Colores::find(1);
+
+        return view('dashboard', compact('count_client','count_especialist','count_users','count_antecedentes','client','especialist', 'colores'));
     }
 }
