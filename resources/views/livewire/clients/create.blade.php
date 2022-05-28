@@ -20,7 +20,7 @@
                                 </li>
 
                                 <li class="nav-item">
-                                <a class="nav-link" id="facturacion-tab" data-toggle="tab" href="#facturacion" role="tab" aria-controls="facturacion" aria-selected="false">Facturacion</a>
+                                <a class="nav-link" id="facturacion-tab" data-toggle="tab" href="#facturacion" role="tab" aria-controls="facturacion" aria-selected="false">Facturación</a>
                                 </li>
 
                                 <li class="nav-item">
@@ -34,46 +34,46 @@
                                 <div class="row mt-3">
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6 ">
                                         <label for="nombre">Nombre</label>
-                                        <input wire:model="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre">@error('nombre') <span class="error text-danger">{{ $message }}</span> @enderror
+                                        <input wire:model.defer="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre">@error('nombre') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6">
                                         <label for="apellido">Apellido</label>
-                                        <input wire:model="apellido" type="text" class="form-control" id="apellido" placeholder="Apellido">@error('apellido') <span class="error text-danger">{{ $message }}</span> @enderror
+                                        <input wire:model.defer="apellido" type="text" class="form-control" id="apellido" placeholder="Apellido">@error('apellido') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
 
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6">
                                         <label for="email">Email</label>
-                                        <input wire:model="email" type="email" class="form-control" id="email" placeholder="Email">@error('email') <span class="error text-danger">{{ $message }}</span> @enderror
+                                        <input wire:model.defer="email" type="email" class="form-control" id="email" placeholder="Email">@error('email') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
 
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6">
                                         <label for="telefono">Telefono</label>
-                                        <input wire:model="telefono" type="number" class="form-control" id="telefono" placeholder="Telefono">@error('telefono') <span class="error text-danger">{{ $message }}</span> @enderror
+                                        <input wire:model.defer="telefono" type="number" class="form-control" id="telefono" placeholder="Telefono">@error('telefono') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
 
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6 ">
                                         <label for="sanguineo">Sanguineo</label>
-                                        <input wire:model="sanguineo" type="text" class="form-control" id="sanguineo" placeholder="sanguineo">@error('sanguineo') <span class="error text-danger">{{ $message }}</span> @enderror
+                                        <input wire:model.defer="sanguineo" type="text" class="form-control" id="sanguineo" placeholder="sanguineo">@error('sanguineo') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
 
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6">
                                         <label for="ocupacion">Ocupación</label>
-                                        <input wire:model="ocupacion" type="text" class="form-control" id="ocupacion" placeholder="ocupación">@error('ocupacion') <span class="error text-danger">{{ $message }}</span> @enderror
+                                        <input wire:model.defer="ocupacion" type="text" class="form-control" id="ocupacion" placeholder="ocupación">@error('ocupacion') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
 
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6">
                                         <label for="edad">Edad</label>
-                                        <input wire:model="edad" type="number" class="form-control" id="edad" placeholder="edad">@error('edad') <span class="error text-danger">{{ $message }}</span> @enderror
+                                        <input wire:model.defer="edad" type="number" class="form-control" id="edad" placeholder="edad">@error('edad') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
 
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6">
                                         <label for="fecha_nacimiento">Fecha de nacimiento</label>
-                                        <input wire:model="fecha_nacimiento" type="date" class="form-control" id="fecha_nacimiento" placeholder="Fecha Nacimiento">@error('fecha_nacimiento') <span class="error text-danger">{{ $message }}</span> @enderror
+                                        <input wire:model.defer="fecha_nacimiento" type="date" class="form-control" id="fecha_nacimiento" placeholder="Fecha Nacimiento">@error('fecha_nacimiento') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
 
                                     <div class="form-group col-xs-12 col-sm-12 col-md-12">
                                         <label for="motivo_consulta">Motivo de consulta</label>
-                                        <textarea wire:model="motivo_consulta" id="fecha_nacimiento" class="form-control"></textarea>
+                                        <textarea wire:model.defer="motivo_consulta" id="fecha_nacimiento" class="form-control"></textarea>
                                     </div>
 
                                 </div>
@@ -93,7 +93,12 @@
 
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6">
                                         <label for="razon_social">Razon social</label>
-                                        <select wire:model.defer="razon_social" class="form-control" id="razon_social">
+                                        <input wire:model.defer="razon_social" type="text" class="form-control" id="razon_social" placeholder="razon_social">@error('razon_social') <span class="error text-danger">{{ $message }}</span> @enderror
+                                    </div>
+
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-12">
+                                        <label for="fiscal">Situación fiscal</label>
+                                        <select wire:model.defer="fiscal" class="form-control" id="fiscal">
                                             <option >Seleciona Razon social</option>
                                             <option value="Fisica">Fisica</option>
                                             <option value="Moral">Moral</option>

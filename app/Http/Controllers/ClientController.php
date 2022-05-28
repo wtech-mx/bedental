@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Antecedente;
 use App\Models\Client;
 use Illuminate\Http\Request;
 use Mediconesystems\LivewireDatatables\Column;
@@ -71,6 +72,10 @@ class ClientController extends Controller
            $client->email = $request->email;
            $client->telefono = $request->telefono;
            $client->save();
+
+           Antecedente::create([
+                'id_client' => $client->id,
+            ]);
 
         Session::flash('success', 'Se ha guardado sus datos con exito');
         return redirect()->back()->with('success','Role created successfully');

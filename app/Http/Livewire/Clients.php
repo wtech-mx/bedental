@@ -13,7 +13,7 @@ class Clients extends Component
     use WithPagination;
 
 	protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $nombre, $apellido, $edad, $sanguineo, $ocupacion, $telefono, $fecha_nacimiento, $motivo_consulta,$email, $domicilio_fiscal, $regimen_fiscal, $rfc, $razon_social, $correo_fiscal, $cfdi, $seguro, $poliza, $empresa,$certificado, $tipo_plan;
+    public $selected_id, $keyWord, $nombre, $apellido, $edad, $sanguineo, $ocupacion, $telefono, $fecha_nacimiento, $motivo_consulta,$email, $domicilio_fiscal, $regimen_fiscal, $fiscal, $rfc, $razon_social, $correo_fiscal, $cfdi, $seguro, $poliza, $empresa,$certificado, $tipo_plan;
     public $updateMode = false;
 
     public function render()
@@ -33,6 +33,7 @@ class Clients extends Component
 						->orWhere('email', 'LIKE', $keyWord)
 						->orWhere('domicilio_fiscal', 'LIKE', $keyWord)
 						->orWhere('regimen_fiscal', 'LIKE', $keyWord)
+                        ->orWhere('fiscal', 'LIKE', $keyWord)
 						->orWhere('rfc', 'LIKE', $keyWord)
 						->orWhere('razon_social', 'LIKE', $keyWord)
 						->orWhere('correo_fiscal', 'LIKE', $keyWord)
@@ -65,6 +66,7 @@ class Clients extends Component
 		$this->email = null;
 		$this->domicilio_fiscal = null;
 		$this->regimen_fiscal = null;
+        $this->fiscal = null;
 		$this->rfc = null;
 		$this->razon_social = null;
 		$this->correo_fiscal = null;
@@ -96,6 +98,7 @@ class Clients extends Component
 			'email' => $this-> email,
 			'domicilio_fiscal' => $this-> domicilio_fiscal,
 			'regimen_fiscal' => $this-> regimen_fiscal,
+            'fiscal' => $this-> fiscal,
 			'rfc' => $this-> rfc,
 			'razon_social' => $this-> razon_social,
 			'correo_fiscal' => $this-> correo_fiscal,
@@ -139,6 +142,7 @@ class Clients extends Component
 		$this->email = $record-> email;
 		$this->domicilio_fiscal = $record-> domicilio_fiscal;
 		$this->regimen_fiscal = $record-> regimen_fiscal;
+        $this->fiscal = $record-> fiscal;
 		$this->rfc = $record-> rfc;
 		$this->razon_social = $record-> razon_social;
 		$this->correo_fiscal = $record-> correo_fiscal;
@@ -173,6 +177,7 @@ class Clients extends Component
 			'email' => $this-> email,
 			'domicilio_fiscal' => $this-> domicilio_fiscal,
 			'regimen_fiscal' => $this-> regimen_fiscal,
+            'fiscal' => $this-> fiscal,
 			'rfc' => $this-> rfc,
 			'razon_social' => $this-> razon_social,
 			'correo_fiscal' => $this-> correo_fiscal,

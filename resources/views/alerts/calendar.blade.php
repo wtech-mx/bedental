@@ -128,8 +128,30 @@
                     let checkArg = arg.event.extendedProps.check;
 
                     if (checkArg == 1){
-                        let imgEvent = '<img width="16px" height="16px" style="margin-left: 10px" src="'+imageArg+'" >';
-                        let titleEvent ='<p> </p>';
+                        let imgEvent = '<i class="fa fa-flask" aria-hidden="true" style="padding: 5px"></i> ';
+                        let titleEvent =  arg.event.title;
+
+                        contenedorEventWrap.classList = "d-flex ml-5";
+                        contenedorEventWrap.innerHTML = imgEvent+titleEvent;
+
+                        arrayOfDomNodes = [contenedorEventWrap ]
+                        return { domNodes: arrayOfDomNodes }
+                    }
+
+                    if (checkArg == 2){
+                        let imgEvent = '<i class="fa fa-check" aria-hidden="true" style="padding: 5px"></i>';
+                        let titleEvent = arg.event.title;
+
+                        contenedorEventWrap.classList = "d-flex ml-5";
+                        contenedorEventWrap.innerHTML = imgEvent+titleEvent;
+
+                        arrayOfDomNodes = [contenedorEventWrap ]
+                        return { domNodes: arrayOfDomNodes }
+                    }
+
+                    if (checkArg == 3){
+                        let imgEvent = '<i class="fa fa-times" aria-hidden="true" style="padding: 5px"></i> ';
+                        let titleEvent = arg.event.title;
 
                         contenedorEventWrap.classList = "d-flex ml-5";
                         contenedorEventWrap.innerHTML = imgEvent+titleEvent;

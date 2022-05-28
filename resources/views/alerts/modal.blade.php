@@ -145,8 +145,9 @@
                       <div class="form-group col-12 mt-3">
                           <label for="">¿Esta tarea ya esta realizada?</label>
                           <select class="form-control" id="check" name="check">
-                              <option value="0">Pendiente</option>
-                              <option value="1">Realizado</option>
+                              <option value="1">Laboratorio </option>
+                              <option value="2">Realizado </option>
+                              <option value="3">Cancelado </option>
                           </select>
                       </div>
 
