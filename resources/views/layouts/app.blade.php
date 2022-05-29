@@ -73,14 +73,17 @@
         </div>
         <!-- Breadgrum -->
 
-        <!-- Page content -->
+        <!-- Page content star-->
 
-        <div class="container-fluid mt--6">
+
+
+        <div class="container-fluid">
           <div class="row">
                @yield('content')
           </div>
         </div>
 
+        <!-- Page content end-->
 
         <!-- Footer -->
         <footer class="footer pt-0">
@@ -93,7 +96,7 @@
             </div>
           </footer>
         <!-- Footer -->
-        @include('layouts.colores')
+
 @endauth
     </div>
 
@@ -146,9 +149,7 @@
   <script src="{{ asset('assets/js/argon.js?v=1.1.0') }}"></script>
   <!-- Demo JS - remove this in your project -->
   <script src="{{ asset('assets/js/demo.min.js') }}"></script>
-
-
-
+    @include('layouts.colores')
 </body>
 
 </html>

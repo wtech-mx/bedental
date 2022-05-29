@@ -33,7 +33,11 @@
                 editable: true,
                 dayMaxEvents: 5,
                 aspectRatio: 1.8,
-                scrollTime: '00:00',
+                themeSystem: 'bootstrap',
+                scrollTime:  "09:00:00",
+                slotMinTime: "09:00:00",
+                slotMaxTime: "21:00:00",
+                hiddenDays: [ 0 ],
 
               headerToolbar: {
                 left: 'today prev,next',
@@ -274,8 +278,6 @@
     @endsection
 
 @section('content')
-
-     <div class="calendar" data-toggle="calendar" id="calendar"></div>
+    <div class="calendar" data-toggle="calendar" id="calendar"></div>
     @include('alerts.modal')
-
 @endsection

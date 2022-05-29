@@ -3,12 +3,6 @@
 @section('breadcrumb')
 
           <div class="row">
-            <a class="nav-link" type="button" data-toggle="modal" data-target="#coloresModal">
-                <i class="fa fa-paint-brush text-green"></i>
-                <span class="nav-link-text">Colores</span>
-              </a>
-
-
 
             <div class="col-xl-3 col-md-6 col-6">
               <div class="card card-stats">
@@ -97,6 +91,32 @@
                 </a>
               </div>
             </div>
+
+            <div class="col-12">
+                <div class="d-flex flex-row-reverse">
+
+                  <div class="card card-stats">
+                    <!-- Card body -->
+                     <a class="nav-link" type="button" data-toggle="modal" data-target="#coloresModal">
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col">
+                              <h5 class="card-title text-uppercase text-muted mb-0">Colores</h5>
+                              <span class="h2 font-weight-bold mb-0"></span>
+                            </div>
+                            <div class="col-auto">
+                              <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
+                                <i class="fa fa-paint-brush text-white"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </a>
+                  </div>
+
+                </div>
+            </div>
+
           </div>
 @endsection
 
@@ -108,25 +128,8 @@
 </style>
 
 @section('content')
-
-    <div class="container-fluid mt--6">
-      <div class="row">
-        <div class="col">
-          <!-- Fullcalendar -->
-          <div class="card card-calendar">
-            <!-- Card header -->
-            <div class="card-header">
-              <!-- Title -->
-              <h5 class="h3 mb-0">Calendassssssr</h5>
-            </div>
-            <!-- Card body -->
-            <div class="card-body p-0">
-              @include('alerts.calendar')
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-
+    {{--calednarioi--}}
+    @include('alerts.calendar');
+    {{--calednarioi--}}
 @endsection
+

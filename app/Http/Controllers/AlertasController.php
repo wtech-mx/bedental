@@ -9,6 +9,7 @@ use App\Models\Alertas;
 use Illuminate\Http\Request;
 use DB;
 use Session;
+use App\Models\Colores;
 use Carbon\Carbon;
 
 
