@@ -9,6 +9,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\PermisosController;
 use App\Http\Controllers\Livewire\Calendar;
 use App\Http\Controllers\AlertasController;
+use App\Http\Controllers\ColoresController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +38,6 @@ Route::group(['middleware' => ['auth']], function() {
 });
 
 //Route Hooks - Do not delete//
-	Route::view('colores', 'livewire.colores.index')->middleware('auth');
 Route::view('antecedentes', 'livewire.antecedentes.index')->name('antecedentes.index')->middleware('auth');
 Route::view('clients', 'livewire.clients.index')->name('clients.index')->middleware('auth');
 Route::view('especialists', 'livewire.especialists.index')->name('especialists.index')->middleware('auth');
