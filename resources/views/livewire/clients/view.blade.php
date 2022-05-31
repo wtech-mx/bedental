@@ -62,7 +62,7 @@
 									Actions
 									</button>
 									<div class="dropdown-menu dropdown-menu-right">
-                                        <a href="/antecedentes" class="dropdown-item" wire:click="edit({{$row->id}})">
+                                        <a href="{{ route('antecedentes.index') }}" class="dropdown-item" wire:click="edit({{$row->id}})">
                                             <i class="fa fa-solid fa-user"></i> Antecedentes
                                         </a>
                                         <a data-toggle="modal" data-target="#updateModal" class="dropdown-item" wire:click="edit({{$row->id}})">
