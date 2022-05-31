@@ -128,9 +128,9 @@
                                     </div>
 
                                     <div class="form-group col-xs-12 col-sm-12 col-md-12">
-                                        <label for="cfdi">GFDI</label>
+                                        <label for="cfdi">CFDI</label>
                                         <select wire:model.defer="regimen_fiscal" class="form-control" id="regimen_fiscal">
-                                            <option >Seleciona el uso del GFDI (Fisica y Moral) (Fisica y Moral)</option>
+                                            <option >Seleciona el uso del CFDI (Fisica y Moral) (Fisica y Moral)</option>
                                             <option value="G01">G01 Adquisicion de mercancias (Fisica y Moral)</option>
                                             <option value="G02">G02 Devoluciones descuentos o bonificaciones (Fisica y Moral)</option>
                                             <option value="G03">G03 Gastoos en general (Fisica y Moral)</option>
@@ -165,7 +165,7 @@
 
                                         <p class="text-center">
                                             <a href="#collapsExample" class="btn btn-primary" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapsExample">
-                                                Ver uso de GFDI
+                                                Ver uso de CFDI
                                             </a>
                                         </p>
 
