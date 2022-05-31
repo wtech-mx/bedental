@@ -90,19 +90,18 @@
                                         <input wire:model.defer="rfc" type="text" class="form-control" id="rfc" placeholder="RFC">@error('rfc') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
 
-
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6">
-                                        <label for="razon_social">Razon social</label>
-                                        <input wire:model.defer="razon_social" type="text" class="form-control" id="razon_social" placeholder="razon_social">@error('razon_social') <span class="error text-danger">{{ $message }}</span> @enderror
-                                    </div>
-
-                                    <div class="form-group col-xs-12 col-sm-12 col-md-12">
                                         <label for="fiscal">Situación fiscal</label>
                                         <select wire:model.defer="fiscal" class="form-control" id="fiscal">
                                             <option >Seleciona Razon social</option>
                                             <option value="Fisica">Fisica</option>
                                             <option value="Moral">Moral</option>
                                         </select>
+                                    </div>
+
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-12">
+                                        <label for="razon_social">Razon social</label>
+                                        <input wire:model.defer="razon_social" type="text" class="form-control" id="razon_social" placeholder="razon_social">@error('razon_social') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>
 
                                     <div class="form-group col-xs-12 col-sm-12 col-md-12">
