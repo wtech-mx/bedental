@@ -95,7 +95,7 @@
 
                       <div class="form-group col-6 mb-3">
                          <label for="">Selecionar Paciente</label>
-                              <select class="form-control" id="id_client" name="id_client">
+                              <select class="form-control mibuscador_paciente" id="id_client" name="id_client">
                                    <option value="">Seleccione Paciente</option>
                                        @foreach($client as $item)
                                           <option value="{{$item->id}}">{{$item->nombre}}</option>
@@ -114,7 +114,7 @@
 
                       <div class="form-group col-12 mb-3">
                          <label for="">Selecionar Doctor</label>
-                              <select class="form-control" id="id_especialist" name="id_especialist">
+                              <select class="form-control mibuscador_doctors" id="id_especialist" name="id_especialist">
                                    <option value="">Seleccione Doctor</option>
                                        @foreach($especialist as $item)
                                           <option value="{{$item->id}}">{{$item->nombre}}</option>
@@ -173,4 +173,6 @@
             </div>
           </div>
         </div>
+
+
 

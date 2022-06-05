@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('template_title')
-    Create Rol
+@section('title')
+    Crear Rol
 @endsection
 
 @section('content')

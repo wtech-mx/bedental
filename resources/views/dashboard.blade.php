@@ -1,3 +1,5 @@
+@section('title', __('Dashboard'))
+
 @extends('layouts.app')
 
 @section('breadcrumb')

@@ -23,6 +23,11 @@
           <ul class="navbar-nav">
 
             <li class="nav-item">
+                <a class="nav-link {{ (Request::is('dashboard*') ? 'active' : '') }}" href="{{ route('dashboard') }}">
+                    <i class="ni ni-shop text-blue"></i>
+                    <span class="nav-link-text">Dasboard</span>
+                </a>
+
                 <a class="nav-link {{ (Request::is('clients*') ? 'active' : '') }}" href="{{ route('clients.index') }}">
                     <i class="ni ni-circle-08 text-blue"></i>
                     <span class="nav-link-text">Pacientes</span>

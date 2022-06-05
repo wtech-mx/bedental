@@ -41,8 +41,9 @@ class HomeController extends Controller
        $antecedentes = Antecedente::all();
        $count_antecedentes = count($antecedentes);
 
-        $client = DB::table('clients')->get();
-        $especialist = DB::table('especialists')->get();
+        $client = Client::orderBy('nombre', 'asc')->get();
+
+        $especialist = Especialist::orderBy('nombre', 'asc')->get();
 
         $colores = Colores::find(1);
 

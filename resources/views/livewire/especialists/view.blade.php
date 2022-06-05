@@ -13,9 +13,6 @@
 						@if (session()->has('message'))
 						<div wire:poll.4s class="btn btn-sm btn-success" style="margin-top:0px; margin-bottom:0px;"> {{ session('message') }} </div>
 						@endif
-						<div>
-							<input wire:model='keyWord' type="text" class="form-control" name="search" id="search" placeholder="Search Especialists">
-						</div>
 						<div class="btn btn-sm btn-info" data-toggle="modal" data-target="#createDataModal">
 						<i class="fa fa-plus"></i>  Agregar Doctor
 						</div>
@@ -46,15 +43,15 @@
 								<td>{{ $row->telefono }}</td>
 								<td>{{ $row->email }}</td>
 								<td width="90">
-								<div class="btn-group">
-									<button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Actions
-									</button>
-									<div class="dropdown-menu dropdown-menu-right">
-									<a data-toggle="modal" data-target="#updateModal" class="dropdown-item" wire:click="edit({{$row->id}})"><i class="fa fa-edit"></i> Edit </a>
-									<a class="dropdown-item" onclick="confirm('Confirm Delete Especialist id {{$row->id}}? \nDeleted Especialists cannot be recovered!')||event.stopImmediatePropagation()" wire:click="destroy({{$row->id}})"><i class="fa fa-trash"></i> Delete </a>
-									</div>
-								</div>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Actions
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                        <a data-toggle="modal" data-target="#updateModal" class="dropdown-item" wire:click="edit({{$row->id}})"><i class="fa fa-edit"></i> Edit </a>
+                                        <a class="dropdown-item" onclick="confirm('Confirm Delete Especialist id {{$row->id}}? \nDeleted Especialists cannot be recovered!')||event.stopImmediatePropagation()" wire:click="destroy({{$row->id}})"><i class="fa fa-trash"></i> Delete </a>
+                                        </div>
+                                    </div>
 								</td>
                                 @include('livewire.especialists.create')
                                 @include('livewire.especialists.update')
