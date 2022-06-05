@@ -4,19 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
-
-  <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
-  <meta name="author" content="Creative Tim">
+  <meta name="author" content="Power By WebTech">
   <title>
-       @yield('template_title') - Bedental System
+       @yield('title') - Bedental System
   </title>
-  {{-- <title>@hasSection('title') @yield('title') | @endif {{ config('app.name', 'Laravel') }}</title> --}}
-
   <!-- Favicon -->
-
   <link rel="icon" href="{{ asset('assets/img/brand/favicon.png') }}" type="image/png">
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
@@ -27,12 +21,11 @@
   <!-- Argon CSS -->
   <link rel="stylesheet" href="{{ asset('assets/css/argon.css?v=1.1.0') }}" type="text/css">
   <link rel="stylesheet" href="{{ asset('css/custom.css') }}" type="text/css">
-
+  <link rel="stylesheet" href="{{ asset('css/select2.css') }}" type="text/css">
     <!-- sweetalert2 JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     <!-- Datatable -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.1/css/bootstrap.min.css">
     <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 
     @yield('fullcalendar')
@@ -111,27 +104,17 @@
         });
     </script>
 
-   <script>
-    $(document).ready(function () {
-        $.noConflict();
-        var table = $('#table_id').DataTable({
-            "ordering": false,
-            autoFill: true,
-            responsive: true,
-            fixedHeader: true,
-            language: {
-                url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json'
-            }
-        });
-    });
-    </script>
   <!-- Argon Scripts -->
   <!-- Core -->
+
   <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/js-cookie/js.cookie.js') }}"></script>
   <script src="{{ asset('assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js') }}"></script>
+ <!-- SELECT 2 -->
+  <script src="{{ asset('js/select2.js') }}"></script>
+
   <!-- Optional JS -->
   <script src="{{ asset('assets/vendor/chart.js/dist/Chart.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/chart.js/dist/Chart.extension.js') }}"></script>
@@ -147,9 +130,16 @@
 
   <!-- Argon JS -->
   <script src="{{ asset('assets/js/argon.js?v=1.1.0') }}"></script>
-  <!-- Demo JS - remove this in your project -->
-  <script src="{{ asset('assets/js/demo.min.js') }}"></script>
+
     @include('layouts.colores')
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+                $('.mibuscador_paciente').select2();
+                $('.mibuscador_doctors').select2();
+        });
+    </script>
+
 </body>
 
 </html>

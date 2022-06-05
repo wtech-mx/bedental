@@ -138,10 +138,8 @@
                     if (checkArg == 1){
                         let imgEvent = '<i class="fa fa-flask" aria-hidden="true" style="padding: 5px"></i> ';
                         let titleEvent =  arg.event.title;
-
                         contenedorEventWrap.classList = "d-flex ml-5";
                         contenedorEventWrap.innerHTML = imgEvent+titleEvent;
-
                         arrayOfDomNodes = [contenedorEventWrap ]
                         return { domNodes: arrayOfDomNodes }
                     }
@@ -149,10 +147,8 @@
                     if (checkArg == 2){
                         let imgEvent = '<i class="fa fa-check" aria-hidden="true" style="padding: 5px"></i>';
                         let titleEvent = arg.event.title;
-
                         contenedorEventWrap.classList = "d-flex ml-5";
                         contenedorEventWrap.innerHTML = imgEvent+titleEvent;
-
                         arrayOfDomNodes = [contenedorEventWrap ]
                         return { domNodes: arrayOfDomNodes }
                     }
@@ -160,10 +156,32 @@
                     if (checkArg == 3){
                         let imgEvent = '<i class="fa fa-times" aria-hidden="true" style="padding: 5px"></i> ';
                         let titleEvent = arg.event.title;
-
                         contenedorEventWrap.classList = "d-flex ml-5";
                         contenedorEventWrap.innerHTML = imgEvent+titleEvent;
-
+                        arrayOfDomNodes = [contenedorEventWrap ]
+                        return { domNodes: arrayOfDomNodes }
+                    }
+                    if (checkArg == 4){
+                        let imgEvent = '<i class="fa fa-address-book" aria-hidden="true" style="padding: 5px"></i>';
+                        let titleEvent = arg.event.title;
+                        contenedorEventWrap.classList = "d-flex ml-5";
+                        contenedorEventWrap.innerHTML = imgEvent+titleEvent;
+                        arrayOfDomNodes = [contenedorEventWrap ]
+                        return { domNodes: arrayOfDomNodes }
+                    }
+                    if (checkArg == 5){
+                        let imgEvent = '<i class="fa fa-calendar" aria-hidden="true" style="padding: 5px"></i>';
+                        let titleEvent = arg.event.title;
+                        contenedorEventWrap.classList = "d-flex ml-5";
+                        contenedorEventWrap.innerHTML = imgEvent+titleEvent;
+                        arrayOfDomNodes = [contenedorEventWrap ]
+                        return { domNodes: arrayOfDomNodes }
+                    }
+                    if (checkArg == 6){
+                        let imgEvent = '<i class="fa fa-clock" aria-hidden="true" style="padding: 5px"></i>';
+                        let titleEvent = arg.event.title;
+                        contenedorEventWrap.classList = "d-flex ml-5";
+                        contenedorEventWrap.innerHTML = imgEvent+titleEvent;
                         arrayOfDomNodes = [contenedorEventWrap ]
                         return { domNodes: arrayOfDomNodes }
                     }

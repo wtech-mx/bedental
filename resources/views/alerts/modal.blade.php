@@ -72,17 +72,17 @@
 
                       <div class="form-group col-4">
                           <label for="">Fecha</label>
-                        <input class="form-control" type="date" name="txtFecha" id="txtFecha">
+                        <input class="form-control" type="date" name="txtFecha" id="txtFecha" required>
                       </div>
 
                       <div class="form-group col-4">
                           <label for="">Hora Inicio</label>
-                        <input class="form-control" type="time" name="txtHora" id="txtHora" autocomplete="off">
+                        <input class="form-control" type="time" name="txtHora" id="txtHora" autocomplete="off" required>
                       </div>
 
                       <div class="form-group col-4">
                           <label for="">Hora Fin</label>
-                        <input class="form-control" type="time" name="txtHorafin" id="txtHorafin" autocomplete="off">
+                        <input class="form-control" type="time" name="txtHorafin" id="txtHorafin" autocomplete="off" required>
                       </div>
 
                       <input type="hidden" class="form-control" name="image" id="image">
@@ -95,7 +95,7 @@
 
                       <div class="form-group col-6 mb-3">
                          <label for="">Selecionar Paciente</label>
-                              <select class="form-control mibuscador_paciente" id="id_client" name="id_client">
+                              <select class="form-control mibuscador_paciente" id="id_client" name="id_client" required>
                                    <option value="">Seleccione Paciente</option>
                                        @foreach($client as $item)
                                           <option value="{{$item->id}}">{{$item->nombre}}</option>
@@ -105,7 +105,7 @@
 
                       <div class="form-group col-6 mb-3">
                          <label for="">Selecionar Unidad</label>
-                              <select class="form-control" id="resource_id" name="resource_id">
+                              <select class="form-control" id="resource_id" name="resource_id" required>
                                    <option value="">Seleccione Unidad</option>
                                    <option value="a">A</option>
                                    <option value="b">B</option>
@@ -114,7 +114,7 @@
 
                       <div class="form-group col-12 mb-3">
                          <label for="">Selecionar Doctor</label>
-                              <select class="form-control mibuscador_doctors" id="id_especialist" name="id_especialist">
+                              <select class="form-control mibuscador_doctors" id="id_especialist" name="id_especialist" required>
                                    <option value="">Seleccione Doctor</option>
                                        @foreach($especialist as $item)
                                           <option value="{{$item->id}}">{{$item->nombre}}</option>
@@ -125,29 +125,26 @@
                       <label for="">Descripcion</label>
                       <textarea class="form-control" name="descripcion" id="descripcion" cols="30" rows="2"></textarea>
 
-                      <div class="form-group col-12 mt-3">
-                          <label for="">Selecciona el estatus de la cita</label>
-                          <select class="form-control" id="color" name="color">
+                      <div class="form-group col-6 mt-3">
+                          <label for="">Selecciona el servicio</label>
+                          <select class="form-control" id="color" name="color" required>
                               <option value="">Selecionar estatus</option>
-                              <option value="#8E44AD">No asistieron cancelado</option>
-                              <option value="#3498DB">Sin confirmar/agendado</option>
-                              <option value="#1ABC9C">Confirmado</option>
-                              <option value="#27AE60">Recordatorio/tentativo</option>
                               <option value="{{$colores->limpieza}}">Limpieza</option>
                               <option value="{{$colores->operatoria}}">Operatoria</option>
                               <option value="{{$colores->ortodoncia}}">Ortodoncia</option>
                               <option value="{{$colores->cirugia_extraccion}}">Cirugua/extraccion</option>
-                              <option value="#95A5A6">Atendido/reservado</option>
-                              <option value="#F1C40F">Paciente nuevo</option>
                           </select>
                       </div>
 
-                      <div class="form-group col-12 mt-3">
-                          <label for="">¿Esta tarea ya esta realizada?</label>
+                      <div class="form-group col-6 mt-3">
+                          <label for="">¿Estatus de la cita?</label>
                           <select class="form-control" id="check" name="check">
                               <option value="1">Laboratorio </option>
-                              <option value="2">Atentido </option>
-                              <option value="3">No asistio </option>
+                              <option value="2">Atendido / reservado </option>
+                              <option value="3">No asistio / cancelado</option>
+                              <option value="4">Sin confirmar agendado</option>
+                              <option value="5">Confirmado</option>
+                              <option value="6">Recordatorio / tentativo</option>
                           </select>
                       </div>
 
