@@ -13,11 +13,15 @@
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
 
                         <li class="nav-item">
-                        <a class="nav-link active" id="evaluacion-tab" data-toggle="tab" href="#evaluacion" role="tab" aria-controls="evaluacion" aria-selected="true">Ant. Patologicos y no Patologicos</a>
+                            <a class="nav-link active" id="evaluacion-tab" data-toggle="tab" href="#evaluacion" role="tab" aria-controls="evaluacion" aria-selected="true">Ant. Patologicos y no Patologicos</a>
                         </li>
 
                         <li class="nav-item">
-                        <a class="nav-link" id="medicamentos-tab" data-toggle="tab" href="#medicamentos" role="tab" aria-controls="medicamentos" aria-selected="false">Evaluación Oral</a>
+                            <a class="nav-link" id="medicamentos-tab" data-toggle="tab" href="#medicamentos" role="tab" aria-controls="medicamentos" aria-selected="false">Evaluación Oral</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" id="radiografico-tab" data-toggle="tab" href="#radiografico" role="tab" aria-controls="radiografico" aria-selected="false">Historial radiografíco</a>
                         </li>
                     </ul>
                 </div>
@@ -121,15 +125,15 @@
                             <div class="row">
                                 <div class="col-md-4">
                                   <div class="form-check form-check-inline">
-                                    <label class="form-control-label" for="example3cols1Input">Enfermedades virales
+                                    <label class="form-control-label" for="example3cols1Input">Enfermedades virales <br>
                                         <label class="form-check-label" for="">Var.</label>
-                                        <input wire:model.defer="varicela" type="checkbox" class="form-check-input" id="varicela" placeholder="varicela">
+                                        <input wire:model.defer="varicela" type="checkbox" class="form-check-input" id="varicela" placeholder="varicela"><br>
                                         <label class="form-check-label" for="">Sara.</label>
-                                        <input wire:model.defer="sarampion" type="checkbox" class="form-check-input" id="sarampion" placeholder="sarampion">
+                                        <input wire:model.defer="sarampion" type="checkbox" class="form-check-input" id="sarampion" placeholder="sarampion"><br>
                                         <label class="form-check-label" for="">Rub.</label>
-                                        <input wire:model.defer="rubeola" type="checkbox" class="form-check-input" id="rubeola" placeholder="rubeola">
+                                        <input wire:model.defer="rubeola" type="checkbox" class="form-check-input" id="rubeola" placeholder="rubeola"><br>
                                         <label class="form-check-label" for="">Esc.</label>
-                                        <input wire:model.defer="escarlatina" type="checkbox" class="form-check-input" id="escarlatina" placeholder="escarlatina">
+                                        <input wire:model.defer="escarlatina" type="checkbox" class="form-check-input" id="escarlatina" placeholder="escarlatina"><br>
                                     </label>
                                   </div>
                                 </div>
@@ -409,15 +413,19 @@
                             <div class="row">
                                 <div class="col-md-4">
                                   <div class="form-group form-check-inline">
-                                    <label class="form-control-label" for="example3cols1Input">Enf. transmisión sexual
+                                    <label class="form-control-label" for="example3cols1Input">Enf. transmisión sexual <br>
                                         <label class="form-check-label" for="">VIH</label>
                                         <input wire:model.defer="vih" type="checkbox" class="form-check-input" id="vih" placeholder="vih">
+                                        <br>
                                         <label class="form-check-label" for="">Hepa</label>
                                         <input wire:model.defer="hepatitis" type="checkbox" class="form-check-input" id="hepatitis" placeholder="hepatitis">
+                                        <br>
                                         <label class="form-check-label" for="">VPH</label>
                                         <input wire:model.defer="vph" type="checkbox" class="form-check-input" id="vph" placeholder="vph">
+                                        <br>
                                         <label class="form-check-label" for="">Otras</label>
                                         <input wire:model.defer="otras_tran" type="checkbox" class="form-check-input" id="otras_tran" placeholder="otras_tran">
+                                        <br>
                                     </label>
                                   </div>
                                 </div>
@@ -480,17 +488,17 @@
                             <div class="row">
                                 <div class="col-md-4">
                                   <div class="form-group form-check-inline">
-                                    <label class="form-control-label" for="example3cols1Input">Problemas respiratorios
+                                    <label class="form-control-label" for="example3cols1Input">Problemas respiratorios <br>
                                         <label class="form-check-label" for="">Covid19</label>
-                                        <input wire:model.defer="covid" type="checkbox" class="form-check-input" id="covid" placeholder="covid">
+                                        <input wire:model.defer="covid" type="checkbox" class="form-check-input" id="covid" placeholder="covid"> <br>
                                         <label class="form-check-label" for="">Influ</label>
-                                        <input wire:model.defer="influenza" type="checkbox" class="form-check-input" id="influenza" placeholder="influenza">
+                                        <input wire:model.defer="influenza" type="checkbox" class="form-check-input" id="influenza" placeholder="influenza"> <br>
                                         <label class="form-check-label" for="">EPOC</label>
-                                        <input wire:model.defer="epoc" type="checkbox" class="form-check-input" id="epoc" placeholder="epoc">
+                                        <input wire:model.defer="epoc" type="checkbox" class="form-check-input" id="epoc" placeholder="epoc"> <br>
                                         <label class="form-check-label" for="">Asma</label>
-                                        <input wire:model.defer="asma" type="checkbox" class="form-check-input" id="asma" placeholder="asma">
+                                        <input wire:model.defer="asma" type="checkbox" class="form-check-input" id="asma" placeholder="asma"> <br>
                                         <label class="form-check-label" for="">Otra</label>
-                                        <input wire:model.defer="otras_res" type="checkbox" class="form-check-input" id="otras_res" placeholder="otras_res">
+                                        <input wire:model.defer="otras_res" type="checkbox" class="form-check-input" id="otras_res" placeholder="otras_res"> <br>
                                     </label>
                                   </div>
                                 </div>
@@ -647,7 +655,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                   <div class="form-group">
-                                    <label class="form-control-label" for="example3cols1Input">¿Le han aplicado anestesia en boca? <br> ¿Presentó alguna reacción: mareo, taquicardia o alguna otra?</label>
+                                    <label class="form-control-label" for="example3cols1Input">¿Le han aplicado anestesia en boca?</label>
                                   </div>
                                 </div>
                                 <div class="col-md-3">
@@ -656,19 +664,31 @@
                                     <input wire:model.defer="pregunta1" type="radio" class="form-check-input" id="pregunta1" name="pregunta1" value="1">
 
                                     <label class="form-check-label" for="">No</label>
-                                    <input wire:model.defer="pregunta1" type="radio" class="form-check-input" id="pregunta1" name="pregunta1" value="0"> <br><br>
-
-                                    <label class="form-check-label" for="">Si</label>
-                                    <input wire:model.defer="pregunta2" type="radio" class="form-check-input" id="pregunta2" name="pregunta2" value="1">
-
-                                    <label class="form-check-label" for="">No</label>
-                                    <input wire:model.defer="pregunta2" type="radio" class="form-check-input" id="pregunta2" name="pregunta2" value="0">
+                                    <input wire:model.defer="pregunta1" type="radio" class="form-check-input" id="pregunta1" name="pregunta1" value="0">
 
                                   </div>
                                 </div>
                                 <div class="col-md-3">
                                   <div class="form-group">
                                     <input wire:model.defer="descripcion1" type="text" class="form-control" id="descripcion1" placeholder="descripcion1">
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="example3cols1Input"><br> ¿Presentó alguna reacción: mareo, taquicardia o alguna otra?</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="form-check form-check-inline form-check-inline">
+                                    <label class="form-check-label" for="">Si</label>
+                                    <input wire:model.defer="pregunta2" type="radio" class="form-check-input" id="pregunta2" name="pregunta2" value="1">
+
+                                    <label class="form-check-label" for="">No</label>
+                                    <input wire:model.defer="pregunta2" type="radio" class="form-check-input" id="pregunta2" name="pregunta2" value="0">
+
                                   </div>
                                 </div>
                             </div>
@@ -860,6 +880,11 @@
                                   </div>
                                 </div>
                             </div>
+
+                        </div>
+
+                        {{-- Historial radiografíco --}}
+                        <div class="tab-pane fade" id="radiografico" role="tabpanel" aria-labelledby="radiografico-tab">
 
                         </div>
                     </div>

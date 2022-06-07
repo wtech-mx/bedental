@@ -10,7 +10,7 @@ use App\Http\Controllers\PermisosController;
 use App\Http\Controllers\Livewire\Calendar;
 use App\Http\Controllers\AlertasController;
 use App\Http\Controllers\ColoresController;
-
+use App\Http\Controllers\RadiografiaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,3 +59,5 @@ Route::patch('calendar/destroy/{id}', [AlertasController::class, 'destroy_calend
 Route::patch('calendar/update/{id}', [AlertasController::class, 'update_calendar'])->name('calendar.update_calendar');
 
 Route::post('create_pacient', [ClientController::class, 'store_client'])->name('client.calendar_store');
+
+Route::post('radiografia/{id}', [RadiografiaController::class, 'upload'])->name('radiografia.upload');

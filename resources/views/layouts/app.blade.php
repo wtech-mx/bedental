@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
+
   <meta name="author" content="Power By WebTech">
   <title>
        @yield('title') - Bedental System
@@ -28,6 +29,8 @@
     <!-- Datatable -->
     <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+    @yield('css')
+    @yield('js_dropzone')
     @yield('fullcalendar')
 
   @livewireStyles
@@ -131,7 +134,7 @@
   <!-- Argon JS -->
   <script src="{{ asset('assets/js/argon.js?v=1.1.0') }}"></script>
 
-    @include('layouts.colores')
+{{--    @include('layouts.colores')--}}
 
     <script type="text/javascript">
         $(document).ready(function(){
@@ -139,6 +142,8 @@
                 $('.mibuscador_doctors').select2();
         });
     </script>
+
+    @yield('funcion_dropzone')
 
 </body>
 

@@ -1,4 +1,11 @@
 @section('title', __('Antecedentes'))
+@section('css')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/min/dropzone.min.css">
+@endsection
+@section('js_dropzone')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/min/dropzone.min.js"></script>
+@endsection
+
 <div class="container-fluid">
 	<div class="row justify-content-center">
 		<div class="col-md-12">
@@ -44,13 +51,15 @@
                                             Acciones
                                             </button>
                                             <div class="dropdown-menu dropdown-menu-right">
-                                            <a data-toggle="modal" data-target="#updateModalAntecedentes" class="dropdown-item" wire:click="edit({{$row->id}})"><i class="fa fa-edit"></i> Edit </a>
-                                            <a class="dropdown-item" onclick="confirm('Confirm Delete Antecedente id {{$row->id}}? \nDeleted Antecedentes cannot be recovered!')||event.stopImmediatePropagation()" wire:click="destroy({{$row->id}})"><i class="fa fa-trash"></i> Delete </a>
+                                                <a data-toggle="modal" data-target="#updateModalAntecedentes" class="dropdown-item" wire:click="edit({{$row->id}})"><i class="fa fa-edit"></i> Edit </a>
+                                                <a class="dropdown-item" onclick="confirm('Confirm Delete Antecedente id {{$row->id}}? \nDeleted Antecedentes cannot be recovered!')||event.stopImmediatePropagation()" wire:click="destroy({{$row->id}})"><i class="fa fa-trash"></i> Delete </a>
+                                                <a type="button" class="dropdown-item" data-toggle="modal" data-target="#Historial_radiografíco{{$row->id}}"><i class="fa fa-object-group"></i>Historial radiografíco</a>
                                             </div>
                                         </div>
                                     </td>
-                                    @include('livewire.especialists.create')
-                                    @include('livewire.especialists.update')
+                                    @include('livewire.antecedentes.create')
+                                    @include('livewire.antecedentes.update')
+                                    @include('livewire.antecedentes.modal_radiografico')
                                 @endforeach
                             </tbody>
                         </table>
@@ -62,3 +71,12 @@
 		</div>
 	</div>
 </div>
+
+@section('funcion_dropzone')
+    <script src="">
+    Dropzone.options.imageUpload ={
+        maxFilesize:1,
+        acceptedFiles: ".jpeg,.jpg,.png,.gif",
+    };
+    </script>
+@endsection
