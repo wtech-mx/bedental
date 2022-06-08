@@ -8,7 +8,7 @@
 
 <div class="container-fluid">
 	<div class="row justify-content-center">
-		<div class="col-md-12">
+		<div class="col-md-8">
 			<div class="card">
 				<div class="card-header">
 					<div style="display: flex; justify-content: space-between; align-items: center;">
@@ -31,7 +31,6 @@
                         <table class="table table-flush" id="datatable-basic" >
                             <thead class="thead">
                                 <tr>
-                                    <td>#</td>
                                     <th>Paciente</th>
                                     <th>Sanguineo</th>
                                     <th>Telefono</th>
@@ -41,11 +40,10 @@
                             <tbody>
                                 @foreach($antecedentes as $row)
                                 <tr>
-                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $row->client->nombre }} {{ $row->client->apellido }}</td>
                                     <td>{{ $row->client->sanguineo }}</td>
                                     <td>{{ $row->client->telefono }}</td>
-                                    <td width="90">
+                                    <td>
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Acciones
@@ -69,6 +67,57 @@
 
 			</div>
 		</div>
+
+        <div class="col-md-4">
+			<div class="card">
+				<div class="card-header">
+					<div style="display: flex; justify-content: space-between; align-items: center;">
+
+						<div class="float-left">
+							<h4>Historial Radiografico</h4>
+						</div>
+
+						<div class="btn btn-sm btn-info" data-toggle="modal" data-target="#createDataModal">
+						    <i class="fa fa-plus"></i> Agregar media
+						</div>
+
+					</div>
+				</div>
+
+				<div class="card-body">
+
+                    <form class="row">
+                        <div class="form-group col-xs-12 col-sm-12 col-md-12">
+                            <label for="id_client">Paciente</label>
+                            <select wire:model="country" class="form-control mibuscador_paciente">
+                                <option>Seleciona el paciente</option>
+                                 @foreach ($countries as $value)
+                                <option value="{{ $value->id }}"> {{ $value->Client->nombre }}</option>>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        @if($cities->count() == 0)
+                        @foreach ($antecedentes as $value)
+                            <div class="form-group col-xs-6 col-sm-6 col-md-6">
+                                <div class="card" style="width: auto;">
+                                  <img class="card-img-top" src="{{asset('img/radiografias/'.$value->Radiografico->file_name)}}" >
+                                  <div class="card-body">
+                                    <h5 class="card-title"> <P>{{$value->Radiografico->name}}</P></h5>
+                                    <p class="card-text">Fecha:  <P>{{$value->Radiografico->date}}</P></p>
+                                  </div>
+                                </div>
+                            </div>
+                        @endforeach
+                        @endif
+
+
+                    </form>
+
+				</div>
+
+			</div>
+        </div>
 	</div>
 </div>
 

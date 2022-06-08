@@ -14,4 +14,6 @@ class Radiografico extends Model
     protected $table = 'radiograficos';
 
     protected $fillable = ['id_antecedente','name','name','date','file_name'];
+
+
 }

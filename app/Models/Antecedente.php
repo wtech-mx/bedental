@@ -21,8 +21,12 @@ class Antecedente extends Model
      */
     public function client()
     {
-
         return $this->hasOne('App\Models\Client', 'id', 'id_client');
+    }
+
+    public function Radiografico()
+    {
+        return $this->hasOne('App\Models\Radiografico', 'id_antecedente', 'id');
     }
 
 }

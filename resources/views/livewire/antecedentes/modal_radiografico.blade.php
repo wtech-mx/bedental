@@ -12,15 +12,15 @@
 
       <div class="modal-body">
 
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item" role="presentation">
-    <a class="nav-link active" id="individual-tab" data-toggle="tab" href="#individual" role="tab" aria-controls="individual" aria-selected="true">Carga individual</a>
-  </li>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="individual-tab" data-toggle="tab" href="#individual" role="tab" aria-controls="individual" aria-selected="true">Carga individual</a>
+      </li>
 
-  <li class="nav-item" role="presentation">
-    <a class="nav-link" id="masiva-tab" data-toggle="tab" href="#masiva" role="tab" aria-controls="masiva" aria-selected="false">Carga Masiva</a>
-  </li>
-</ul>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="masiva-tab" data-toggle="tab" href="#masiva" role="tab" aria-controls="masiva" aria-selected="false">Carga Masiva</a>
+      </li>
+    </ul>
 
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="individual" role="tabpanel" aria-labelledby="individual-tab">
