@@ -29,6 +29,8 @@
     <!-- Datatable -->
     <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+
     @yield('css')
     @yield('js_dropzone')
     @yield('fullcalendar')
@@ -133,6 +135,8 @@
 
   <!-- Argon JS -->
   <script src="{{ asset('assets/js/argon.js?v=1.1.0') }}"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
 
 {{--    @include('layouts.colores')--}}
 

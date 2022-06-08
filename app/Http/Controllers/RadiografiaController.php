@@ -29,4 +29,9 @@ class RadiografiaController extends Controller
         Session::flash('success', 'Se ha Creado  con exito');
         return redirect()->back();
     }
+
+    public function img($id, Request $request)
+    {
+
+    }
 }

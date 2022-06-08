@@ -52,12 +52,15 @@
                                                 <a data-toggle="modal" data-target="#updateModalAntecedentes" class="dropdown-item" wire:click="edit({{$row->id}})"><i class="fa fa-edit"></i> Edit </a>
                                                 <a class="dropdown-item" onclick="confirm('Confirm Delete Antecedente id {{$row->id}}? \nDeleted Antecedentes cannot be recovered!')||event.stopImmediatePropagation()" wire:click="destroy({{$row->id}})"><i class="fa fa-trash"></i> Delete </a>
                                                 <a type="button" class="dropdown-item" data-toggle="modal" data-target="#Historial_radiografíco{{$row->id}}"><i class="fa fa-object-group"></i>Historial radiografíco</a>
+                                                <a type="button" class="dropdown-item" data-toggle="modal" data-target="#exampleModal{{$row->id}}"><i class="fa fa-edit"></i> IMG Historial </a>
+
                                             </div>
                                         </div>
                                     </td>
                                     @include('livewire.antecedentes.create')
                                     @include('livewire.antecedentes.update')
                                     @include('livewire.antecedentes.modal_radiografico')
+                                    @include('livewire.antecedentes.modal_img_radiografico')
                                 @endforeach
                             </tbody>
                         </table>
@@ -98,7 +101,7 @@
                         </div>
 
                         @if($cities->count() == 0)
-                        @foreach ($antecedentes as $value)
+                        @foreach ($cities as $value)
                             <div class="form-group col-xs-6 col-sm-6 col-md-6">
                                 <div class="card" style="width: auto;">
                                   <img class="card-img-top" src="{{asset('img/radiografias/'.$value->Radiografico->file_name)}}" >
