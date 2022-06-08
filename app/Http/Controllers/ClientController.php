@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Antecedente;
 use App\Models\Client;
+use App\Models\Factura;
 use Illuminate\Http\Request;
 use Mediconesystems\LivewireDatatables\Column;
 use Mediconesystems\LivewireDatatables\NumberColumn;
@@ -26,7 +27,7 @@ class ClientController extends Controller
     {
         $clients = Client::paginate();
 
-        return view('client.index', compact('clients'))
+        return view('client.index', compact('clients', 'facturas'))
             ->with('i', (request()->input('page', 1) - 1) * $clients->perPage());
     }
 

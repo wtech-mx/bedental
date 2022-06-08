@@ -11,6 +11,7 @@ use App\Http\Controllers\Livewire\Calendar;
 use App\Http\Controllers\AlertasController;
 use App\Http\Controllers\ColoresController;
 use App\Http\Controllers\RadiografiaController;
+use App\Http\Controllers\FacturasController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,3 +62,5 @@ Route::patch('calendar/update/{id}', [AlertasController::class, 'update_calendar
 Route::post('create_pacient', [ClientController::class, 'store_client'])->name('client.calendar_store');
 
 Route::post('radiografia/{id}', [RadiografiaController::class, 'upload'])->name('radiografia.upload');
+
+Route::post('factura/{id}', [FacturasController::class, 'store'])->name('factura.store');

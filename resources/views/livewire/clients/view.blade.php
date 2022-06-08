@@ -58,6 +58,11 @@
                                             <a href="{{ route('antecedentes.index') }}" class="dropdown-item" wire:click="edit({{$row->id}})">
                                                 <i class="fa fa-solid fa-user"></i> Antecedentes
                                             </a>
+
+                                            <a type="button" class="dropdown-item" data-toggle="modal" data-target="#facturasModal{{$row->id}}">
+                                                <i class="fa fa-solid fa-user"></i> Facturas
+                                            </a>
+
                                             <a data-toggle="modal" data-target="#updateModal" class="dropdown-item" wire:click="edit({{$row->id}})">
                                                 <i class="fa fa-edit"></i> Edit
                                             </a>
@@ -69,6 +74,7 @@
 								</td>
                                 @include('livewire.clients.create')
                                 @include('livewire.clients.update')
+                                @include('livewire.clients.modal_facturas')
 							@endforeach
 						</tbody>
 					</table>
