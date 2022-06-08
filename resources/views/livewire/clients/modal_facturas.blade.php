@@ -55,6 +55,9 @@
                     </div>
 
                     <div class="tab-pane fade" id="masiva{{ $row->id }}" role="tabpanel" aria-labelledby="masiva-tab">
+                        @if (!empty($facturas))
+
+
                         @foreach ($facturas as $fact)
                             @if ($fact->id_clients == $row->id)
 
@@ -68,6 +71,7 @@
                                 </div>
                             @endif
                         @endforeach
+                        @endif
                     </div>
                 </div>
 
