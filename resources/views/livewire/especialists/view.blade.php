@@ -58,7 +58,7 @@
 							@endforeach
 						</tbody>
 					</table>
-					{{ $especialists->links() }}
+
 					</div>
 				</div>
 			</div>

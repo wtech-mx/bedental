@@ -18,32 +18,9 @@ class Clients extends Component
 
     public function render()
     {
-
 		$keyWord = '%'.$this->keyWord .'%';
         return view('livewire.clients.view', [
-            'clients' => Client::latest()
-						->orWhere('nombre', 'LIKE', $keyWord)
-						->orWhere('apellido', 'LIKE', $keyWord)
-						->orWhere('edad', 'LIKE', $keyWord)
-						->orWhere('sanguineo', 'LIKE', $keyWord)
-						->orWhere('ocupacion', 'LIKE', $keyWord)
-						->orWhere('telefono', 'LIKE', $keyWord)
-						->orWhere('fecha_nacimiento', 'LIKE', $keyWord)
-                        ->orWhere('motivo_consulta', 'LIKE', $keyWord)
-						->orWhere('email', 'LIKE', $keyWord)
-						->orWhere('domicilio_fiscal', 'LIKE', $keyWord)
-						->orWhere('regimen_fiscal', 'LIKE', $keyWord)
-                        ->orWhere('fiscal', 'LIKE', $keyWord)
-						->orWhere('rfc', 'LIKE', $keyWord)
-						->orWhere('razon_social', 'LIKE', $keyWord)
-						->orWhere('correo_fiscal', 'LIKE', $keyWord)
-						->orWhere('cfdi', 'LIKE', $keyWord)
-						->orWhere('seguro', 'LIKE', $keyWord)
-						->orWhere('poliza', 'LIKE', $keyWord)
-						->orWhere('tipo_plan', 'LIKE', $keyWord)
-						->orWhere('certificado', 'LIKE', $keyWord)
-						->orWhere('empresa', 'LIKE', $keyWord)
-						->paginate(10),
+            'clients' => Client::orderBy('apellido', 'asc')->get(),
         ]);
     }
 
