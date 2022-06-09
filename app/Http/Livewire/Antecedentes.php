@@ -28,13 +28,13 @@ class Antecedentes extends Component
     {
          $client = Client::get();
          $radiografico = Radiografico::get();
-
+         $antecedentes = Antecedente::get();
 
 		$keyWord = '%'.$this->keyWord .'%';
         return view('livewire.antecedentes.view', [
             'client' => $client,
             'radiografico' => $radiografico,
-            'antecedentes' => Antecedente::latest(),
+            'antecedentes' => $antecedentes
         ]);
     }
 

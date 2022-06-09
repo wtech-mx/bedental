@@ -36,24 +36,7 @@ class Especialists extends Component
     {
 		$keyWord = '%'.$this->keyWord .'%';
         return view('livewire.especialists.view', [
-            'especialists' => Especialist::latest()
-				->orWhere('nombre', 'LIKE', $keyWord)
-				->orWhere('apellido', 'LIKE', $keyWord)
-				->orWhere('cedula', 'LIKE', $keyWord)
-				->orWhere('especialidad', 'LIKE', $keyWord)
-				->orWhere('telefono', 'LIKE', $keyWord)
-				->orWhere('fecha_nacimiento', 'LIKE', $keyWord)
-				->orWhere('email', 'LIKE', $keyWord)
-				->orWhere('domicilio_fiscal', 'LIKE', $keyWord)
-				->orWhere('regimen_fiscal', 'LIKE', $keyWord)
-				->orWhere('rfc', 'LIKE', $keyWord)
-				->orWhere('razon_social', 'LIKE', $keyWord)
-				->orWhere('correo_fiscal', 'LIKE', $keyWord)
-				->orWhere('cfdi', 'LIKE', $keyWord)
-				->orWhere('poliza', 'LIKE', $keyWord)
-                ->orWhere('seguro', 'LIKE', $keyWord)
-				->orWhere('empresa', 'LIKE', $keyWord)
-				->paginate(10)
+            'especialists' => Especialist::all(),
         ]);
     }
 
