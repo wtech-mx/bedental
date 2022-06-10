@@ -28,7 +28,7 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" id="fiscals-tab" data-toggle="tab" href="#fiscals" role="tab" aria-controls="fiscals" aria-selected="false">Pdf Fiscal</a>
+                                    <a class="nav-link" id="fiscals2-tab" data-toggle="tab" href="#fiscals2" role="tab" aria-controls="fiscals2" aria-selected="false">Pdf Fiscal</a>
                                 </li>
                             </ul>
                         </div>
@@ -219,7 +219,7 @@
                             {{-- tab datos de SEGURO --}}
 
                             {{-- tab datos de fiscal --}}
-                            <div class="tab-pane fade" id="fiscals" role="tabpanel" aria-labelledby="fiscals-tab">
+                            <div class="tab-pane fade" id="fiscals2" role="tabpanel" aria-labelledby="fiscals2-tab">
                                 <div class="row mt-3">
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6 ">
                                         <label for="fiscal">PDF Situación Fiscal</label>

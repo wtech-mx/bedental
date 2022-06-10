@@ -70,7 +70,6 @@ class Clients extends Component
 		'nombre' => 'required',
 		'apellido' => 'required',
 		'telefono' => 'required',
-        'pdf_fiscal' => 'required|mimes:jpeg,png,jpg,pdf,svg|max:2048',
         ]);
 
         Client::create([
@@ -94,8 +93,7 @@ class Clients extends Component
 			'poliza' => $this-> poliza,
 			'tipo_plan' => $this-> tipo_plan,
 			'certificado' => $this-> certificado,
-			'empresa' => $this-> empresa,
-            'pdf_fiscal' => $imageName
+			'empresa' => $this-> empresa
         ]);
 
 //        $antecedente = new Antecedente;
