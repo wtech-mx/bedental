@@ -48,7 +48,6 @@ Route::view('especialists', 'livewire.especialists.index')->name('especialists.i
 |--------------------------------------------------------------------------*/
 Route::patch('colores/update/{id}', [ColoresController::class, 'update_colores'])->name('colores.update_colores');
 
-
 /*|--------------------------------------------------------------------------
 |Calendario
 |--------------------------------------------------------------------------*/
@@ -63,4 +62,11 @@ Route::post('create_pacient', [ClientController::class, 'store_client'])->name('
 
 Route::post('radiografia/{id}', [RadiografiaController::class, 'upload'])->name('radiografia.upload');
 
+/*|--------------------------------------------------------------------------
+|Calendario
+|--------------------------------------------------------------------------*/
+
+Route::get('facturas', [FacturasController::class, 'index'])->name('facturas.index');
 Route::post('factura/{id}', [FacturasController::class, 'store'])->name('factura.store');
+Route::patch('facturas/{id}', [FacturasController::class, 'upload'])->name('facturas.upload');
+

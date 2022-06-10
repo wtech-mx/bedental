@@ -60,14 +60,25 @@
 
                         @foreach ($facturas as $fact)
                             @if ($fact->id_clients == $row->id)
+                                <div class="row">
+                                      <div class="col-12">
+                                           <div class="card-body">
+                                              <h3 class="text-center">Fecha:{{$fact->date}}</h3>
+                                              <h3 class="text-center">Titulo:{{$fact->name}}</h3>
+                                           </div>
+                                      </div>
 
-                                <div class="card-body">
-                                    <h5 class="card-title">
-                                        <P>{{$fact->name}}</P>
-                                    </h5>
-                                    <p class="card-text">Fecha:
-                                    <P>{{$fact->date}}</P>
-                                    </p>
+                                      <div class="col-sm-6">
+                                        <div class="card">
+                                            <iframe class="card-img-top" src="{{asset('/img/facturas/'.$fact->file_name)}}" height="200" width="300"></iframe>
+                                        </div>
+                                      </div>
+
+                                      <div class="col-sm-6">
+                                        <div class="card">
+                                            <iframe class="card-img-top" src="{{asset('/img/facturas/'.$fact->file_name2.'#toolbar=0')}}" height="200" width="300" type="application/pdf"></iframe>
+                                        </div>
+                                      </div>
                                 </div>
                             @endif
                         @endforeach

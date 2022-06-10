@@ -221,7 +221,7 @@
                             {{-- tab datos de fiscal --}}
                             <div class="tab-pane fade" id="fiscals" role="tabpanel" aria-labelledby="fiscals-tab">
                                 <div class="row mt-3">
-                                    <div class="form-group col-xs-12 col-sm-12 col-md-6 ">
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-12 ">
                                         <label for="fiscal">PDF Situación Fiscal</label>
                                         <input wire:model.defer="pdf_fiscal" type="file" class="form-control" id="pdf_fiscal" >@error('pdf_fiscal') <span class="error text-danger">{{ $message }}</span> @enderror
                                     </div>

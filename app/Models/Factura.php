@@ -13,14 +13,14 @@ class Factura extends Model
 
     protected $table = 'facturas';
 
-    protected $fillable = ['id_cliente','name','date','file_name' ,'file_name2'];
+    protected $fillable = ['id_clients','name','date','file_name' ,'file_name2', 'estatus'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function client()
     {
-        return $this->hasOne('App\Models\Client', 'id', 'id_cliente');
+        return $this->hasOne('App\Models\Client', 'id', 'id_clients');
     }
 
 }

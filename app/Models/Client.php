@@ -19,4 +19,8 @@ class Client extends Model
     {
         return $this->hasOne('App\Models\Antecedente', 'id_client', 'id');
     }
+
+
+
+
 }

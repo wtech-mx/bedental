@@ -33,6 +33,11 @@
                     <span class="nav-link-text">Pacientes</span>
                 </a>
 
+                <a class="nav-link {{ (Request::is('facturas*') ? 'active' : '') }}" href="{{ route('facturas.index') }}">
+                    <i class="ni ni-single-copy-04 text-dark"></i>
+                    <span class="nav-link-text">Facturas</span>
+                </a>
+
               <a class="nav-link {{ (Request::is('especialists*') ? 'active' : '') }}" href="{{ route('especialists.index') }}">
                 <i class="fa fa-user-md text-orange"></i>
                 <span class="nav-link-text">Doctores</span>

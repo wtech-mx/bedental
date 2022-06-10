@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('difundir', function (Blueprint $table) {
-            //
+        Schema::table('facturas', function (Blueprint $table) {
+              $table->integer('estatus')->nullable();
         });
     }
 
@@ -25,7 +25,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('difundir', function (Blueprint $table) {
+        Schema::table('facturas', function (Blueprint $table) {
             //
         });
     }
