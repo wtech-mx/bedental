@@ -15,7 +15,8 @@ class SendEmailController extends Controller
     public function index()
     {
 
-      Mail::to('adrianwebtech@gmail.com')->send('dinopiza@yahoo.com.mx');
+      Mail::to('adrianwebtech@gmail.com')->send(new NotifyMail());
+
 
       if (Mail::failures()) {
            return response()->Fail('Sorry! Please try again latter');
