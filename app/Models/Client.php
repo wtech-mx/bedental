@@ -13,7 +13,7 @@ class Client extends Model
 
     protected $table = 'clients';
 
-    protected $fillable = ['nombre','apellido','edad','sanguineo','ocupacion','telefono','fecha_nacimiento','motivo_consulta','email','domicilio_fiscal','regimen_fiscal','fiscal','rfc','razon_social','correo_fiscal','cfdi','seguro','poliza','empresa','certificado','tipo_plan'];
+    protected $fillable = ['nombre','apellido','edad','sanguineo','ocupacion','telefono','fecha_nacimiento','motivo_consulta','email','domicilio_fiscal','regimen_fiscal','fiscal','rfc','razon_social','correo_fiscal','cfdi','seguro','poliza','empresa','certificado','tipo_plan', 'pdf_fiscal'];
 
     public function Antecedente()
     {

@@ -26,6 +26,10 @@
                                 <li class="nav-item">
                                 <a class="nav-link" id="seguro-tab" data-toggle="tab" href="#seguro" role="tab" aria-controls="seguro" aria-selected="false">Seguro</a>
                                 </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" id="fiscals-tab" data-toggle="tab" href="#fiscals" role="tab" aria-controls="fiscals" aria-selected="false">Pdf Fiscal</a>
+                                </li>
                             </ul>
                         </div>
                           {{-- tab datos de cliente --}}
@@ -213,6 +217,17 @@
                                 </div>
                             </div>
                             {{-- tab datos de SEGURO --}}
+
+                            {{-- tab datos de fiscal --}}
+                            <div class="tab-pane fade" id="fiscals" role="tabpanel" aria-labelledby="fiscals-tab">
+                                <div class="row mt-3">
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-6 ">
+                                        <label for="fiscal">PDF Situación Fiscal</label>
+                                        <input wire:model.defer="pdf_fiscal" type="file" class="form-control" id="pdf_fiscal" >@error('pdf_fiscal') <span class="error text-danger">{{ $message }}</span> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- tab datos de fiscal --}}
 
                           </div>
 

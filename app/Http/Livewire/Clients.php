@@ -6,18 +6,26 @@ use App\Models\Antecedente;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Client;
+use App\Models\Factura;
+use Livewire\WithFileUploads;
 
 
 class Clients extends Component
 {
     use WithPagination;
-
+    use WithFileUploads;
 	protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $nombre, $apellido, $edad, $sanguineo, $ocupacion, $telefono, $fecha_nacimiento, $motivo_consulta,$email, $domicilio_fiscal, $regimen_fiscal, $fiscal, $rfc, $razon_social, $correo_fiscal, $cfdi, $seguro, $poliza, $empresa,$certificado, $tipo_plan;
+    public $selected_id, $keyWord, $nombre, $apellido, $edad, $sanguineo, $ocupacion, $telefono, $fecha_nacimiento, $motivo_consulta,$email, $domicilio_fiscal, $regimen_fiscal, $fiscal, $rfc, $razon_social, $correo_fiscal, $cfdi, $seguro, $poliza, $empresa,$certificado, $tipo_plan, $pdf_fiscal;
     public $updateMode = false;
+    public $facturas;
+
+    public function mount(){
+        $this->facturas = Factura::all();
+    }
 
     public function render()
     {
+
 		$keyWord = '%'.$this->keyWord .'%';
         return view('livewire.clients.view', [
             'clients' => Client::orderBy('apellido', 'asc')->get(),
@@ -53,6 +61,7 @@ class Clients extends Component
 		$this->empresa = null;
 		$this->tipo_plan = null;
 		$this->certificado = null;
+        $this->pdf_fiscal = null;
     }
 
     public function store()
@@ -61,6 +70,7 @@ class Clients extends Component
 		'nombre' => 'required',
 		'apellido' => 'required',
 		'telefono' => 'required',
+        'pdf_fiscal' => 'required|mimes:jpeg,png,jpg,pdf,svg|max:2048',
         ]);
 
         Client::create([
@@ -84,7 +94,8 @@ class Clients extends Component
 			'poliza' => $this-> poliza,
 			'tipo_plan' => $this-> tipo_plan,
 			'certificado' => $this-> certificado,
-			'empresa' => $this-> empresa
+			'empresa' => $this-> empresa,
+            'pdf_fiscal' => $imageName
         ]);
 
 //        $antecedente = new Antecedente;
@@ -129,6 +140,7 @@ class Clients extends Component
 		$this->empresa = $record-> empresa;
 		$this->tipo_plan = $record-> tipo_plan;
 		$this->certificado = $record-> certificado;
+        $this->pdf_fiscal = $record-> pdf_fiscal;
         $this->updateMode = true;
     }
 
@@ -163,6 +175,7 @@ class Clients extends Component
 			'poliza' => $this-> poliza,
 			'tipo_plan' => $this-> tipo_plan,
 			'certificado' => $this-> certificado,
+            'pdf_fiscal' => $this-> pdf_fiscal,
 			'empresa' => $this-> empresa
             ]);
 
