@@ -12,6 +12,8 @@ use App\Http\Controllers\AlertasController;
 use App\Http\Controllers\ColoresController;
 use App\Http\Controllers\RadiografiaController;
 use App\Http\Controllers\FacturasController;
+use App\Http\Controllers\SendEmailController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -70,3 +72,4 @@ Route::get('facturas', [FacturasController::class, 'index'])->name('facturas.ind
 Route::post('factura/{id}', [FacturasController::class, 'store'])->name('factura.store');
 Route::patch('facturas/{id}', [FacturasController::class, 'upload'])->name('facturas.upload');
 
+Route::get('send-email', [SendEmailController::class, 'index']);
