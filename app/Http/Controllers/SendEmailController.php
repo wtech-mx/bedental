@@ -22,8 +22,6 @@ class SendEmailController extends Controller
 
         Mail::to('adrianwebtech@gmail.com')->send(new NotifyMail($mailData));
 
-        dd("Email is sent successfully.");
-        
 
 
     }
