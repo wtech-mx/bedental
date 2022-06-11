@@ -44,10 +44,10 @@
                                 <textarea name="emailBody" id="emailBody" class="form-control" placeholder="Mail Body"></textarea>
                             </div>
 
-                            <div class="form-group">
-                                <label for="emailAttachments">Attachment(s) </label>
-                                <input type="file" name="emailAttachments[]" multiple="multiple" id="emailAttachments" class="form-control">
-                            </div>
+{{--                            <div class="form-group">--}}
+{{--                                <label for="emailAttachments">Attachment(s) </label>--}}
+{{--                                <input type="file" name="emailAttachments[]" multiple="multiple" id="emailAttachments" class="form-control">--}}
+{{--                            </div>--}}
                         </div>
 
                         <div class="card-footer">

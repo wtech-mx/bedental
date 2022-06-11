@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+
 use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+
 use Session;
 
 class MailerController extends Controller {
@@ -13,14 +16,11 @@ class MailerController extends Controller {
         return view("email");
     }
 
-
     // ========== [ Compose Email ] ================
     public function composeEmail(Request $request) {
         require base_path("vendor/autoload.php");
+
         $mail = new PHPMailer(true);     // Passing `true` enables exceptions
-
-
-
         try {
 
             // Email server settings
@@ -40,10 +40,9 @@ class MailerController extends Controller {
             $mail->Username =  env('MAIL_USERNAME');   //  sender username
             $mail->Password = env('MAIL_PASSWORD');       // sender password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;   // encryption - ssl/tls
-            $mail->Port = 587;
+            $mail->Port = 465;
 
             // port - 587/465
-
 
             $mail->setFrom('pruebaswebtech@gmail.com', 'WebTech');
             $mail->addAddress($request->emailRecipient);
@@ -52,13 +51,11 @@ class MailerController extends Controller {
 
             $mail->addReplyTo('josue.adrian.ramirezhernandez@gmail.com');
 
-
-            if(isset($_FILES['emailAttachments'])) {
-                for ($i=0; $i < count($_FILES['emailAttachments']['tmp_name']); $i++) {
-                    $mail->addAttachment($_FILES['emailAttachments']['tmp_name'][$i], $_FILES['emailAttachments']['name'][$i]);
-                }
-            }
-
+//            if(isset($_FILES['emailAttachments'])) {
+//                for ($i=0; $i < count($_FILES['emailAttachments']['tmp_name']); $i++) {
+//                    $mail->addAttachment($_FILES['emailAttachments']['tmp_name'][$i], $_FILES['emailAttachments']['name'][$i]);
+//                }
+//            }
 
             $mail->isHTML(true);                // Set email content format to HTML
 
