@@ -13,6 +13,7 @@ use App\Http\Controllers\ColoresController;
 use App\Http\Controllers\RadiografiaController;
 use App\Http\Controllers\FacturasController;
 use App\Http\Controllers\SendEmailController;
+use App\Http\Controllers\MailerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,4 +73,6 @@ Route::get('facturas', [FacturasController::class, 'index'])->name('facturas.ind
 Route::post('factura/{id}', [FacturasController::class, 'store'])->name('factura.store');
 Route::patch('facturas/{id}', [FacturasController::class, 'upload'])->name('facturas.upload');
 
-Route::get('send-email', [SendEmailController::class, 'index']);
+
+Route::get("email", [MailerController::class, "email"])->name("email");
+Route::post("send-email", [MailerController::class, "composeEmail"])->name("send-email");
