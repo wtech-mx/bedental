@@ -21,6 +21,7 @@
                   <thead class="thead-light">
                       <tr>
                        <th>Pacietnes</th>
+                       <th>Correo</th>
                        <th>Fecha</th>
                        <th>Titulo</th>
                        <th>Estatus</th>
@@ -31,6 +32,7 @@
                    @foreach ($facturas as  $row)
                       <tr>
                        <td>{{$row->Client->nombre}} / <br> {{$row->Client->apellido}}</td>
+                          <td>{{$row->Client->email}}</td>
                        <td>{{$row->date}}</td>
                        <td>{{$row->name}}</td>
                        <td>
@@ -71,9 +73,8 @@
                                  <i class="fa fa-edit"></i> Editar Factura
                               </a>
 
-                              <a class="dropdown-item" href="">
-                                <i class="ni ni-email-83"></i> Enviar Factura
-                              </a>
+                               @include('facturas.send_mail')
+
                             </div>
                           </div>
                         </td>

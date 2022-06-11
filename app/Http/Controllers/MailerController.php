@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+use App\Models\Factura;
 
 use Session;
 
@@ -21,18 +22,8 @@ class MailerController extends Controller {
         require base_path("vendor/autoload.php");
 
         $mail = new PHPMailer(true);     // Passing `true` enables exceptions
+
         try {
-
-            // Email server settings
-//            $mail->SMTPDebug = 1;
-//            $mail->isSMTP();
-//            $mail->Host = 'smtp.gmail.com';             //  smtp host
-//            $mail->SMTPAuth = true;
-//            $mail->Username = 'pruebaswebtech@gmail.com';   //  sender username
-//            $mail->Password = 'Ytumamatambien1';       // sender password
-//            $mail->SMTPSecure = 'tls';                  // encryption - ssl/tls
-//            $mail->Port = 587;
-
             $mail->SMTPDebug = 1;
             $mail->isSMTP();
             $mail->Host = env('MAIL_HOST');
@@ -41,24 +32,28 @@ class MailerController extends Controller {
             $mail->Password = env('MAIL_PASSWORD');       // sender password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;   // encryption - ssl/tls
             $mail->Port = 465;
-
             // port - 587/465
-
             $mail->setFrom('pruebaswebtech@gmail.com', 'WebTech');
             $mail->addAddress($request->emailRecipient);
             $mail->addCC($request->emailCc);
             $mail->addBCC($request->emailBcc);
+//            $mail->addReplyTo('josue.adrian.ramirezhernandez@gmail.com');
 
-            $mail->addReplyTo('josue.adrian.ramirezhernandez@gmail.com');
+            if ($request->hasFile("emailAttachments")){
+                for ($i=0; $i < count($_FILES['emailAttachments']['tmp_name']); $i++) {
+                    $mail->addAttachment($_FILES['emailAttachments']['tmp_name'][$i], $_FILES['emailAttachments']['name'][$i]);
+                }
+            }
 
-//            if(isset($_FILES['emailAttachments'])) {
-//                for ($i=0; $i < count($_FILES['emailAttachments']['tmp_name']); $i++) {
-//                    $mail->addAttachment($_FILES['emailAttachments']['tmp_name'][$i], $_FILES['emailAttachments']['name'][$i]);
-//                }
-//            }
+            if ($request->hasFile("file_name")){
+                 dd($mail->AddAttachment($request->file('file_name')->getPathName())); //Agrega un archivo adjunto desde una ruta en el sistema de archivos
+            }
+
+            if ($request->get("file_name2")){
+
+            }
 
             $mail->isHTML(true);                // Set email content format to HTML
-
             $mail->Subject = $request->emailSubject;
             $mail->Body    = $request->emailBody;
             // $mail->AltBody = plain text version of email body;
@@ -66,18 +61,30 @@ class MailerController extends Controller {
             if( !$mail->send() ) {
                 Session::flash('failed', 'Email not sent.');
                 return back()->with("failed", "Email not sent.")->withErrors($mail->ErrorInfo);
-
             }
 
             else {
+
+                 $id = $request->id;
+                 $estatus = $request->estatus;
+
+                 if ($estatus == 1){
+                    $facturas = Factura::findorfail($id);
+                    $facturas->estatus = 1;
+                    $facturas->update ();
+                 }
+
                 Session::flash('success', 'Se ha Creado  con exito');
                 return back()->with("success", "Email has been sent.");
-
             }
 
         } catch (Exception $e) {
-                Session::flash('error', 'Message could not be sent');
-                echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                 $id = $request->id;
+                 $estatus = $request->estatus;
+                 $facturas = Factura::findorfail($id);
+                 $facturas->estatus = 3;
+                 $facturas->update ();
+              Session::flash('error', 'Message could not be sent');
              return back()->with('error','Message could not be sent.');
         }
     }
