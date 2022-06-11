@@ -24,13 +24,22 @@ class MailerController extends Controller {
         try {
 
             // Email server settings
+//            $mail->SMTPDebug = 1;
+//            $mail->isSMTP();
+//            $mail->Host = 'smtp.gmail.com';             //  smtp host
+//            $mail->SMTPAuth = true;
+//            $mail->Username = 'pruebaswebtech@gmail.com';   //  sender username
+//            $mail->Password = 'Ytumamatambien1';       // sender password
+//            $mail->SMTPSecure = 'tls';                  // encryption - ssl/tls
+//            $mail->Port = 587;
+
             $mail->SMTPDebug = 1;
             $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com';             //  smtp host
+            $mail->Host = env('MAIL_HOST');
             $mail->SMTPAuth = true;
-            $mail->Username = 'pruebaswebtech@gmail.com';   //  sender username
-            $mail->Password = 'Ytumamatambien1';       // sender password
-            $mail->SMTPSecure = 'tls';                  // encryption - ssl/tls
+            $mail->Username =  env('MAIL_USERNAME');   //  sender username
+            $mail->Password = env('MAIL_PASSWORD');       // sender password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;   // encryption - ssl/tls
             $mail->Port = 587;
 
             // port - 587/465
