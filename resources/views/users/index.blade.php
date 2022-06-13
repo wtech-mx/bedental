@@ -16,7 +16,7 @@
               <a class="btn btn-success" href="{{ route('users.create') }}"> Crear nuevo usuario</a>
             </div>
 
-            <div class="table-responsive py-4" style="">
+            <div class="table-responsive py-4" style="margin-left: 1rem;">
               <table class="table table-flush table_id" id="datatable-basic" >
                   <thead class="thead-light">
                       <tr>
