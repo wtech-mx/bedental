@@ -43,20 +43,21 @@
                                     <td>{{ $row->client->nombre }} {{ $row->client->apellido }}</td>
                                     <td>{{ $row->client->sanguineo }}</td>
                                     <td>{{ $row->client->telefono }}</td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Acciones
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a data-toggle="modal" data-target="#updateModalAntecedentes" class="dropdown-item" wire:click="edit({{$row->id}})"><i class="fa fa-edit"></i> Edit </a>
-                                                <a class="dropdown-item" onclick="confirm('Confirm Delete Antecedente id {{$row->id}}? \nDeleted Antecedentes cannot be recovered!')||event.stopImmediatePropagation()" wire:click="destroy({{$row->id}})"><i class="fa fa-trash"></i> Delete </a>
-                                                <a type="button" class="dropdown-item" data-toggle="modal" data-target="#Historial_radiografíco{{$row->id}}"><i class="fa fa-object-group"></i>Historial radiografíco</a>
-                                                <a type="button" class="dropdown-item" data-toggle="modal" data-target="#exampleModal{{$row->id}}"><i class="fa fa-edit"></i> IMG Historial </a>
 
-                                            </div>
-                                        </div>
-                                    </td>
+                                <td class="text-right">
+                                  <div class="dropdown ">
+                                    <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <i class="fas fa-ellipsis-v"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                        <a data-toggle="modal" data-target="#updateModalAntecedentes" class="dropdown-item" wire:click="edit({{$row->id}})"><i class="fa fa-edit"></i> Edit </a>
+                                        <a class="dropdown-item" onclick="confirm('Confirm Delete Antecedente id {{$row->id}}? \nDeleted Antecedentes cannot be recovered!')||event.stopImmediatePropagation()" wire:click="destroy({{$row->id}})"><i class="fa fa-trash"></i> Delete </a>
+                                        <a type="button" class="dropdown-item" data-toggle="modal" data-target="#Historial_radiografíco{{$row->id}}"><i class="fa fa-object-group"></i>Historial radiografíco</a>
+                                        <a type="button" class="dropdown-item" data-toggle="modal" data-target="#exampleModal{{$row->id}}"><i class="fa fa-edit"></i> IMG Historial </a>
+                                    </div>
+                                  </div>
+                                </td>
+
                                     @include('livewire.antecedentes.create')
                                     @include('livewire.antecedentes.update')
                                     @include('livewire.antecedentes.modal_radiografico')

@@ -138,7 +138,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
 
-{{--    @include('layouts.colores')--}}
+    @include('layouts.colores')
 
     <script type="text/javascript">
         $(document).ready(function(){
