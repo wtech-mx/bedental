@@ -13,7 +13,9 @@
             <!-- Card header -->
             <div class="card-header">
               <h3 class="mb-3">Gestionar Facturas</h3>
-              <a class="btn btn-success" href="{{ route('users.create') }}"> Crear nueva Facturas</a>
+                <a type="button" class="btn btn-primary text-white" data-toggle="modal" data-target="#facturas">
+                   Crear nueva Facturas
+                </a>
             </div>
 
             <div class="table-responsive py-4" style="">
@@ -88,6 +90,6 @@
         </div>
       </div>
 </div>
-
+ @include('facturas.create')
 
 @endsection

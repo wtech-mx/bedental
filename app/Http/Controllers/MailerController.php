@@ -33,24 +33,25 @@ class MailerController extends Controller {
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;   // encryption - ssl/tls
             $mail->Port = 465;
             // port - 587/465
-            $mail->setFrom('pruebaswebtech@gmail.com', 'WebTech');
+            $mail->setFrom('bedentalconsultorio@gmail.con', 'Bedental');
             $mail->addAddress($request->emailRecipient);
             $mail->addCC($request->emailCc);
             $mail->addBCC($request->emailBcc);
+
+             $fileAttach = $request->get("file_name");
+             $fileAttach2 = $request->get("file_name2");
+             $mail->AddAttachment($fileAttach);
+             $mail->AddAttachment($fileAttach2);
+              // si no se especifico un archivo adjunto cargamos uno por defecto
+
+
+            $mail->AddAttachment($fileAttach);
 //            $mail->addReplyTo('josue.adrian.ramirezhernandez@gmail.com');
 
             if ($request->hasFile("emailAttachments")){
                 for ($i=0; $i < count($_FILES['emailAttachments']['tmp_name']); $i++) {
                     $mail->addAttachment($_FILES['emailAttachments']['tmp_name'][$i], $_FILES['emailAttachments']['name'][$i]);
                 }
-            }
-
-            if ($request->hasFile("file_name")){
-                 dd($mail->AddAttachment($request->file('file_name')->getPathName())); //Agrega un archivo adjunto desde una ruta en el sistema de archivos
-            }
-
-            if ($request->get("file_name2")){
-
             }
 
             $mail->isHTML(true);                // Set email content format to HTML
@@ -75,7 +76,7 @@ class MailerController extends Controller {
                  }
 
                 Session::flash('success', 'Se ha Creado  con exito');
-                return back()->with("success", "Email has been sent.");
+                return back()->with("email", "Email has been sent.");
             }
 
         } catch (Exception $e) {

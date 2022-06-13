@@ -65,3 +65,16 @@
     })
 </script>
 @endif
+
+@if (Session::has('email'))
+<script>
+    Swal.fire({
+        title: 'Enviado!!',
+        html: 'Se haenviado el correo <b>Exitosamente</b> </br>',
+        imageUrl: '{{ asset('img/icon/sending.png') }}',
+        background: '#fff',
+        imageWidth: 150,
+        imageHeight: 150,
+    })
+</script>
+@endif

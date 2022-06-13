@@ -73,6 +73,7 @@ Route::get('facturas', [FacturasController::class, 'index'])->name('facturas.ind
 Route::post('factura/{id}', [FacturasController::class, 'store'])->name('factura.store');
 Route::patch('facturas/{id}', [FacturasController::class, 'upload'])->name('facturas.upload');
 
+Route::post('create_factura', [FacturasController::class, 'store_factura'])->name('factura.create_store');
 
 Route::get("email", [MailerController::class, "email"])->name("email");
 Route::post("send-email", [MailerController::class, "composeEmail"])->name("send-email");
