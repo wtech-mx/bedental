@@ -38,18 +38,23 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('permisos', PermisosController::class);
     Route::resource('users', UserController::class);
-    Route::resource('clients', ClientController::class);
 });
 
 //Route Hooks - Do not delete//
 Route::view('antecedentes', 'livewire.antecedentes.index')->name('antecedentes.index')->middleware('auth');
-Route::view('clients', 'livewire.clients.index')->name('clients.index')->middleware('auth');
 Route::view('especialists', 'livewire.especialists.index')->name('especialists.index')->middleware('auth');
 
 /*|--------------------------------------------------------------------------
 |Colores
 |--------------------------------------------------------------------------*/
 Route::patch('colores/update/{id}', [ColoresController::class, 'update_colores'])->name('colores.update_colores');
+
+/*|--------------------------------------------------------------------------
+|Clientes
+|--------------------------------------------------------------------------*/
+Route::get('client', [ClientController::class, 'index'])->name('client.index');
+Route::post('create/client', [ClientController::class, 'store'])->name('client.store');
+Route::patch('update/client/{id}', [ClientController::class, 'update'])->name('client.update');
 
 /*|--------------------------------------------------------------------------
 |Calendario

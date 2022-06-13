@@ -18,45 +18,11 @@ use Session;
  */
 class ClientController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $clients = Client::paginate();
+        $clients = Client::get();
 
-        return view('client.index', compact('clients', 'facturas'))
-            ->with('i', (request()->input('page', 1) - 1) * $clients->perPage());
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        $client = new Client();
-        return view('client.create', compact('client'));
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        request()->validate(Client::$rules);
-
-        $client = Client::create($request->all());
-
-        Session::flash('success', 'Se ha guardado sus datos con exito');
-        return redirect()->route('clients.index')
-            ->with('success', 'Client created successfully.');
+        return view('clients.view', compact('clients'));
     }
 
     public function store_client(Request $request)
@@ -83,48 +49,90 @@ class ClientController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function store(Request $request)
     {
-        $client = Client::find($id);
+        $this->validate($request, [
+            'nombre' => 'required',
+            'apellido' => 'required',
+            'telefono' => 'required',
+        ]);
 
-        return view('client.show', compact('client'));
+        $client = new Client();
+        $client->nombre = $request->nombre;
+        $client->apellido = $request-> apellido;
+        $client->edad = $request-> edad;
+        $client->sanguineo = $request-> sanguineo;
+        $client->ocupacion = $request-> ocupacion;
+        $client->telefono = $request-> telefono;
+        $client->fecha_nacimiento = $request-> fecha_nacimiento;
+        $client->motivo_consulta = $request-> motivo_consulta;
+        $client->email = $request-> email;
+        $client->domicilio_fiscal = $request-> domicilio_fiscal;
+        $client->regimen_fiscal = $request-> regimen_fiscal;
+        $client->fiscal = $request-> fiscal;
+        $client->rfc = $request-> rfc;
+        $client->razon_social = $request-> razon_social;
+        $client->correo_fiscal = $request-> correo_fiscal;
+        $client->cfdi = $request-> cfdi;
+        $client->seguro = $request-> seguro;
+        $client->poliza = $request-> poliza;
+        $client->tipo_plan = $request-> tipo_plan;
+        $client->certificado = $request-> certificado;
+        $client->empresa = $request-> empresa;
+        if ($request->hasFile("pdf_fiscal")){
+            $file = $request->file('pdf_fiscal');
+            $path = public_path() . '/pdf_fiscal';
+            $fileName = uniqid() . $file->getClientOriginalName();
+            $file->move($path, $fileName);
+            $client->pdf_fiscal = $fileName;
+        }
+        $client->save();
+
+        $antecedente = new Antecedente();
+        $antecedente->id_client = $client->id;
+        $antecedente->save();
+
+        Session::flash('success', 'Se ha guardado sus datos con exito');
+        return redirect()->route('client.index');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function update(Request $request, $id)
     {
-        $client = Client::find($id);
 
-        return view('client.edit', compact('client'));
-    }
+        $client = Client::findOrFail($id);
+        $client->nombre = $request->nombre;
+        $client->apellido = $request-> apellido;
+        $client->edad = $request-> edad;
+        $client->sanguineo = $request-> sanguineo;
+        $client->ocupacion = $request-> ocupacion;
+        $client->telefono = $request-> telefono;
+        $client->fecha_nacimiento = $request-> fecha_nacimiento;
+        $client->motivo_consulta = $request-> motivo_consulta;
+        $client->email = $request-> email;
+        $client->domicilio_fiscal = $request-> domicilio_fiscal;
+        $client->regimen_fiscal = $request-> regimen_fiscal;
+        $client->fiscal = $request-> fiscal;
+        $client->rfc = $request-> rfc;
+        $client->razon_social = $request-> razon_social;
+        $client->correo_fiscal = $request-> correo_fiscal;
+        $client->cfdi = $request-> cfdi;
+        $client->seguro = $request-> seguro;
+        $client->poliza = $request-> poliza;
+        $client->tipo_plan = $request-> tipo_plan;
+        $client->certificado = $request-> certificado;
+        $client->empresa = $request-> empresa;
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  Client $client
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Client $client)
-    {
-        request()->validate(Client::$rules);
-
-        $client->update($request->all());
+        if ($request->hasFile("pdf_fiscal")){
+            $file = $request->file('pdf_fiscal');
+            $path = public_path() . '/pdf_fiscal';
+            $fileName = uniqid() . $file->getClientOriginalName();
+            $file->move($path, $fileName);
+            $client->pdf_fiscal = $fileName;
+        }
+        $client->update();
 
         Session::flash('edit', 'Se ha editado sus datos con exito');
-        return redirect()->route('clients.index')
-            ->with('success', 'Client updated successfully');
+        return redirect()->route('client.index');
     }
 
     /**
@@ -134,10 +142,11 @@ class ClientController extends Controller
      */
     public function destroy($id)
     {
+        $antecedente = Antecedente::where('id_client','=',$id)->delete();
         $client = Client::find($id)->delete();
 
         Session::flash('delete', 'Se ha eliminado sus datos con exito');
-        return redirect()->route('clients.index')
+        return redirect()->route('client.index')
             ->with('success', 'Client deleted successfully');
     }
 }
