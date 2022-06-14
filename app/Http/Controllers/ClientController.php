@@ -93,7 +93,7 @@ class ClientController extends Controller
         $antecedente->save();
 
         Session::flash('success', 'Se ha guardado sus datos con exito');
-        return redirect()->route('client.index');
+        return redirect()->route('clients.index');
     }
 
     public function update(Request $request, $id)
@@ -132,7 +132,7 @@ class ClientController extends Controller
         $client->update();
 
         Session::flash('edit', 'Se ha editado sus datos con exito');
-        return redirect()->route('client.index');
+        return redirect()->route('clients.index');
     }
 
     /**
@@ -146,7 +146,7 @@ class ClientController extends Controller
         $client = Client::find($id)->delete();
 
         Session::flash('delete', 'Se ha eliminado sus datos con exito');
-        return redirect()->route('client.index')
+        return redirect()->route('clients.index')
             ->with('success', 'Client deleted successfully');
     }
 }

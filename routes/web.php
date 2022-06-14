@@ -14,6 +14,7 @@ use App\Http\Controllers\RadiografiaController;
 use App\Http\Controllers\FacturasController;
 use App\Http\Controllers\SendEmailController;
 use App\Http\Controllers\MailerController;
+use App\Http\Controllers\AntecedentesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,7 +42,6 @@ Route::group(['middleware' => ['auth']], function() {
 });
 
 //Route Hooks - Do not delete//
-Route::view('antecedentes', 'livewire.antecedentes.index')->name('antecedentes.index')->middleware('auth');
 Route::view('especialists', 'livewire.especialists.index')->name('especialists.index')->middleware('auth');
 
 /*|--------------------------------------------------------------------------
@@ -52,9 +52,16 @@ Route::patch('colores/update/{id}', [ColoresController::class, 'update_colores']
 /*|--------------------------------------------------------------------------
 |Clientes
 |--------------------------------------------------------------------------*/
-Route::get('client', [ClientController::class, 'index'])->name('client.index');
+Route::get('client', [ClientController::class, 'index'])->name('clients.index');
 Route::post('create/client', [ClientController::class, 'store'])->name('client.store');
 Route::patch('update/client/{id}', [ClientController::class, 'update'])->name('client.update');
+
+/*|--------------------------------------------------------------------------
+|Historial clinico
+|--------------------------------------------------------------------------*/
+Route::get('antecedente', [AntecedentesController::class, 'index'])->name('antecedentes.index');
+Route::post('create/antecedentes', [AntecedentesController::class, 'store'])->name('antecedentes.store');
+Route::patch('update/antecedentes/{id}', [AntecedentesController::class, 'update'])->name('antecedentes.update');
 
 /*|--------------------------------------------------------------------------
 |Calendario
