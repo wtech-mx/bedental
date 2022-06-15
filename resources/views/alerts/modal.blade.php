@@ -117,7 +117,7 @@
                               <select class="form-control mibuscador_doctors" id="id_especialist" name="id_especialist" required>
                                    <option value="">Seleccione Doctor</option>
                                        @foreach($especialist as $item)
-                                          <option value="{{$item->id}}">{{$item->nombre}}</option>
+                                          <option value="{{$item->id}}">{{$item->nombre}} {{$item->apellido}}</option>
                                        @endforeach
                               </select>
                       </div>

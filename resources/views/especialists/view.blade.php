@@ -1,4 +1,6 @@
 @section('title', __('Especialists'))
+@extends('layouts.app')
+@section('content')
 
 <div class="container-fluid">
 	<div class="row justify-content-center">
@@ -11,9 +13,9 @@
 							Listado Doctor </h4>
 						</div>
 						@if (session()->has('message'))
-						<div wire:poll.4s class="btn btn-sm btn-success" style="margin-top:0px; margin-bottom:0px;"> {{ session('message') }} </div>
+						<div class="btn btn-sm btn-success" style="margin-top:0px; margin-bottom:0px;"> {{ session('message') }} </div>
 						@endif
-						<div class="btn btn-sm btn-info" data-toggle="modal" data-target="#createDataModal">
+						<div class="btn btn-sm btn-info" data-toggle="modal" data-target="#create">
 						<i class="fa fa-plus"></i>  Agregar Doctor
 						</div>
 					</div>
@@ -49,15 +51,18 @@
                                       <i class="fas fa-ellipsis-v"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                        <a data-toggle="modal" data-target="#updateModal" class="dropdown-item" wire:click="edit({{$row->id}})"><i class="fa fa-edit"></i> Edit </a>
+                                        <a data-toggle="modal" class="dropdown-item" data-target="#updateModal{{$row->id}}">
+                                            <i class="fa fa-edit"></i>
+                                            Edit
+                                        </a>
 
-                                        <a class="dropdown-item" onclick="confirm('Confirm Delete Especialist id {{$row->id}}? \nDeleted Especialists cannot be recovered!')||event.stopImmediatePropagation()" wire:click="destroy({{$row->id}})"><i class="fa fa-trash"></i> Delete </a>
                                     </div>
                                   </div>
                                 </td>
 
-                                @include('livewire.especialists.create')
-                                @include('livewire.especialists.update')
+                                @include('especialists.create')
+                                @include('especialists.update')
+
 							@endforeach
 						</tbody>
 					</table>
@@ -68,3 +73,4 @@
 		</div>
 	</div>
 </div>
+@endsection

@@ -3,7 +3,7 @@
       <!-- Brand -->
       <div class="sidenav-header d-flex align-items-center">
         <a class="navbar-brand" href="{{ route('dashboard') }}">
-          <img src="{{ asset('assets/img/brand/cropped-LOGOS-BEDTL-1.png') }}" class="navbar-brand-img" alt="...">
+          <img src="{{ asset('assets/img/brand/cropped-LOGOS-BEDTL-1.png') }}" class="navbar-brand-img"style="max-height: 5rem;">
         </a>
         <div class="ml-auto">
           <!-- Sidenav toggler -->
@@ -25,7 +25,7 @@
             <li class="nav-item">
                 <a class="nav-link {{ (Request::is('dashboard*') ? 'active' : '') }}" href="{{ route('dashboard') }}">
                     <i class="ni ni-shop text-blue"></i>
-                    <span class="nav-link-text">Dasboard</span>
+                    <span class="nav-link-text">Inicio</span>
                 </a>
 
                 <a class="nav-link {{ (Request::is('clients*') ? 'active' : '') }}" href="{{ route('clients.index') }}">
@@ -34,24 +34,20 @@
                 </a>
 
                 <a class="nav-link {{ (Request::is('facturas*') ? 'active' : '') }}" href="{{ route('facturas.index') }}">
-                    <i class="ni ni-single-copy-04 text-dark"></i>
+                    <i class="ni ni-single-copy-04 text-blue"></i>
                     <span class="nav-link-text">Facturas</span>
                 </a>
 
               <a class="nav-link {{ (Request::is('especialists*') ? 'active' : '') }}" href="{{ route('especialists.index') }}">
-                <i class="fa fa-user-md text-orange"></i>
+                <i class="fa fa-user-md text-blue"></i>
                 <span class="nav-link-text">Doctores</span>
               </a>
 
               <a class="nav-link {{ (Request::is('antecedentes*') ? 'active' : '') }}" href="{{ route('antecedentes.index') }}">
-                <i class="fa fa-address-book text-light"></i>
+                <i class="fa fa-address-book text-blue"></i>
                 <span class="nav-link-text">Historial clinico</span>
               </a>
 
-              <a class="nav-link {{ (Request::is('calendar*') ? 'active' : '') }}" href="{{ route('calendar.index_calendar') }}">
-                <i class="fa fa-calendar text-red"></i>
-                <span class="nav-link-text">Calendario</span>
-              </a>
             </li>
 
             <li class="nav-item">
@@ -73,12 +69,6 @@
               </div>
             </li>
 
-{{--            <li class="nav-item">--}}
-{{--              <a class="nav-link" href="../../pages/widgets.html">--}}
-{{--                <i class="ni ni-archive-2 text-green"></i>--}}
-{{--                <span class="nav-link-text">Widgets</span>--}}
-{{--              </a>--}}
-{{--            </li>--}}
 
           </ul>
           <!-- Divider -->
@@ -90,15 +80,8 @@
 
             <li class="nav-item">
               <a href="{{ route('email') }}" class="nav-link {{ (Request::is('email*') ? 'show' : '') }}">
-                <i class="fa fa-envelope text-green"></i>
+                <i class="fa fa-envelope text-blue"></i>
                 <span class="nav-link-text">Correo</span>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html" target="_blank">
-                <i class="ni ni-spaceship"></i>
-                <span class="nav-link-text">Getting started</span>
               </a>
             </li>
 

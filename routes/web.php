@@ -15,6 +15,7 @@ use App\Http\Controllers\FacturasController;
 use App\Http\Controllers\SendEmailController;
 use App\Http\Controllers\MailerController;
 use App\Http\Controllers\AntecedentesController;
+use App\Http\Controllers\EspecialistsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,7 +43,8 @@ Route::group(['middleware' => ['auth']], function() {
 });
 
 //Route Hooks - Do not delete//
-Route::view('especialists', 'livewire.especialists.index')->name('especialists.index')->middleware('auth');
+
+//Route::view('especialists', 'livewire.especialists.index')->name('especialists.index')->middleware('auth');
 
 /*|--------------------------------------------------------------------------
 |Colores
@@ -55,6 +57,14 @@ Route::patch('colores/update/{id}', [ColoresController::class, 'update_colores']
 Route::get('client', [ClientController::class, 'index'])->name('clients.index');
 Route::post('create/client', [ClientController::class, 'store'])->name('client.store');
 Route::patch('update/client/{id}', [ClientController::class, 'update'])->name('client.update');
+
+/*|--------------------------------------------------------------------------
+|Doctores
+|--------------------------------------------------------------------------*/
+
+Route::get('especialists', [EspecialistsController::class, 'index'])->name('especialists.index');
+Route::post('create/especialists', [EspecialistsController::class, 'store'])->name('especialists.store');
+Route::patch('update/especialists/{id}', [EspecialistsController::class, 'update'])->name('especialists.update');
 
 /*|--------------------------------------------------------------------------
 |Historial clinico
@@ -84,8 +94,8 @@ Route::post('radiografia/{id}', [RadiografiaController::class, 'upload'])->name(
 Route::get('facturas', [FacturasController::class, 'index'])->name('facturas.index');
 Route::post('factura/{id}', [FacturasController::class, 'store'])->name('factura.store');
 Route::patch('facturas/{id}', [FacturasController::class, 'upload'])->name('facturas.upload');
-
 Route::post('create_factura', [FacturasController::class, 'store_factura'])->name('factura.create_store');
+
 
 Route::get("email", [MailerController::class, "email"])->name("email");
 Route::post("send-email", [MailerController::class, "composeEmail"])->name("send-email");

@@ -21,8 +21,9 @@ class ClientController extends Controller
     public function index()
     {
         $clients = Client::get();
+        $facturas = Factura::get();
 
-        return view('clients.view', compact('clients'));
+        return view('clients.view', compact('clients','facturas'));
     }
 
     public function store_client(Request $request)

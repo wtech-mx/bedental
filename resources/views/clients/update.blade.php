@@ -9,7 +9,7 @@
                     <span aria-hidden="true close-btn">×</span>
                 </button>
             </div>
-            <form method="POST" action="{{ route('client.update', $row->id) }}" enctype="multipart/form-data" role="form">
+            <form method="POST" action="{{ route('especialists.update', $row->id) }}" enctype="multipart/form-data" role="form">
                 @csrf
                 <input type="hidden" name="_method" value="PATCH">
                 <div class="modal-body">
