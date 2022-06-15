@@ -9,7 +9,6 @@
     "license": "MIT",
     "require": {
         "php": "^8.0",
-        "flightsadmin/livewire-crud": "^0.0.17",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^9.0",
@@ -17,8 +16,6 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.3",
         "laravelcollective/html": "^6.3",
-        "livewire/livewire": "^2.10",
-        "mediconesystems/livewire-datatables": "^0.9.4",
         "phpmailer/phpmailer": "^6.6",
         "phpoffice/phpspreadsheet": "^1.23",
         "spatie/laravel-permission": "^5.5"
