@@ -291,7 +291,8 @@
                                         <input name="pdf_fiscal" type="file" class="form-control" id="pdf_fiscal"
                                             placeholder="pdf_fiscal" value="{{$row->pdf_fiscal}}">@error('pdf_fiscal')
                                         <span class="error text-danger">{{ $message }}</span> @enderror
-
+                                        <embed  width="400" height="400"
+                                            src="{{asset('pdf_fiscal/' . $row->pdf_fiscal)}}" frameborder="0"/>
                                     </div>
                                 </div>
                             </div>
