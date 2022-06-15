@@ -11,11 +11,11 @@ class FacturasController extends Controller
 {
     public function index()
     {
-
+        $facturas = Factura::get();
 
         $client = Client::orderBy('nombre', 'asc')->get();
 
-        return view('facturas.index', compact('client'));
+        return view('facturas.index', compact('facturas','client'));
     }
 
     public function store($id, Request $request)
