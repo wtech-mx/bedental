@@ -288,6 +288,9 @@
                                 <div class="row mt-3">
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6 ">
                                         <label for="fiscal">PDF Situación Fiscal</label>
+                                        <input name="pdf_fiscal" type="file" class="form-control" id="pdf_fiscal"
+                                            placeholder="pdf_fiscal" value="{{$row->pdf_fiscal}}">@error('pdf_fiscal')
+                                        <span class="error text-danger">{{ $message }}</span> @enderror
 
                                     </div>
                                 </div>
