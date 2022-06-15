@@ -9,7 +9,7 @@
                     <span aria-hidden="true close-btn">×</span>
                 </button>
             </div>
-            <form method="POST" action="{{ route('especialists.update', $row->id) }}" enctype="multipart/form-data" role="form">
+            <form method="POST" action="{{ route('client.update', $row->id) }}" enctype="multipart/form-data" role="form">
                 @csrf
                 <input type="hidden" name="_method" value="PATCH">
                 <div class="modal-body">
@@ -288,11 +288,7 @@
                                 <div class="row mt-3">
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6 ">
                                         <label for="fiscal">PDF Situación Fiscal</label>
-                                        <input name="pdf_fiscal" type="file" class="form-control" id="pdf_fiscal"
-                                            placeholder="pdf_fiscal" value="{{$row->pdf_fiscal}}">@error('pdf_fiscal')
-                                        <span class="error text-danger">{{ $message }}</span> @enderror
-                                        <iframe width="400" height="400"
-                                            src="{{asset('pdf_fiscal/' . $row->pdf_fiscal)}}" frameborder="0"></iframe>
+
                                     </div>
                                 </div>
                             </div>
