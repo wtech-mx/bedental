@@ -37,7 +37,7 @@
     @yield('js_dropzone')
     @yield('fullcalendar')
 
-  @livewireStyles
+{{--  @livewireStyles--}}
 </head>
 
 <body style="overflow-x: hidden">
@@ -103,7 +103,7 @@
     @include('layouts.alertas')
 
     <!--livewire -->
-    @livewireScripts
+{{--    @livewireScripts--}}
 
     <script type="text/javascript">
         window.livewire.on('closeModal', () => {
