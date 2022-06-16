@@ -105,11 +105,11 @@
     <!--livewire -->
 {{--    @livewireScripts--}}
 
-    <script type="text/javascript">
-        window.livewire.on('closeModal', () => {
-            $('#createDataModal').modal('hide');
-        });
-    </script>
+{{--    <script type="text/javascript">--}}
+{{--        window.livewire.on('closeModal', () => {--}}
+{{--            $('#createDataModal').modal('hide');--}}
+{{--        });--}}
+{{--    </script>--}}
 
   <!-- Argon Scripts -->
   <!-- Core -->
