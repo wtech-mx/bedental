@@ -62,6 +62,17 @@
                                         <input name="email" type="email" class="form-control" id="email"
                                             placeholder="Email">@error('email') <span class="error text-danger">{{
                                             $message }}</span> @enderror
+                                        <p>
+                                          <a class="" data-toggle="collapse" href="#Correo" role="button" aria-expanded="false" aria-controls="Correo">
+                                            Agregar otro Correo
+                                          </a>
+                                        </p>
+                                        <div class="collapse" id="Correo">
+                                            <label for="telefono">Email 2</label>
+                                            <input name="email2" type="number" class="form-control" id="email2"
+                                                placeholder="Email">@error('email2') <span class="error text-danger">{{
+                                                $message }}</span> @enderror
+                                        </div>
                                     </div>
 
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6">
@@ -69,6 +80,17 @@
                                         <input name="telefono" type="number" class="form-control" id="telefono"
                                             placeholder="Telefono">@error('telefono') <span class="error text-danger">{{
                                             $message }}</span> @enderror
+                                        <p>
+                                          <a class="" data-toggle="collapse" href="#Telefono" role="button" aria-expanded="false" aria-controls="Telefono">
+                                            Agregar otro telefono
+                                          </a>
+                                        </p>
+                                        <div class="collapse" id="Telefono">
+                                            <label for="telefono">Telefono2</label>
+                                            <input name="telefono2" type="number" class="form-control" id="telefono2"
+                                                placeholder="Telefono">@error('telefono2') <span class="error text-danger">{{
+                                                $message }}</span> @enderror
+                                        </div>
                                     </div>
 
                                     <div class="form-group col-xs-12 col-sm-12 col-md-6 ">

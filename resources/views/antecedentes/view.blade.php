@@ -50,7 +50,7 @@
                                                 <td>{{ $row->client->sanguineo }}</td>
                                                 <td>{{ $row->client->telefono }}</td>
 
-                                                <td class="text-right">
+                                                <td class="text-left">
                                                     <div class="dropdown ">
                                                         <a class="btn btn-sm btn-icon-only text-light" href="#"
                                                             role="button" data-toggle="dropdown" aria-haspopup="true"

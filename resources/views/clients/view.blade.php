@@ -34,7 +34,7 @@
                                                 <th>Apellido</th>
                                                 <th>Edad</th>
                                                 <th>Sanguineo</th>
-                                                <th>Ocupacion</th>
+                                                <th>Motivo de consulta</th>
                                                 <th>Telefono</th>
                                                 <th>Fecha Nacimiento</th>
                                                 <th>Email</th>
@@ -49,12 +49,12 @@
                                                 <td>{{ $row->apellido }}</td>
                                                 <td>{{ $row->edad }}</td>
                                                 <td>{{ $row->sanguineo }}</td>
-                                                <td>{{ $row->ocupacion }}</td>
+                                                <td>{{ $row->motivo_consulta }}</td>
                                                 <td>{{ $row->telefono }}</td>
                                                 <td>{{ $row->fecha_nacimiento }}</td>
                                                 <td>{{ $row->email }}</td>
 
-                                                <td class="text-right">
+                                                <td class="text-left">
                                                     <div class="dropdown ">
                                                         <a class="btn btn-sm btn-icon-only text-light" href="#"
                                                             role="button" data-toggle="dropdown" aria-haspopup="true"

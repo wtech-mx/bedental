@@ -779,6 +779,25 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="Talla">Talla</label>
+                                        <input name="talla" type="text" class="form-control" id="talla" value="{{$row->talla}}">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="Peso">Peso</label>
+                                        <input name="peso" type="text" class="form-control" id="peso" value="{{$row->peso}}">
+                                    </div>
+                                </div>
+
+                            </div>
+
                         </div>
                         {{-- tab datos de Evaluación --}}
 

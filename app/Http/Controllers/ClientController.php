@@ -65,9 +65,11 @@ class ClientController extends Controller
         $client->sanguineo = $request-> sanguineo;
         $client->ocupacion = $request-> ocupacion;
         $client->telefono = $request-> telefono;
+        $client->telefono2 = $request-> telefono2;
         $client->fecha_nacimiento = $request-> fecha_nacimiento;
         $client->motivo_consulta = $request-> motivo_consulta;
         $client->email = $request-> email;
+        $client->email2 = $request-> email2;
         $client->domicilio_fiscal = $request-> domicilio_fiscal;
         $client->regimen_fiscal = $request-> regimen_fiscal;
         $client->fiscal = $request-> fiscal;
@@ -107,9 +109,11 @@ class ClientController extends Controller
         $client->sanguineo = $request-> sanguineo;
         $client->ocupacion = $request-> ocupacion;
         $client->telefono = $request-> telefono;
+        $client->telefono2 = $request-> telefono2;
         $client->fecha_nacimiento = $request-> fecha_nacimiento;
         $client->motivo_consulta = $request-> motivo_consulta;
         $client->email = $request-> email;
+        $client->email2 = $request-> email2;
         $client->domicilio_fiscal = $request-> domicilio_fiscal;
         $client->regimen_fiscal = $request-> regimen_fiscal;
         $client->fiscal = $request-> fiscal;

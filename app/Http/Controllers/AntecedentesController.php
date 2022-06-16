@@ -24,9 +24,7 @@ class AntecedentesController extends Controller
         $antecedentes = Antecedente::findOrFail($id);
         $antecedentes->antecedente1 = $request-> antecedente1;
         $antecedentes->tratamiento1 = $request-> tratamiento1;
-        $antecedentes->tiempo1 = $request-> tiempo1;
         $antecedentes->tratamiento2 = $request-> tratamiento2;
-        $antecedentes->tiempo2 = $request-> tiempo2;
         $antecedentes->tratamiento3 = $request-> tratamiento3;
         $antecedentes->antecedente4 = $request-> antecedente4;
         $antecedentes->tratamiento4 = $request-> tratamiento4;
@@ -95,6 +93,9 @@ class AntecedentesController extends Controller
         $antecedentes->descripcion8 = $request-> descripcion8;
         $antecedentes->descripcion9 = $request-> descripcion9;
         $antecedentes->descripcion10 = $request-> descripcion10;
+        $antecedentes->talla = $request-> talla;
+        $antecedentes->peso = $request-> peso;
+
         $antecedentes->update();
 
         Session::flash('edit', 'Se ha editado sus datos con exito');
