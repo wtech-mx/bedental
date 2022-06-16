@@ -98,7 +98,7 @@
                               <select class="form-control mibuscador_paciente" id="id_client" name="id_client" >
                                    <option value="">Seleccione Paciente</option>
                                        @foreach($client as $item)
-                                          <option selected value="{{$item->id}}">{{$item->nombre}}</option>
+                                          <option selected value="{{$item->id}}">{{$item->nombre}} {{$item->apellido}}</option>
                                        @endforeach
                               </select>
                       </div>
