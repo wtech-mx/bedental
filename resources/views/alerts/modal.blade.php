@@ -72,17 +72,17 @@
 
                       <div class="form-group col-4">
                           <label for="">Fecha</label>
-                        <input class="form-control" type="date" name="txtFecha" id="txtFecha" required>
+                        <input class="form-control" type="date" name="txtFecha" id="txtFecha" >
                       </div>
 
                       <div class="form-group col-4">
                           <label for="">Hora Inicio</label>
-                        <input class="form-control" type="time" name="txtHora" id="txtHora" autocomplete="off" required>
+                        <input class="form-control" type="time" name="txtHora" id="txtHora" autocomplete="off" >
                       </div>
 
                       <div class="form-group col-4">
                           <label for="">Hora Fin</label>
-                        <input class="form-control" type="time" name="txtHorafin" id="txtHorafin" autocomplete="off" required>
+                        <input class="form-control" type="time" name="txtHorafin" id="txtHorafin" autocomplete="off" >
                       </div>
 
                       <input type="hidden" class="form-control" name="image" id="image">
@@ -95,17 +95,17 @@
 
                       <div class="form-group col-6 mb-3">
                          <label for="">Selecionar Paciente</label>
-                              <select class="form-control mibuscador_paciente" id="id_client" name="id_client" required>
+                              <select class="form-control mibuscador_paciente" id="id_client" name="id_client" >
                                    <option value="">Seleccione Paciente</option>
                                        @foreach($client as $item)
-                                          <option value="{{$item->id}}">{{$item->nombre}}</option>
+                                          <option selected value="{{$item->id}}">{{$item->nombre}}</option>
                                        @endforeach
                               </select>
                       </div>
 
                       <div class="form-group col-6 mb-3">
                          <label for="">Selecionar Unidad</label>
-                              <select class="form-control" id="resource_id" name="resource_id" required>
+                              <select class="form-control" id="resource_id" name="resource_id" >
                                    <option value="">Seleccione Unidad</option>
                                    <option value="a">A</option>
                                    <option value="b">B</option>
@@ -114,7 +114,7 @@
 
                       <div class="form-group col-12 mb-3">
                          <label for="">Selecionar Doctor</label>
-                              <select class="form-control mibuscador_doctors" id="id_especialist" name="id_especialist" required>
+                              <select class="form-control" id="id_especialist" name="id_especialist" >
                                    <option value="">Seleccione Doctor</option>
                                        @foreach($especialist as $item)
                                           <option value="{{$item->id}}">{{$item->nombre}} {{$item->apellido}}</option>
@@ -127,7 +127,7 @@
 
                       <div class="form-group col-6 mt-3">
                           <label for="">Selecciona el servicio</label>
-                          <select class="form-control" id="color" name="color" required>
+                          <select class="form-control" id="color" name="color" >
                               <option value="">Selecionar estatus</option>
                               <option value="{{$colores->limpieza}}">Limpieza</option>
                               <option value="{{$colores->operatoria}}">Operatoria</option>
