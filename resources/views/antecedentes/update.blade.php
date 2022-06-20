@@ -55,7 +55,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="example3cols3Input">Tratamiento</label>
+                                        <label class="form-control-label" for="example3cols3Input">Observaciones</label>
                                     </div>
                                 </div>
                             </div>
@@ -89,8 +89,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input name="tratamiento1" type="text" class="form-control" id="tratamiento1"
-                                            placeholder="Tratamiento1" value="{{$row->tratamiento1}}">
+                                        <input name="Observaciones1" type="text" class="form-control" id="Observaciones1"
+                                            placeholder="Observaciones1" value="{{$row->Observaciones1}}">
                                     </div>
                                 </div>
                             </div>
@@ -124,8 +124,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input name="tratamiento2" type="text" class="form-control" id="tratamiento2"
-                                            placeholder="Tratamiento2" value="{{$row->tratamiento2}}">
+                                        <input name="Observaciones2" type="text" class="form-control" id="Observaciones2"
+                                            placeholder="Observaciones2" value="{{$row->Observaciones2}}">
                                     </div>
                                 </div>
                             </div>
@@ -192,8 +192,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input name="tratamiento3" type="text" class="form-control" id="tratamiento3"
-                                            placeholder="Tratamiento3" value="{{$row->tratamiento3}}">
+                                        <input name="Observaciones3" type="text" class="form-control" id="Observaciones3"
+                                            placeholder="Observaciones3" value="{{$row->Observaciones3}}">
                                     </div>
                                 </div>
                             </div>
@@ -227,8 +227,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input name="tratamiento4" type="text" class="form-control" id="tratamiento4"
-                                            placeholder="Tratamiento4" value="{{$row->tratamiento4}}">
+                                        <input name="Observaciones4" type="text" class="form-control" id="Observaciones4"
+                                            placeholder="Observaciones4" value="{{$row->Observaciones4}}">
                                     </div>
                                 </div>
                             </div>
@@ -262,8 +262,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input name="tratamiento5" type="text" class="form-control" id="tratamiento5"
-                                            placeholder="Tratamiento5" value="{{$row->tratamiento5}}">
+                                        <input name="Observaciones5" type="text" class="form-control" id="Observaciones5"
+                                            placeholder="Observaciones5" value="{{$row->Observaciones5}}">
                                     </div>
                                 </div>
                             </div>
@@ -297,8 +297,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input name="tratamiento6" type="text" class="form-control" id="tratamiento6"
-                                            placeholder="Tratamiento6" value="{{$row->tratamiento6}}">
+                                        <input name="Observaciones6" type="text" class="form-control" id="Observaciones6"
+                                            placeholder="Observaciones6" value="{{$row->Observaciones6}}">
                                     </div>
                                 </div>
                             </div>
@@ -331,8 +331,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input name="tratamiento7" type="text" class="form-control" id="tratamiento7"
-                                            placeholder="Tratamiento7" value="{{$row->tratamiento7}}">
+                                        <input name="Observaciones7" type="text" class="form-control" id="Observaciones7"
+                                            placeholder="Observaciones7" value="{{$row->Observaciones7}}">
                                     </div>
                                 </div>
                             </div>
@@ -366,8 +366,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input name="tratamiento8" type="text" class="form-control" id="tratamiento8"
-                                            placeholder="Tratamiento8" value="{{$row->tratamiento8}}">
+                                        <input name="Observaciones8" type="text" class="form-control" id="Observaciones8"
+                                            placeholder="Observaciones8" value="{{$row->Observaciones8}}">
                                     </div>
                                 </div>
                             </div>
@@ -401,8 +401,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input name="tratamiento9" type="text" class="form-control" id="tratamiento9"
-                                            placeholder="Tratamiento9" value="{{$row->tratamiento9}}">
+                                        <input name="Observaciones9" type="text" class="form-control" id="Observaciones9"
+                                            placeholder="Observaciones9" value="{{$row->Observaciones9}}">
                                     </div>
                                 </div>
                             </div>
@@ -436,8 +436,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input name="tratamiento10" type="text" class="form-control" id="tratamiento10"
-                                            placeholder="Tratamiento10" value="{{$row->tratamiento10}}">
+                                        <input name="Observaciones10" type="text" class="form-control" id="Observaciones10"
+                                            placeholder="Observaciones10" value="{{$row->Observaciones10}}">
                                     </div>
                                 </div>
                             </div>
@@ -470,8 +470,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input name="tratamiento11" type="text" class="form-control" id="tratamiento11"
-                                            placeholder="Tratamiento11" value="{{$row->tratamiento11}}">
+                                        <input name="Observaciones11" type="text" class="form-control" id="Observaciones11"
+                                            placeholder="Observaciones11" value="{{$row->Observaciones11}}">
                                     </div>
                                 </div>
                             </div>
@@ -538,8 +538,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input name="tratamiento12" type="text" class="form-control" id="tratamiento12"
-                                            placeholder="Tratamiento12" value="{{$row->tratamiento12}}">
+                                        <input name="Observaciones12" type="text" class="form-control" id="Observaciones12"
+                                            placeholder="Observaciones12" value="{{$row->Observaciones12}}">
                                     </div>
                                 </div>
                             </div>
@@ -573,8 +573,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input name="tratamiento13" type="text" class="form-control" id="tratamiento13"
-                                            placeholder="Tratamiento13" value="{{$row->tratamiento13}}">
+                                        <input name="Observaciones13" type="text" class="form-control" id="Observaciones13"
+                                            placeholder="Observaciones13" value="{{$row->Observaciones13}}">
                                     </div>
                                 </div>
                             </div>
@@ -586,42 +586,42 @@
                                             respiratorios <br>
                                             <label class="form-check-label" for="">Covid19</label>
                                             @if ($row->covid == '1')
-                                            <input type="radio" class="form-check-input" id="covid" name="covid"
+                                            <input type="checkbox" class="form-check-input" id="covid" name="covid"
                                                 value="1" checked><br>
                                             @else
-                                            <input type="radio" class="form-check-input" id="covid" name="covid"
+                                            <input type="checkbox" class="form-check-input" id="covid" name="covid"
                                                 value="1"><br>
                                             @endif
                                             <label class="form-check-label" for="">Influ.</label>
                                             @if ($row->influenza == '1')
-                                            <input type="radio" class="form-check-input" id="influenza" name="influenza"
+                                            <input type="checkbox" class="form-check-input" id="influenza" name="influenza"
                                                 value="1" checked><br>
                                             @else
-                                            <input type="radio" class="form-check-input" id="influenza" name="influenza"
+                                            <input type="checkbox" class="form-check-input" id="influenza" name="influenza"
                                                 value="1"><br>
                                             @endif
                                             <label class="form-check-label" for="">EPOC</label>
                                             @if ($row->epoc == '1')
-                                            <input type="radio" class="form-check-input" id="epoc" name="epoc" value="1"
+                                            <input type="checkbox" class="form-check-input" id="epoc" name="epoc" value="1"
                                                 checked><br>
                                             @else
-                                            <input type="radio" class="form-check-input" id="sarampion" name="sarampion"
+                                            <input type="checkbox" class="form-check-input" id="sarampion" name="sarampion"
                                                 value="1"><br>
                                             @endif
                                             <label class="form-check-label" for="">Asma</label>
                                             @if ($row->asma == '1')
-                                            <input type="radio" class="form-check-input" id="asma" name="asma" value="1"
+                                            <input type="checkbox" class="form-check-input" id="asma" name="asma" value="1"
                                                 checked><br>
                                             @else
-                                            <input type="radio" class="form-check-input" id="asma" name="asma"
+                                            <input type="checkbox" class="form-check-input" id="asma" name="asma"
                                                 value="1"><br>
                                             @endif
                                             <label class="form-check-label" for="">Asma</label>
                                             @if ($row->otras_res == '1')
-                                            <input type="radio" class="form-check-input" id="otras_res" name="otras_res"
+                                            <input type="checkbox" class="form-check-input" id="otras_res" name="otras_res"
                                                 value="1" checked><br>
                                             @else
-                                            <input type="radio" class="form-check-input" id="otras_res" name="otras_res"
+                                            <input type="checkbox" class="form-check-input" id="otras_res" name="otras_res"
                                                 value="1"><br>
                                             @endif
                                         </label>
@@ -649,8 +649,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input name="tratamiento14" type="text" class="form-control" id="tratamiento14"
-                                            placeholder="Tratamiento14" value="{{$row->tratamiento14}}">
+                                        <input name="Observaciones14" type="text" class="form-control" id="Observaciones14"
+                                            placeholder="Observaciones14" value="{{$row->Observaciones14}}">
                                     </div>
                                 </div>
                             </div>
@@ -683,8 +683,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input name="tratamiento15" type="text" class="form-control" id="tratamiento15"
-                                            placeholder="Tratamiento15" value="{{$row->tratamiento15}}">
+                                        <input name="Observaciones15" type="text" class="form-control" id="Observaciones15"
+                                            placeholder="Observaciones15" value="{{$row->Observaciones15}}">
                                     </div>
                                 </div>
                             </div>
@@ -718,8 +718,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input name="tratamiento16" type="text" class="form-control" id="tratamiento16"
-                                            placeholder="Tratamiento16" value="{{$row->tratamiento16}}">
+                                        <input name="Observaciones16" type="text" class="form-control" id="Observaciones16"
+                                            placeholder="Observaciones16" value="{{$row->Observaciones16}}">
                                     </div>
                                 </div>
                             </div>
@@ -753,8 +753,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input name="tratamiento17" type="text" class="form-control" id="tratamiento17"
-                                            placeholder="Tratamiento17" value="{{$row->tratamiento17}}">
+                                        <input name="Observaciones17" type="text" class="form-control" id="Observaciones17"
+                                            placeholder="Observaciones17" value="{{$row->Observaciones17}}">
                                     </div>
                                 </div>
                             </div>
@@ -774,8 +774,8 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input name="tratamiento18" type="text" class="form-control" id="tratamiento18"
-                                            placeholder="Tratamiento18" value="{{$row->tratamiento18}}">
+                                        <input name="Observaciones18" type="text" class="form-control" id="Observaciones18"
+                                            placeholder="Observaciones18" value="{{$row->Observaciones18}}">
                                     </div>
                                 </div>
                             </div>
@@ -1026,26 +1026,26 @@
                                     <div class="form-check form-check-inline form-check-inline">
                                         <label class="form-check-label" for="">P.</label>
                                         @if ($row->pregunta8 == '1')
-                                        <input type="radio" class="form-check-input" id="pregunta8" name="pregunta8"
+                                        <input type="checkbox" class="form-check-input" id="pregunta8" name="pregunta8"
                                             value="1" checked><br>
                                         @else
-                                        <input type="radio" class="form-check-input" id="pregunta8" name="pregunta8"
+                                        <input type="checkbox" class="form-check-input" id="pregunta8" name="pregunta8"
                                             value="1"><br>
                                         @endif
                                         <label class="form-check-label" for="">E.</label>
                                         @if ($row->pregunta9 == '1')
-                                        <input type="radio" class="form-check-input" id="pregunta9" name="pregunta9"
+                                        <input type="checkbox" class="form-check-input" id="pregunta9" name="pregunta9"
                                             value="1" checked><br>
                                         @else
-                                        <input type="radio" class="form-check-input" id="pregunta9" name="pregunta9"
+                                        <input type="checkbox" class="form-check-input" id="pregunta9" name="pregunta9"
                                             value="1"><br>
                                         @endif
                                         <label class="form-check-label" for="">H</label>
                                         @if ($row->pregunta10 == '1')
-                                        <input type="radio" class="form-check-input" id="pregunta10" name="pregunta10"
+                                        <input type="checkbox" class="form-check-input" id="pregunta10" name="pregunta10"
                                             value="1" checked><br>
                                         @else
-                                        <input type="radio" class="form-check-input" id="pregunta10" name="pregunta10"
+                                        <input type="checkbox" class="form-check-input" id="pregunta10" name="pregunta10"
                                             value="1"><br>
                                         @endif
 

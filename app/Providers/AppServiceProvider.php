@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Colores;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +24,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer('layouts.app', function ($view) {
+            $colores = Colores::find(1);
+            $view->with(['colores' => $colores]);
+        });
     }
 }

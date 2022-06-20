@@ -70,8 +70,12 @@
                         $('#txtFecha').val(info.dateStr);
                     } else {
                         let fechaHora = info.dateStr.split("T");
+                        let unahora = fechaHora[1].substring(0, 2);
+                        let final = Number(unahora) + 1;
                         $('#txtFecha').val(fechaHora[0]);
+                        $('#txtHorafin').val(fechaHora[1].substring(0, 5));
                         $('#txtHora').val(fechaHora[1].substring(0, 5));
+                        console.log('hora', final)
                     }
                   $('#exampleModal').modal('toggle');
                 },
