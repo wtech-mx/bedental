@@ -137,34 +137,34 @@
                                             <br>
                                             <label class="form-check-label" for="">Var.</label>
                                             @if ($row->varicela == '1')
-                                            <input type="radio" class="form-check-input" id="varicela" name="varicela"
+                                            <input type="checkbox" class="form-check-input" id="varicela" name="varicela"
                                                 value="1" checked> <br>
                                             @else
-                                            <input type="radio" class="form-check-input" id="varicela" name="varicela"
+                                            <input type="checkbox" class="form-check-input" id="varicela" name="varicela"
                                                 value="1"> <br>
                                             @endif
                                             <label class="form-check-label" for="">Sara.</label>
                                             @if ($row->sarampion == '1')
-                                            <input type="radio" class="form-check-input" id="sarampion" name="sarampion"
+                                            <input type="checkbox" class="form-check-input" id="sarampion" name="sarampion"
                                                 value="1" checked> <br>
                                             @else
-                                            <input type="radio" class="form-check-input" id="sarampion" name="sarampion"
+                                            <input type="checkbox" class="form-check-input" id="sarampion" name="sarampion"
                                                 value="1"> <br>
                                             @endif
                                             <label class="form-check-label" for="">Rub.</label>
                                             @if ($row->sarampion == '1')
-                                            <input type="radio" class="form-check-input" id="sarampion" name="sarampion"
+                                            <input type="checkbox" class="form-check-input" id="sarampion" name="sarampion"
                                                 value="1" checked> <br>
                                             @else
-                                            <input type="radio" class="form-check-input" id="sarampion" name="sarampion"
+                                            <input type="checkbox" class="form-check-input" id="sarampion" name="sarampion"
                                                 value="1"> <br>
                                             @endif
                                             <label class="form-check-label" for="">Esc.</label>
                                             @if ($row->escarlatina == '1')
-                                            <input type="radio" class="form-check-input" id="escarlatina"
+                                            <input type="checkbox" class="form-check-input" id="escarlatina"
                                                 name="escarlatina" value="1" checked> <br>
                                             @else
-                                            <input type="radio" class="form-check-input" id="escarlatina"
+                                            <input type="checkbox" class="form-check-input" id="escarlatina"
                                                 name="escarlatina" value="1"> <br>
                                             @endif
                                         </label>
@@ -483,34 +483,34 @@
                                             sexual <br>
                                             <label class="form-check-label" for="">VIH</label>
                                             @if ($row->vih == '1')
-                                            <input type="radio" class="form-check-input" id="vih" name="vih" value="1"
+                                            <input type="checkbox" class="form-check-input" id="vih" name="vih" value="1"
                                                 checked><br>
                                             @else
-                                            <input type="radio" class="form-check-input" id="vih" name="vih"
+                                            <input type="checkbox" class="form-check-input" id="vih" name="vih"
                                                 value="1"><br>
                                             @endif
                                             <label class="form-check-label" for="">Hepa.</label>
                                             @if ($row->hepatitis == '1')
-                                            <input type="radio" class="form-check-input" id="hepatitis" name="hepatitis"
+                                            <input type="checkbox" class="form-check-input" id="hepatitis" name="hepatitis"
                                                 value="1" checked><br>
                                             @else
-                                            <input type="radio" class="form-check-input" id="hepatitis" name="hepatitis"
+                                            <input type="checkbox" class="form-check-input" id="hepatitis" name="hepatitis"
                                                 value="1"><br>
                                             @endif
                                             <label class="form-check-label" for="">VPH</label>
                                             @if ($row->vph == '1')
-                                            <input type="radio" class="form-check-input" id="vph" name="vph" value="1"
+                                            <input type="checkbox" class="form-check-input" id="vph" name="vph" value="1"
                                                 checked><br>
                                             @else
-                                            <input type="radio" class="form-check-input" id="sarampion" name="sarampion"
+                                            <input type="checkbox" class="form-check-input" id="sarampion" name="sarampion"
                                                 value="1"><br>
                                             @endif
                                             <label class="form-check-label" for="">Otras</label>
                                             @if ($row->otras_tran == '1')
-                                            <input type="radio" class="form-check-input" id="otras_tran"
+                                            <input type="checkbox" class="form-check-input" id="otras_tran"
                                                 name="otras_tran" value="1" checked><br>
                                             @else
-                                            <input type="radio" class="form-check-input" id="otras_tran"
+                                            <input type="checkbox" class="form-check-input" id="otras_tran"
                                                 name="otras_tran" value="1"><br>
                                             @endif
                                         </label>
