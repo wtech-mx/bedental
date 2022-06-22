@@ -214,6 +214,28 @@
                         arrayOfDomNodes = [contenedorEventWrap ]
                         return { domNodes: arrayOfDomNodes }
                     }
+                    if (checkArg == 7){
+                        modulocapi = arg.event.extendedProps.resource_id.toUpperCase()
+                        let hora = '<div class="position-absolute" style="top: 0;left: 0">'+hor+'</div>';
+                        let imgEvent = '<div class="position-absolute" style="top: 5px;right: 15px"><i class="fa fa-user-plus" aria-hidden="true"></i></div>';
+                        let titleEvent =  '<div class="position-absolute" style="top: 20px;left: 0">'+arg.event.title+'</div>';
+                        let modulo = '<div class="position-absolute" style="top: 20px;right: 17px">'+modulocapi+'</div>';
+                        contenedorEventWrap.classList = "position-relative";
+                        contenedorEventWrap.innerHTML = imgEvent+hora+titleEvent+modulo;
+                        arrayOfDomNodes = [contenedorEventWrap ]
+                        return { domNodes: arrayOfDomNodes }
+                    }
+                    if (checkArg == 8){
+                        modulocapi = arg.event.extendedProps.resource_id.toUpperCase()
+                        let hora = '<div class="position-absolute" style="top: 0;left: 0">'+hor+'</div>';
+                        let imgEvent = '<div class="position-absolute" style="top: 5px;right: 15px"><i class="fa fa-ban" aria-hidden="true"></i></div>';
+                        let titleEvent =  '<div class="position-absolute" style="top: 20px;left: 0">'+arg.event.title+'</div>';
+                        let modulo = '<div class="position-absolute" style="top: 20px;right: 17px">'+modulocapi+'</div>';
+                        contenedorEventWrap.classList = "position-relative";
+                        contenedorEventWrap.innerHTML = imgEvent+hora+titleEvent+modulo;
+                        arrayOfDomNodes = [contenedorEventWrap ]
+                        return { domNodes: arrayOfDomNodes }
+                    }
 
                   },
 
@@ -252,7 +274,7 @@
                     id_especialist:$('#id_especialist').val(),
                     descripcion:$('#descripcion').val(),
                     estatus:$('#estatus').val()+estatusDefault,
-                    check:$('#check').val()+checkDefault,
+                    check:$('#check').val(),
                     image:$('#image').val()+imageDefault,
                     color:$('#color').val(),
                     start:$('#txtFecha').val()+" "+$('#txtHora').val(),

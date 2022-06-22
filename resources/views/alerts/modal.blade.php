@@ -139,12 +139,14 @@
                       <div class="form-group col-6 mt-3">
                           <label for="">¿Estatus de la cita?</label>
                           <select class="form-control" id="check" name="check">
+                              <option selected value="8">Sin estatus</option>
                               <option value="1">Laboratorio </option>
                               <option value="2">Atendido / reservado </option>
                               <option value="3">No asistio / cancelado</option>
                               <option value="4">Sin confirmar agendado</option>
                               <option value="5">Confirmado</option>
                               <option value="6">Recordatorio / tentativo</option>
+                              <option value="7">paciente nuevo / primera vez</option>
                           </select>
                       </div>
 
