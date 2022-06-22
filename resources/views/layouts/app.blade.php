@@ -53,7 +53,7 @@
         <!-- header -->
 
         <!-- Breadgrum -->
-        <div class="header bg-primary pb-6">
+        <div class="header pb-6" style="background-color: #A0D7E5">
           <div class="container-fluid">
             <div class="header-body">
               <div class="row align-items-center py-4">

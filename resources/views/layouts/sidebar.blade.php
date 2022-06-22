@@ -2,8 +2,8 @@
     <div class="scrollbar-inner">
       <!-- Brand -->
       <div class="sidenav-header d-flex align-items-center">
-        <a class="navbar-brand" href="{{ route('dashboard') }}">
-          <img src="{{ asset('assets/img/brand/cropped-LOGOS-BEDTL-1.png') }}" class="navbar-brand-img"style="max-height: 5rem;">
+        <a class="navbar-brand text-center" href="{{ route('dashboard') }}">
+          <img src="{{ asset('assets/img/brand/cropped-LOGOS-BEDTL-1.png') }}" class="navbar-brand-img"style="max-height: 8rem;top: 2%;left:20%;position: absolute">
         </a>
         <div class="ml-auto">
           <!-- Sidenav toggler -->
@@ -16,7 +16,7 @@
           </div>
         </div>
       </div>
-      <div class="navbar-inner">
+      <div class="navbar-inner mt-5">
         <!-- Collapse -->
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
           <!-- Nav items -->

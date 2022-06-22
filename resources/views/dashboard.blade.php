@@ -17,7 +17,7 @@
                           <span class="h2 font-weight-bold mb-0"> {{$count_client}} </span>
                         </div>
                         <div class="col-auto">
-                          <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
+                          <div class="icon icon-shape text-white rounded-circle shadow" style="background-color: #A0D7E5">
                             <i class="ni ni-circle-08 text-white"></i>
                           </div>
                         </div>
@@ -42,7 +42,7 @@
                       <span class="h2 font-weight-bold mb-0"> {{$count_especialist}} </span>
                     </div>
                     <div class="col-auto">
-                      <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
+                      <div class="icon icon-shape  text-white rounded-circle shadow" style="background-color: #A0D7E5">
                         <i class="fa fa-user-md text-white"></i>
                       </div>
                     </div>
@@ -63,7 +63,7 @@
                       <span class="h2 font-weight-bold mb-0">{{$count_antecedentes}}</span>
                     </div>
                     <div class="col-auto">
-                      <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
+                      <div class="icon icon-shape text-white rounded-circle shadow" style="background-color: #A0D7E5">
                         <i class="fa fa-address-book text-white"></i>
                       </div>
                     </div>
@@ -84,7 +84,7 @@
                       <span class="h2 font-weight-bold mb-0">{{$count_users}}</span>
                     </div>
                     <div class="col-auto">
-                      <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
+                      <div class="icon icon-shape text-white rounded-circle shadow" style="background-color: #A0D7E5">
                          <i class="ni ni-settings text-white"></i>
                       </div>
                     </div>
@@ -107,7 +107,7 @@
                               <span class="h2 font-weight-bold mb-0"></span>
                             </div>
                             <div class="col-auto">
-                              <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
+                              <div class="icon icon-shape text-white rounded-circle shadow" style="background-color: #A0D7E5">
                                 <i class="fa fa-paint-brush text-white"></i>
                               </div>
                             </div>
