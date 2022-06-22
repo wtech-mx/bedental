@@ -139,53 +139,78 @@
                     let imageArg = arg.event.extendedProps.image;
                     let checkArg = arg.event.extendedProps.check;
 
+                    minutos3=(arg.event.start.getMinutes());
+                    hora3=(arg.event.start.getHours());
+                    minutos3 = (minutos3<10)?"0"+minutos3:minutos3;
+                    hora3 = (hora3<10)?"0"+hora3:hora3;
+                    horario = (hora3+":"+minutos3);
+                    let hor = horario;
+
                     if (checkArg == 1){
-                        let imgEvent = '<i class="fa fa-flask" aria-hidden="true" style="padding: 5px"></i> ';
-                        let titleEvent =  arg.event.title;
-                        contenedorEventWrap.classList = "d-flex ml-5";
-                        contenedorEventWrap.innerHTML = imgEvent+titleEvent;
+                        modulocapi = arg.event.extendedProps.resource_id.toUpperCase()
+                        let hora = '<div class="position-absolute" style="top: 0;left: 0">'+hor+'</div>';
+                        let imgEvent = '<div class="position-absolute" style="top: 5px;right: 15px"><i class="fa fa-flask" aria-hidden="true"></i></div>';
+                        let titleEvent =  '<div class="position-absolute" style="top: 20px;left: 0">'+arg.event.title+'</div>';
+                        let modulo = '<div class="position-absolute" style="top: 20px;right: 17px">'+modulocapi+'</div>';
+                        contenedorEventWrap.classList = "position-relative";
+                        contenedorEventWrap.innerHTML = imgEvent+hora+titleEvent+modulo;
                         arrayOfDomNodes = [contenedorEventWrap ]
                         return { domNodes: arrayOfDomNodes }
                     }
 
                     if (checkArg == 2){
-                        let imgEvent = '<i class="fa fa-check" aria-hidden="true" style="padding: 5px"></i>';
-                        let titleEvent = arg.event.title;
-                        contenedorEventWrap.classList = "d-flex ml-5";
-                        contenedorEventWrap.innerHTML = imgEvent+titleEvent;
+                        modulocapi = arg.event.extendedProps.resource_id.toUpperCase()
+                        let hora = '<div class="position-absolute" style="top: 0;left: 0">'+hor+'</div>';
+                        let imgEvent = '<div class="position-absolute" style="top: 5px;right: 15px"><i class="fa fa-check" aria-hidden="true"></i></div>';
+                        let titleEvent =  '<div class="position-absolute" style="top: 20px;left: 0">'+arg.event.title+'</div>';
+                        let modulo = '<div class="position-absolute" style="top: 20px;right: 17px">'+modulocapi+'</div>';
+                        contenedorEventWrap.classList = "position-relative";
+                        contenedorEventWrap.innerHTML = imgEvent+hora+titleEvent+modulo;
                         arrayOfDomNodes = [contenedorEventWrap ]
                         return { domNodes: arrayOfDomNodes }
                     }
 
                     if (checkArg == 3){
-                        let imgEvent = '<i class="fa fa-times" aria-hidden="true" style="padding: 5px"></i> ';
-                        let titleEvent = arg.event.title;
-                        contenedorEventWrap.classList = "d-flex ml-5";
-                        contenedorEventWrap.innerHTML = imgEvent+titleEvent;
+                        modulocapi = arg.event.extendedProps.resource_id.toUpperCase()
+                        let hora = '<div class="position-absolute" style="top: 0;left: 0">'+hor+'</div>';
+                        let imgEvent = '<div class="position-absolute" style="top: 5px;right: 15px"><i class="fa fa-times" aria-hidden="true"></i></div>';
+                        let titleEvent =  '<div class="position-absolute" style="top: 20px;left: 0">'+arg.event.title+'</div>';
+                        let modulo = '<div class="position-absolute" style="top: 20px;right: 17px">'+modulocapi+'</div>';
+                        contenedorEventWrap.classList = "position-relative";
+                        contenedorEventWrap.innerHTML = imgEvent+hora+titleEvent+modulo;
                         arrayOfDomNodes = [contenedorEventWrap ]
                         return { domNodes: arrayOfDomNodes }
                     }
                     if (checkArg == 4){
-                        let imgEvent = '<i class="fa fa-address-book" aria-hidden="true" style="padding: 5px"></i>';
-                        let titleEvent = arg.event.title;
-                        contenedorEventWrap.classList = "d-flex ml-5";
-                        contenedorEventWrap.innerHTML = imgEvent+titleEvent;
+                        modulocapi = arg.event.extendedProps.resource_id.toUpperCase()
+                        let hora = '<div class="position-absolute" style="top: 0;left: 0">'+hor+'</div>';
+                        let imgEvent = '<div class="position-absolute" style="top: 5px;right: 15px"><i class="fa fa-address-book" aria-hidden="true"></i></div>';
+                        let titleEvent =  '<div class="position-absolute" style="top: 20px;left: 0">'+arg.event.title+'</div>';
+                        let modulo = '<div class="position-absolute" style="top: 20px;right: 17px">'+modulocapi+'</div>';
+                        contenedorEventWrap.classList = "position-relative";
+                        contenedorEventWrap.innerHTML = imgEvent+hora+titleEvent+modulo;
                         arrayOfDomNodes = [contenedorEventWrap ]
                         return { domNodes: arrayOfDomNodes }
                     }
                     if (checkArg == 5){
-                        let imgEvent = '<i class="fa fa-calendar" aria-hidden="true" style="padding: 5px"></i>';
-                        let titleEvent = arg.event.title;
-                        contenedorEventWrap.classList = "d-flex ml-5";
-                        contenedorEventWrap.innerHTML = imgEvent+titleEvent;
+                        modulocapi = arg.event.extendedProps.resource_id.toUpperCase()
+                        let hora = '<div class="position-absolute" style="top: 0;left: 0">'+hor+'</div>';
+                        let imgEvent = '<div class="position-absolute" style="top: 5px;right: 15px"><i class="fa fa-calendar" aria-hidden="true"></i></div>';
+                        let titleEvent =  '<div class="position-absolute" style="top: 20px;left: 0">'+arg.event.title+'</div>';
+                        let modulo = '<div class="position-absolute" style="top: 20px;right: 17px">'+modulocapi+'</div>';
+                        contenedorEventWrap.classList = "position-relative";
+                        contenedorEventWrap.innerHTML = imgEvent+hora+titleEvent+modulo;
                         arrayOfDomNodes = [contenedorEventWrap ]
                         return { domNodes: arrayOfDomNodes }
                     }
                     if (checkArg == 6){
-                        let imgEvent = '<i class="fa fa-clock" aria-hidden="true" style="padding: 5px"></i>';
-                        let titleEvent = arg.event.title;
-                        contenedorEventWrap.classList = "d-flex ml-5";
-                        contenedorEventWrap.innerHTML = imgEvent+titleEvent;
+                        modulocapi = arg.event.extendedProps.resource_id.toUpperCase()
+                        let hora = '<div class="position-absolute" style="top: 0;left: 0">'+hor+'</div>';
+                        let imgEvent = '<div class="position-absolute" style="top: 5px;right: 15px"><i class="fa fa-clock" aria-hidden="true"></i></div>';
+                        let titleEvent =  '<div class="position-absolute" style="top: 20px;left: 0">'+arg.event.title+'</div>';
+                        let modulo = '<div class="position-absolute" style="top: 20px;right: 17px">'+modulocapi+'</div>';
+                        contenedorEventWrap.classList = "position-relative";
+                        contenedorEventWrap.innerHTML = imgEvent+hora+titleEvent+modulo;
                         arrayOfDomNodes = [contenedorEventWrap ]
                         return { domNodes: arrayOfDomNodes }
                     }
