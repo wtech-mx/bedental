@@ -57,6 +57,7 @@ Route::patch('colores/update/{id}', [ColoresController::class, 'update_colores']
 Route::get('client', [ClientController::class, 'index'])->name('clients.index');
 Route::post('create/client', [ClientController::class, 'store'])->name('client.store');
 Route::patch('update/client/{id}', [ClientController::class, 'update'])->name('client.update');
+Route::patch('cambio/correo/{id}', [ClientController::class, 'upload'])->name('client_correo.upload');
 
 /*|--------------------------------------------------------------------------
 |Doctores
