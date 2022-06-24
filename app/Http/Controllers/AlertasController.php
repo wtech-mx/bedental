@@ -22,6 +22,15 @@ class AlertasController extends Controller
         $this->middleware('auth');
     }
 
+    public function index_recordatorios()
+    {
+        $colores = Colores::find(1);
+        $alert_retenedores = Alertas::where('color', '=', $colores->retenedores)->get();
+        $alert_limpieza = Alertas::where('color', '=', $colores->limpieza)->get();
+
+        return view('recordatorios.view', compact('alert_retenedores','alert_limpieza','colores'));
+    }
+
     public function index_calendar()
     {
 

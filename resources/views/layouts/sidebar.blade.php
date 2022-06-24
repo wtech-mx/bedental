@@ -43,9 +43,9 @@
                 <span class="nav-link-text">Doctores</span>
               </a>
 
-              <a class="nav-link {{ (Request::is('retenedores*') ? 'active' : '') }}" href="{{ route('retenedores.index') }}">
+              <a class="nav-link {{ (Request::is('recordatorios*') ? 'active' : '') }}" href="{{ route('recordatorios.index') }}">
                 <i class="fa fa-user-md text-blue"></i>
-                <span class="nav-link-text">Retenedores</span>
+                <span class="nav-link-text">Recordatorios</span>
               </a>
 
                 <a class="nav-link {{ (Request::is('facturas*') ? 'active' : '') }}" href="{{ route('facturas.index') }}">

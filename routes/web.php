@@ -103,4 +103,4 @@ Route::post("send-email", [MailerController::class, "composeEmail"])->name("send
 /*|--------------------------------------------------------------------------
 |Retenedores
 |--------------------------------------------------------------------------*/
-Route::get('retenedores', [AlertasController::class, 'index_retenedores'])->name('retenedores.index');
+Route::get('recordatorios', [AlertasController::class, 'index_recordatorios'])->name('recordatorios.index');
