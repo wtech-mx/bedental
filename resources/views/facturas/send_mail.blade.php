@@ -9,8 +9,9 @@
      <input type="hidden" name="file_name" id="file_name" value="{{'img/facturas/'.$row->file_name}}"/>
      <input type="hidden" name="file_name2" id="file_name2" value="{{'img/facturas/'.$row->file_name2}}">
 
-     <input type="hidden" name="emailCc" id="emailCc" class="form-control" value="dinopiza@yahoo.com.mx">
-     <input type="hidden" name="emailBcc" id="emailBcc" class="form-control" value="josue.adrian.ramirezhernandez@gmail.com">
+     <input type="hidden" name="emailCc" id="emailCc" class="form-control" value="bedentalconsultorio@gmail.com">
+     <input type="hidden" name="emailBcc" id="emailBcc" class="form-control" value="{{$row->Client->correo_fiscal}}">
+     <input type="hidden" name="emailBcc2" id="emailBcc2" class="form-control" value="{{$row->Client->email2}}">
      <input type="hidden" name="estatus" id="estatus" class="form-control" value="1">
      <textarea name="emailBody" id="emailBody" class="form-control" hidden>
         Te contactamos de BEDENTAL te hacemos llegar tu factura anexada a este correo, cualquier duda o acalracion nos puedes contactar, que tenga un buen dia.

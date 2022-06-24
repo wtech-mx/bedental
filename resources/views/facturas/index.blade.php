@@ -24,6 +24,7 @@
                       <tr>
                        <th>Pacietnes</th>
                        <th>Correo</th>
+                       <th>Correo Fiscal</th>
                        <th>Fecha</th>
                        <th>Titulo</th>
                        <th>Estatus</th>
@@ -34,7 +35,8 @@
                    @foreach ($facturas as  $row)
                       <tr>
                        <td>{{$row->Client->nombre}} / <br> {{$row->Client->apellido}}</td>
-                          <td>{{$row->Client->email}}</td>
+                       <td>{{$row->Client->email}}</td>
+                       <td>{{$row->Client->correo_fiscal}}</td>
                        <td>{{$row->date}}</td>
                        <td>{{$row->name}}</td>
                        <td>
@@ -71,6 +73,10 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
 
+                              <a class="dropdown-item" type="button" data-toggle="modal" data-target="#changeenvelop{{$row->id}}">
+                                 <i class="fa fa-pen"></i> Editar Correos
+                              </a>
+
                               <a class="dropdown-item" type="button" data-toggle="modal" data-target="#staticBackdrop{{$row->id}}">
                                  <i class="fa fa-edit"></i> Editar Factura
                               </a>
@@ -80,6 +86,7 @@
                             </div>
                           </div>
                         </td>
+                    @include('facturas.cambiar_correo')
                     @include('facturas.edit')
                    @endforeach
 

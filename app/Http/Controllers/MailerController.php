@@ -33,11 +33,24 @@ class MailerController extends Controller {
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;   // encryption - ssl/tls
             $mail->Port = 465;
             // port - 587/465
-            $mail->setFrom('bedentalconsultorio@gmail.con', 'Bedental');
+            $mail->setFrom('bedentalconsultorio@gmail.com', 'Bedental');
             $mail->addAddress($request->emailRecipient);
-            $mail->addCC($request->emailCc);
-            $mail->addBCC($request->emailBcc);
 
+            if ($request->emailBcc == false and $request->emailBcc2 == false){
+                 $mail->addBCC('liza211@hotmail.com');
+
+
+            }else if ($request->emailBcc == false){
+                $mail->addBCC($request->emailBcc2);
+
+            }else if ($request->emailBcc2 == false){
+                $mail->addBCC($request->emailBcc);
+
+            }else if ($request->emailBcc == true and $request->emailBcc2 == true){
+                 $mail->addBCC($request->emailBcc,$request->emailBcc2);
+
+            }
+            
              $fileAttach = $request->get("file_name");
              $fileAttach2 = $request->get("file_name2");
              $mail->AddAttachment($fileAttach);
@@ -74,9 +87,8 @@ class MailerController extends Controller {
                     $facturas->estatus = 1;
                     $facturas->update ();
                  }
-
                 Session::flash('success', 'Se ha Creado  con exito');
-                return back()->with("email", "Email has been sent.");
+                return redirect()->route('facturas.index')->with("email", "Email has been sent.");
             }
 
         } catch (Exception $e) {

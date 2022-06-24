@@ -17,7 +17,7 @@ class FacturasController extends Controller
 
     public function index()
     {
-        $facturas = Factura::get();
+        $facturas = Factura::orderBy('id', 'desc')->get();
 
         $client = Client::orderBy('nombre', 'asc')->get();
 

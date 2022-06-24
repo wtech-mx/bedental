@@ -146,6 +146,20 @@ class ClientController extends Controller
         return redirect()->route('clients.index');
     }
 
+    public function upload(Request $request, $id){
+         $client = Client::findOrFail($id);
+
+         $client->email = $request-> email;
+         $client->email2 = $request-> email2;
+         $client->correo_fiscal = $request-> correo_fiscal;
+
+         $client->update();
+
+        Session::flash('edit', 'Se ha editado sus datos con exito');
+        return redirect()->route('facturas.index');
+
+    }
+
     /**
      * @param int $id
      * @return \Illuminate\Http\RedirectResponse
