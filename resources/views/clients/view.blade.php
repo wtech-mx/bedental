@@ -50,7 +50,7 @@
                                                 <td>{{ $row->edad }}</td>
                                                 <td>{{ $row->sanguineo }}</td>
                                                 <td>{{ $row->motivo_consulta }}</td>
-                                                <td>{{ $row->telefono }}</td>
+                                                <td>{{ $row->telefono }} <br> {{ $row->telefono2 }}</td>
                                                 <td>{{ $row->fecha_nacimiento }}</td>
                                                 <td>{{ $row->email }}</td>
 
