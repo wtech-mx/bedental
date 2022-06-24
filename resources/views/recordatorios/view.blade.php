@@ -68,7 +68,7 @@
                  $proxima_limpieza2  = date("m", strtotime($item->start."+ 6 month"));
                  @endphp
                  <tr>
-                   <td>{{ $item->Client->name }} {{ $item->Client->apellido }}</td>
+                   <td>{{ $item->Client->nombre }} {{ $item->Client->apellido }}</td>
                    <td>{{ $item->Client->telefono }}</td>
                    <td>{{ $fecha_ultimo }}</td>
                    <td>{{ $proxima_limpieza }}</td>
