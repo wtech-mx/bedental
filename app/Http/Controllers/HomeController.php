@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Alertas;
 use Illuminate\Http\Request;
 use App\Models\Client;
 use App\Models\Especialist;
@@ -47,6 +48,14 @@ class HomeController extends Controller
 
         $colores = Colores::find(1);
 
-        return view('dashboard', compact('count_client','count_especialist','count_users','count_antecedentes','client','especialist', 'colores'));
+        $alert_retenedores = Alertas::where('color', '=', $colores->retenedores)->get();
+        $count_retenedores = count($alert_retenedores);
+
+        $alert_limpieza = Alertas::where('color', '=', $colores->limpieza)->get();
+        $count_limpieza = count($alert_limpieza);
+
+        $recordatorios = $count_retenedores + $count_limpieza;
+
+        return view('dashboard', compact('count_client','count_especialist','count_users','count_antecedentes','client','especialist', 'colores', 'recordatorios'));
     }
 }
