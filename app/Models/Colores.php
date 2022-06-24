@@ -13,6 +13,6 @@ class Colores extends Model
 
     protected $table = 'colores';
 
-    protected $fillable = ['limpieza','operatoria','ortodoncia','cirugia_extraccion'];
+    protected $fillable = ['limpieza','operatoria','ortodoncia','cirugia_extraccion', 'retenedores'];
 
 }

@@ -16,6 +16,7 @@ class ColoresController extends Controller
         $color->operatoria = $request->operatoria;
         $color->ortodoncia = $request->ortodoncia;
         $color->cirugia_extraccion = $request->cirugia_extraccion;
+        $color->retenedores = $request->retenedores;
         $color->update();
 
         Session::flash('edit', 'Se ha editado sus datos con exito');

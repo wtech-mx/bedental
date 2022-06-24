@@ -99,3 +99,8 @@ Route::post('create_factura', [FacturasController::class, 'store_factura'])->nam
 
 Route::get("email", [MailerController::class, "email"])->name("email");
 Route::post("send-email", [MailerController::class, "composeEmail"])->name("send-email");
+
+/*|--------------------------------------------------------------------------
+|Retenedores
+|--------------------------------------------------------------------------*/
+Route::get('retenedores', [AlertasController::class, 'index_retenedores'])->name('retenedores.index');

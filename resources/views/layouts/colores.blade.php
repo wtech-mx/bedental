@@ -33,6 +33,11 @@
                             <label for="cirugia_extraccion">Cirugia/Extracción</label>
                             <input name="cirugia_extraccion" type="color" class="form-control" id="cirugia_extraccion" value="{{$colores->cirugia_extraccion}}">
                         </div>
+
+                        <div class="form-group col-6">
+                            <label for="retenedores">Retenedores</label>
+                            <input name="retenedores" type="color" class="form-control" id="retenedores" value="{{$colores->retenedores}}">
+                        </div>
                 </div>
 
                     <div class="modal-footer">

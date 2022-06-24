@@ -43,6 +43,11 @@
                 <span class="nav-link-text">Doctores</span>
               </a>
 
+              <a class="nav-link {{ (Request::is('retenedores*') ? 'active' : '') }}" href="{{ route('retenedores.index') }}">
+                <i class="fa fa-user-md text-blue"></i>
+                <span class="nav-link-text">Retenedores</span>
+              </a>
+
                 <a class="nav-link {{ (Request::is('facturas*') ? 'active' : '') }}" href="{{ route('facturas.index') }}">
                     <i class="ni ni-single-copy-04 text-blue"></i>
                     <span class="nav-link-text">Facturas</span>

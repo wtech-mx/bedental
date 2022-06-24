@@ -115,7 +115,7 @@
                         </div>
                     </a>
                   </div>
-
+                    @include('layouts.colores')
                 </div>
             </div>
 

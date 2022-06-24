@@ -133,6 +133,7 @@
                               <option value="{{$colores->operatoria}}">Operatoria</option>
                               <option value="{{$colores->ortodoncia}}">Ortodoncia</option>
                               <option value="{{$colores->cirugia_extraccion}}">Cirugua/extraccion</option>
+                              <option value="{{$colores->retenedores}}">Retenedores</option>
                           </select>
                       </div>
 

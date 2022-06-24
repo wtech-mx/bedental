@@ -22,7 +22,6 @@ class AlertasController extends Controller
         $this->middleware('auth');
     }
 
-
     public function index_calendar()
     {
 
