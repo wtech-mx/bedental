@@ -127,13 +127,11 @@
 
                       <div class="form-group col-6 mt-3">
                           <label for="">Selecciona el servicio</label>
-                          <select class="form-control" id="color" name="color" >
+                          <select class="form-control" id="id_color" name="id_color" >
                               <option value="">Selecionar estatus</option>
-                              <option value="{{$colores->limpieza}}">Limpieza</option>
-                              <option value="{{$colores->operatoria}}">Operatoria</option>
-                              <option value="{{$colores->ortodoncia}}">Ortodoncia</option>
-                              <option value="{{$colores->cirugia_extraccion}}">Cirugua/extraccion</option>
-                              <option value="{{$colores->retenedores}}">Retenedores</option>
+                              @foreach($colores as $item)
+                                    <option value="{{$item->id}}">{{$item->servicio}}</option>
+                              @endforeach
                           </select>
                       </div>
 
@@ -147,7 +145,6 @@
                               <option value="4">Sin confirmar agendado</option>
                               <option value="5">Confirmado</option>
                               <option value="6">Recordatorio / tentativo</option>
-                              <option value="7">paciente nuevo / primera vez</option>
                           </select>
                       </div>
 

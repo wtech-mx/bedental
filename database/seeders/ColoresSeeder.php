@@ -16,10 +16,28 @@ class ColoresSeeder extends Seeder
     public function run()
     {
         $colores = Colores::create([
-            'limpieza' => '#8e5252',
-            'operatoria' => '#2eff58',
-            'ortodoncia' => '#259dad',
-            'cirugia_extraccion' => '#aae114'
+            'servicio' => 'limpieza',
+            'color' => '#8e5252',
+        ]);
+
+        $colores = Colores::create([
+            'servicio' => 'operatoria',
+            'color' => '#2eff58',
+        ]);
+
+        $colores = Colores::create([
+            'servicio' => 'ortodoncia',
+            'color' => '#259dad',
+        ]);
+
+        $colores = Colores::create([
+            'servicio' => 'cirugia_extraccion',
+            'color' => '#aae114',
+        ]);
+
+        $colores = Colores::create([
+            'servicio' => 'retenedores',
+            'color' => '#2eb280',
         ]);
     }
 }

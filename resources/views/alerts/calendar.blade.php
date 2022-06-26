@@ -120,7 +120,7 @@
                   $('#resource_id').val(info.event.extendedProps.resource_id);
                   $('#id_especialist').val(info.event.extendedProps.id_especialist);
                   $('#title').val(info.event.title);
-                  $('#color').val(info.event.backgroundColor);
+                  $('#id_color').val(info.event.extendedProps.id_color);
                   $('#descripcion').val(info.event.extendedProps.descripcion);
                   $('#estatus').val(info.event.extendedProps.estatus);
                   $('#check').val(info.event.extendedProps.check);
@@ -276,7 +276,7 @@
                     estatus:$('#estatus').val()+estatusDefault,
                     check:$('#check').val(),
                     image:$('#image').val()+imageDefault,
-                    color:$('#color').val(),
+                    id_color:$('#id_color').val(),
                     start:$('#txtFecha').val()+" "+$('#txtHora').val(),
                     end:$('#txtFecha').val()+" "+$('#txtHorafin').val(),
                     '_token':$("meta[name='csrf-token']").attr("content"),
@@ -297,7 +297,7 @@
                     estatus:$('#estatus').val(),
                     check:$('#check').val(),
                     image:$('#image').val(),
-                    color:$('#color').val(),
+                    id_color:$('#id_color').val(),
                     start:$('#txtFecha').val()+" "+$('#txtHora').val(),
                     end:$('#txtFecha').val()+" "+$('#txtHorafin').val(),
                     '_token':$("meta[name='csrf-token']").attr("content"),
@@ -332,7 +332,7 @@
                   $('#txtFecha').val("");
                   $('#txtHora').val("");
                   $('#txtHorafin').val("");
-                  $('#color').val("");
+                  $('#id_color').val("");
                   $('#descripcion').val("");
                   $('#estatus').val("");
                   $('#check').val("");

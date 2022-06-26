@@ -12,11 +12,8 @@ class ColoresController extends Controller
     {
 
         $color = Colores::find($id);
-        $color->limpieza = $request->limpieza;
-        $color->operatoria = $request->operatoria;
-        $color->ortodoncia = $request->ortodoncia;
-        $color->cirugia_extraccion = $request->cirugia_extraccion;
-        $color->retenedores = $request->retenedores;
+        $color->servicio = $request->servicio;
+        $color->color = $request->color;
         $color->update();
 
         Session::flash('edit', 'Se ha editado sus datos con exito');

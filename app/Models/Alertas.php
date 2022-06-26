@@ -35,5 +35,10 @@ class Alertas extends Model
        return $this->belongsTo(Client::class,'id_client');
     }
 
+    public function Colores()
+    {
+       return $this->belongsTo(Colores::class,'id_color');
+    }
+
 }
 

@@ -8,36 +8,24 @@
                      <span aria-hidden="true close-btn">×</span>
                 </button>
             </div>
-            <form method="POST" action="{{ route('colores.update_colores', $colores->id) }}"
+            <form method="POST" action="{{ route('colores.update_colores') }}"
                 enctype="multipart/form-data" role="form">
               @csrf
               <input type="hidden" name="_method" value="PATCH">
 
                 <div class="modal-body row">
+                    @foreach ($colores as $item)
                         <div class="form-group col-6">
-                            <label for="limpieza">Limpieza</label>
-                            <input name="limpieza" type="color" class="form-control" id="limpieza" value="{{$colores->limpieza}}">
+                            <label for="limpieza">Servicio</label>
+                            <input name="id_{{$item->id}}" type="text" class="form-control" id="id_{{$item->id}}" value="{{$item->id}}">
+                            <input name="servicio_{{$item->id}}" type="text" class="form-control" id="servicio_{{$item->id}}" value="{{$item->servicio}}">
                         </div>
 
                         <div class="form-group col-6">
-                            <label for="operatoria">Operatoria</label>
-                            <input name="operatoria" type="color" class="form-control" id="operatoria" value="{{$colores->operatoria}}">
+                            <label for="operatoria">Color</label>
+                            <input name="color_{{$item->id}}" type="color" class="form-control" id="color_{{$item->id}}" value="{{$item->color}}">
                         </div>
-
-                        <div class="form-group col-6">
-                            <label for="ortodoncia">Ortodoncia</label>
-                            <input name="ortodoncia" type="color" class="form-control" id="ortodoncia" value="{{$colores->ortodoncia}}">
-                        </div>
-
-                        <div class="form-group col-6">
-                            <label for="cirugia_extraccion">Cirugia/Extracción</label>
-                            <input name="cirugia_extraccion" type="color" class="form-control" id="cirugia_extraccion" value="{{$colores->cirugia_extraccion}}">
-                        </div>
-
-                        <div class="form-group col-6">
-                            <label for="retenedores">Retenedores</label>
-                            <input name="retenedores" type="color" class="form-control" id="retenedores" value="{{$colores->retenedores}}">
-                        </div>
+                    @endforeach
                 </div>
 
                     <div class="modal-footer">

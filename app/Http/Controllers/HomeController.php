@@ -46,12 +46,12 @@ class HomeController extends Controller
 
         $especialist = Especialist::orderBy('nombre', 'asc')->get();
 
-        $colores = Colores::find(1);
+        $colores = Colores::get();
 
-        $alert_retenedores = Alertas::where('color', '=', $colores->retenedores)->get();
+        $alert_retenedores = Alertas::where('id_color', '=', 6)->get();
         $count_retenedores = count($alert_retenedores);
 
-        $alert_limpieza = Alertas::where('color', '=', $colores->limpieza)->get();
+        $alert_limpieza = Alertas::where('id_color', '=', 2)->get();
         $count_limpieza = count($alert_limpieza);
 
         $recordatorios = $count_retenedores + $count_limpieza;

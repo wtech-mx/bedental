@@ -24,9 +24,9 @@ class AlertasController extends Controller
 
     public function index_recordatorios()
     {
-        $colores = Colores::find(1);
-        $alert_retenedores = Alertas::where('color', '=', $colores->retenedores)->get();
-        $alert_limpieza = Alertas::where('color', '=', $colores->limpieza)->get();
+        $colores = Colores::get();
+        $alert_retenedores = Alertas::where('id_color', '=', 6)->get();
+        $alert_limpieza = Alertas::where('id_color', '=', 2)->get();
 
         return view('recordatorios.view', compact('alert_retenedores','alert_limpieza','colores'));
     }
@@ -39,8 +39,8 @@ class AlertasController extends Controller
 
         $alert = Alertas::get();
 
-        $colores = Colores::find(1);
-
+        $colores = Colores::get();
+        
         return view('alerts.calendar', compact('client', 'alert','especialist', 'colores'));
     }
 
