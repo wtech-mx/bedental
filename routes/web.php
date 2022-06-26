@@ -49,8 +49,7 @@ Route::group(['middleware' => ['auth']], function() {
 /*|--------------------------------------------------------------------------
 |Colores
 |--------------------------------------------------------------------------*/
-Route::patch('colores/update', [ColoresController::class, 'update_colores'])->name('colores.update_colores');
-
+Route::post('colores/update/', [ColoresController::class, 'update_colores'])->name('colores.update_colores');
 /*|--------------------------------------------------------------------------
 |Clientes
 |--------------------------------------------------------------------------*/

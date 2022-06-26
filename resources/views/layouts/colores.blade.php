@@ -8,22 +8,20 @@
                      <span aria-hidden="true close-btn">×</span>
                 </button>
             </div>
-            <form method="POST" action="{{ route('colores.update_colores') }}"
-                enctype="multipart/form-data" role="form">
+            <form action="{{ route('colores.update_colores') }}" method="post"  enctype="multipart/form-data">
               @csrf
-              <input type="hidden" name="_method" value="PATCH">
 
                 <div class="modal-body row">
                     @foreach ($colores as $item)
-                        <div class="form-group col-6">
+                        <div class="form-group col-8">
                             <label for="limpieza">Servicio</label>
-                            <input name="id_{{$item->id}}" type="text" class="form-control" id="id_{{$item->id}}" value="{{$item->id}}">
-                            <input name="servicio_{{$item->id}}" type="text" class="form-control" id="servicio_{{$item->id}}" value="{{$item->servicio}}">
+                            <input type="hidden" class="form-control" id="id[]" name="id[]" value="{{$item->id}}">
+                            <input type="text" class="form-control" id="servicio[]" name="servicio[]" value="{{$item->servicio}}">
                         </div>
 
-                        <div class="form-group col-6">
+                        <div class="form-group col-4">
                             <label for="operatoria">Color</label>
-                            <input name="color_{{$item->id}}" type="color" class="form-control" id="color_{{$item->id}}" value="{{$item->color}}">
+                            <input type="color" class="form-control" id="color[]" name="color[]" value="{{$item->color}}">
                         </div>
                     @endforeach
                 </div>

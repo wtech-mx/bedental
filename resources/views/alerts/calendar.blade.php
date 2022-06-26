@@ -120,6 +120,7 @@
                   $('#resource_id').val(info.event.extendedProps.resource_id);
                   $('#id_especialist').val(info.event.extendedProps.id_especialist);
                   $('#title').val(info.event.title);
+                  $('#color').val(info.event.backgroundColor);
                   $('#id_color').val(info.event.extendedProps.id_color);
                   $('#descripcion').val(info.event.extendedProps.descripcion);
                   $('#estatus').val(info.event.extendedProps.estatus);
@@ -138,6 +139,7 @@
                     let titleArg = arg.event.title;
                     let imageArg = arg.event.extendedProps.image;
                     let checkArg = arg.event.extendedProps.check;
+                    let id_color = arg.event.extendedProps.id_color;
 
                     minutos3=(arg.event.start.getMinutes());
                     hora3=(arg.event.start.getHours());
@@ -147,6 +149,7 @@
                     let hor = horario;
 
                     if (checkArg == 1){
+
                         modulocapi = arg.event.extendedProps.resource_id.toUpperCase()
                         let hora = '<div class="position-absolute" style="top: 0;left: 0">'+hor+'</div>';
                         let imgEvent = '<div class="position-absolute" style="top: 5px;right: 15px"><i class="fa fa-flask" aria-hidden="true"></i></div>';
@@ -276,6 +279,7 @@
                     estatus:$('#estatus').val()+estatusDefault,
                     check:$('#check').val(),
                     image:$('#image').val()+imageDefault,
+                    color:$('#color').val(),
                     id_color:$('#id_color').val(),
                     start:$('#txtFecha').val()+" "+$('#txtHora').val(),
                     end:$('#txtFecha').val()+" "+$('#txtHorafin').val(),
@@ -297,6 +301,7 @@
                     estatus:$('#estatus').val(),
                     check:$('#check').val(),
                     image:$('#image').val(),
+                    color:$('#color').val(),
                     id_color:$('#id_color').val(),
                     start:$('#txtFecha').val()+" "+$('#txtHora').val(),
                     end:$('#txtFecha').val()+" "+$('#txtHorafin').val(),
@@ -332,6 +337,7 @@
                   $('#txtFecha').val("");
                   $('#txtHora').val("");
                   $('#txtHorafin').val("");
+                  $('#color').val("");
                   $('#id_color').val("");
                   $('#descripcion').val("");
                   $('#estatus').val("");
@@ -345,6 +351,10 @@
     @endsection
 
 @section('content')
+    <style>
+
+    </style>
+
     <div class="calendar" data-toggle="calendar" id="calendar"></div>
     @include('alerts.modal')
 @endsection
