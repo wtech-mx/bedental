@@ -7,10 +7,19 @@ use App\Models\Colores;
 use Illuminate\Http\Request;
 use Session;
 use Illuminate\Support\Arr;
-
-
 class ColoresController extends Controller
 {
+    public function create(Request $request)
+    {
+        $color = new Colores;
+        $color -> servicio = $request->get('servicio');
+        $color -> color = $request->get('color');
+        $color->save();
+
+        Session::flash('create', 'Se ha creado sus datos con exito');
+        return redirect()->back();
+    }
+
     public function update_colores(Request $request,$id)
     {
 
@@ -19,48 +28,14 @@ class ColoresController extends Controller
         $color -> color = $request->get('color');
         $color->update();
 
-
-//           $comps2 = Alertas::get()->toArray();
-//
-//            $arr = array();
-//            foreach ($comps2 as $s) {
-//                array_push($arr,$s->id);
-//            }
-//             dd($arr);
-//
-//
-//
-//
-//
-//           $alertas = Alertas::find($comp->id);
-//           $alertas->color = $request->get('color');
-//
-
-
-
-
-//           $alertas = Alertas::get()->pluck('id_color');
-//           $colores = Colores::get()->pluck('id');
-//
-//           $comps = Alertas::join('colores','alertas.id_color','=','colores.id')
-//               ->select('colores.color')->get();
-//
-//           $comps2 = Alertas::select('id')->get();
-//
-//           foreach ($comps2 as $comp2){
-//
-//                $comps = Alertas::join('colores','alertas.id_color','=','colores.id')
-//               ->select('colores.color')->get();
-//
-//                    $alertas = Alertas::find($comp2->id);
-//                foreach ($comps as $comp){
-//
-//                    $alertas->color = $comp->color;
-//                    $alertas->update();
-//                }
-//
-//            }
-
+        $alerta = Alertas::where('id_color',$id)->get()->count();
+        for($i=1; $i<=$alerta; $i++){
+            $alert = Alertas::where('id_color', $id)
+                             ->where('color', '!=', $color -> color)
+                             ->first();
+            $alert->color =$request->get('color');
+            $alert->update();
+        }
 
         Session::flash('edit', 'Se ha editado sus datos con exito');
         return redirect()->back();

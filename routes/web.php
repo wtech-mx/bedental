@@ -49,6 +49,7 @@ Route::group(['middleware' => ['auth']], function() {
 /*|--------------------------------------------------------------------------
 |Colores
 |--------------------------------------------------------------------------*/
+Route::post('colores/create', [ColoresController::class, 'create'])->name('colores.create');
 Route::post('colores/update/{id}', [ColoresController::class, 'update_colores'])->name('colores.update_colores');
 /*|--------------------------------------------------------------------------
 |Clientes

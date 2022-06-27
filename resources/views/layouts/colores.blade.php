@@ -9,9 +9,30 @@
                 </button>
             </div>
 
-
-
                 <div class="modal-body ">
+                    <a class="" data-toggle="collapse" href="#Telefono" role="button" aria-expanded="false" aria-controls="Telefono">
+                        Agregar servicio
+                      </a>
+                      <div class="collapse" id="Telefono">
+                    <form action="{{ route('colores.create') }}" method="post" class="row"  enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group col-6">
+                            <label for="limpieza">Servicio</label>
+                            <input type="text" class="form-control" id="servicio" name="servicio">
+                        </div>
+
+                        <div class="form-group col-3">
+                            <label for="Color">Color</label>
+                            <input type="color" class="form-control" id="color" name="color">
+                        </div>
+
+                        <div class="form-group col-3">
+                            <label for="operatoria" style="opacity: 0;">-------</label>
+                            <button type="submit" class="btn btn-primary">Crear</button>
+                        </div>
+                    </form>
+                </div>
+                    <hr>
                     @foreach ($colores as $item)
                     <form action="{{ route('colores.update_colores',$item->id) }}" method="post" class="row"  enctype="multipart/form-data">
                       @csrf
