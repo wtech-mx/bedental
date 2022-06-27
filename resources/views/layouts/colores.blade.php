@@ -8,29 +8,36 @@
                      <span aria-hidden="true close-btn">×</span>
                 </button>
             </div>
-            <form action="{{ route('colores.update_colores') }}" method="post"  enctype="multipart/form-data">
-              @csrf
 
-                <div class="modal-body row">
+
+
+                <div class="modal-body ">
                     @foreach ($colores as $item)
-                        <div class="form-group col-8">
+                    <form action="{{ route('colores.update_colores',$item->id) }}" method="post" class="row"  enctype="multipart/form-data">
+                      @csrf
+                        <div class="form-group col-6">
                             <label for="limpieza">Servicio</label>
-                            <input type="hidden" class="form-control" id="id[]" name="id[]" value="{{$item->id}}">
-                            <input type="text" class="form-control" id="servicio[]" name="servicio[]" value="{{$item->servicio}}">
+                            <input type="hidden" class="form-control" id="id" name="id" value="{{$item->id}}">
+                            <input type="text" class="form-control" id="servicio" name="servicio" value="{{$item->servicio}}">
                         </div>
 
-                        <div class="form-group col-4">
-                            <label for="operatoria">Color</label>
-                            <input type="color" class="form-control" id="color[]" name="color[]" value="{{$item->color}}">
+                        <div class="form-group col-3">
+                            <label for="Color">Color</label>
+                            <input type="color" class="form-control" id="color" name="color" value="{{$item->color}}">
                         </div>
+
+                        <div class="form-group col-3">
+                            <label for="operatoria" style="opacity: 0;">-------</label>
+                            <button type="submit" class="btn btn-primary">guardar</button>
+                        </div>
+                       </form>
                     @endforeach
                 </div>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">cerrar</button>
-                        <button type="submit" class="btn btn-primary">guardar</button>
                     </div>
-            </form>
+
         </div>
     </div>
 </div>
