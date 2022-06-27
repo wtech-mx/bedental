@@ -68,6 +68,7 @@
                       <div class="form-group col-12">
                         {{--<label for="">id</label>--}}
                         <input class="form-control" type="hidden" name="txtID" id="txtID">
+                        <input class="form-control" type="text" name="txtTelefono" id="txtTelefono">
                       </div>
 
                       <div class="form-group col-4">

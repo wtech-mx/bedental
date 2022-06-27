@@ -120,6 +120,7 @@
                   $('#resource_id').val(info.event.extendedProps.resource_id);
                   $('#id_especialist').val(info.event.extendedProps.id_especialist);
                   $('#title').val(info.event.title);
+                  $('#txtTelefono').val(info.event.extendedProps.telefono);
                   $('#color').val(info.event.backgroundColor);
                   $('#id_color').val(info.event.extendedProps.id_color);
                   $('#descripcion').val(info.event.extendedProps.descripcion);
@@ -335,6 +336,7 @@
                   $('#resource_id').val("");
                   $('#id_especialist').val("");
                   $('#txtFecha').val("");
+                  $('#txtTelefono').val("");
                   $('#txtHora').val("");
                   $('#txtHorafin').val("");
                   $('#color').val("");
