@@ -17,27 +17,27 @@ class ColoresSeeder extends Seeder
     {
         $colores = Colores::create([
             'servicio' => 'limpieza',
-            'color' => '#8e5252',
+            'color' => '#aad8e4',
         ]);
 
         $colores = Colores::create([
             'servicio' => 'operatoria',
-            'color' => '#2eff58',
+            'color' => '#b8d77f',
         ]);
 
         $colores = Colores::create([
             'servicio' => 'ortodoncia',
-            'color' => '#259dad',
+            'color' => '#ffa857',
         ]);
 
         $colores = Colores::create([
             'servicio' => 'cirugia_extraccion',
-            'color' => '#aae114',
+            'color' => '#8ab1ff',
         ]);
 
         $colores = Colores::create([
             'servicio' => 'retenedores',
-            'color' => '#2eb280',
+            'color' => '#80d67a',
         ]);
     }
 }

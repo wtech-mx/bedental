@@ -14,7 +14,6 @@ return new class extends Migration
     public function up()
     {
         Schema::table('alertas', function (Blueprint $table) {
-            $table->dropColumn('color');
             $table->dropColumn('created_at');
             $table->dropColumn('updated_at');
             $table->unsignedBigInteger('id_color');

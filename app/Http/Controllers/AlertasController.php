@@ -80,8 +80,6 @@ class AlertasController extends Controller
 
     public function update_calendar(Request $request, $id)
     {
-        // $datosEvento = request()->except(['_token', '_method']);
-        // $respuesta = Alertas::where('id', '=', $id)->update($datosEvento);
         $datosEvento = Alertas::find($id);
         $datosEvento->start = $request->start;
         $datosEvento->end = $request->end;
