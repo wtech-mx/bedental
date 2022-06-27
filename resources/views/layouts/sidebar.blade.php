@@ -44,7 +44,7 @@
               </a>
 
               <a class="nav-link {{ (Request::is('recordatorios*') ? 'active' : '') }}" href="{{ route('recordatorios.index') }}">
-                <i class="fa fa-user-md text-blue"></i>
+                <i class="ni ni-calendar-grid-58 text-blue"></i>
                 <span class="nav-link-text">Recordatorios</span>
               </a>
 

@@ -106,7 +106,7 @@
                             </div>
                             <div class="col-auto">
                               <div class="icon icon-shape text-white rounded-circle shadow" style="background-color: #9368a9">
-                                <i class="fa fa-paint-brush text-white"></i>
+                                <i class="ni ni-calendar-grid-58 text-white"></i>
                               </div>
                             </div>
                           </div>

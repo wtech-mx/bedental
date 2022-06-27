@@ -11,7 +11,7 @@ use DB;
 use Session;
 use App\Models\Colores;
 use Carbon\Carbon;
-
+use DateTime;
 
 
 class AlertasController extends Controller
@@ -59,6 +59,12 @@ class AlertasController extends Controller
         $datosEvento->descripcion = $request->descripcion;
         $datosEvento->check = $request->check;
         $datosEvento->color = $datosEvento->Colores->color;
+
+        if ( $datosEvento->end == $datosEvento->start){
+            $now = date($datosEvento->end);
+            $new_time = date("Y-m-d H:i", strtotime('+1 hours', strtotime($now))); // $now + 3 hours
+            $datosEvento->end = $new_time;
+        }
 
         $datosEvento->save();
     }

@@ -98,7 +98,7 @@
                               <select class="form-control mibuscador_paciente" id="id_client" name="id_client" >
                                    <option value="">Seleccione Paciente</option>
                                        @foreach($client as $item)
-                                          <option selected value="{{$item->id}}">{{$item->nombre}} {{$item->apellido}}</option>
+                                          <option  value="{{$item->id}}">{{$item->nombre}} {{$item->apellido}}</option>
                                        @endforeach
                               </select>
                       </div>
@@ -153,16 +153,18 @@
 
               </div>
 
+
               <div class="modal-footer">
-                  <button class="btn btn-success text-white" id="btnAgregar">
+
+                  <button class="btn btn-success btn-sm text-white" id="btnAgregar">
                       <i class="fa fa-plus-circle" aria-hidden="true"></i> Agregar
                   </button>
 
-                  <button class="btn btn-warning text-dark" id="btnModificar">
+                  <button class="btn btn-warning btn-sm text-dark" id="btnModificar">
                       <i class="fa fa-retweet" aria-hidden="true"></i> Modificar
                   </button>
 
-                  <button class="btn btn-danger text-white" id="btnBorrar">
+                  <button class="btn btn-danger btn-sm text-white" id="btnBorrar">
                       <i class="fa fa-trash" aria-hidden="true"></i> Borrar
                   </button>
               </div>
