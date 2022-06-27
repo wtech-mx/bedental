@@ -40,7 +40,7 @@ class AlertasController extends Controller
         $alert = Alertas::get();
 
         $colores = Colores::get();
-        
+
         return view('alerts.calendar', compact('client', 'alert','especialist', 'colores'));
     }
 
@@ -51,13 +51,14 @@ class AlertasController extends Controller
         $datosEvento->start = $request->start;
         $datosEvento->end = $request->end;
         $datosEvento->image = $request->image;
-        $datosEvento->color = $request->color;
+        $datosEvento->id_color = $request->id_color;
         $datosEvento->id_client = $request->id_client;
         $datosEvento->title = $datosEvento->Client->nombre;
         $datosEvento->resource_id = $request->resource_id;
         $datosEvento->id_especialist = $request->id_especialist;
         $datosEvento->descripcion = $request->descripcion;
         $datosEvento->check = $request->check;
+        $datosEvento->color = $datosEvento->Colores->color;
 
         $datosEvento->save();
     }
@@ -79,8 +80,22 @@ class AlertasController extends Controller
 
     public function update_calendar(Request $request, $id)
     {
-        $datosEvento = request()->except(['_token', '_method']);
-        $respuesta = Alertas::where('id', '=', $id)->update($datosEvento);
+        // $datosEvento = request()->except(['_token', '_method']);
+        // $respuesta = Alertas::where('id', '=', $id)->update($datosEvento);
+        $datosEvento = Alertas::find($id);
+        $datosEvento->start = $request->start;
+        $datosEvento->end = $request->end;
+        $datosEvento->image = $request->image;
+        $datosEvento->id_color = $request->id_color;
+        $datosEvento->id_client = $request->id_client;
+        $datosEvento->title = $datosEvento->Client->nombre;
+        $datosEvento->resource_id = $request->resource_id;
+        $datosEvento->id_especialist = $request->id_especialist;
+        $datosEvento->descripcion = $request->descripcion;
+        $datosEvento->check = $request->check;
+        $datosEvento->color = $datosEvento->Colores->color;
+
+        $datosEvento->update();
     }
 
     public function destroy_calendar($id)
