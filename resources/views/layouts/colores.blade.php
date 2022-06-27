@@ -10,7 +10,7 @@
             </div>
 
                 <div class="modal-body ">
-                    <a class="" data-toggle="collapse" href="#Telefono" role="button" aria-expanded="false" aria-controls="Telefono">
+                    <a class="btn btn-primary" data-toggle="collapse" href="#Telefono" role="button" aria-expanded="false" aria-controls="Telefono">
                         Agregar servicio
                       </a>
                       <div class="collapse" id="Telefono">
