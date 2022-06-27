@@ -28,7 +28,7 @@ class ColoresController extends Controller
         $color -> color = $request->get('color');
         $color->update();
 
-        $alerta = Alertas::where('id_color',$id)->get()->count();
+        $alerta = Alertas::where('id_color',$id)->where('color', '!=', $color -> color)->get()->count();
         for($i=1; $i<=$alerta; $i++){
             $alert = Alertas::where('id_color', $id)
                              ->where('color', '!=', $color -> color)
