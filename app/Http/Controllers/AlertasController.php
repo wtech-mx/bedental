@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use DB;
 use Session;
 use App\Models\Colores;
+use App\Models\Controlpagos;
 use Carbon\Carbon;
 use DateTime;
 
@@ -102,6 +103,15 @@ class AlertasController extends Controller
         $datosEvento->color = $datosEvento->Colores->color;
 
         $datosEvento->update();
+
+        if ($datosEvento->check == 2){
+            $controlpagos = new Controlpagos;
+            $controlpagos->fecha = $datosEvento->start;
+            $controlpagos->id_clients = $datosEvento->id_client;
+            $controlpagos->id_alertas = $id;
+            $controlpagos->id_doctor = $datosEvento->id_especialist;
+            $controlpagos->save();
+        }
     }
 
     public function destroy_calendar($id)

@@ -53,6 +53,11 @@
                     <span class="nav-link-text">Facturas</span>
                 </a>
 
+                <a class="nav-link {{ (Request::is('control_pagos*') ? 'active' : '') }}" href="{{ route('control_pagos.index') }}">
+                    <i class="ni ni-money-coins text-blue"></i>
+                    <span class="nav-link-text">Control pago</span>
+                </a>
+
             </li>
 
             <li class="nav-item">

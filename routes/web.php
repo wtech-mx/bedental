@@ -16,6 +16,7 @@ use App\Http\Controllers\SendEmailController;
 use App\Http\Controllers\MailerController;
 use App\Http\Controllers\AntecedentesController;
 use App\Http\Controllers\EspecialistsController;
+use App\Http\Controllers\ControlpagosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,7 +90,7 @@ Route::post('create_pacient', [ClientController::class, 'store_client'])->name('
 Route::post('radiografia/{id}', [RadiografiaController::class, 'upload'])->name('radiografia.upload');
 
 /*|--------------------------------------------------------------------------
-|Calendario
+|facturas
 |--------------------------------------------------------------------------*/
 
 Route::get('facturas', [FacturasController::class, 'index'])->name('facturas.index');
@@ -97,6 +98,15 @@ Route::post('factura/{id}', [FacturasController::class, 'store'])->name('factura
 Route::patch('facturas/{id}', [FacturasController::class, 'upload'])->name('facturas.upload');
 Route::post('create_factura', [FacturasController::class, 'store_factura'])->name('factura.create_store');
 
+/*|--------------------------------------------------------------------------
+|Control de pagos
+|--------------------------------------------------------------------------*/
+
+Route::get('control_pagos', [ControlpagosController::class, 'index'])->name('control_pagos.index');
+
+/*|--------------------------------------------------------------------------
+|email
+|--------------------------------------------------------------------------*/
 
 Route::get("email", [MailerController::class, "email"])->name("email");
 Route::post("send-email", [MailerController::class, "composeEmail"])->name("send-email");
