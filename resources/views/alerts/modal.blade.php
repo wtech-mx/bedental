@@ -65,6 +65,10 @@
 
                   <div class="form-row">
 
+                       <div class="form-group col-12">
+                        <input class="form-control" type="hidden" name="txtID" id="txtID">
+                      </div>
+
                       <div class="form-group col-4">
                           <label for="">Fecha</label>
                         <input class="form-control" type="date" name="txtFecha" id="txtFecha" >
@@ -142,7 +146,6 @@
                               <option value="6">Recordatorio / tentativo</option>
                           </select>
                       </div>
-
 
                   </div>
 
