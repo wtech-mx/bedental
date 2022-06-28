@@ -248,6 +248,12 @@
             calendar.setOption('locale','Es');
             calendar.render();
 
+            $('#btnWhats').click(function(){
+                ObjEvento= recolectarDatosGUIWhatsapp('POST');
+                {{--EnviarInformacion('{{route('calendar.index_calendar')}}', ObjEvento);--}}
+                EnviarInformacionWhatsapp('', ObjEvento);
+            });
+
             $('#btnAgregar').click(function(){
                 ObjEvento= recolectarDatosGUI('POST');
                 {{--EnviarInformacion('{{route('calendar.index_calendar')}}', ObjEvento);--}}
@@ -263,6 +269,17 @@
                 ObjEvento= editarDatosGUI('PATCH');
                 EnviarInformacion('/update/'+$('#txtID').val(), ObjEvento);
             });
+
+            function recolectarDatosGUIWhatsapp(method){
+                nuevoEventowhatasapp={
+                    telefono:$('#txtTelefono').val(),
+                    fecha:$('#txtFecha').val(),
+                    hora:$('#txtHora').val(),
+                    '_token':$("meta[name='csrf-token']").attr("content"),
+                    '_method':method
+                }
+                return (nuevoEventowhatasapp);
+            }
 
             function recolectarDatosGUI(method){
                 colorAlert =("#2ECC71");
@@ -311,6 +328,12 @@
                 }
                 console.log('Fecha nuevo 1',nuevoEvento)
                 return (nuevoEvento);
+            }
+
+            function EnviarInformacionWhatsapp(accion,ObjEvento){
+                // console.log(ObjEvento['telefono']);
+                var pagina='https://api.whatsapp.com/send?phone=+52'+ObjEvento['telefono']+'&text=Buen%20día%20✨🦷%20Le%20escribimos%20del%20consultorio%20dental%20BeDental%20para%20confirmar%20la%20cita%20'+ObjEvento['fecha']+'%20%20a%20las%20'+ObjEvento['hora']+'%20Le%20agradecemos%20nos%20confirme%20su%20asistencia%20a%20más%20tardar%20hoy%20antes%20de%202:00%20pm%20de%20lo%20contrario%20se%20cederá%20el%20lugar%20a%20otro%20paciente%20que%20requiera.%20Quedamos%20al%20pendiente%20de%20su%20pronta%20respuesta.%20Gracias!';
+                window.open(pagina, '_blank');
             }
 
             function EnviarInformacion(accion,ObjEvento){

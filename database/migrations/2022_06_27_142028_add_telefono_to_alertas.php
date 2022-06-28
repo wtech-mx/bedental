@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('alertas', function (Blueprint $table) {
-            $table->varchar('telefono')->nullable();
+            $table->string('telefono')->nullable();
         });
     }
 

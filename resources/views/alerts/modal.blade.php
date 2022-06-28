@@ -65,12 +65,6 @@
 
                   <div class="form-row">
 
-                      <div class="form-group col-12">
-                        {{--<label for="">id</label>--}}
-                        <input class="form-control" type="hidden" name="txtID" id="txtID">
-                        <input class="form-control" type="text" name="txtTelefono" id="txtTelefono">
-                      </div>
-
                       <div class="form-group col-4">
                           <label for="">Fecha</label>
                         <input class="form-control" type="date" name="txtFecha" id="txtFecha" >
@@ -156,6 +150,11 @@
 
 
               <div class="modal-footer">
+
+                  <button class="btn  btn-sm text-white" id="btnWhats" style="background-color: #128C7E">
+                      <input type="hidden" name="txtTelefono" id="txtTelefono">
+                      <i class="fab fa-whatsapp" aria-hidden="true"></i> Whatdsapp
+                  </button>
 
                   <button class="btn btn-success btn-sm text-white" id="btnAgregar">
                       <i class="fa fa-plus-circle" aria-hidden="true"></i> Agregar
