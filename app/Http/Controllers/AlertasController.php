@@ -110,7 +110,7 @@ class AlertasController extends Controller
             $controlpagos->id_clients = $datosEvento->id_client;
             $controlpagos->id_alertas = $id;
             $controlpagos->id_doctor = $datosEvento->id_especialist;
-            $controlpagos->tratamiento = $datosEvento->id_especialist;
+            // $controlpagos->tratamiento = $datosEvento->id_especialist;
             $controlpagos->save();
         }
     }

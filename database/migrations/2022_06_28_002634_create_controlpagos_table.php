@@ -18,22 +18,23 @@ return new class extends Migration
 
             $table->unsignedBigInteger('id_clients');
             $table->foreign('id_clients')
-            ->references('id')->on('clients')
-            ->inDelete('set null');
+                ->references('id')->on('clients')
+                ->inDelete('set null');
 
             $table->unsignedBigInteger('id_color');
             $table->foreign('id_color')
-            ->references('id')->on('colores');
+                ->references('id')->on('colores')
+                ->inDelete('set null');
 
             $table->unsignedBigInteger('id_alertas');
             $table->foreign('id_alertas')
-            ->references('id')->on('alertas')
-            ->inDelete('set null');
+                ->references('id')->on('alertas')
+                ->inDelete('set null');
 
             $table->unsignedBigInteger('id_doctor');
             $table->foreign('id_doctor')
-            ->references('id')->on('especialists')
-            ->inDelete('set null');
+                ->references('id')->on('especialists')
+                ->inDelete('set null');
 
             $table->string('fecha')->nullable();
             $table->string('tratamiento')->nullable();
