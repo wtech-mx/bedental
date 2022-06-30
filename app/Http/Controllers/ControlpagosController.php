@@ -34,26 +34,35 @@ class ControlpagosController extends Controller
         $costo_total = $request->get('costo_total');
         $pagado = $request->get('pagado');
         $saldo_pendiente = $request->get('saldo_pendiente');
-        $firma_doctor = $request->get('firma_doctor');
-        $firma_paciente = $request->get('firma_paciente');
 
         $controlpagos->costo_total = $costo_total;
         $controlpagos->pagado = $pagado;
         $controlpagos->saldo_pendiente = $saldo_pendiente;
 
-        $folderPath = public_path('upload/');
+        if ($request->signed != null){
+            $folderPath = public_path('upload/');
+            $image_parts = explode(";base64,", $request->signed);
+            $image_type_aux = explode("image/", $image_parts[0]);
+            $image_type = $image_type_aux[1];
+            $image_base64 = base64_decode($image_parts[1]);
+            $file = $folderPath . uniqid() . '.'.$image_type;
+            $nombre_archivo = pathinfo($file, PATHINFO_FILENAME);
+            $controlpagos->firma_doctor = $nombre_archivo;
+            file_put_contents($file, $image_base64);
+        }
 
-        $image_parts = explode(";base64,", $request->signed);
 
-        $image_type_aux = explode("image/", $image_parts[0]);
-
-        $image_type = $image_type_aux[1];
-
-        $image_base64 = base64_decode($image_parts[1]);
-
-        $file = $folderPath . uniqid() . '.'.$image_type;
-        $firma1 = file_put_contents($file, $image_base64);
-        dd($firma1);
+        if ($request->signed2 != null) {
+            $folderPath2 = public_path('upload/');
+            $image_parts2 = explode(";base64,", $request->signed2);
+            $image_type_aux2 = explode("image/", $image_parts2[0]);
+            $image_type2 = $image_type_aux2[1];
+            $image_base642 = base64_decode($image_parts2[1]);
+            $file2 = $folderPath2 . uniqid() . '.' . $image_type2;
+            $nombre_archivo2 = pathinfo($file2, PATHINFO_FILENAME);
+            $controlpagos->firma_paciente = $nombre_archivo2;
+            file_put_contents($file2, $image_base642);
+        }
 
         $controlpagos->update();
         Session::flash('edit', 'Se ha editado  con exito');

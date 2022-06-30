@@ -11,9 +11,18 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script type="text/javascript" src="http://keith-wood.name/js/jquery.signature.js"></script>
+
 @endsection
 
 @section('content')
+
+    <style>
+    .kbw-signature {
+        display: block!important;
+        border: 1px solid #a0a0a0;
+        -ms-touch-action: none;
+    }
+    </style>
 
 <div class="container-fluid mt-3">
       <div class="row">
@@ -58,8 +67,8 @@
                        <td>{{$item->costo_total}}</td>
                        <td>{{$item->saldo_pendiente}}</td>
                        <td>{{$item->pagado}}</td>
-                       <td>{{$item->firma_doctor}}</td>
-                       <td>{{$item->firma_paciente}}</td>
+                       <td><img src="{{asset('upload/' . $item->firma_doctor)}}.png" width="100px"></td>
+                       <td><img src="{{asset('upload/' . $item->firma_paciente)}}.png" width="100px"></td>
                         <td class="text-left">
                           <div class="dropdown ">
                             <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -77,6 +86,21 @@
                       </tr>
                    @include('controlpagos.edit')
 
+                    <script type="text/javascript">
+                        var sign{{$item->id}} = $('#sign{{$item->id}}').signature({syncField: '#signature64n{{$item->id}}', syncFormat: 'PNG'});
+                        var sig{{$item->id}} = $('#sig{{$item->id}}').signature({syncField: '#signature64{{$item->id}}', syncFormat: 'PNG'});
+                        $('#clearn{{$item->id}}').click(function(e) {
+                            e.preventDefault();
+                            sign{{$item->id}}.signature('clear');
+                            $("#signature64n{{$item->id}}").val('');
+                        });
+                        $('#clear{{$item->id}}').click(function(e) {
+                            e.preventDefault();
+                            sig{{$item->id}}.signature('clear');
+                            $("#signature64{{$item->id}}").val('');
+                        });
+                    </script>
+
                    @endforeach
               </table>
             </div>
@@ -85,15 +109,6 @@
         </div>
       </div>
 </div>
-
-    <script type="text/javascript">
-        var sig = $('#sig').signature({syncField: '#signature64', syncFormat: 'PNG'});
-        $('#clear').click(function(e) {
-            e.preventDefault();
-            sig.signature('clear');
-            $("#signature64").val('');
-        });
-    </script>
 
 @endsection
 

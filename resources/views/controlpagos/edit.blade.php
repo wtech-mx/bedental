@@ -10,6 +10,7 @@
       </div>
 
       <div class="modal-body row">
+
       {!! Form::open(array('route' => ['control_pagos.update', $item->id],'method'=>'PATCH','enctype'=>'multipart/form-data')) !!}
 
             <div class="form-group col-xs-12 col-sm-12 col-md-6">
@@ -43,21 +44,18 @@
             </div>
 
             <div class="form-group col-xs-12 col-sm-12 col-md-12">
-                <label for="">Firma doctor canvas :</label>
-                <div id="sig" ></div>
-                <br/>
-                <button id="clear" class="btn btn-danger btn-sm">Clear Signature</button>
-                <textarea id="signature64" name="signed" style="display: none"></textarea>
+                <label for="">Firma doctor :</label>
+                <div id="sign{{$item->id}}" ></div>
+                <button id="clearn{{$item->id}}" class="btn btn-danger btn-sm">Limpiar</button>
+                <textarea class="form-control" id="signature64n{{$item->id}}" name="signed" style="display: none"></textarea>
             </div>
 
-            <div class="form-group col-xs-12 col-sm-12 col-md-6">
-                <label for="">Firma doctor:</label>
-                <input type="text" value="{{$item->firma_doctor}}" class="form-control" name="firma_doctor" id="firma_doctor">
-            </div>
 
-            <div class="form-group col-xs-12 col-sm-12 col-md-6">
-                <label for="">Firma paciente:</label>
-                <input type="text" value="{{$item->firma_paciente}}" class="form-control" name="firma_paciente" id="firma_paciente">
+            <div class="form-group col-xs-12 col-sm-12 col-md-12">
+                <label for="">Firma paciente :</label>
+                <div id="sig{{$item->id}}" ></div>
+                <button id="clear{{$item->id}}" class="btn btn-danger btn-sm">Limpiar</button>
+                <textarea class="form-control" id="signature64{{$item->id}}" name="signed2" style="display: none"></textarea>
             </div>
 
             <div class="form-group col-xs-12 col-sm-12 col-md-12 text-center mt-3">
