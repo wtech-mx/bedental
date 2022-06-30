@@ -4,6 +4,15 @@
     Control de pagos
 @endsection
 
+@section('css')
+    <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/south-street/jquery-ui.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://keith-wood.name/css/jquery.signature.css">
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="http://keith-wood.name/js/jquery.signature.js"></script>
+@endsection
+
 @section('content')
 
 <div class="container-fluid mt-3">
@@ -45,7 +54,7 @@
                        <td>{{$item->fecha}}</td>
                        <td>{{$item->Client->nombre}}</td>
                        <td>{{$item->Especialists->nombre}}</td>
-                       <td>{{$item->tratamiento}}</td>
+                       <td>{{$item->Colores->servicio}}</td>
                        <td>{{$item->costo_total}}</td>
                        <td>{{$item->saldo_pendiente}}</td>
                        <td>{{$item->pagado}}</td>
@@ -66,12 +75,9 @@
                           </div>
                         </td>
                       </tr>
-
-
                    @include('controlpagos.edit')
 
                    @endforeach
-
               </table>
             </div>
 
@@ -80,5 +86,15 @@
       </div>
 </div>
 
+    <script type="text/javascript">
+        var sig = $('#sig').signature({syncField: '#signature64', syncFormat: 'PNG'});
+        $('#clear').click(function(e) {
+            e.preventDefault();
+            sig.signature('clear');
+            $("#signature64").val('');
+        });
+    </script>
 
 @endsection
+
+

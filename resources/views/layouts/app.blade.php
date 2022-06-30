@@ -149,6 +149,7 @@
         });
     </script>
 
+
     @yield('funcion_dropzone')
 
 </body>

@@ -29,7 +29,7 @@
 
             <div class="form-group col-xs-12 col-sm-12 col-md-6">
                 <label for="">Tratameinto:</label>
-                <input type="text" value="{{$item->tratamiento}}" class="form-control" name="tratamiento" id="tratamiento" disabled>
+                <input type="text" value="{{$item->Colores->servicio}}" class="form-control" name="tratamiento" id="tratamiento" disabled>
             </div>
 
             <div class="form-group col-xs-12 col-sm-12 col-md-6">
@@ -40,6 +40,14 @@
             <div class="form-group col-xs-12 col-sm-12 col-md-6">
                 <label for="">Saldo pendiente:</label>
                 <input type="text" value="{{$item->saldo_pendiente}}" class="form-control" name="saldo_pendiente" id="saldo_pendiente">
+            </div>
+
+            <div class="form-group col-xs-12 col-sm-12 col-md-12">
+                <label for="">Firma doctor canvas :</label>
+                <div id="sig" ></div>
+                <br/>
+                <button id="clear" class="btn btn-danger btn-sm">Clear Signature</button>
+                <textarea id="signature64" name="signed" style="display: none"></textarea>
             </div>
 
             <div class="form-group col-xs-12 col-sm-12 col-md-6">
@@ -63,3 +71,4 @@
     </div>
   </div>
 </div>
+

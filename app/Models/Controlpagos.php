@@ -13,7 +13,7 @@ class Controlpagos extends Model
 
     protected $table = 'controlpagos';
 
-    protected $fillable = ['id_clients','id_alertas','id_doctor','tratamiento','fecha' ,'costo_total', 'pagado','saldo_pendiente','firma_doctor','firma_paciente'];
+    protected $fillable = ['id_clients','id_alertas','id_color','id_doctor','tratamiento','fecha' ,'costo_total', 'pagado','saldo_pendiente','firma_doctor','firma_paciente'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
@@ -32,6 +32,11 @@ class Controlpagos extends Model
     public function alertas()
     {
         return $this->hasOne('App\Models\Alertas', 'id', 'id_alertas');
+    }
+
+    public function colores()
+    {
+        return $this->hasOne('App\Models\Colores', 'id', 'id_color');
     }
 
 }
