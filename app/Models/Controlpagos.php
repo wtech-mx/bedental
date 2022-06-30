@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Controlpagos extends Model
 {
     use HasFactory;
@@ -25,7 +26,7 @@ class Controlpagos extends Model
 
     public function especialists()
     {
-        return $this->hasOne('App\Models\Especialists', 'id', 'id_doctor');
+        return $this->hasOne('App\Models\Especialist', 'id', 'id_doctor');
     }
 
     public function alertas()

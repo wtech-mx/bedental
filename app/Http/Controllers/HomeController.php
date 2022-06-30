@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alertas;
+use App\Models\Factura;
 use Illuminate\Http\Request;
 use App\Models\Client;
 use App\Models\Especialist;
 use App\Models\User;
 use App\Models\Antecedente;
 use App\Models\Colores;
+
 use DB;
 
 class HomeController extends Controller
@@ -48,14 +50,19 @@ class HomeController extends Controller
 
         $colores = Colores::get();
 
+       $facturas = Factura::all();
+       $count_facturas = count($facturas);
+
         $alert_retenedores = Alertas::where('id_color', '=', 6)->get();
         $count_retenedores = count($alert_retenedores);
 
         $alert_limpieza = Alertas::where('id_color', '=', 2)->get();
         $count_limpieza = count($alert_limpieza);
 
+
+
         $recordatorios = $count_retenedores + $count_limpieza;
 
-        return view('dashboard', compact('count_client','count_especialist','count_users','count_antecedentes','client','especialist', 'colores', 'recordatorios'));
+        return view('dashboard', compact('count_client','count_especialist','count_facturas','count_users','count_antecedentes','client','especialist', 'colores', 'recordatorios'));
     }
 }

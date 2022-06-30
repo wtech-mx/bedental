@@ -115,17 +115,36 @@
                   </div>
             </div>
 
-            <div class="col-9">
-                <div class="d-flex flex-row-reverse">
-
+            <div class="col-xl-3 col-md-6 col-6">
                   <div class="card card-stats">
                     <!-- Card body -->
-                     <a class="nav-link" type="button" data-toggle="modal" data-target="#coloresModal">
+                     <a class="hover_card_bred" href="{{ route('facturas.index') }}">
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col">
+                              <h5 class="card-title text-uppercase text-muted mb-0">Facturas</h5>
+                              <span class="h2 font-weight-bold mb-0">{{$count_facturas}}</span>
+                            </div>
+                            <div class="col-auto">
+                              <div class="icon icon-shape text-white rounded-circle shadow" style="background-color: #9368a9">
+                                <i class="ni ni-single-copy-04 text-white"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </a>
+                  </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 col-6">
+                  <div class="card card-stats">
+                    <!-- Card body -->
+                     <a class="hover_card_bred" type="button" data-toggle="modal" data-target="#coloresModal">
                         <div class="card-body">
                           <div class="row">
                             <div class="col">
                               <h5 class="card-title text-uppercase text-muted mb-0">Colores</h5>
-                              <span class="h2 font-weight-bold mb-0"></span>
+                              <span class="h2 font-weight-bold mb-0">{{$count_facturas}}</span>
                             </div>
                             <div class="col-auto">
                               <div class="icon icon-shape text-white rounded-circle shadow" style="background-color: #9368a9">
@@ -136,9 +155,9 @@
                         </div>
                     </a>
                   </div>
-                    @include('layouts.colores')
-                </div>
             </div>
+
+            @include('layouts.colores')
 
           </div>
 @endsection

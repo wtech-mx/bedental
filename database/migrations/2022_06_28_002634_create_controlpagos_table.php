@@ -21,6 +21,10 @@ return new class extends Migration
             ->references('id')->on('clients')
             ->inDelete('set null');
 
+            $table->unsignedBigInteger('id_color');
+            $table->foreign('id_color')
+            ->references('id')->on('colores');
+
             $table->unsignedBigInteger('id_alertas');
             $table->foreign('id_alertas')
             ->references('id')->on('alertas')

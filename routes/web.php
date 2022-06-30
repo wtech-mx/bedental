@@ -103,7 +103,7 @@ Route::post('create_factura', [FacturasController::class, 'store_factura'])->nam
 |--------------------------------------------------------------------------*/
 
 Route::get('control_pagos', [ControlpagosController::class, 'index'])->name('control_pagos.index');
-
+Route::patch('control_pagos/{id}', [ControlpagosController::class, 'update'])->name('control_pagos.update');
 /*|--------------------------------------------------------------------------
 |email
 |--------------------------------------------------------------------------*/

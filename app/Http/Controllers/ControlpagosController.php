@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Alertas;
 use App\Models\Client;
+use App\Models\Especialist;
 use App\Models\Controlpagos;
 use Illuminate\Http\Request;
 
@@ -73,9 +74,20 @@ class ControlpagosController extends Controller
      * @param  \App\Models\Controlpagos  $controlpagos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Controlpagos $controlpagos)
+    public function update($id, Request $request)
     {
-        //
+        $facturas = Factura::findorfail($id);
+
+        $name  = $request->get('name');
+        $date  = $request->get('date');
+
+        $facturas->name = $name;
+        $facturas->date = $date;
+        $facturas->estatus = 0;
+        $facturas->update ();
+
+        Session::flash('edit', 'Se ha editado  con exito');
+        return redirect()->back();
     }
 
     /**

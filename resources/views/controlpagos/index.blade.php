@@ -29,11 +29,11 @@
                       <tr>
                        <th>Fecha</th>
                        <th>Paciente</th>
-                       <th>Cita</th>
+                       <th>Doctor</th>
                        <th>Tratamiento</th>
                        <th>Costo Total</th>
-                       <th>Pagado</th>
                        <th>Saldo pendiente</th>
+                       <th>Pagado</th>
                        <th>Firma Doctor</th>
                        <th >Firma Paciete</th>
                        <th >Acciones</th>
@@ -44,15 +44,31 @@
                       <tr>
                        <td>{{$item->fecha}}</td>
                        <td>{{$item->Client->nombre}}</td>
-                       <td>{{$item->id_alertas}}</td>
+                       <td>{{$item->Especialists->nombre}}</td>
                        <td>{{$item->tratamiento}}</td>
                        <td>{{$item->costo_total}}</td>
-                       <td>{{$item->pagado}}</td>
                        <td>{{$item->saldo_pendiente}}</td>
+                       <td>{{$item->pagado}}</td>
                        <td>{{$item->firma_doctor}}</td>
                        <td>{{$item->firma_paciente}}</td>
-                       <td class="text-left"></td>
+                        <td class="text-left">
+                          <div class="dropdown ">
+                            <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+
+                              <a class="dropdown-item" type="button" data-toggle="modal" data-target="#controlpagos{{$item->id}}">
+                                 <i class="fa fa-pen"></i> Editar
+                              </a>
+
+                            </div>
+                          </div>
+                        </td>
                       </tr>
+
+
+                   @include('controlpagos.edit')
 
                    @endforeach
 
@@ -63,6 +79,6 @@
         </div>
       </div>
 </div>
- @include('facturas.create')
+
 
 @endsection
