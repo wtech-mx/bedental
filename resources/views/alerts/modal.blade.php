@@ -379,12 +379,11 @@
 
               </div>
 
-
               <div class="modal-footer">
-
                   <button class="btn  btn-sm text-white" id="btnWhats" style="background-color: #128C7E">
+                      <input type="text" name="txtTelefono" id="txtTelefono" disabled style="background: transparent;color: #fff;border: 1px solid transparent;display: inherit;left: 40px;position: relative;">
                       <input type="hidden" name="txtTelefono" id="txtTelefono">
-                      <i class="fab fa-whatsapp" aria-hidden="true"></i> Whatdsapp
+                      <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
                   </button>
 
                   <button class="btn btn-success btn-sm text-white" id="btnAgregar">
