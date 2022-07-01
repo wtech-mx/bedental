@@ -40,11 +40,28 @@ class ClientController extends Controller
             'telefono' => 'required',
         ]);
 
-           $client = new Client();
-           $client->nombre = $request->nombre;
-           $client->apellido = $request->apellido;
-           $client->email = $request->email;
-           $client->telefono = $request->telefono;
+            $client = new Client();
+            $client->nombre = $request->nombre;
+            $client->apellido = $request-> apellido;
+            $client->edad = $request-> edad;
+            $client->telefono = $request-> telefono;
+            $client->telefono2 = $request-> telefono2;
+            $client->fecha_nacimiento = $request-> fecha_nacimiento;
+            $client->motivo_consulta = $request-> motivo_consulta;
+            $client->email = $request-> email;
+            $client->email2 = $request-> email2;
+            $client->domicilio_fiscal = $request-> domicilio_fiscal;
+            $client->regimen_fiscal = $request-> regimen_fiscal;
+            $client->fiscal = $request-> fiscal;
+            $client->rfc = $request-> rfc;
+            $client->razon_social = $request-> razon_social;
+            $client->correo_fiscal = $request-> correo_fiscal;
+            $client->cfdi = $request-> cfdi;
+            $client->seguro = $request-> seguro;
+            $client->poliza = $request-> poliza;
+            $client->tipo_plan = $request-> tipo_plan;
+            $client->certificado = $request-> certificado;
+            $client->empresa = $request-> empresa;
            $client->save();
 
            Antecedente::create([
@@ -88,6 +105,7 @@ class ClientController extends Controller
         $client->tipo_plan = $request-> tipo_plan;
         $client->certificado = $request-> certificado;
         $client->empresa = $request-> empresa;
+
         if ($request->hasFile("pdf_fiscal")){
             $file = $request->file('pdf_fiscal');
             $path = public_path() . '/pdf_fiscal';

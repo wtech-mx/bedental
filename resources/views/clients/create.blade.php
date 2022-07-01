@@ -69,7 +69,7 @@
                                         </p>
                                         <div class="collapse" id="Correo">
                                             <label for="telefono">Email 2</label>
-                                            <input name="email2" type="number" class="form-control" id="email2"
+                                            <input name="email2" type="email" class="form-control" id="email2"
                                                 placeholder="Email">@error('email2') <span class="error text-danger">{{
                                                 $message }}</span> @enderror
                                         </div>
@@ -81,11 +81,11 @@
                                             placeholder="Telefono">@error('telefono') <span class="error text-danger">{{
                                             $message }}</span> @enderror
                                         <p>
-                                          <a class="" data-toggle="collapse" href="#Telefono" role="button" aria-expanded="false" aria-controls="Telefono">
+                                          <a class="" data-toggle="collapse" href="#Telefono2" role="button" aria-expanded="false" aria-controls="Telefono">
                                             Agregar otro telefono
                                           </a>
                                         </p>
-                                        <div class="collapse" id="Telefono">
+                                        <div class="collapse" id="Telefono2">
                                             <label for="telefono">Telefono2</label>
                                             <input name="telefono2" type="number" class="form-control" id="telefono2"
                                                 placeholder="Telefono">@error('telefono2') <span class="error text-danger">{{
@@ -194,7 +194,7 @@
 
                                     <div class="form-group col-xs-12 col-sm-12 col-md-12">
                                         <label for="cfdi">CFDI</label>
-                                        <select name="regimen_fiscal" class="form-control" id="regimen_fiscal">
+                                        <select name="cfdi" class="form-control" id="cfdi">
                                             <option>Seleciona el uso del CFDI (Fisica y Moral) (Fisica y Moral)</option>
                                             <option value="G01">G01 Adquisicion de mercancias (Fisica y Moral)</option>
                                             <option value="G02">G02 Devoluciones descuentos o bonificaciones (Fisica y
