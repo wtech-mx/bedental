@@ -52,6 +52,7 @@
                        <th>Costo Total</th>
                        <th>Saldo pendiente</th>
                        <th>Pagado</th>
+                       <th>¿Requiere Factuta?</th>
                        <th>Firma Doctor</th>
                        <th >Firma Paciete</th>
                        <th >Acciones</th>
@@ -67,6 +68,7 @@
                        <td>{{$item->costo_total}}</td>
                        <td>{{$item->saldo_pendiente}}</td>
                        <td>{{$item->pagado}}</td>
+                       <td>{{$item->factura}}</td>
                        <td><img src="{{asset('upload/' . $item->firma_doctor)}}.png" width="100px"></td>
                        <td><img src="{{asset('upload/' . $item->firma_paciente)}}.png" width="100px"></td>
                         <td class="text-left">
@@ -103,6 +105,8 @@
 
                    @endforeach
               </table>
+
+              <div id="chart"></div>
             </div>
 
           </div>

@@ -7,8 +7,10 @@ use App\Models\Client;
 use App\Models\Colores;
 use App\Models\Especialist;
 use App\Models\Controlpagos;
+use App\Models\Factura;
 use Illuminate\Http\Request;
 use Session;
+use DB;
 
 class ControlpagosController extends Controller
 {
@@ -23,7 +25,12 @@ class ControlpagosController extends Controller
         $client = Client::orderBy('nombre', 'asc')->get();
         $controlpagos = Controlpagos::orderBy('fecha', 'asc')->get();
 
-        return view('controlpagos.index', compact('alertas', 'client', 'controlpagos'));
+        $graficacontrol = Controlpagos::select(\DB::raw("COUNT(*) as count"))
+                    ->whereYear('fecha', date('Y'))
+                    ->groupBy(\DB::raw("Month(fecha)"))
+                    ->pluck('count');
+
+        return view('controlpagos.index', compact('alertas', 'client', 'controlpagos', 'graficacontrol'));
     }
 
 
@@ -38,6 +45,16 @@ class ControlpagosController extends Controller
         $controlpagos->costo_total = $costo_total;
         $controlpagos->pagado = $pagado;
         $controlpagos->saldo_pendiente = $saldo_pendiente;
+        $controlpagos->factura = $request->get('factura');
+
+        if($controlpagos->factura == 'Si'){
+            $facturas = new Factura();
+            $facturas->id_clients = $controlpagos->id;
+            $facturas->date = $controlpagos->fecha;
+            $facturas->name = $controlpagos->Colores->servicio;
+            $facturas->estatus = 0;
+            $facturas->save();
+        }
 
         if ($request->signed != null){
             $folderPath = public_path('upload/');
@@ -68,6 +85,7 @@ class ControlpagosController extends Controller
         Session::flash('edit', 'Se ha editado  con exito');
         return redirect()->back();
     }
+
 }
 
 

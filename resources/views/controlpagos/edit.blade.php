@@ -43,6 +43,16 @@
                 <input type="text" value="{{$item->saldo_pendiente}}" class="form-control" name="saldo_pendiente" id="saldo_pendiente">
             </div>
 
+            <div class="form-group col-xs-12 col-sm-12 col-md-6">
+                <label for="">¿Requiere Factura?</label>
+                <select class="form-control" id="factura" name="factura" required>
+                    <option value="{{$item->factura}}">{{$item->factura}}</option>
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
+               </select>
+            </div>
+
+
             <div class="form-group col-xs-12 col-sm-12 col-md-12">
                 <label for="">Firma doctor :</label>
                 <div id="sign{{$item->id}}" ></div>
