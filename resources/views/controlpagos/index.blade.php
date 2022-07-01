@@ -31,14 +31,12 @@
 
         </div>
 
-        <div class="col-12">
+        <div class="col-8">
           <div class="card">
             <!-- Card header -->
             <div class="card-header">
               <h3 class="mb-3">Control de pagos</h3>
-                <a type="button" class="btn btn-primary text-white" data-toggle="modal" data-target="#facturas">
-                   Crear nueva Pago
-                </a>
+
             </div>
 
             <div class="table-responsive py-4" style="margin-left: 1rem;">
@@ -53,8 +51,6 @@
                        <th>Saldo pendiente</th>
                        <th>Pagado</th>
                        <th>¿Requiere Factuta?</th>
-                       <th>Firma Doctor</th>
-                       <th >Firma Paciete</th>
                        <th >Acciones</th>
                      </tr>
                   </thead>
@@ -69,8 +65,6 @@
                        <td>{{$item->saldo_pendiente}}</td>
                        <td>{{$item->pagado}}</td>
                        <td>{{$item->factura}}</td>
-                       <td><img src="{{asset('upload/' . $item->firma_doctor)}}.png" width="100px"></td>
-                       <td><img src="{{asset('upload/' . $item->firma_paciente)}}.png" width="100px"></td>
                         <td class="text-left">
                           <div class="dropdown ">
                             <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -102,18 +96,61 @@
                             $("#signature64{{$item->id}}").val('');
                         });
                     </script>
-
                    @endforeach
               </table>
 
-              <div id="chart"></div>
+
             </div>
 
           </div>
+        </div>
+        <div class="col-4">
+             <div id="chart"></div>
         </div>
       </div>
 </div>
 
 @endsection
 
+@section('charts')
+ <script type="text/javascript">
+    var users =  <?php echo json_encode($graficacontrol) ?>;
 
+    Highcharts.chart('chart', {
+        title: {
+            text: 'Grafica de Ingresos'
+        },
+         xAxis: {
+            categories: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
+        },
+        yAxis: {
+            title: {
+                text: 'Nuumero de ingresos'
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+        series: [{
+            name: 'Num ingresos',
+            data: users
+        }],
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
+                }
+            }]
+        }
+    });
+</script>
+@endsection

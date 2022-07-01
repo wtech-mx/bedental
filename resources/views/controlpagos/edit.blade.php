@@ -58,6 +58,7 @@
                 <div id="sign{{$item->id}}" ></div>
                 <button id="clearn{{$item->id}}" class="btn btn-danger btn-sm">Limpiar</button>
                 <textarea class="form-control" id="signature64n{{$item->id}}" name="signed" style="display: none"></textarea>
+                <img src="{{asset('upload/' . $item->firma_doctor)}}.png" width="100px">
             </div>
 
 
@@ -66,6 +67,7 @@
                 <div id="sig{{$item->id}}" ></div>
                 <button id="clear{{$item->id}}" class="btn btn-danger btn-sm">Limpiar</button>
                 <textarea class="form-control" id="signature64{{$item->id}}" name="signed2" style="display: none"></textarea>
+                <img src="{{asset('upload/' . $item->firma_paciente)}}.png" width="100px">
             </div>
 
             <div class="form-group col-xs-12 col-sm-12 col-md-12 text-center mt-3">
