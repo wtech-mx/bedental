@@ -58,6 +58,11 @@
                     <span class="nav-link-text">Control pago</span>
                 </a>
 
+                <a class="nav-link {{ (Request::is('odontograma*') ? 'active' : '') }}" href="{{ route('odontograma.index') }}">
+                    <i class="fa fa-tooth text-blue"></i>
+                    <span class="nav-link-text">Odontograma</span>
+                </a>
+
             </li>
 
             <li class="nav-item">

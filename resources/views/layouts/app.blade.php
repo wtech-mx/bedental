@@ -156,6 +156,7 @@
 
 
     @yield('charts')
+    @yield('odontograma')
     @yield('funcion_dropzone')
 
 </body>

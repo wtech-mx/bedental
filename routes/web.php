@@ -17,6 +17,7 @@ use App\Http\Controllers\MailerController;
 use App\Http\Controllers\AntecedentesController;
 use App\Http\Controllers\EspecialistsController;
 use App\Http\Controllers\ControlpagosController;
+use App\Http\Controllers\OdontogramaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -115,3 +116,11 @@ Route::post("send-email", [MailerController::class, "composeEmail"])->name("send
 |Retenedores
 |--------------------------------------------------------------------------*/
 Route::get('recordatorios', [AlertasController::class, 'index_recordatorios'])->name('recordatorios.index');
+
+/*|--------------------------------------------------------------------------
+|Odontograma
+|--------------------------------------------------------------------------*/
+Route::get('odontograma', [OdontogramaController::class, 'index'])->name('odontograma.index');
+Route::get('odontograma/create', [OdontogramaController::class, 'create'])->name('odontograma.create');
+Route::post('odontograma', [OdontogramaController::class, 'store'])->name('odontograma.store');
+Route::patch('odontograma/{id}', [OdontogramaController::class, 'update'])->name('odontograma.update');
