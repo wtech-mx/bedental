@@ -16,6 +16,7 @@ use Session;
  * Class ClientController
  * @package App\Http\Controllers
  */
+
 class ClientController extends Controller
 {
 
@@ -35,10 +36,10 @@ class ClientController extends Controller
     public function store_client(Request $request)
     {
 
-        $this->validate($request, [
-            'nombre' => 'required',
-            'telefono' => 'required',
-        ]);
+            $this->validate($request, [
+                'nombre' => 'required',
+                'telefono' => 'required',
+            ]);
 
             $client = new Client();
             $client->nombre = $request->nombre;
