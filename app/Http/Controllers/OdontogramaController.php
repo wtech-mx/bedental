@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Hunts;
 use App\Models\Client;
 use App\Models\Dientes;
 use App\Models\Especialist;
@@ -21,7 +22,6 @@ class OdontogramaController extends Controller
     {
         $odontograma = Odontograma::get();
         $client = Client::get();
-        $especialist= Especialist::get();
 
         return view('odontograma.index', compact('odontograma', 'client', 'especialist'));
     }
@@ -31,8 +31,11 @@ class OdontogramaController extends Controller
         $odontograma = Odontograma::get();
         $client = Client::get();
         $especialist= Especialist::get();
+        $especialist= Especialist::get();
+        $hunts_permanentes = Hunts::where('permanentes','=',0)->get();
+        $hunts_child = Hunts::where('permanentes','=',1)->get();
 
-        return view('odontograma.create', compact('odontograma', 'client', 'especialist'));
+        return view('odontograma.create', compact('odontograma', 'client', 'especialist','hunts_permanentes','hunts_child'));
     }
 
     public function store(Request $request)

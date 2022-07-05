@@ -65,25 +65,46 @@
 
                             <div class="col-12 mb-5">
                                 <div class="row">
-                                    <div class="form-group mb-5 col-1">
-                                        <div class="container_checkbox_odontogram position-relative">
-                                            <i class="fa fa-tooth position-absolute" style="left: 0px;top: -20px;"></i>
-                                            <input class="form-check-input position-absolute"  type="checkbox" value="1" id="lado1" name="lado1" style="left: 20px;top: -2px;">
-                                            <input class="form-check-input position-absolute"  type="checkbox" value="1" id="lado2" name="lado2" style="left: 8px;top: 10px;">
-                                            <input class="form-check-input position-absolute"  type="checkbox" value="1" id="lado3" name="lado3" style="left: 20px;top: 10px;">
-                                            <input class="form-check-input position-absolute"  type="checkbox" value="1" id="lado4" name="lado4" style="left: 32px;top: 10px;">
-                                            <input class="form-check-input position-absolute"  type="checkbox" value="1" id="lado5" name="lado5" style="left: 20px;top:22px;">
+                                    @foreach($hunts_permanentes as $item)
+                                        <div class="form-group mb-5 col-1 p-4">
+                                            <div class="container_checkbox_odontogram position-relative">
+                                                <i class="fa fa-tooth position-absolute" style="left: 0px;top: -20px;"></i>
+                                                <input type="checkbox" value="{{$item->od}}" id="od" name="od">
+                                                <input class="form-check-input position-absolute"  type="checkbox" value="1" id="lado1" name="lado1" style="left: 20px;top: -2px;">
+                                                <input class="form-check-input position-absolute"  type="checkbox" value="1" id="lado2" name="lado2" style="left: 8px;top: 10px;">
+                                                <input class="form-check-input position-absolute"  type="checkbox" value="1" id="lado3" name="lado3" style="left: 20px;top: 10px;">
+                                                <input class="form-check-input position-absolute"  type="checkbox" value="1" id="lado4" name="lado4" style="left: 32px;top: 10px;">
+                                                <input class="form-check-input position-absolute"  type="checkbox" value="1" id="lado5" name="lado5" style="left: 20px;top:22px;">
+                                                <p style="font-size: 9px;position: absolute;top: 40px;left:-5px ">OD: {{$item->od}}</p>
+                                            </div>
                                         </div>
-                                    </div>
-
+                                    @endforeach
                                 </div>
                             </div>
 
                           </div>
 
                           <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-
+                            <div class="col-12 mb-5">
+                                <div class="row">
+                                    @foreach($hunts_child as $item)
+                                        <div class="form-group mb-5 col-1 p-4">
+                                            <div class="container_checkbox_odontogram position-relative">
+                                                <i class="fa fa-tooth position-absolute" style="left: 0px;top: -20px;"></i>
+                                                <input type="checkbox" value="{{$item->od}}" id="od" name="od">
+                                                <input class="form-check-input position-absolute"  type="checkbox" value="1" id="lado1" name="lado1" style="left: 20px;top: -2px;">
+                                                <input class="form-check-input position-absolute"  type="checkbox" value="1" id="lado2" name="lado2" style="left: 8px;top: 10px;">
+                                                <input class="form-check-input position-absolute"  type="checkbox" value="1" id="lado3" name="lado3" style="left: 20px;top: 10px;">
+                                                <input class="form-check-input position-absolute"  type="checkbox" value="1" id="lado4" name="lado4" style="left: 32px;top: 10px;">
+                                                <input class="form-check-input position-absolute"  type="checkbox" value="1" id="lado5" name="lado5" style="left: 20px;top:22px;">
+                                                <p style="font-size: 9px;position: absolute;top: 40px;left:-5px ">OD: {{$item->od}}</p>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
                           </div>
+
                         </div>
 
                     </div>
