@@ -123,4 +123,5 @@ Route::get('recordatorios', [AlertasController::class, 'index_recordatorios'])->
 Route::get('odontograma', [OdontogramaController::class, 'index'])->name('odontograma.index');
 Route::get('odontograma/create', [OdontogramaController::class, 'create'])->name('odontograma.create');
 Route::post('odontograma', [OdontogramaController::class, 'store'])->name('odontograma.store');
-Route::patch('odontograma/{id}', [OdontogramaController::class, 'update'])->name('odontograma.update');
+Route::get('odontograma/edit/{id}', [OdontogramaController::class, 'edit'])->name('odontograma.edit');
+Route::patch('odontograma/update/{id}', [OdontogramaController::class, 'update'])->name('odontograma.update');

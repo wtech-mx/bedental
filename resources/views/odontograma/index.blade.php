@@ -37,7 +37,7 @@
                        <td>{{$row->Doctor->nombre}} / <br> {{$row->Doctor->apellido}}</td>
                        <td>{{$row->fecha}}</td>
                        @php
-                           
+
                        @endphp
                        <td>{{$row->total}}</td>
                        <td>
@@ -61,13 +61,12 @@
                               <i class="fas fa-ellipsis-v"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                              <a class="dropdown-item" type="button" data-toggle="modal" data-target="#editOdontograma{{$row->id}}">
+                              <a class="dropdown-item" type="button" href="{{ route('odontograma.edit', $row->id) }}">
                                  <i class="fa fa-edit"></i> Editar Odontograma
                               </a>
                             </div>
                           </div>
                         </td>
-                    @include('odontograma.edit')
                    @endforeach
 
               </table>
