@@ -22,6 +22,7 @@ class OdontogramaController extends Controller
     {
         $odontograma = Odontograma::get();
         $client = Client::get();
+        $especialist= Especialist::get();
 
         return view('odontograma.index', compact('odontograma', 'client', 'especialist'));
     }
@@ -48,31 +49,34 @@ class OdontogramaController extends Controller
         $odontograma->estatus = 0;
         $odontograma->save();
 
-        if($request->get('lado1_1') || $request->get('lado2_1') || $request->get('lado3_1') || $request->get('lado4_1') || $request->get('lado5_1')){
-            $dintes = new Dientes();
-            $dintes->id_odontograma = $odontograma->id;
-            $dintes->diente = 1;
-            $dintes->lado1 = $request->get('lado1_1');
-            $dintes->lado2 = $request->get('lado2_1');
-            $dintes->lado3 = $request->get('lado3_1');
-            $dintes->lado4 = $request->get('lado4_1');
-            $dintes->lado5 = $request->get('lado5_1');
-            $dintes->save();
-        }
-
-        if($request->get('lado1_2') || $request->get('lado2_2') || $request->get('lado3_2') || $request->get('lado4_2') || $request->get('lado5_2')){
-            $dintes = new Dientes();
-            $dintes->id_odontograma = $odontograma->id;
-            $dintes->diente = 2;
-            $dintes->lado1 = $request->get('lado1_2');
-            $dintes->lado2 = $request->get('lado2_2');
-            $dintes->lado3 = $request->get('lado3_2');
-            $dintes->lado4 = $request->get('lado4_2');
-            $dintes->lado5 = $request->get('lado5_2');
-            $dintes->save();
-        }
-
+        $hunts_child = Hunts::where('permanentes','=',1)->get();
         $od = $request->od;
+        foreach($hunts_child as $item){
+            $lado1 = $request->lado1_.$item->od;
+            $lado2 = $request->lado2_.$item->od;
+            $lado3 = $request->lado3_.$item->od;
+            $lado4 = $request->lado4_.$item->od;
+            $lado5 = $request->lado5_.$item->od;
+            for ($count = 0; $count < count($od); $count++) {
+                if($request->get('lado1_'.$item->od) || $request->get('lado2_'.$item->od) || $request->get('lado3_'.$item->od) || $request->get('lado4_'.$item->od) || $request->get('lado5_'.$item->od)){
+
+                    $data2 = array(
+                        'id_odontograma' => $odontograma->id,
+                        'diente' => $item->od,
+                        'lado1' => $lado1[$count],
+                        'lado2' => $lado2[$count],
+                        'lado3' => $lado3[$count],
+                        'lado4' => $lado4[$count],
+                        'lado5' => $lado5[$count],
+                    );
+                    $insert_data2[] = $data2;
+
+                }
+            }
+        }
+        dientes::insert($insert_data2);
+
+
         $diagnostico = $request->diagnostico;
         $tratamiento = $request->tratamiento;
         $costo = $request->costo;
