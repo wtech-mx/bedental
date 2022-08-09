@@ -50,17 +50,17 @@
                         <div class="d-flex justify-content-center mb-5">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                               <li class="nav-item" role="presentation">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Temprales</a>
+                                <a class="nav-link " id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Temprales</a>
                               </li>
 
                               <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Permanentes</a>
+                                <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Permanentes</a>
                               </li>
                             </ul>
                         </div>
 
                         <div class="tab-content" id="myTabContent">
-                          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                          <div class="tab-pane fade " id="home" role="tabpanel" aria-labelledby="home-tab">
 
                             <div class="col-12 mb-5">
                                 <div class="row">
@@ -83,20 +83,45 @@
 
                           </div>
 
-                          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                          <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                             <div class="col-12 mb-5">
                                 <div class="row">
                                     @foreach($hunts_child as $item)
                                         <div class="form-group mb-5 col-1 p-4">
                                             <div class="container_checkbox_odontogram position-relative">
                                                 <i class="fa fa-tooth position-absolute" style="left: 0px;top: -20px;"></i>
-
+                                                <label>{{ Form::checkbox('hunts_child[]', 1, in_array($dientes, $dientes) ? 1 : 0, array('class' => 'name')) }}
+                                                    {{ $item->od }}</label>
+                                                {{-- @if($odontograma->Diente->lado1 == 1)
                                                 <input class="form-check-input position-absolute"  type="checkbox" value="1" id="lado1_{{$item->od}}[]" name="lado1_{{$item->od}}[]" style="left: 20px;top: -2px;">
+                                              @else
+                                                <input class="form-check-input position-absolute"  type="checkbox" value="1" id="lado1_{{$item->od}}[]" name="lado1_{{$item->od}}[]" style="left: 20px;top: -2px;">
+                                                @endif
+
+                                                @if($odontograma->Diente->lado2 == 1)
+                                                <input class="form-check-input position-absolute"  type="checkbox" value="1" id="lado2_{{$item->od}}[]" name="lado2_{{$item->od}}[]" style="left: 8px;top: 10px;" checked>
+                                                @else
                                                 <input class="form-check-input position-absolute"  type="checkbox" value="1" id="lado2_{{$item->od}}[]" name="lado2_{{$item->od}}[]" style="left: 8px;top: 10px;">
+                                                @endif
+
+                                                @if($odontograma->Diente->lado3 == 1)
+                                                <input class="form-check-input position-absolute"  type="checkbox" value="1" id="lado3_{{$item->od}}[]" name="lado3_{{$item->od}}[]" style="left: 20px;top: 10px;" checked>
+                                                @else
                                                 <input class="form-check-input position-absolute"  type="checkbox" value="1" id="lado3_{{$item->od}}[]" name="lado3_{{$item->od}}[]" style="left: 20px;top: 10px;">
+                                                @endif
+
+                                                @if($odontograma->Diente->lado4 == 1)
+                                                <input class="form-check-input position-absolute"  type="checkbox" value="1" id="lado4_{{$item->od}}[]" name="lado4_{{$item->od}}[]" style="left: 32px;top: 10px;" checked>
+                                                @else
                                                 <input class="form-check-input position-absolute"  type="checkbox" value="1" id="lado4_{{$item->od}}[]" name="lado4_{{$item->od}}[]" style="left: 32px;top: 10px;">
+                                                @endif
+
+                                                @if($odontograma->Diente->lado5 == 1)
+                                                <input class="form-check-input position-absolute"  type="checkbox" value="1" id="lado5_{{$item->od}}[]" name="lado5_{{$item->od}}[]" style="left: 20px;top:22px;" checked>
+                                                @else
                                                 <input class="form-check-input position-absolute"  type="checkbox" value="1" id="lado5_{{$item->od}}[]" name="lado5_{{$item->od}}[]" style="left: 20px;top:22px;">
-                                                <p style="font-size: 9px;position: absolute;top: 40px;left:-5px ">OD: {{$item->od}}</p>
+                                                @endif
+                                                <p style="font-size: 9px;position: absolute;top: 40px;left:-5px ">OD: {{$item->od}}</p> --}}
                                             </div>
                                         </div>
                                     @endforeach

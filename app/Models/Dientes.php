@@ -20,10 +20,9 @@ class Dientes extends Model
     'lado4',
     'lado5',
     ];
-
     public function Odontograma()
     {
-       return $this->belongsTo(Odontograma::class,'id_odontograma');
+        return $this->hasOne('App\Models\Odontograma', 'id_odontograma', 'id');
     }
 
 }

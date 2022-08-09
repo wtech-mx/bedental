@@ -9,6 +9,7 @@ use App\Models\Especialist;
 use App\Models\Odontograma;
 use App\Models\PlanTratamiento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class OdontogramaController extends Controller
@@ -86,8 +87,9 @@ class OdontogramaController extends Controller
 
                 }
             }
+            dientes::insert($insert_data2);
         }
-        dientes::insert($insert_data2);
+
 
 
         $diagnostico = $request->diagnostico;
@@ -118,18 +120,22 @@ class OdontogramaController extends Controller
     {
         $odontograma = Odontograma::Find($id);
         $plan_tratamiento = PlanTratamiento::where('id_odontograma','=', $odontograma->id)->get();
-        $dientes = Dientes::where('id_odontograma','=', $odontograma->id)->get();
+        // $dientes = Dientes::where('id_odontograma','=', $odontograma->id)->get();
         $client = Client::get();
         $especialist= Especialist::get();
         $hunts_permanentes = Hunts::where('permanentes','=',0)->get();
         $hunts_child = Hunts::where('permanentes','=',1)->get();
+
+        $dientes = DB::table("dientes")->where("dientes.id_odontograma",$id)
+        ->pluck('dientes.lado1','dientes.lado1')
+        ->all();
 
         return view('odontograma.edit', compact('odontograma', 'client', 'especialist','hunts_permanentes','hunts_child', 'plan_tratamiento', 'dientes'));
     }
 
     public function update(Request $request, $id)
     {
-        
+
     }
 
 }

@@ -29,4 +29,9 @@ class Odontograma extends Model
     {
        return $this->belongsTo(Especialist::class,'id_doctor');
     }
+
+    public function Diente()
+    {
+        return $this->hasOne('App\Models\Dientes', 'id_odontograma', 'id');
+    }
 }
