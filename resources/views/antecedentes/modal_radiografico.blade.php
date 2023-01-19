@@ -45,7 +45,7 @@
 
                                 <div class="form-group col-12 mb-5">
                                     <label for="">Imagen</label>
-                                    <input class="form-control" type="file" name="file_name">
+                                    <input class="form-control" type="file" name="imagen">
                                 </div>
 
                                 <div class="d-flex justify-content-center">

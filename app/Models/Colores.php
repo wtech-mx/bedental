@@ -13,6 +13,6 @@ class Colores extends Model
 
     protected $table = 'colores';
 
-    protected $fillable = ['servicio','color'];
+    protected $fillable = ['servicio','color','imagen'];
 
 }

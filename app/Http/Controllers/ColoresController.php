@@ -14,6 +14,13 @@ class ColoresController extends Controller
         $color = new Colores;
         $color -> servicio = $request->get('servicio');
         $color -> color = $request->get('color');
+
+        $image  = $request->file('imagen');
+        $imageName = time().'.'.$image->getClientOriginalName();
+
+        $image->move(public_path('/img/iconos_serv'),$imageName);
+
+        $color->imagen = $imageName;
         $color->save();
 
         Session::flash('create', 'Se ha creado sus datos con exito');
@@ -26,7 +33,14 @@ class ColoresController extends Controller
         $color = Colores::find($id);
         $color -> servicio = $request->get('servicio');
         $color -> color = $request->get('color');
+
+        $image  = $request->file('imagen');
+        $imageName = time().'.'.$image->getClientOriginalName();
+
+        $image->move(public_path('/img/iconos_serv'),$imageName);
+        $color->imagen = $imageName;
         $color->update();
+
 
         $alerta = Alertas::where('id_color',$id)->where('color', '!=', $color -> color)->get()->count();
         for($i=1; $i<=$alerta; $i++){
