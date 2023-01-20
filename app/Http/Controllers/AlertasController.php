@@ -51,7 +51,7 @@ class AlertasController extends Controller
         $datosEvento = new Alertas;
         $datosEvento->start = $request->start;
         $datosEvento->end = $request->end;
-        $datosEvento->image = $request->image;
+        $datosEvento->color = $request->image;
         $datosEvento->id_color = $request->id_color;
         $datosEvento->id_client = $request->id_client;
         $datosEvento->title = $datosEvento->Client->nombre;
@@ -60,7 +60,7 @@ class AlertasController extends Controller
         $datosEvento->id_especialist = $request->id_especialist;
         $datosEvento->descripcion = $request->descripcion;
         $datosEvento->check = $request->check;
-        $datosEvento->color = $datosEvento->Colores->color;
+        $datosEvento->image = asset('img/iconos_serv/'.$datosEvento->Colores->imagen);
 
         if ( $datosEvento->end == $datosEvento->start){
             $now = date($datosEvento->end);

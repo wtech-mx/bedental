@@ -355,7 +355,7 @@
                       <div class="form-group col-6 mt-3">
                           <label for="">Selecciona el servicio</label>
                           <select class="form-control" id="id_color" name="id_color" >
-                              <option value="">Selecionar estatus</option>
+                              <option value="">Selecionar servicio</option>
                               @foreach($colores as $item)
                                     <option value="{{$item->id}}">{{$item->servicio}}</option>
                               @endforeach

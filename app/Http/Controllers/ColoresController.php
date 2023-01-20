@@ -42,12 +42,12 @@ class ColoresController extends Controller
         $color->update();
 
 
-        $alerta = Alertas::where('id_color',$id)->where('color', '!=', $color -> color)->get()->count();
+        $alerta = Alertas::where('id_color',$id)->get()->count();
         for($i=1; $i<=$alerta; $i++){
             $alert = Alertas::where('id_color', $id)
-                             ->where('color', '!=', $color -> color)
+                             ->where('image', '!=', asset('img/iconos_serv/'.$color -> imagen))
                              ->first();
-            $alert->color =$request->get('color');
+            $alert->image = asset('img/iconos_serv/'.$imageName);
             $alert->update();
         }
 

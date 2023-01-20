@@ -8,7 +8,17 @@
 
     <link href='{{ asset('lib/main.css') }}' rel='stylesheet' />
     <script src='{{ asset('lib/main.js') }}'></script>
-
+<style>
+    .atendido{
+        background-color: rgb(104, 104, 104);
+    }
+    .noasistira{
+        background-color: rgb(170, 10, 149);
+    }
+    .confirmado{
+        background-color: rgb(24, 161, 31);
+    }
+</style>
         @php
         $Y = date('Y') ;
         $M = date('m');
@@ -141,6 +151,8 @@
                     let imageArg = arg.event.extendedProps.image;
                     let checkArg = arg.event.extendedProps.check;
                     let id_color = arg.event.extendedProps.id_color;
+                    let imgEvent = '<img width="16px" height="16px" style="margin-left: 10px" src="'+imageArg+'" >';
+                    // let bg = arg.event.backgroundColor;
 
                     minutos3=(arg.event.start.getMinutes());
                     hora3=(arg.event.start.getHours());
@@ -153,7 +165,6 @@
 
                         modulocapi = arg.event.extendedProps.resource_id.toUpperCase()
                         let hora = '<div class="d-inline" style="margin-left: 3px;font-size: 12px;">'+hor+'</div>';
-                        let imgEvent = '<div class="d-inline" style="font-size: 12px;"><i class="fa fa-flask" aria-hidden="true"></i></div>';
                         let titleEvent =  '<div class="d-block" style="font-size: 11px;">'+arg.event.title+'</div>';
                         let modulo = '<div class="d-inline" style="margin-left: 7px;">'+modulocapi+'</div>';
                         contenedorEventWrap.classList = "position-relative";
@@ -165,10 +176,9 @@
                     if (checkArg == 2){
                         modulocapi = arg.event.extendedProps.resource_id.toUpperCase()
                         let hora = '<div class="d-inline" style="margin-left: 3px;font-size: 12px;">'+hor+'</div>';
-                        let imgEvent = '<div class="d-inline" style="font-size: 12px;"><i class="fa fa-check" aria-hidden="true"></i></div>';
                         let titleEvent =  '<div class="d-block" style="font-size: 11px;">'+arg.event.title+'</div>';
                         let modulo = '<div class="d-inline" style="margin-left: 7px;">'+modulocapi+'</div>';
-                        contenedorEventWrap.classList = "position-relative";
+                        contenedorEventWrap.classList = "position-relative atendido";
                         contenedorEventWrap.innerHTML =  imgEvent+hora+modulo+titleEvent;
                         arrayOfDomNodes = [contenedorEventWrap ]
                         return { domNodes: arrayOfDomNodes }
@@ -177,10 +187,9 @@
                     if (checkArg == 3){
                         modulocapi = arg.event.extendedProps.resource_id.toUpperCase()
                         let hora = '<div class="d-inline" style="margin-left: 3px;font-size: 12px;">'+hor+'</div>';
-                        let imgEvent = '<div class="d-inline" style="font-size: 12px;"><i class="fa fa-times" aria-hidden="true"></i></div>';
                         let titleEvent =  '<div class="d-block" style="font-size: 11px;">'+arg.event.title+'</div>';
                         let modulo = '<div class="d-inline" style="margin-left: 7px;">'+modulocapi+'</div>';
-                        contenedorEventWrap.classList = "position-relative";
+                        contenedorEventWrap.classList = "position-relative noasistira";
                         contenedorEventWrap.innerHTML = imgEvent+hora+modulo+titleEvent;
                         arrayOfDomNodes = [contenedorEventWrap ]
                         return { domNodes: arrayOfDomNodes }
@@ -188,7 +197,6 @@
                     if (checkArg == 4){
                         modulocapi = arg.event.extendedProps.resource_id.toUpperCase()
                         let hora = '<div class="d-inline" style="margin-left: 3px;font-size: 12px;">'+hor+'</div>';
-                        let imgEvent = '<div class="d-inline" style="font-size: 12px;"><i class="fa fa-address-book" aria-hidden="true"></i></div>';
                         let titleEvent =  '<div class="d-block" style="font-size: 11px;">'+arg.event.title+'</div>';
                         let modulo = '<div class="d-inline" style="margin-left: 7px;">'+modulocapi+'</div>';
                         contenedorEventWrap.classList = "position-relative";
@@ -199,10 +207,9 @@
                     if (checkArg == 5){
                         modulocapi = arg.event.extendedProps.resource_id.toUpperCase()
                         let hora = '<div class="d-inline" style="margin-left: 3px;font-size: 12px;">'+hor+'</div>';
-                        let imgEvent = '<div class="d-inline" style="font-size: 12px;"><i class="fa fa-calendar" aria-hidden="true"></i></div>';
                         let titleEvent =  '<div class="d-block" style="font-size: 11px;">'+arg.event.title+'</div>';
                         let modulo = '<div class="d-inline" style="margin-left: 7px;">'+modulocapi+'</div>';
-                        contenedorEventWrap.classList = "position-relative";
+                        contenedorEventWrap.classList = "position-relative confirmado";
                         contenedorEventWrap.innerHTML = imgEvent+hora+modulo+titleEvent;
                         arrayOfDomNodes = [contenedorEventWrap ]
                         return { domNodes: arrayOfDomNodes }
@@ -210,7 +217,6 @@
                     if (checkArg == 6){
                         modulocapi = arg.event.extendedProps.resource_id.toUpperCase()
                         let hora = '<div class="d-inline" style="margin-left: 3px;font-size: 12px;">'+hor+'</div>';
-                        let imgEvent = '<div class="d-inline" style="font-size: 12px;"><i class="fa fa-clock" aria-hidden="true"></i></div>';
                         let titleEvent =  '<div class="d-block" style="font-size: 11px;">'+arg.event.title+'</div>';
                         let modulo = '<div class="d-inline" style="margin-left: 7px;">'+modulocapi+'</div>';
                         contenedorEventWrap.classList = "position-relative";
@@ -221,7 +227,6 @@
                     if (checkArg == 7){
                         modulocapi = arg.event.extendedProps.resource_id.toUpperCase()
                         let hora = '<div class="d-inline" style="margin-left: 3px;font-size: 12px;">'+hor+'</div>';
-                        let imgEvent = '<div class="d-inline" style="font-size: 12px;"><i class="fa fa-user-plus" aria-hidden="true"></i></div>';
                         let titleEvent =  '<div class="d-block" style="font-size: 11px;">'+arg.event.title+'</div>';
                         let modulo = '<div class="d-inline" style="margin-left: 7px;">'+modulocapi+'</div>';
                         contenedorEventWrap.classList = "position-relative";
@@ -232,7 +237,6 @@
                     if (checkArg == 8){
                         modulocapi = arg.event.extendedProps.resource_id.toUpperCase()
                         let hora = '<div class="d-inline" style="margin-left: 3px;font-size: 12px;">'+hor+'</div>';
-                        let imgEvent = '<div class="d-inline" style="font-size: 12px;"><i class="fa fa-ban" aria-hidden="true"></i></div>';
                         let titleEvent =  '<div class="d-block" style="font-size: 11px;">'+arg.event.title+'</div>';
                         let modulo = '<div class="d-inline" style="margin-left: 7px;">'+modulocapi+'</div>';
                         contenedorEventWrap.classList = "position-relative";
