@@ -19,10 +19,18 @@ class AntecedentesController extends Controller
     public function index()
     {
         $antecedentes = Antecedente::get();
-        $client = Client::get();
         $radio = Radiografico::get();
 
-        return view('antecedentes.view', compact('antecedentes', 'client', 'radio'));
+        return view('antecedentes.view', compact('antecedentes', 'radio'));
+    }
+
+    public function edit($id)
+    {
+        $antecedentes = Antecedente::find($id);
+        $client = Client::get();
+
+
+        return view('antecedentes.update', compact('antecedentes', 'client'));
     }
 
     public function update(Request $request, $id)

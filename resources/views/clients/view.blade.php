@@ -74,7 +74,7 @@
                                                                 <i class="fa fa-solid fa-user"></i> Facturas
                                                             </a>
 
-                                                            <a data-toggle="modal" class="dropdown-item" data-target="#updateModal{{$row->id}}">
+                                                            <a href="{{ route('client.edit', $row->id) }}">
                                                                 <i class="fa fa-edit"></i> Edit
                                                             </a>
                                                             {{-- <a class="dropdown-item"
@@ -89,7 +89,6 @@
 
 
                                                 @include('clients.create')
-                                                @include('clients.update')
                                                 @include('clients.modal_facturas')
                                                 @endforeach
                                         </tbody>

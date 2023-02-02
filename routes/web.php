@@ -58,6 +58,7 @@ Route::post('colores/update/{id}', [ColoresController::class, 'update_colores'])
 |--------------------------------------------------------------------------*/
 Route::get('client', [ClientController::class, 'index'])->name('clients.index');
 Route::post('create/client', [ClientController::class, 'store'])->name('client.store');
+Route::get('edit/client/{id}', [ClientController::class, 'edit'])->name('client.edit');
 Route::patch('update/client/{id}', [ClientController::class, 'update'])->name('client.update');
 Route::patch('cambio/correo/{id}', [ClientController::class, 'upload'])->name('client_correo.upload');
 
@@ -74,6 +75,7 @@ Route::patch('update/especialists/{id}', [EspecialistsController::class, 'update
 |--------------------------------------------------------------------------*/
 Route::get('antecedente', [AntecedentesController::class, 'index'])->name('antecedentes.index');
 Route::post('create/antecedentes', [AntecedentesController::class, 'store'])->name('antecedentes.store');
+Route::get('edit/antecedentes/{id}', [AntecedentesController::class, 'edit'])->name('antecedentes.edit');
 Route::patch('update/antecedentes/{id}', [AntecedentesController::class, 'update'])->name('antecedentes.update');
 
 /*|--------------------------------------------------------------------------
@@ -93,7 +95,6 @@ Route::post('radiografia/{id}', [RadiografiaController::class, 'upload'])->name(
 /*|--------------------------------------------------------------------------
 |facturas
 |--------------------------------------------------------------------------*/
-
 Route::get('facturas', [FacturasController::class, 'index'])->name('facturas.index');
 Route::post('factura/{id}', [FacturasController::class, 'store'])->name('factura.store');
 Route::patch('facturas/{id}', [FacturasController::class, 'upload'])->name('facturas.upload');

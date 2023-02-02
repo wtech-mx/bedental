@@ -58,8 +58,7 @@
                                                             <i class="fas fa-ellipsis-v"></i>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                            <a data-toggle="modal"
-                                                                data-target="#updateModalAntecedentes{{$row->id}}"
+                                                            <a href="{{ route('antecedentes.edit', $row->id) }}"
                                                                 class="dropdown-item"><i class="fa fa-edit"></i> Edit </a>
 
                                                             <a class="dropdown-item"
@@ -79,7 +78,6 @@
                                                     </div>
                                                 </td>
 
-                                                @include('antecedentes.update')
                                                 @include('antecedentes.modal_radiografico')
                                                 @include('antecedentes.modal_img_radiografico')
                                                 @endforeach

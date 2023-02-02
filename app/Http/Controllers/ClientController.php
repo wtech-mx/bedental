@@ -74,6 +74,14 @@ class ClientController extends Controller
 
     }
 
+    public function edit($id)
+    {
+        $clients = Client::find($id);
+
+
+        return view('clients.update', compact('clients'));
+    }
+
     public function store(Request $request)
     {
         $this->validate($request, [
