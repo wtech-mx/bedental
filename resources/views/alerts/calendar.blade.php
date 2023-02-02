@@ -6,8 +6,11 @@
 
 @section('fullcalendar')
 
-    <link href='{{ asset('lib/main.css') }}' rel='stylesheet' />
-    <script src='{{ asset('lib/main.js') }}'></script>
+    {{-- <link href='{{ asset('lib/main.css') }}' rel='stylesheet' />
+    <script src='{{ asset('lib/main.js') }}'></script> --}}
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@6.1.1/index.global.min.js'></script>
+
+
 <style>
     .atendido{
         background-color: rgb(104, 104, 104);
@@ -46,11 +49,13 @@
                 slotMinTime: "08:00:00",
                 slotMaxTime: "22:00:00",
                 hiddenDays: [ 0 ],
+                schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
 
               headerToolbar: {
                 left: 'today prev,next',
                 center: 'title',
-                right: 'resourceTimelineDay,timeGridWeek,dayGridMonth'
+                // right: 'dayGridDay,timeGridWeek,dayGridMonth' sirve para la vidsata por di
+                right: 'resourceTimeGridDay,timeGridWeek,dayGridMonth'
               },
 
                  resourceAreaHeaderContent: 'Modulo',
