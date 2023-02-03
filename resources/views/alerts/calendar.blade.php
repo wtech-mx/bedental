@@ -4,7 +4,9 @@
      Calendario
 @endsection
 
-@section('fullcalendar')
+
+
+@section('fullcalendar_css')
 
     {{-- <link href='{{ asset('lib/main.css') }}' rel='stylesheet' />
     <script src='{{ asset('lib/main.js') }}'></script> --}}
@@ -22,6 +24,17 @@
         background-color: rgb(24, 161, 31);
     }
 </style>
+
+@endsection
+
+@section('content')
+
+    <div class="calendar" data-toggle="calendar" id="calendar"></div>
+    @include('alerts.modal')
+
+@endsection
+
+@section('fullcalendar_js')
         @php
         $Y = date('Y') ;
         $M = date('m');
@@ -58,19 +71,10 @@
                 right: 'resourceTimeGridDay,timeGridWeek,dayGridMonth'
               },
 
-                 resourceAreaHeaderContent: 'Modulo',
-                  resourceLabelContent: function(arg) {
-                    return 'Unidad ' + arg.resource.id.toUpperCase();
-                  },
-                  resourceLabelDidMount: function(arg) {
-                    if (arg.resource.id == 'h') {
-                      arg.el.style.backgroundColor = 'rgb(255, 243, 206)';
-                    }
-                  },
-                  resources: [
-                    { id: 'a'},
-                    { id: 'b'},
-                  ],
+              resources: [
+                    { id: "a", title: "Room A" },
+                    { id: "b", title: "Room B" },
+                ],
 
                 events:"{{ route('calendar.show_calendar') }}",
 
@@ -384,11 +388,4 @@
 
     @endsection
 
-@section('content')
-    <style>
 
-    </style>
-
-    <div class="calendar" data-toggle="calendar" id="calendar"></div>
-    @include('alerts.modal')
-@endsection

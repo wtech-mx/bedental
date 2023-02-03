@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="{{ asset('assets/vendor/nucleo/css/nucleo.css') }}" type="text/css">
   <link rel="stylesheet" href="{{ asset('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}" type="text/css">
   <!-- Page plugins -->
+  @yield('fullcalendar_css')
   <!-- Argon CSS -->
   <link rel="stylesheet" href="{{ asset('assets/css/argon.css?v=1.1.0') }}" type="text/css">
   <link rel="stylesheet" href="{{ asset('css/custom.css') }}" type="text/css">
@@ -35,7 +36,7 @@
 
     @yield('css')
     @yield('js_dropzone')
-    @yield('fullcalendar')
+
 
 {{--  @livewireStyles--}}
 </head>
@@ -113,6 +114,7 @@
 
   <!-- Argon Scripts -->
   <!-- Core -->
+  @yield('fullcalendar_js')
 
   <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
