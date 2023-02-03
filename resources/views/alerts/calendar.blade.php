@@ -136,7 +136,7 @@
                   $('#txtHora').val(horario);
                   $('#txtHorafin').val(horario2);
                   $('#id_client').val(info.event.extendedProps.id_client);
-                  $('#resource_id').val(info.event.extendedProps.resource_id);
+                  $('#resourceId').val(info.event.extendedProps.resourceId);
                   $('#id_especialist').val(info.event.extendedProps.id_especialist);
                   $('#title').val(info.event.title);
                   $('#txtTelefono').val(info.event.extendedProps.telefono);
@@ -172,7 +172,7 @@
 
                     if (checkArg == 1){
 
-                        modulocapi = arg.event.extendedProps.resource_id.toUpperCase()
+                        modulocapi = arg.event.extendedProps.resourceId.toUpperCase()
                         let hora = '<div class="d-inline" style="margin-left: 3px;font-size: 12px;">'+hor+'</div>';
                         let titleEvent =  '<div class="d-block" style="font-size: 11px;">'+arg.event.title+'</div>';
                         let modulo = '<div class="d-inline" style="margin-left: 7px;">'+modulocapi+'</div>';
@@ -183,7 +183,7 @@
                     }
 
                     if (checkArg == 2){
-                        modulocapi = arg.event.extendedProps.resource_id.toUpperCase()
+                        modulocapi = arg.event.extendedProps.resourceId.toUpperCase()
                         let hora = '<div class="d-inline" style="margin-left: 3px;font-size: 12px;">'+hor+'</div>';
                         let titleEvent =  '<div class="d-block" style="font-size: 11px;">'+arg.event.title+'</div>';
                         let modulo = '<div class="d-inline" style="margin-left: 7px;">'+modulocapi+'</div>';
@@ -194,7 +194,7 @@
                     }
 
                     if (checkArg == 3){
-                        modulocapi = arg.event.extendedProps.resource_id.toUpperCase()
+                        modulocapi = arg.event.extendedProps.resourceId.toUpperCase()
                         let hora = '<div class="d-inline" style="margin-left: 3px;font-size: 12px;">'+hor+'</div>';
                         let titleEvent =  '<div class="d-block" style="font-size: 11px;">'+arg.event.title+'</div>';
                         let modulo = '<div class="d-inline" style="margin-left: 7px;">'+modulocapi+'</div>';
@@ -204,7 +204,7 @@
                         return { domNodes: arrayOfDomNodes }
                     }
                     if (checkArg == 4){
-                        modulocapi = arg.event.extendedProps.resource_id.toUpperCase()
+                        modulocapi = arg.event.extendedProps.resourceId.toUpperCase()
                         let hora = '<div class="d-inline" style="margin-left: 3px;font-size: 12px;">'+hor+'</div>';
                         let titleEvent =  '<div class="d-block" style="font-size: 11px;">'+arg.event.title+'</div>';
                         let modulo = '<div class="d-inline" style="margin-left: 7px;">'+modulocapi+'</div>';
@@ -214,7 +214,7 @@
                         return { domNodes: arrayOfDomNodes }
                     }
                     if (checkArg == 5){
-                        modulocapi = arg.event.extendedProps.resource_id.toUpperCase()
+                        modulocapi = arg.event.extendedProps.resourceId.toUpperCase()
                         let hora = '<div class="d-inline" style="margin-left: 3px;font-size: 12px;">'+hor+'</div>';
                         let titleEvent =  '<div class="d-block" style="font-size: 11px;">'+arg.event.title+'</div>';
                         let modulo = '<div class="d-inline" style="margin-left: 7px;">'+modulocapi+'</div>';
@@ -224,7 +224,7 @@
                         return { domNodes: arrayOfDomNodes }
                     }
                     if (checkArg == 6){
-                        modulocapi = arg.event.extendedProps.resource_id.toUpperCase()
+                        modulocapi = arg.event.extendedProps.resourceId.toUpperCase()
                         let hora = '<div class="d-inline" style="margin-left: 3px;font-size: 12px;">'+hor+'</div>';
                         let titleEvent =  '<div class="d-block" style="font-size: 11px;">'+arg.event.title+'</div>';
                         let modulo = '<div class="d-inline" style="margin-left: 7px;">'+modulocapi+'</div>';
@@ -234,7 +234,7 @@
                         return { domNodes: arrayOfDomNodes }
                     }
                     if (checkArg == 7){
-                        modulocapi = arg.event.extendedProps.resource_id.toUpperCase()
+                        modulocapi = arg.event.extendedProps.resourceId.toUpperCase()
                         let hora = '<div class="d-inline" style="margin-left: 3px;font-size: 12px;">'+hor+'</div>';
                         let titleEvent =  '<div class="d-block" style="font-size: 11px;">'+arg.event.title+'</div>';
                         let modulo = '<div class="d-inline" style="margin-left: 7px;">'+modulocapi+'</div>';
@@ -244,7 +244,7 @@
                         return { domNodes: arrayOfDomNodes }
                     }
                     if (checkArg == 8){
-                        modulocapi = arg.event.extendedProps.resource_id.toUpperCase()
+                        modulocapi = arg.event.extendedProps.resourceId.toUpperCase()
                         let hora = '<div class="d-inline" style="margin-left: 3px;font-size: 12px;">'+hor+'</div>';
                         let titleEvent =  '<div class="d-block" style="font-size: 11px;">'+arg.event.title+'</div>';
                         let modulo = '<div class="d-inline" style="margin-left: 7px;">'+modulocapi+'</div>';
@@ -304,7 +304,7 @@
                     id:$('#txtID').val(),
                     title:$('#title').val(),
                     id_client:$('#id_client').val(),
-                    resource_id:$('#resource_id').val(),
+                    resourceId:$('#resourceId').val(),
                     id_especialist:$('#id_especialist').val(),
                     descripcion:$('#descripcion').val(),
                     estatus:$('#estatus').val()+estatusDefault,
@@ -326,7 +326,7 @@
                     id:$('#txtID').val(),
                     title:$('#title').val(),
                     id_client:$('#id_client').val(),
-                    resource_id:$('#resource_id').val(),
+                    resourceId:$('#resourceId').val(),
                     id_especialist:$('#id_especialist').val(),
                     descripcion:$('#descripcion').val(),
                     estatus:$('#estatus').val(),
@@ -369,7 +369,7 @@
                   $('#txtID').val("");
                   $('#title').val("");
                   $('#id_client').val("");
-                  $('#resource_id').val("");
+                  $('#resourceId').val("");
                   $('#id_especialist').val("");
                   $('#txtFecha').val("");
                   $('#txtTelefono').val("");

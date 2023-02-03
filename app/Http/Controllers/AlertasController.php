@@ -56,7 +56,7 @@ class AlertasController extends Controller
         $datosEvento->id_client = $request->id_client;
         $datosEvento->title = $datosEvento->Client->nombre;
         $datosEvento->telefono = $datosEvento->Client->telefono;
-        $datosEvento->resource_id = $request->resource_id;
+        $datosEvento->resourceId = $request->resourceId;
         $datosEvento->id_especialist = $request->id_especialist;
         $datosEvento->descripcion = $request->descripcion;
         $datosEvento->check = $request->check;
@@ -96,7 +96,7 @@ class AlertasController extends Controller
         $datosEvento->id_client = $request->id_client;
         $datosEvento->title = $datosEvento->Client->nombre;
         $datosEvento->telefono = $datosEvento->Client->telefono;
-        $datosEvento->resource_id = $request->resource_id;
+        $datosEvento->resourceId = $request->resourceId;
         $datosEvento->id_especialist = $request->id_especialist;
         $datosEvento->descripcion = $request->descripcion;
         $datosEvento->check = $request->check;
