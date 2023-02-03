@@ -34,7 +34,6 @@
                                                 <th>Apellido</th>
                                                 <th>Edad</th>
                                                 <th>Sanguineo</th>
-                                                <th>Motivo de consulta</th>
                                                 <th>Telefono</th>
                                                 <th>Fecha Nacimiento</th>
                                                 <th>Email</th>
@@ -49,7 +48,6 @@
                                                 <td>{{ $row->apellido }}</td>
                                                 <td>{{ $row->edad }}</td>
                                                 <td>{{ $row->sanguineo }}</td>
-                                                <td>{{ $row->motivo_consulta }}</td>
                                                 <td>{{ $row->telefono }} <br> {{ $row->telefono2 }}</td>
                                                 <td>{{ $row->fecha_nacimiento }}</td>
                                                 <td>{{ $row->email }}</td>

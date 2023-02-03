@@ -16,6 +16,7 @@
             </div>
         <form action="{{ route('odontograma.update', $odontograma->id) }}" method="post" enctype="multipart/form-data">
             @csrf
+            <input type="hidden" name="_method" value="PATCH">
             <div class="modal-body">
 
                 <div class="row">
