@@ -312,7 +312,7 @@
                         <input class="form-control" type="time" name="txtHorafin" id="txtHorafin" autocomplete="off" >
                       </div>
 
-                      <input type="hidden" class="form-control" name="image" id="image">
+                      {{-- <input type="hidden" class="form-control" name="image" id="image"> --}}
                       <input class="form-control" type="hidden" name="estatus" id="estatus" >
 
                       {{-- <div class="form-group col-12 mb-3">
@@ -334,8 +334,8 @@
                          <label for="">Selecionar Unidad</label>
                               <select class="form-control" id="resourceId" name="resourceId" >
                                    <option value="">Seleccione Unidad</option>
-                                   <option value="a">A</option>
-                                   <option value="b">B</option>
+                                   <option value="A">A</option>
+                                   <option value="B">B</option>
                               </select>
                       </div>
 
@@ -365,13 +365,10 @@
                       <div class="form-group col-6 mt-3">
                           <label for="">¿Estatus de la cita?</label>
                           <select class="form-control" id="check" name="check">
-                              <option selected value="8">Sin estatus</option>
-                              <option value="1">Laboratorio </option>
-                              <option value="2">Atendido / reservado </option>
-                              <option value="3">No asistio / cancelado</option>
-                              <option value="4">Sin confirmar agendado</option>
-                              <option value="5">Confirmado</option>
-                              <option value="6">Recordatorio / tentativo</option>
+                            <option value="">Selecionar estatus</option>
+                            @foreach($estatus as $item)
+                                <option value="{{$item->id}}">{{$item->estatus}}</option>
+                            @endforeach
                           </select>
                       </div>
 
@@ -381,7 +378,7 @@
 
               <div class="modal-footer">
                   <button class="btn  btn-sm text-white" id="btnWhats" style="background-color: #128C7E">
-                      <input type="text" name="txtTelefono" id="txtTelefono" disabled style="background: transparent;color: #fff;border: 1px solid transparent;display: inherit;left: 40px;position: relative;">
+                      <input type="text" name="txtTelefono" id="txtTelefono" disabled style="background: transparent;color: #fff;border: 1px solid transparent;display: inherit;left: 40px;position: relative;font-size:0px;">
                       <input type="hidden" name="txtTelefono" id="txtTelefono">
                       <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
                   </button>

@@ -143,7 +143,7 @@
                         <div class="card-body">
                           <div class="row">
                             <div class="col">
-                              <h5 class="card-title text-uppercase text-muted mb-0">Colores</h5>
+                              <h5 class="card-title text-uppercase text-muted mb-0">Servicios</h5>
                               <span class="h2 font-weight-bold mb-0">{{$count_facturas}}</span>
                             </div>
                             <div class="col-auto">
@@ -157,7 +157,28 @@
                   </div>
             </div>
 
-            @include('layouts.colores')
+            <div class="col-xl-3 col-md-6 col-6">
+                <div class="card card-stats">
+                  <!-- Card body -->
+                   <a class="hover_card_bred" type="button" data-toggle="modal" data-target="#estatusModal">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col">
+                            <h5 class="card-title text-uppercase text-muted mb-0">Estatus</h5>
+                            <span class="h2 font-weight-bold mb-0">{{$count_facturas}}</span>
+                          </div>
+                          <div class="col-auto">
+                            <div class="icon icon-shape text-white rounded-circle shadow" style="background-color: #9368a9">
+                              <i class="fa fa-paint-brush text-white"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </a>
+                </div>
+            </div>
+
+            @include('layouts.estatus')
 
           </div>
 @endsection

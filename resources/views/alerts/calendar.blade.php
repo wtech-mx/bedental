@@ -72,11 +72,28 @@
               },
 
               resources: [
-                    { id: "a", title: "Room A" },
-                    { id: "b", title: "Room B" },
+                    { id: "A", title: "Modulo A" },
+                    { id: "B", title: "Modulo B" },
                 ],
 
                 events:"{{ route('calendar.show_calendar') }}",
+
+                // events: [
+                // {
+                // id: "3",
+                // resourceId: "a",
+                // start: "2023-02-03T12:00:00",
+                // end: "2023-02-03T13:00:00",
+                // title: "event 3" },
+
+
+                // {
+                // id: "5",
+                // resourceId: "b",
+                // start: "2023-02-03T10:00:00",
+                // end: "2023-02-03T1:00:00",
+                // title: "event 5" }
+                // ],
 
                   dateClick:function (info) {
 
@@ -151,110 +168,72 @@
                   console.log('Fecha', dia)
                 },
 
-                  eventContent: function(arg) {
+                eventContent: function(arg) {
 
-                    let arrayOfDomNodes = []
-                    let contenedorEventWrap = document.createElement('div');
+                minutos3=(arg.event.start.getMinutes());
+                hora3=(arg.event.start.getHours());
+                minutos3 = (minutos3<10)?"0"+minutos3:minutos3;
+                hora3 = (hora3<10)?"0"+hora3:hora3;
+                horario = (hora3+":"+minutos3);
+                let hor = horario;
 
-                    let titleArg = arg.event.title;
-                    let imageArg = arg.event.extendedProps.image;
-                    let checkArg = arg.event.extendedProps.check;
-                    let id_color = arg.event.extendedProps.id_color;
-                    let imgEvent = '<img width="16px" height="16px" style="margin-left: 10px" src="'+imageArg+'" >';
-                    // let bg = arg.event.backgroundColor;
+                let imageArg = arg.event.extendedProps.image;
+                let modulocapi = arg.event.getResources().map(function(resource) { return resource.id });
+                let checkArg = arg.event.extendedProps.check;
+                let id_color = arg.event.extendedProps.id_color;
 
-                    minutos3=(arg.event.start.getMinutes());
-                    hora3=(arg.event.start.getHours());
-                    minutos3 = (minutos3<10)?"0"+minutos3:minutos3;
-                    hora3 = (hora3<10)?"0"+hora3:hora3;
-                    horario = (hora3+":"+minutos3);
-                    let hor = horario;
+                let arrayOfDomNodes = []
 
-                    if (checkArg == 1){
+                // title event
+                let titleEvent = document.createElement('div')
+                  titleEvent.innerHTML = arg.event.title
+                  titleEvent.classList = "fc-event-title fc-sticky"
 
-                        modulocapi = arg.event.extendedProps.resourceId.toUpperCase()
-                        let hora = '<div class="d-inline" style="margin-left: 3px;font-size: 12px;">'+hor+'</div>';
-                        let titleEvent =  '<div class="d-block" style="font-size: 11px;">'+arg.event.title+'</div>';
-                        let modulo = '<div class="d-inline" style="margin-left: 7px;">'+modulocapi+'</div>';
-                        contenedorEventWrap.classList = "position-relative";
-                        contenedorEventWrap.innerHTML = imgEvent+hora+modulo+titleEvent;
-                        arrayOfDomNodes = [contenedorEventWrap ]
-                        return { domNodes: arrayOfDomNodes }
+
+                // Hora event
+                let horaEvent = document.createElement('div')
+                  horaEvent.innerHTML = '<div style="font-size:10px;">'+hor+' - '+modulocapi+'</div>';
+                  horaEvent.classList = "fc-event-time"
+
+                // image event
+                let imgEventWrap = document.createElement('div')
+                  let imgEvent = '<img width="16px" height="16px" style="margin-left: 10px" src="'+imageArg+'" >';
+                  imgEventWrap.classList = "fc-event-img"
+                  imgEventWrap.innerHTML = imgEvent;
+
+                   if (checkArg == 1){
+
+                        horaEvent.innerHTML = '<div style="background: red;"></div>';
+                        horaEvent.classList = "fc-timegrid-event-harness>.fc-timegrid-event"
                     }
 
                     if (checkArg == 2){
-                        modulocapi = arg.event.extendedProps.resourceId.toUpperCase()
-                        let hora = '<div class="d-inline" style="margin-left: 3px;font-size: 12px;">'+hor+'</div>';
-                        let titleEvent =  '<div class="d-block" style="font-size: 11px;">'+arg.event.title+'</div>';
-                        let modulo = '<div class="d-inline" style="margin-left: 7px;">'+modulocapi+'</div>';
-                        contenedorEventWrap.classList = "position-relative atendido";
-                        contenedorEventWrap.innerHTML =  imgEvent+hora+modulo+titleEvent;
-                        arrayOfDomNodes = [contenedorEventWrap ]
-                        return { domNodes: arrayOfDomNodes }
+
                     }
 
                     if (checkArg == 3){
-                        modulocapi = arg.event.extendedProps.resourceId.toUpperCase()
-                        let hora = '<div class="d-inline" style="margin-left: 3px;font-size: 12px;">'+hor+'</div>';
-                        let titleEvent =  '<div class="d-block" style="font-size: 11px;">'+arg.event.title+'</div>';
-                        let modulo = '<div class="d-inline" style="margin-left: 7px;">'+modulocapi+'</div>';
-                        contenedorEventWrap.classList = "position-relative noasistira";
-                        contenedorEventWrap.innerHTML = imgEvent+hora+modulo+titleEvent;
-                        arrayOfDomNodes = [contenedorEventWrap ]
-                        return { domNodes: arrayOfDomNodes }
-                    }
-                    if (checkArg == 4){
-                        modulocapi = arg.event.extendedProps.resourceId.toUpperCase()
-                        let hora = '<div class="d-inline" style="margin-left: 3px;font-size: 12px;">'+hor+'</div>';
-                        let titleEvent =  '<div class="d-block" style="font-size: 11px;">'+arg.event.title+'</div>';
-                        let modulo = '<div class="d-inline" style="margin-left: 7px;">'+modulocapi+'</div>';
-                        contenedorEventWrap.classList = "position-relative";
-                        contenedorEventWrap.innerHTML = imgEvent+hora+modulo+titleEvent;
-                        arrayOfDomNodes = [contenedorEventWrap ]
-                        return { domNodes: arrayOfDomNodes }
-                    }
-                    if (checkArg == 5){
-                        modulocapi = arg.event.extendedProps.resourceId.toUpperCase()
-                        let hora = '<div class="d-inline" style="margin-left: 3px;font-size: 12px;">'+hor+'</div>';
-                        let titleEvent =  '<div class="d-block" style="font-size: 11px;">'+arg.event.title+'</div>';
-                        let modulo = '<div class="d-inline" style="margin-left: 7px;">'+modulocapi+'</div>';
-                        contenedorEventWrap.classList = "position-relative confirmado";
-                        contenedorEventWrap.innerHTML = imgEvent+hora+modulo+titleEvent;
-                        arrayOfDomNodes = [contenedorEventWrap ]
-                        return { domNodes: arrayOfDomNodes }
-                    }
-                    if (checkArg == 6){
-                        modulocapi = arg.event.extendedProps.resourceId.toUpperCase()
-                        let hora = '<div class="d-inline" style="margin-left: 3px;font-size: 12px;">'+hor+'</div>';
-                        let titleEvent =  '<div class="d-block" style="font-size: 11px;">'+arg.event.title+'</div>';
-                        let modulo = '<div class="d-inline" style="margin-left: 7px;">'+modulocapi+'</div>';
-                        contenedorEventWrap.classList = "position-relative";
-                        contenedorEventWrap.innerHTML = imgEvent+hora+modulo+titleEvent;
-                        arrayOfDomNodes = [contenedorEventWrap ]
-                        return { domNodes: arrayOfDomNodes }
-                    }
-                    if (checkArg == 7){
-                        modulocapi = arg.event.extendedProps.resourceId.toUpperCase()
-                        let hora = '<div class="d-inline" style="margin-left: 3px;font-size: 12px;">'+hor+'</div>';
-                        let titleEvent =  '<div class="d-block" style="font-size: 11px;">'+arg.event.title+'</div>';
-                        let modulo = '<div class="d-inline" style="margin-left: 7px;">'+modulocapi+'</div>';
-                        contenedorEventWrap.classList = "position-relative";
-                        contenedorEventWrap.innerHTML = imgEvent+hora+modulo+titleEvent;
-                        arrayOfDomNodes = [contenedorEventWrap ]
-                        return { domNodes: arrayOfDomNodes }
-                    }
-                    if (checkArg == 8){
-                        modulocapi = arg.event.extendedProps.resourceId.toUpperCase()
-                        let hora = '<div class="d-inline" style="margin-left: 3px;font-size: 12px;">'+hor+'</div>';
-                        let titleEvent =  '<div class="d-block" style="font-size: 11px;">'+arg.event.title+'</div>';
-                        let modulo = '<div class="d-inline" style="margin-left: 7px;">'+modulocapi+'</div>';
-                        contenedorEventWrap.classList = "position-relative";
-                        contenedorEventWrap.innerHTML = imgEvent+hora+modulo+titleEvent;
-                        arrayOfDomNodes = [contenedorEventWrap ]
-                        return { domNodes: arrayOfDomNodes }
+
                     }
 
-                  },
+                    if (checkArg == 4){
+
+                    }
+
+                    if (checkArg == 5){
+
+                    }
+
+                    if (checkArg == 6){
+
+                    }
+
+
+                arrayOfDomNodes = [ titleEvent,horaEvent,imgEventWrap ]
+
+                return { domNodes: arrayOfDomNodes }
+              },
+
+
 
             });
 

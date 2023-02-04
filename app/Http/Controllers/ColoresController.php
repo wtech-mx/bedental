@@ -42,14 +42,14 @@ class ColoresController extends Controller
         $color->update();
 
 
-        $alerta = Alertas::where('id_color',$id)->get()->count();
-        for($i=1; $i<=$alerta; $i++){
-            $alert = Alertas::where('id_color', $id)
-                             ->where('image', '!=', asset('img/iconos_serv/'.$color -> imagen))
-                             ->first();
-            $alert->image = asset('img/iconos_serv/'.$imageName);
-            $alert->update();
-        }
+        // $alerta = Alertas::where('id_color',$id)->get()->count();
+        // for($i=1; $i<=$alerta; $i++){
+        //     $alert = Alertas::where('id_color', $id)
+        //                      ->where('image', '!=', asset('img/iconos_serv/'.$color -> imagen))
+        //                      ->first();
+        //     $alert->image = asset('img/iconos_serv/'.$imageName);
+        //     $alert->update();
+        // }
 
         Session::flash('edit', 'Se ha editado sus datos con exito');
         return redirect()->back();

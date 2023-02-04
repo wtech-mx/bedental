@@ -10,6 +10,7 @@ use App\Models\Especialist;
 use App\Models\User;
 use App\Models\Antecedente;
 use App\Models\Colores;
+use App\Models\Status;
 
 use DB;
 
@@ -50,6 +51,8 @@ class HomeController extends Controller
 
         $colores = Colores::get();
 
+        $estatus = Status::get();
+
        $facturas = Factura::all();
        $count_facturas = count($facturas);
 
@@ -63,6 +66,6 @@ class HomeController extends Controller
 
         $recordatorios = $count_retenedores + $count_limpieza;
 
-        return view('dashboard', compact('count_client','count_especialist','count_facturas','count_users','count_antecedentes','client','especialist', 'colores', 'recordatorios'));
+        return view('dashboard', compact('count_client','count_especialist','count_facturas','count_users','count_antecedentes','client','especialist', 'colores','estatus', 'recordatorios'));
     }
 }

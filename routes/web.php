@@ -10,6 +10,7 @@ use App\Http\Controllers\PermisosController;
 use App\Http\Controllers\Livewire\Calendar;
 use App\Http\Controllers\AlertasController;
 use App\Http\Controllers\ColoresController;
+use App\Http\Controllers\StatusController;
 use App\Http\Controllers\RadiografiaController;
 use App\Http\Controllers\FacturasController;
 use App\Http\Controllers\SendEmailController;
@@ -53,6 +54,13 @@ Route::group(['middleware' => ['auth']], function() {
 |--------------------------------------------------------------------------*/
 Route::post('colores/create', [ColoresController::class, 'create'])->name('colores.create');
 Route::post('colores/update/{id}', [ColoresController::class, 'update_colores'])->name('colores.update_colores');
+
+/*|--------------------------------------------------------------------------
+|Estatus
+|--------------------------------------------------------------------------*/
+Route::post('estatus/create', [StatusController::class, 'create'])->name('estatus.create');
+Route::post('estatus/update/{id}', [StatusController::class, 'update_estatus'])->name('estatus.update_estatus');
+
 /*|--------------------------------------------------------------------------
 |Clientes
 |--------------------------------------------------------------------------*/

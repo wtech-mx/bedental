@@ -26,10 +26,11 @@ class AlertasController extends Controller
     public function index_recordatorios()
     {
         $colores = Colores::get();
+        $estatus = Status::get();
         $alert_retenedores = Alertas::where('id_color', '=', 6)->get();
         $alert_limpieza = Alertas::where('id_color', '=', 2)->get();
 
-        return view('recordatorios.view', compact('alert_retenedores','alert_limpieza','colores'));
+        return view('recordatorios.view', compact('alert_retenedores','alert_limpieza','colores','estatus'));
     }
 
     public function index_calendar()
