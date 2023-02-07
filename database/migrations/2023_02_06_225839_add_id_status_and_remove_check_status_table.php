@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::table('alertas', function (Blueprint $table) {
-            $table->dropForeign('FK_alertas_colores');
-            $table->dropColumn("id_color");
+            // $table->dropForeign('FK_alertas_colores');
+            // $table->dropColumn("id_color");
 
             $table->unsignedBigInteger('id_status');
             $table->foreign('id_status')
