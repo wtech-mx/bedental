@@ -179,6 +179,7 @@
             </div>
 
             @include('layouts.estatus')
+            @include('layouts.colores')
 
           </div>
 @endsection
