@@ -56,10 +56,10 @@ class HomeController extends Controller
        $facturas = Factura::all();
        $count_facturas = count($facturas);
 
-        $alert_retenedores = Alertas::where('id_color', '=', 6)->get();
+        $alert_retenedores = Alertas::where('id_status', '=', 1)->get();
         $count_retenedores = count($alert_retenedores);
 
-        $alert_limpieza = Alertas::where('id_color', '=', 2)->get();
+        $alert_limpieza = Alertas::where('id_status', '=', 2)->get();
         $count_limpieza = count($alert_limpieza);
 
 

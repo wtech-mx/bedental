@@ -364,7 +364,7 @@
 
                       <div class="form-group col-6 mt-3">
                           <label for="">¿Estatus de la cita?</label>
-                          <select class="form-control" id="check" name="check">
+                          <select class="form-control" id="id_status" name="id_status">
                             <option value="">Selecionar estatus</option>
                             @foreach($estatus as $item)
                                 <option value="{{$item->id}}">{{$item->estatus}}</option>

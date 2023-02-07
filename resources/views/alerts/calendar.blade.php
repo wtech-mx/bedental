@@ -160,8 +160,7 @@
                   $('#color').val(info.event.backgroundColor);
                   $('#id_color').val(info.event.extendedProps.id_color);
                   $('#descripcion').val(info.event.extendedProps.descripcion);
-                  $('#estatus').val(info.event.extendedProps.estatus);
-                  $('#check').val(info.event.extendedProps.check);
+                  $('#id_status').val(info.event.extendedProps.id_status);
                   $('#image').val(info.event.extendedProps.image);
                   $('#exampleModal').modal();
 
@@ -179,8 +178,6 @@
 
                 let imageArg = arg.event.extendedProps.image;
                 let modulocapi = arg.event.getResources().map(function(resource) { return resource.id });
-                let checkArg = arg.event.extendedProps.check;
-                let id_color = arg.event.extendedProps.id_color;
 
                 let arrayOfDomNodes = []
 
@@ -201,31 +198,7 @@
                   imgEventWrap.classList = "fc-event-img"
                   imgEventWrap.innerHTML = imgEvent;
 
-                   if (checkArg == 1){
 
-                        horaEvent.innerHTML = '<div style="background: red;"></div>';
-                        horaEvent.classList = "fc-timegrid-event-harness>.fc-timegrid-event"
-                    }
-
-                    if (checkArg == 2){
-
-                    }
-
-                    if (checkArg == 3){
-
-                    }
-
-                    if (checkArg == 4){
-
-                    }
-
-                    if (checkArg == 5){
-
-                    }
-
-                    if (checkArg == 6){
-
-                    }
 
 
                 arrayOfDomNodes = [ titleEvent,horaEvent,imgEventWrap ]
@@ -275,8 +248,6 @@
 
             function recolectarDatosGUI(method){
                 colorAlert =("#2ECC71");
-                estatusDefault = 0;
-                checkDefault = 0;
                 imageDefault = ("{{asset('img/icon/comprobado.png') }}");
 
                 nuevoEvento={
@@ -286,8 +257,7 @@
                     resourceId:$('#resourceId').val(),
                     id_especialist:$('#id_especialist').val(),
                     descripcion:$('#descripcion').val(),
-                    estatus:$('#estatus').val()+estatusDefault,
-                    check:$('#check').val(),
+                    id_status:$('#id_status').val(),
                     image:$('#image').val()+imageDefault,
                     color:$('#color').val(),
                     id_color:$('#id_color').val(),
@@ -308,8 +278,7 @@
                     resourceId:$('#resourceId').val(),
                     id_especialist:$('#id_especialist').val(),
                     descripcion:$('#descripcion').val(),
-                    estatus:$('#estatus').val(),
-                    check:$('#check').val(),
+                    id_status:$('#id_status').val(),
                     image:$('#image').val(),
                     color:$('#color').val(),
                     id_color:$('#id_color').val(),
@@ -357,8 +326,7 @@
                   $('#color').val("");
                   $('#id_color').val("");
                   $('#descripcion').val("");
-                  $('#estatus').val("");
-                  $('#check').val("");
+                  $('#id_status').val("");
                   $('#image').val("");
             }
           });

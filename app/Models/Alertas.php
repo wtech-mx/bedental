@@ -24,21 +24,24 @@ class Alertas extends Model
         'status',
     ];
 
-    public function scopeTitulo($query,$titulo)
+    public function scopeTitulo($query, $titulo)
     {
         if ($titulo)
-            return $query->where('titulo','LIKE',"%$titulo%");
+            return $query->where('titulo', 'LIKE', "%$titulo%");
     }
 
     public function Client()
     {
-       return $this->belongsTo(Client::class,'id_client');
+        return $this->belongsTo(Client::class, 'id_client');
+    }
+
+    public function Status()
+    {
+        return $this->belongsTo(Status::class, 'id_status');
     }
 
     public function Colores()
     {
-       return $this->belongsTo(Colores::class,'id_color');
+        return $this->belongsTo(Colores::class, 'id_color');
     }
-
 }
-

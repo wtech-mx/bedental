@@ -39,13 +39,13 @@ class StatusController extends Controller
     public function update_estatus(Request $request,$id)
     {
         $estatus = Status::find($id);
-        $estatus -> servicio = $request->get('servicio');
+        $estatus -> estatus = $request->get('estatus');
         $estatus -> color = $request->get('color');
         $estatus->update();
 
-        $alerta = Alertas::where('id_color',$id)->where('color', '!=', $estatus -> color)->get()->count();
+        $alerta = Alertas::where('id_status',$id)->where('color', '!=', $estatus -> color)->get()->count();
         for($i=1; $i<=$alerta; $i++){
-            $alert = Alertas::where('id_color', $id)
+            $alert = Alertas::where('id_status', $id)
                              ->where('color', '!=', $estatus -> color)
                              ->first();
             $alert->color =$request->get('color');

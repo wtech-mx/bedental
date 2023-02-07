@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use DB;
 use Session;
 use App\Models\Colores;
+use App\Models\Status;
 use App\Models\Controlpagos;
 use Carbon\Carbon;
 use DateTime;
@@ -27,10 +28,10 @@ class AlertasController extends Controller
     {
         $colores = Colores::get();
         $estatus = Status::get();
-        $alert_retenedores = Alertas::where('id_color', '=', 6)->get();
-        $alert_limpieza = Alertas::where('id_color', '=', 2)->get();
+        // $alert_retenedores = Alertas::where('id_color', '=', 6)->get();
+        // $alert_limpieza = Alertas::where('id_color', '=', 2)->get();
 
-        return view('recordatorios.view', compact('alert_retenedores','alert_limpieza','colores','estatus'));
+        return view('recordatorios.view', compact('colores','estatus'));
     }
 
     public function index_calendar()
@@ -52,15 +53,16 @@ class AlertasController extends Controller
         $datosEvento = new Alertas;
         $datosEvento->start = $request->start;
         $datosEvento->end = $request->end;
-        $datosEvento->color = $request->image;
         $datosEvento->id_color = $request->id_color;
+        $datosEvento->id_status = $request->id_status;
+        $datosEvento->estatus = $datosEvento->Status->estatus;
+        $datosEvento->color = $datosEvento->Status->color;
         $datosEvento->id_client = $request->id_client;
         $datosEvento->title = $datosEvento->Client->nombre;
         $datosEvento->telefono = $datosEvento->Client->telefono;
         $datosEvento->resourceId = $request->resourceId;
         $datosEvento->id_especialist = $request->id_especialist;
         $datosEvento->descripcion = $request->descripcion;
-        $datosEvento->check = $request->check;
         $datosEvento->image = asset('img/iconos_serv/'.$datosEvento->Colores->imagen);
 
         if ( $datosEvento->end == $datosEvento->start){
@@ -92,28 +94,28 @@ class AlertasController extends Controller
         $datosEvento = Alertas::find($id);
         $datosEvento->start = $request->start;
         $datosEvento->end = $request->end;
-        $datosEvento->image = $request->image;
         $datosEvento->id_color = $request->id_color;
+        $datosEvento->id_status = $request->id_status;
+        $datosEvento->estatus = $datosEvento->Status->estatus;
+        $datosEvento->color = $datosEvento->Status->color;
         $datosEvento->id_client = $request->id_client;
         $datosEvento->title = $datosEvento->Client->nombre;
         $datosEvento->telefono = $datosEvento->Client->telefono;
         $datosEvento->resourceId = $request->resourceId;
         $datosEvento->id_especialist = $request->id_especialist;
         $datosEvento->descripcion = $request->descripcion;
-        $datosEvento->check = $request->check;
-        $datosEvento->color = $datosEvento->Colores->color;
-
+        $datosEvento->image = asset('img/iconos_serv/'.$datosEvento->Colores->imagen);
         $datosEvento->update();
 
-        if ($datosEvento->check == 2){
-            $controlpagos = new Controlpagos;
-            $controlpagos->fecha = $datosEvento->start;
-            $controlpagos->id_clients = $datosEvento->id_client;
-            $controlpagos->id_alertas = $id;
-            $controlpagos->id_doctor = $datosEvento->id_especialist;
-            $controlpagos->id_color = $datosEvento->id_color;
-            $controlpagos->save();
-        }
+        // if ($datosEvento->check == 2){
+        //     $controlpagos = new Controlpagos;
+        //     $controlpagos->fecha = $datosEvento->start;
+        //     $controlpagos->id_clients = $datosEvento->id_client;
+        //     $controlpagos->id_alertas = $id;
+        //     $controlpagos->id_doctor = $datosEvento->id_especialist;
+        //     $controlpagos->id_color = $datosEvento->id_color;
+        //     $controlpagos->save();
+        // }
     }
 
     public function destroy_calendar($id)
