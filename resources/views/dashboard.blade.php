@@ -144,7 +144,7 @@
                           <div class="row">
                             <div class="col">
                               <h5 class="card-title text-uppercase text-muted mb-0">Servicios</h5>
-                              <span class="h2 font-weight-bold mb-0">{{$count_facturas}}</span>
+                              <span class="h2 font-weight-bold mb-0">{{$count_servicios}}</span>
                             </div>
                             <div class="col-auto">
                               <div class="icon icon-shape text-white rounded-circle shadow" style="background-color: #9368a9">
@@ -165,7 +165,7 @@
                         <div class="row">
                           <div class="col">
                             <h5 class="card-title text-uppercase text-muted mb-0">Estatus</h5>
-                            <span class="h2 font-weight-bold mb-0">{{$count_facturas}}</span>
+                            <span class="h2 font-weight-bold mb-0">{{$count_estatus}}</span>
                           </div>
                           <div class="col-auto">
                             <div class="icon icon-shape text-white rounded-circle shadow" style="background-color: #9368a9">

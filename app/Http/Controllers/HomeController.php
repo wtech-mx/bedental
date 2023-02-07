@@ -50,8 +50,10 @@ class HomeController extends Controller
         $especialist = Especialist::orderBy('nombre', 'asc')->get();
 
         $colores = Colores::get();
+        $count_servicios = count($colores);
 
         $estatus = Status::get();
+        $count_estatus = count($estatus);
 
        $facturas = Factura::all();
        $count_facturas = count($facturas);
@@ -66,6 +68,6 @@ class HomeController extends Controller
 
         $recordatorios = $count_retenedores + $count_limpieza;
 
-        return view('dashboard', compact('count_client','count_especialist','count_facturas','count_users','count_antecedentes','client','especialist', 'colores','estatus', 'recordatorios'));
+        return view('dashboard', compact('count_client','count_especialist','count_facturas','count_users','count_antecedentes','client','especialist', 'colores','estatus', 'recordatorios', 'count_servicios', 'count_estatus'));
     }
 }
