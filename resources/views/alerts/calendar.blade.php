@@ -153,7 +153,7 @@
                   $('#txtHora').val(horario);
                   $('#txtHorafin').val(horario2);
                   $('#id_client').val(info.event.extendedProps.id_client);
-                  $('#resourceId').val(info.event.extendedProps.resourceId);
+                  $('#resourceId').val(info.event._def.resourceIds);
                   $('#id_especialist').val(info.event.extendedProps.id_especialist);
                   $('#title').val(info.event.title);
                   $('#txtTelefono').val(info.event.extendedProps.telefono);
@@ -197,9 +197,6 @@
                   let imgEvent = '<img width="16px" height="16px" style="margin-left: 10px" src="'+imageArg+'" >';
                   imgEventWrap.classList = "fc-event-img"
                   imgEventWrap.innerHTML = imgEvent;
-
-
-
 
                 arrayOfDomNodes = [ titleEvent,horaEvent,imgEventWrap ]
 
