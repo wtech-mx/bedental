@@ -14,15 +14,9 @@
 
 
 <style>
-    .atendido{
-        background-color: rgb(104, 104, 104);
-    }
-    .noasistira{
-        background-color: rgb(170, 10, 149);
-    }
-    .confirmado{
-        background-color: rgb(24, 161, 31);
-    }
+.fc-v-event .fc-event-title {
+    font-size: 9px;
+}
 </style>
 
 @endsection
