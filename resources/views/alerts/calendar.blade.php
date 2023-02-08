@@ -183,16 +183,16 @@
 
                 // Hora event
                 let horaEvent = document.createElement('div')
-                  horaEvent.innerHTML = '<div style="font-size:10px;">'+hor+' - '+modulocapi+'</div>';
+                  horaEvent.innerHTML = '<div style="font-size:10px;">'+hor+' - '+modulocapi+'<img width="13px" height="13px" style="margin-left: 10px" src="'+imageArg+'" ></div>';
                   horaEvent.classList = "fc-event-time"
 
                 // image event
-                let imgEventWrap = document.createElement('div')
-                  let imgEvent = '<img width="16px" height="16px" style="margin-left: 10px" src="'+imageArg+'" >';
-                  imgEventWrap.classList = "fc-event-img"
-                  imgEventWrap.innerHTML = imgEvent;
+                // let imgEventWrap = document.createElement('div')
+                //   let imgEvent = '<img width="16px" height="16px" style="margin-left: 10px" src="'+imageArg+'" >';
+                //   imgEventWrap.classList = "fc-event-img"
+                //   imgEventWrap.innerHTML = imgEvent;
 
-                arrayOfDomNodes = [ titleEvent,horaEvent,imgEventWrap ]
+                arrayOfDomNodes = [ titleEvent,horaEvent ]
 
                 return { domNodes: arrayOfDomNodes }
               },
