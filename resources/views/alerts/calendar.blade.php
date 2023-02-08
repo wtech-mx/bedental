@@ -183,7 +183,7 @@
 
                 // Hora event
                 let horaEvent = document.createElement('div')
-                  horaEvent.innerHTML = '<div style="font-size:10px;">'+hor+' - '+modulocapi+'<img width="22px" style="margin-left: 10px" src="'+imageArg+'" ></div>';
+                  horaEvent.innerHTML = '<div style="font-size:10px;">'+hor+' - '+modulocapi+'<img width="15px" style="margin-left: 10px" src="'+imageArg+'" ></div>';
                   horaEvent.classList = "fc-event-time"
 
                 // image event
