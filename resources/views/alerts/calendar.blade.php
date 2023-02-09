@@ -49,7 +49,7 @@
                 initialDate: '{{$Fecha}}',
                 initialView: 'timeGridWeek',
                 editable: true,
-                dayMaxEvents: 3,
+                dayMaxEvents: 5,
                 aspectRatio: 1.8,
                 themeSystem: 'bootstrap',
                 scrollTime:  "09:00:00",
