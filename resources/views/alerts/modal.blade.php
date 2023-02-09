@@ -323,7 +323,7 @@
                       <div class="form-group col-6 mb-3">
 
                          <label for="">Selecionar Paciente</label>
-                         <input class="" type="text" name="title" id="title" disabled style="background: transparent;border: 0px;padding:0px">
+                         <input class="" type="text" name="title" id="title" disabled style="background: transparent;font-size: 12px;border: 0px;padding:0px">
                               <select class="form-control mibuscador_paciente" id="id_client" name="id_client" >
                                    <option value="">Seleccione Paciente</option>
                                        @foreach($client as $item)
