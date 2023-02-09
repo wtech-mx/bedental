@@ -15,7 +15,7 @@
 
 <style>
 .fc-v-event .fc-event-title {
-    font-size: 6px;
+    font-size: 7.6px;
 }
 </style>
 
